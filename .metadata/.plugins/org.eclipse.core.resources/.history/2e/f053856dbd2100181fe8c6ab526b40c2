@@ -1,0 +1,15 @@
+package practice016_ex;
+
+public class Test6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str1 = "Not immutable";
+		String srt2 = "Strings are immutable";
+		StringBuffer str3 = new StringBuffer("Not immutable");
+//StringBuffer 클래스 사용		
+		boolean result = str1.contentEquals(str3);
+
+	}
+
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<input type="text" id="input1">
+	<button onclick="com()">compare</button>
+	<p id="demo"></p>
+	<p id = "demo1"></p>
+
+	<script>
+        function com() {
+            var age = Number(document.getElementById("input1").value);
+            //document.getElementById("demo1").innerHTML = age;
+            if (isNaN(age)){
+                document.getElementById("demo").innerHTML = "Is not Number.<br>Plz submit fucking NUMBER";
+                return;
+            }
+            var compare = (age < 18) ? "Too Young" : "Old enough";
+            document.getElementById("demo").innerHTML = compare;
+        }
+    </script>
+
+</body>
+</html>

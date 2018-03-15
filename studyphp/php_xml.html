@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="/studyphp/style.css">
+<script src="js/php.js"></script>
+<title>php_xml</title>
+</head>
+<body>
+<header>PHP_XML</header>
+	<section>
+		<article>
+			<h1 id="index_subject">목차</h1>
+			<div id="list"></div>
+			<h1 id="index_bookmark">부록</h1>
+			<div id="bookmark_list"></div>
+			<h1 class="subject">PHP XML Parsers</h1>
+			<h1>What is XML?</h1>
+			<p>
+				The XML language is a way to structure data for sharing
+				across websites. <br> <br> Several web
+				technologies like RSS Feeds and Podcasts are written in
+				XML. <br> <br> XML is easy to create. It looks
+				a lot like HTML, except that you make up your own tags.
+				<br> <br> If you want to learn more about XML,
+				please visit our XML tutorial.
+			</p>
+			<h1>What is an XML Parser?</h1>
+			<p>To read and update, create and manipulate an XML
+				document, you will need an XML parser. In PHP there are
+				two major types of XML parsers:</p>
+			<ul>
+				<li>Tree-Based Parsers</li>
+				<li>Event-Based Parsers</li>
+			</ul>
+			<h1>Tree-Based Parsers</h1>
+			<p>
+				Tree-based parsers holds the entire document in Memory
+				and transforms the XML document into a Tree structure.
+				It analyzes the whole document, and provides access to
+				the Tree elements (DOM). <br> <br> This type
+				of parser is a better option for smaller XML documents,
+				but not for large XML document as it causes major
+				performance issues. <br> <br> Example of
+				tree-based parsers:
+			</p>
+			<ul>
+				<li>SimpleXML</li>
+				<li>DOM</li>
+			</ul>
+			<h1>Event-Based Parsers</h1>
+			<p>
+				Event-based parsers do not hold the entire document in
+				Memory, instead, they read in one node at a time and
+				allow you to interact with in real time. Once you move
+				onto the next node, the old one is thrown away. <br>
+				<br> This type of parser is well suited for large
+				XML documents. It parses faster and consumes less
+				memory. <br> <br> Example of event-based
+				parsers:
+			</p>
+			<ul>
+				<li>XMLReader</li>
+				<li>XML Expat Parser</li>
+			</ul>
+			<h1 class="subject">PHP SimpleXML Parser</h1>
+			<p>SimpleXML is a PHP extension that allows us to
+				easily manipulate and get XML data.</p>
+			<h1>The SimpleXML Parser</h1>
+			<p>
+				SimpleXML is a tree-based parser. <br> <br>
+				SimpleXML provides an easy way of getting an element's
+				name, attributes and textual content if you know the XML
+				document's structure or layout. <br> <br>
+				SimpleXML turns an XML document into a data structure
+				you can iterate through like a collection of arrays and
+				objects. <br> <br> Compared to DOM or the
+				Expat parser, SimpleXML takes a fewer lines of code to
+				read text data from an element.
+			</p>
+			<h1>Installation</h1>
+			<p>As of PHP 5, the SimpleXML functions are part of
+				the PHP core. No installation is required to use these
+				functions.</p>
+			<h1>PHP SimpleXML - Read From String</h1>
+			<p>
+				The PHP simplexml_load_string() function is used to read
+				XML data from a string. <br> <br> Assume we
+				have a variable that contains XML data, like this:
+			</p>
+			<pre class="code">&lt;?php
+$myXMLData =
+"&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt;";
+
+$xml=simplexml_load_string($myXMLData) or die("Error: Cannot create object");
+print_r($xml);
+?&gt;  </pre>
+			<a class="center" href="practice_xml/xml_01.php">프렉티스1</a>
+			<p>The output of the code above will be:</p>
+			<div class="code">SimpleXMLElement Object ( [to]
+				=&gt; Tove [from] =&gt; Jani [heading] =&gt; Reminder
+				[body] =&gt; Don't forget me this weekend! )</div>
+			<p>Error Handling Tip: Use the libxml functionality
+				to retrieve all XML errors when loading the document and
+				then iterate over the errors. The following example
+				tries to load a broken XML string:</p>
+			<pre class="code">&lt;?php
+libxml_use_internal_errors(true);
+$myXMLData =
+"&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;document&gt;
+&lt;user&gt;John Doe&lt;/wronguser&gt;
+&lt;email&gt;john@example.com&lt;/wrongemail&gt;
+&lt;/document&gt;";
+
+$xml = simplexml_load_string($myXMLData);
+if ($xml === false) {
+    echo "Failed loading XML: ";
+    foreach(libxml_get_errors() as $error) {
+        echo "&lt;br&gt;", $error-&gt;message;
+    }
+} else {
+    print_r($xml);
+}
+?&gt; </pre>
+			<a href="practice_xml/xml_02.php" class="center">프렉티스2</a>
+			<p>The output of the code above will be:</p>
+			<pre class="code">Failed loading XML:
+Opening and ending tag mismatch: user line 3 and wronguser
+Opening and ending tag mismatch: email line 4 and wrongemail </pre>
+			<h1>PHP SimpleXML - Read From File</h1>
+			<p>
+				The PHP simplexml_load_file() function is used to read
+				XML data from a file. <br> <br> Assume we have
+				an XML file called "note.xml", that looks like this:
+			</p>
+			<pre class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;note&gt;
+  &lt;to&gt;Tove&lt;/to&gt;
+  &lt;from&gt;Jani&lt;/from&gt;
+  &lt;heading&gt;Reminder&lt;/heading&gt;
+  &lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt; </pre>
+			<p>The example below shows how to use the
+				simplexml_load_file() function to read XML data from a
+				file:</p>
+			<a href="practice_xml/xml_03.php" class="center">프렉티스3</a>
+			<p>The output of the code above will be:</p>
+			<div class="code">SimpleXMLElement Object ( [to] =>
+				Tove [from] => Jani [heading] => Reminder [body] =>
+				Don't forget me this weekend! )</div>
+			<p>Tip: The next chapter shows how to get/retrieve
+				node values from an XML file with SimpleXML!</p>
+			<h1>More PHP SimpleXML</h1>
+			<p>For more information about the PHP SimpleXML
+				functions, visit our PHP SimpleXML Reference.</p>
+			<h1 class="subject">PHP SimpleXML - Get
+				Node/Attribute Values</h1>
+			<p>SimpleXML is a PHP extension that allows us to
+				easily manipulate and get XML data.</p>
+			<h1>PHP SimpleXML - Get Node Values</h1>
+			<p>Get the node values from the "note.xml" file:</p>
+			<pre class="code"> &lt;?php
+$xml=simplexml_load_file("note.xml") or die("Error: Cannot create object");
+echo $xml-&gt;to . "&lt;br&gt;";
+echo $xml-&gt;from . "&lt;br&gt;";
+echo $xml-&gt;heading . "&lt;br&gt;";
+echo $xml-&gt;body;
+?&gt; </pre>
+			<a href="practice_xml/xml_04.php" class="center">프렉티스4</a>
+			<p>The output of the code above will be:</p>
+			<pre class="code">Tove
+Jani
+Reminder
+Don't forget me this weekend! </pre>
+			<h1>Another XML File</h1>
+			<p>Assume we have an XML file called "books.xml",
+				that looks like this:</p>
+
+			<pre class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;bookstore&gt;
+  &lt;book category="COOKING"&gt;
+    &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt;
+    &lt;author&gt;Giada De Laurentiis&lt;/author&gt;
+    &lt;year&gt;2005&lt;/year&gt;
+    &lt;price&gt;30.00&lt;/price&gt;
+  &lt;/book&gt;
+  &lt;book category="CHILDREN"&gt;
+    &lt;title lang="en"&gt;Harry Potter&lt;/title&gt;
+    &lt;author&gt;J K. Rowling&lt;/author&gt;
+    &lt;year&gt;2005&lt;/year&gt;
+    &lt;price&gt;29.99&lt;/price&gt;
+  &lt;/book&gt;
+  &lt;book category="WEB"&gt;
+    &lt;title lang="en-us"&gt;XQuery Kick Start&lt;/title&gt;
+    &lt;author&gt;James McGovern&lt;/author&gt;
+    &lt;year&gt;2003&lt;/year&gt;
+    &lt;price&gt;49.99&lt;/price&gt;
+  &lt;/book&gt;
+  &lt;book category="WEB"&gt;
+    &lt;title lang="en-us"&gt;Learning XML&lt;/title&gt;
+    &lt;author&gt;Erik T. Ray&lt;/author&gt;
+    &lt;year&gt;2003&lt;/year&gt;
+    &lt;price&gt;39.95&lt;/price&gt;
+  &lt;/book&gt;
+&lt;/bookstore&gt; </pre>
+			<h1>PHP SimpleXML - Get Node Values of Specific
+				Elements</h1>
+			<p>The following example gets the node value of the
+				&lt;title&gt; element in the first and second
+				&lt;book&gt; elements in the "books.xml" file:</p>
+			<pre class="code"> &lt;?php
+$xml=simplexml_load_file("books.xml") or die("Error: Cannot create object");
+echo $xml-&gt;book[0]-&gt;title . "&lt;br&gt;";
+echo $xml-&gt;book[1]-&gt;title;
+?&gt; </pre>
+			<a class="center" href="practice_xml/xml_05.php">프렉티스5</a>
+			<p>The output of the code above will be:</p>
+			<div class="code">
+				Everyday Italian<br> Harry Potter
+			</div>
+			<h1>PHP SimpleXML - Get Node Values - Loop</h1>
+			<p>The following example loops through all the
+				&lt;book&gt; elements in the "books.xml" file, and gets
+				the node values of the &lt;title&gt;, &lt;author&gt;,
+				&lt;year&gt;, and &lt;price&gt; elements:</p>
+			<pre class="code"> &lt;?php
+$xml=simplexml_load_file("books.xml") or die("Error: Cannot create object");
+foreach($xml-&gt;children() as $books) {
+    echo $books-&gt;title . ", ";
+    echo $books-&gt;author . ", ";
+    echo $books-&gt;year . ", ";
+    echo $books-&gt;price . "&lt;br&gt;";
+}
+?&gt; </pre>
+			<a href="practice_xml/xml_06.php" class="center">프렉티스6</a>
+			<p>The output of the code above will be:</p>
+			<pre class="code">Everyday Italian, Giada De Laurentiis, 2005, 30.00
+Harry Potter, J K. Rowling, 2005, 29.99
+XQuery Kick Start, James McGovern, 2003, 49.99
+Learning XML, Erik T. Ray, 2003, 39.95 </pre>
+
+
+			<h1>PHP SimpleXML - Get Attribute Values</h1>
+			<p>The following example gets the attribute value of
+				the "category" attribute of the first &lt;book&gt;
+				element and the attribute value of the "lang" attribute
+				of the &lt;title&gt; element in the second &lt;book&gt;
+				element:</p>
+			<h1>PHP SimpleXML - Get Attribute Values</h1>
+			<p>The following example gets the attribute value of
+				the "category" attribute of the first &lt;book&gt;
+				element and the attribute value of the "lang" attribute
+				of the &lt;title&gt; element in the second &lt;book&gt;
+				element:</p>
+			<pre class="code"> &lt;?php
+$xml=simplexml_load_file("books.xml") or die("Error: Cannot create object");
+echo $xml-&gt;book[0]['category'] . "&lt;br&gt;";
+echo $xml-&gt;book[1]-&gt;title['lang'];
+?&gt; </pre>
+			<a href="practice_xml/xml_07.php" class="center">프렉티스
+				7</a>
+			<p>The output of the code above will be:</p>
+			<pre class="code">COOKING
+en</pre>
+			<h1>PHP SimpleXML - Get Attribute Values - Loop</h1>
+			<p>The following example gets the attribute values of
+				the &lt;title&gt; elements in the "books.xml" file:</p>
+			<pre class="code"> &lt;?php
+$xml=simplexml_load_file("books.xml") or die("Error: Cannot create object");
+foreach($xml-&gt;children() as $books) {
+    echo $books-&gt;title['lang'];
+    echo "&lt;br&gt;";
+}
+?&gt; </pre>
+			<p>The output of the code above will be:</p>
+			<pre class="code">en
+en
+en-us
+en-us</pre>
+			<h1>More PHP SimpleXML</h1>
+			<p>For more information about the PHP SimpleXML
+				functions, visit our PHP SimpleXML Reference.</p>
+			<h1>PHP XML Expat Parser</h1>
+			<p>The built-in XML Expat Parser makes it possible to
+				process XML documents in PHP.</p>
+			<h1 class="subject">The XML Expat Parser</h1>
+			<p>
+				The Expat parser is an event-based parser. <br> <br>
+				Look at the following XML fraction:
+			</p>
+			<div class="code">&lt;from&gt;Jani&lt;/from&gt;</div>
+			<p>An event-based parser reports the XML above as a
+				series of three events:</p>
+			<ul>
+				<li>Start element: from</li>
+				<li>Start CDATA section, value: Jani</li>
+				<li>Close element: from</li>
+			</ul>
+			<p>The XML Expat Parser functions are part of the PHP
+				core. There is no installation needed to use these
+				functions.</p>
+			<h1>The XML File</h1>
+			<p>The XML file "note.xml" will be used in the
+				example below:</p>
+			<pre class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt; </pre>
+			<h1>Initializing the XML Expat Parser</h1>
+			<p>We want to initialize the XML Expat Parser in PHP,
+				define some handlers for different XML events, and then
+				parse the XML file.</p>
+			<pre class="code"> &lt;?php
+// Initialize the XML parser
+$parser=xml_parser_create();
+
+// Function to use at the start of an element
+function start($parser,$element_name,$element_attrs) {
+  switch($element_name) {
+    case "NOTE":
+    echo "-- Note --&lt;br&gt;";
+    break;
+    case "TO":
+    echo "To: ";
+    break;
+    case "FROM":
+    echo "From: ";
+    break;
+    case "HEADING":
+    echo "Heading: ";
+    break;
+    case "BODY":
+    echo "Message: ";
+  }
+}
+
+// Function to use at the end of an element
+function stop($parser,$element_name) {
+  echo "&lt;br&gt;";
+}
+
+// Function to use when finding character data
+function char($parser,$data) {
+  echo $data;
+}
+
+// Specify element handler
+xml_set_element_handler($parser,"start","stop");
+
+// Specify data handler
+xml_set_character_data_handler($parser,"char");
+
+// Open XML file
+$fp=fopen("note.xml","r");
+
+// Read data
+while ($data=fread($fp,4096)) {
+  xml_parse($parser,$data,feof($fp)) or
+  die (sprintf("XML Error: %s at line %d",
+  xml_error_string(xml_get_error_code($parser)),
+  xml_get_current_line_number($parser)));
+}
+
+// Free the XML parser
+xml_parser_free($parser);
+?&gt; </pre>
+			<a href="practice_xml/xml_09.php" class="center">프렉티스9</a>
+			<p>Example explained:</p>
+			<ol>
+				<li>Initialize the XML parser with the
+					xml_parser_create() function</li>
+				<li>Create functions to use with the different
+					event handlers</li>
+				<li>Add the xml_set_element_handler() function to
+					specify which function will be executed when the parser
+					encounters the opening and closing tags</li>
+				<li>Add the xml_set_character_data_handler()
+					function to specify which function will execute when
+					the parser encounters character data</li>
+				<li>Parse the file "note.xml" with the xml_parse()
+					function</li>
+				<li>In case of an error, add xml_error_string()
+					function to convert an XML error to a textual
+					description</li>
+				<li>Call the xml_parser_free() function to release
+					the memory allocated with the xml_parser_create()
+					function</li>
+			</ol>
+			<h1>More PHP XML Expat Parser</h1>
+			<p>
+				For more information about the PHP Expat functions,
+				visit our <a
+					href="https://www.w3schools.com/php/php_ref_xml.asp"
+					target="_blank">PHP XML Parser Reference.</a>
+			</p>
+			<h1 class="subject">PHP XML DOM Parser</h1>
+			<p>The built-in DOM parser makes it possible to
+				process XML documents in PHP.</p>
+			<h1>The XML DOM Parser</h1>
+			<p>
+				The DOM parser is a tree-based parser. <br> <br>
+				Look at the following XML document fraction:
+			</p>
+			<pre class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;from&gt;Jani&lt;/from&gt; </pre>
+			<p>The DOM sees the XML above as a tree structure:</p>
+			<ul>
+				<li>Level 1: XML Document</li>
+				<li>Level 2: Root element: &lt;from&gt;</li>
+				<li>Level 3: Text element: "Jani"</li>
+			</ul>
+			<h1>Installation</h1>
+			<p>The DOM parser functions are part of the PHP core.
+				There is no installation needed to use these functions.</p>
+			<h1>The XML File</h1>
+			<p>The XML file below ("note.xml") will be used in
+				our example:</p>
+			<pre class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt; </pre>
+			<h1>Load and Output XML</h1>
+			<p>We want to initialize the XML parser, load the
+				xml, and output it:</p>
+			<pre class="code">&lt;?php
+$xmlDoc = new DOMDocument();
+$xmlDoc-&gt;load("note.xml");
+
+print $xmlDoc-&gt;saveXML();
+?&gt; </pre>
+			<a href="practice_xml/xml_10.php" class="center">프렉티스10</a>
+			<p>The output of the code above will be:</p>
+			<div class="code">Tove Jani Reminder Don't forget
+				me this weekend!</div>
+			<p>If you select "View source" in the browser window,
+				you will see the following HTML:</p>
+			<pre class="code">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt; </pre>
+			<p>
+				The example above creates a DOMDocument-Object and loads
+				the XML from "note.xml" into it. <br> <br>
+				Then the saveXML() function puts the internal XML
+				document into a string, so we can output it.
+			</p>
+			<h1>Looping through XML</h1>
+			<p>We want to initialize the XML parser, load the
+				XML, and loop through all elements of the &lt;note&gt;
+				element:</p>
+			<pre class="code">&lt;?php
+$xmlDoc = new DOMDocument();
+$xmlDoc-&gt;load("note.xml");
+
+$x = $xmlDoc-&gt;documentElement;
+foreach ($x-&gt;childNodes AS $item) {
+  print $item-&gt;nodeName . " = " . $item-&gt;nodeValue . "&lt;br&gt;";
+}
+?&gt; </pre>
+			<a href="practice_xml/xml_11.php" class="center">프렉티스11</a>
+			<p>The output of the code above will be:</p>
+			<pre class="code">#text =
+to = Tove
+#text =
+from = Jani
+#text =
+heading = Reminder
+#text =
+body = Don't forget me this weekend!
+#text = </pre>
+			<p>
+				In the example above you see that there are empty text
+				nodes between each element. <br> <br> When XML
+				generates, it often contains white-spaces between the
+				nodes. The XML DOM parser treats these as ordinary
+				elements, and if you are not aware of them, they
+				sometimes cause problems. <br> <br> If you
+				want to learn more about the XML DOM, please visit our <a
+					href="https://www.w3schools.com/xml/default.asp"
+					target="_blank">XML tutorial</a>.
+			</p>
+
+
+
+
+		</article>
+	</section>
+	<footer>PHP_SQL END</footer>
+	<aside>
+		<a href="#index_subject">위로</a>
+	</aside>
+
+</body>
+</html>

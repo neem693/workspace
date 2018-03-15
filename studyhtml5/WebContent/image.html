@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>image</title>
+<body background=".\images\bg.jpg">
+
+	<h1>이미지</h1>
+
+	<p>이미지는 웹문서의 구성의 중요한 부분이지만 text에 비해 요량이 크다. 다운로드 속도가 느려짐</p>
+	<br>
+	<p>
+		사용가능한 3가지 포맷이 있다.<br>jpg:24bit color<br>gif:8bit color<br>
+		png: 32bit color
+	</p>
+	<h3>jpg</h3>
+	<p>web color의 특징: 발광체(스스로 빛을 내는)로서 rgb(red,green,blue)의 빛의 세기로 색상을
+		구현</p>
+	<p>각 원색은 2의 8승 (256단계, 8bit)단계로 밝기를 조정</p>
+	<p>rrggbb를 16진수로 표현</p>
+	<p>빨간색을 최대로 하는걸 16진수로 표현하면 ff0000</p>
+	<p>초록색을 최대로 하는걸 16진수로 표현하면 00ff00</p>
+	<p>파란색을 최대로 하는걸 16진수로 표현하면 0000ff</p>
+	<p>true컬러는 8비트 x 3 = 24bit 컬러 ->jpg</p>
+	<p>jpg는 압축률이 높음, 사진과 같이 세밀한 이미지에 적합하다.
+	<h3>gif</h3>
+	<p>8비트 색 (256개의 색상만 가능), 로고, 심볼같은 단순한 이미지에 적합 컬러수가 적은것,특정 색상 하나를
+		투명한 효과를 줄 수 있음.</p>
+
+	<h3>png</h3>
+	<p>32bit 컬러로 투르컬러 + 알파 채널8bit로 투명도를 조정한다. 반투명 효과 (연기, 그림자) 적용에
+		적합하다.</p>
+
+	<p>
+		web에서 사용하는 이미지의 용도<br> 1. 정보<br> 2. 디자인-배경그림으로 처리<br>
+	</p>
+	<hr>
+	<h3>
+		JPG 표현
+		<h3>
+			<th><img src=".\images\select color.jpg" alt="노란색색의 RGB 코드입니다.">
+			</th> <br>
+			<table>
+				<br>
+				<hr>
+				<h3>
+					색 표현
+					<h3>
+						<tr bgcolor="#ffff00">
+							<th>이것은 노란색입니다.(#ffff00)</th>
+						</tr>
+			</table>
+			<h3>
+				<br>
+
+				<hr>
+				<h3>
+					PNG 표현
+					<h3>
+						<br> <br>
+
+						<table align="center">
+							<tr bgcolor="#00ffff">
+								<th>이것은 하늘색입니다.(#00ffff) <br> 밑에 사진은 PNG 파일입니다. 투명도가
+									표시됩니다. <br> <img src="images/signature1.png" width="250"
+									height="100"
+								>
+
+								</th>
+							</tr>
+						</table>
+
+						<br>
+						<hr>
+						<h3>
+							GIF 표현
+							<h3>
+								<th><img src="images/steam_logo.gif"></th> <br>
+								<th><img src="images/Clap.gif"></th> <br> <br>
+</body>
+</head>
+
+
+</html>
+

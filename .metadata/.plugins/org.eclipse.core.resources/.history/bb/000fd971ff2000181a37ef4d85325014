@@ -1,0 +1,11 @@
+package practice016;
+
+public class Test3_StringDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String string1 = "saw I was";
+
+	}
+
+}

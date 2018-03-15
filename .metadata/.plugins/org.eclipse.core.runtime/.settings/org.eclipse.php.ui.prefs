@@ -1,0 +1,12 @@
+cleanup.format.on.save=false
+cleanup.remove_trailing_whitespaces=false
+cleanup.remove_trailing_whitespaces_all=true
+cleanup.remove_trailing_whitespaces_ignore_empty=false
+eclipse.preferences.version=1
+org.eclipse.php.core.workspaceDefaultLocale=ko_KR
+org.eclipse.php.ui.editor.templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="php" deleted\="false" description\="create template for html 5 php" enabled\="true" name\="HTML5_php">&lt;\!DOCTYPE html&gt;&\#13;\r\n&lt;html&gt;&\#13;\r\n&lt;head&gt;&\#13;\r\n&lt;meta charset\="${encoding}"&gt;&\#13;\r\n&lt;meta name \= "viewport" content \= "width\=device-width,initial-scale \= 1.0"/&gt;&\#13;\r\n&lt;title&gt;Insert title here&lt;/title&gt;&\#13;\r\n&lt;/head&gt;&\#13;\r\n&lt;body&gt;&\#13;\r\n&lt;?php&\#13;\r\n${cursor}&\#13;\r\n?&gt;&\#13;\r\n&lt;/body&gt;&\#13;\r\n&lt;/html&gt;&\#13;\r\n</template></templates>
+org.eclipse.php.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.php.uihoverModifierMasks=org.eclipse.php.ui.editor.hover.BestMatchHover;0;org.eclipse.php.debug.ui.hovers.PHPDebugTextHover;0;org.eclipse.php.xdebug.ui.hover.XDebugTextHover;0;org.eclipse.php.ui.editor.hover.ProblemHover;0;org.eclipse.php.ui.editor.hover.PHPDocumentationHover;0;org.eclipse.php.ui.editor.hover.PHPSourceTextHover;262144;org.eclipse.php.ui.editor.hover.PHPAnnotationTextHover;0;
+org.eclipse.php.uihoverModifiers=org.eclipse.php.ui.editor.hover.BestMatchHover;0;org.eclipse.php.debug.ui.hovers.PHPDebugTextHover;\!0;org.eclipse.php.xdebug.ui.hover.XDebugTextHover;\!0;org.eclipse.php.ui.editor.hover.ProblemHover;\!0;org.eclipse.php.ui.editor.hover.PHPDocumentationHover;\!0;org.eclipse.php.ui.editor.hover.PHPSourceTextHover;Ctrl;org.eclipse.php.ui.editor.hover.PHPAnnotationTextHover;\!0;
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

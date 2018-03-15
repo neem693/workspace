@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+<h2>Never Create Strings as objects.</h2>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id = "demo"></p>
+
+<script>
+var x = "John";
+var y = new String("John");
+document.getElementById("demo").innerHTML = (x==y);
+</script>
+
+</body>
+</html>

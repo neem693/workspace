@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+
+.out{
+	width: 600px;
+	border: 1px solid black;
+	display: block;
+	margin: 10px;
+	
+}
+
+.in{
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+	display: inline-block;
+	border: red 3px solid;
+}
+
+.inn{
+	width: 300px;
+	height: 100px;
+	box-sizing: border-box;
+	background-color: aqua;
+	border: red 3px solid;
+	display: inline-block;
+}

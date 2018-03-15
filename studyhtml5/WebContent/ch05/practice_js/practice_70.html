@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<pre>
+function getRndInteger1(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+	</pre>
+	<label>Max</label><input type="text" id = "max1"><br>
+	<label>Min</label><input type="text" id = "min1"><br>
+	<button onclick="check1()">발생</button><br>
+	<p id="demo1"></p>
+	<pre>
+function getRndInteger2(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+	</pre>
+	<label>Max</label><input type="text" id = "max2"><br>
+	<label>Min</label><input type="text" id = "min2"><br>
+	<button onclick="check2()">발생</button><br>
+	<p id="demo2"></p>
+	
+
+	<script>
+	function getRandomInteger1(min,max){
+	    return Math.floor(Math.random()* (max - min)) + min;
+	}
+	function getRandomInteger2(min,max){
+	    return Math.floor(Math.random()* (max - min + 1)) + min;
+	}
+    function check1(){
+        var max = document.getElementById("max1").value;
+        var min = document.getElementById("min1").value;
+        min = Number(min);
+        max = Number(max);
+       
+        document.getElementById("demo1").innerHTML = getRandomInteger1(min,max);
+    }
+    function check2(){
+        var max = document.getElementById("max2").value;
+        var min = document.getElementById("min2").value;
+        min = Number(min);
+        max = Number(max);
+        document.getElementById("demo2").innerHTML = getRandomInteger2(min,max);
+    }
+    </script>
+</body>
+</html>

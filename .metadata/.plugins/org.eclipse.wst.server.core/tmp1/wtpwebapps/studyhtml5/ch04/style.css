@@ -1,0 +1,279 @@
+@CHARSET "UTF-8";
+@FONT-FACE {
+	font-family: cour;
+	src: url(/studyphp/font/cour.ttf);
+}
+@FONT-FACE {
+	font-family: notosans;
+	src: url(./../font/NotoSansCJKkr-Thin.otf);
+}
+@FONT-FACE {
+	font-family: notosans_b;
+	src: url(./../font/NotoSansCJKkr-Bold.otf);
+}
+li{
+	color:aqua;
+}
+li:hover{
+	background-color: #b000b0;
+}
+
+
+div#list,div#bookmark_list{
+	background-color: black;
+}
+
+
+body{
+	font-family: notosans;
+}
+
+/*이 부분은 텍스트 부분 */
+p, td {
+	line-height: 30px;
+}
+
+th {
+	background-color: #9d9dff;
+	color: yellow;
+}
+
+p.bold, td.bold {
+	font-weight: bold;
+}
+
+div#b {
+	width: device-width;
+	height: auto;
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	font-size: medium;
+	color: #000000;
+	
+}
+
+div#s {
+	background-color: orange;
+	width: 75%;
+	height: auto;
+	padding: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	font-size: large;
+	font-weight: bold;
+	font-family: inherit;
+	display: block;
+}
+
+div#div1 {
+	width: 800px;
+}
+
+h1 {
+	color: #583cfd;
+	font-family: notosans_b;
+
+	
+}
+h1 a{
+	text-decoration: none;
+	padding: 5px 0;
+	display: block;
+	text-align: center;
+	
+	
+	
+}
+h1 a:hover{
+	background-color:#000080; 
+}
+
+h2 {
+	color: #400040;
+}
+.bookmark{
+	background-color: #cfcfcf;
+	font-size: x-large;
+	text-align: center;
+}
+.bookmark a{
+	color:red;
+}
+.bookmark a:BEFORE{
+	content: '\2605';
+}
+.bookmark a:AFTER{
+	content: '\2606';
+}
+
+h3 {
+	color: white;
+	background-color: olive;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+
+
+table, td, th {
+	border-collapse: collapse;
+	border: 1px solid #8000ff;
+	margin-left: auto;
+	margin-right: auto;
+	display: blcok;
+}
+
+a {
+	color: blue;
+}
+
+img {
+	width: 90%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.code {
+	font-family: cour,notosans;
+	border: 2px solid #ababab;
+	border-radius: 10px;
+	padding: 15px;
+	width: 80%;
+	margin: 5px auto;
+}
+.subject {
+	background: #a9df04;
+	padding: 20px 0px;
+	text-align: center;
+	font-size: x-large;
+	font-family: notosans_b;
+	
+	
+}
+
+.fixed{
+	background-color: orange;
+	position:fixed;
+	width:100px;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+	padding: 10px 0px;
+	font-family: notosans_b;
+	
+	
+}
+
+.imp{
+	padding: 3px;
+	background-color: #4600ff;
+	color: #ffff00;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+.center{
+	background-color: #8000ff;
+	text-align: center;
+	display: block;
+	padding: 2px;
+}
+.center:HOVER {
+	background-color: #ffff00;
+	color:  black;
+}
+
+@media screen and (min-width: 900px) {
+	/*this is text section. */
+	p {
+		text-indent: 10px;
+	}
+	p, td {
+		line-height: 30px;
+	}
+	p.bold, td.bold {
+		font-weight: bold;
+	}
+	div#b {
+		width: device-width;
+		height: auto;
+		background-color: black;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 10px;
+		font-size: 16px;
+		color: white;
+		font-family: notosans;
+		border: 10px double #ffff80;
+		border-radius: 30px;
+	}
+	div#s {
+		background-color: orange;
+		width: 75%;
+		height: auto;
+		padding: 2px;
+		margin-left: auto;
+		margin-right: auto;
+		color: black;
+		font-size: 16px;
+		font-weight: bold;
+		font-family: inherit;
+		display: block;
+	}
+	div#div1 {
+		width: 800px;
+	}
+	h1 {
+		color: aqua;
+	}
+	h2 {
+		color: lime;
+	}
+	h3 {
+		color: white;
+		background-color: olive;
+		text-decoration: underline;
+		display: inline-block;
+	}
+	table, td, th {
+		border-collapse: collapse;
+		border: 1px solid white;
+		margin-left: auto;
+		margin-right: auto;
+		color: white;
+		display: blcok;
+	}
+	th {
+		color: yellow;
+	}
+	a {
+		color: yellow;
+	}
+	img {
+		width: 90%;
+		max-width: 600px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.shadow {
+		box-shadow: 0px 0px 30px yellow;
+	}
+	table,tr,td{
+	width: 80%;
+	table-layout: fixed;
+	}
+}
+
+@MEDIA screen and (max-width: 480px) {
+	/*this is text section. */
+	
+	table{
+	width: 100%;
+	table-layout: fixed;
+	}
+}

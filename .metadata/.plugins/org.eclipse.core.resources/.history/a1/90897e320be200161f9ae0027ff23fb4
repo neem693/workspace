@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<title>form</title>
+</head>
+<body>
+
+	<h1>
+		&lt;form&gt;와 &lt;/form&gt;사이에 위치하는 태그<br>
+	</h1>
+	<h2>input text</h2>
+	<p>
+		모든 폼 태그는 원칙적으로 &lt;form&gt; 과 &lt;/form&gt; 사이에 위치한다. Ajax 기능을 사용하는 경우
+		등의 프로그램을 코딩하는 방법에 따라서 &lt;form&gt; 태그를 생략해도 된다.<br>레이블이 없는
+		&lt;input&gt; , &lt;select&gt;와 같은 폼 태그에는 &lt;label&gt;태그를 붙여서 작성한다.
+	<table border="1" width="200" style="width: 291px;">
+		<tr>
+			<td>&lt;label for = &quot;name&quot;&gt;이름&lt;/label&gt;<br>&lt;input
+				type = &quot;text&quot; id = &quot;name&quot;/&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<h2>fieldset 태그 사용</h2>
+	<table border="1" width="200" style="width: 479px;">
+		<tr>
+			<td>&lt;fieldset&gt;<br>&lt;legend&gt;취미&lt;/legend&gt;<br>&lt;input
+				type = &quot;checkbox&quot; name =&quot;h1&quot; id =
+				&quot;h1&quot;/&gt; <br>&lt;/fieldset&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h2>HTML 5에서 웹 폼 구성 예시</h2>
+	<h3>form태그를 사용해서 웹 폼을 구성할 경우</h3>
+	<p>
+		&lt;div&gt;태그 등의 영역을 나누는 태그로 싸준 후 &lt;button&gt; 태그등을 사용해서 폼에 입력한 내용을
+		전달할 페이지로 넘겨준다. <br>이때 자바스크립트에서 Ajax코드 등을 기술해서 처리해서 사용한다.
+		&lt;form&gt; 태그에 action 속성을 쓰지 않고 구성해도 된다.
+	</p>
+	<table border="1" width="200" style="width: 479px;">
+		<tr>
+			<td>......... <br>&lt;/fieldset&gt; <br>&lt;input
+				type = &quot;submit&quot; value = &quot;전송&quot;&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<h3>form태그를 사용하지 않을 경우</h3>
+	<br>
+	<table border="1" width="200" style="width: 621px;">
+		<tr>
+			<td>&lt;script&gt;<br>$(document).ready(function(){<br>$(&quot;button&quot;).click(function()//페이지
+				이동 기술});<br>});<br>&lt;/script&gt;<br> <br> <br>&lt;div&gt;<br>
+				<br>......... <br>&lt;/fieldset&gt; <br>&lt;button&gt;전송&lt;/button&gt;<br>&lt;/div&gt;
+			</td>
+		</tr>
+	</table>
+
+	<h3>form 태그 웹포 영역 설정</h3>
+	<p>
+		html에서 폼은 사용자 입력을 받기 위해서 사용하며 폼은 &lt;form&gt;태그를 사용해서 정의한다.<br>&lt;form&gt;태그를
+		정의할 때 속성을 사용할 수 있다. 예를 들어 name 속성은 폼에 일므을 부여해서 폼을 구별할 때 사용하며,
+		action속성은 사용자가 입력한 값을 처리할 페이지명을 값으로 갖는다. 사용자가 입력한 값은 주로 DB에 저장되기 때문에
+		처리할 페이지 명을 값으로 주로 DB에 저장되기 떄문에 처리할 페이지는 jsp, asp, php와 같은 서버사이드 스크립트를
+		쓴다. 처리할 페이지가 서버사이트 스크립트여서 서버에서 처리되기 때문에 입력한 값을 서버로 제출한다고 표현 할 수 있다.<br>
+	<table border="1" width="200" style="width: 621px;">
+		<tr>
+			<td>&lt;form name = &quot;aForm&quot; action =
+				&quot;a.jsp&quot;&gt;<br>웹폼 태그 나열<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>대충 어떤 속성들이 있는지 알자.
+	<br>
+	<br>
+	<h4>&lt;form 태그 속성&gt;</h4>
+	<br>
+	<br>accept-charset : 폼의 캐릭터 셋을 지정
+	<br>action : 폼에 입력된 값을 처리할 페이지의 url을지정한다.
+	<br>autocomplete : html5 에서 추가된 속성으로 폼에 입력 값을 자동 완성할지를 지정
+	<br>enctype: 폼에 입력된 값을 처리 페이지로 넘길 때 인코팅 방식을 지정한다.
+	<br>method: 폼에 입력된 값을 처리페이지로 넘길 때 HTTP방식을 지정한다.
+	<br>name: 폼의 이름을 지정한다.
+	<br>novalidate: html5 에서 추가된 속성으로 폼에 입력된 값을 처리 페이지로 넘길 때 입증된 데이터가
+	아니라는 것을 지정한다.
+	<br>target: action속성에 있는 처리페이지의 타깃을 지정한다.
+	<br>
+	<br>
+	<br>웹폼 태그들을 사용하여, 사용자 입력을 묶어서 처리한다.
+	<h4>웹 폼 태그의 종류</h4>
+	input: 텍스트 필드, 체크박스, 라디오 버튼등을 만들 때 사용
+	<br>select: 콤보 박스를 만들 때 사용
+	<br>textarea: 여러줄을 입력하는 입력 필드인 텍스트 에리어를 만들 때 사용
+	<br>button: 버튼을 만들 때 사용
+	<br>datalist: 텍스트 필드에 입력할 값의 목록인 데이터 리스트를 만들 때 사용
+	<br>keygen: 키젠은 보안키를 만들 때 사용
+	<br>output: 수학적 계산 결과를 표시할 떄 아웃풋을 사용
+	<br>
+	<br>
+	<br>
+	<h2>&lt;input&gt; 태그 속성 - 아이디</h2>
+
+	<table border ="1" width="800" align="center">
+		<tr>
+			<td>&lt;input&gt;태그 속성</td>
+			<td>값</td>
+			<td>설명</td>
+		</tr>
+		<tr>
+			<td>accept</td>
+			<td>.png .doc 등의 확장자<br>audio/*<br>video/*<br>image/*<br>미디어타입
+			</td>
+			<td>파일 선택기인 &lt;input type=&quot;file&quot;&gt; 에서만 사용하는 속성으로,
+				서버가 받아들일 수 있는 파일의 타입을 지정<br>예) &lt;input type =&quot;file&quot;
+				name=&quot;afile&quot; accept =&quot;image/*&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>autocomplete</td>
+			<td>on<br>off
+			</td>
+			<td>텍스트 필드과 같이 직접 값을 입력하는 웹 폼태그에서 자동완성 기능을 사용할 수 있도록 지정, 자동 완성을
+				지정하려면 autocomplete = &quot;on&quot;, 자동완성을 끌면 autocomplete =
+				&quot;off&quot;로 지정<br>예)&lt;input type = &quot;text&quot;
+				autocomplete = &quot;on&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>autofocus</td>
+			<td>autofocus</td>
+			<td>웹 페이지가 화면에 표시될 때 자동으로 특정 웹 폼 태그에 포커스를 지정, 포커스를 지정할 태그에
+				autofocus를 기술<br>예)&lt;input type = &quot;text&quot;
+				autofocus&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>checked</td>
+			<td>checked</td>
+			<td>체크박스 또는 라디오 버튼에서 선택 항목을 미리 지정할 때 사용, 주요 항목이나 필수 항목등에 사용됨<br>예)&lt;input
+				type =&quot;radio&quot; name =&quot;g&quot; value =&quot;f&quot;
+				checked&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>disabled</td>
+			<td>웹 폼 태그를 사용할 수 없도록 지정<br>예) &lt;input type
+				=&quot;text&quot; disabled&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>데이터 리스트의 id</td>
+			<td>데이터 리스트에서 선택한 항목을 표시<br>예) input list =
+				&quot;m_units&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>max</td>
+			<td>숫자, 날짜</td>
+			<td>숫자 입력&lt;input type =&quot;number&quot;&gt; 나 날짜 입력<br>&lt;input
+				type = &quot;date&quot; 등에서 최댓값을 지정<br>예) &lt;input type =
+				&quot;number&quot; name =&quot;q&quot; min =&quot;1&quot;
+				max=&quot;10&quot;&gt; <br>&lt;input type =&quot;date&quot;
+				name =&quot;birth&quot; max = &quot;2015-12-31&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>maxlength</td>
+			<td>숫자</td>
+			<td>텍스트 필드나 패스워드 필드에서 입력할 문자의 수를 제한하기 위해서 사용. maxlength =
+				&quot;10&quot; 이면 최대 10개의 문자를 입력할 수 있다는 의미임.<br>&lt;input type
+				= &quot;text&quot; maxlength = &quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>min</td>
+			<td>숫자, 날짜</td>
+			<td>숫자 입력이나 날짜 입력등에서 최솟값을 지정한다.<br>예) &lt;input type
+				=&quot;number&quot; name =&quot;q&quot; min = &quot;1&quot;
+				max=&quot;10&quot;<br>&lt;input type = &quot;date&quot; name =
+				&quot;birth&quot; min =&quot;2010-01-01&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>multiple</td>
+			<td>multiple</td>
+			<td>1개 이상의 값을 입력 받을 때 사용. 주로 파일 선택기인 &lt;input type
+				=&quot;file&quot;&gt; 에서 여러 파일을 선택할 때 사용<br>&lt;input type =
+				&quot;file&quot; name = &quot;imgs&quot; multiple maxlength =
+				&quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>이름</td>
+			<td>웹 폼 태그의 이름을 지저어<br>&lt;input type = &quot;text&quot;
+				name = &quot;imgs&quot; maxlength = &quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>pattern</td>
+			<td>정규표현식</td>
+			<td>유효한 값이 입력되도록 정규표현식을 지정. 입력되느느 글자 수를 6자 이상 요구하는 경우
+				pattern=&quot;.{6.}&quot;과 같이 지정할 수 있음<br>&lt;input type =
+				&quot;password&quot; pattern = &quot;.{6.}&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>placeholder</td>
+			<td>힌트</td>
+			<td>텍스트 필드 같이 값을 직접 입력하는 웹 등 태그에 입력 힌트 값을 지정<br>&lt;input
+				type = &quot;text&quot; id=&quot;id&quot; placeholder
+				=&quot;aaa@aaaa.com&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>required</td>
+			<td>required</td>
+			<td>반드시 입력해야 하는 필수 항목을 지정<br>&lt;input type =
+				&quot;text&quot; id = &quot;id&quot; placeholder =
+				&quot;aaa@aaaa.com&quot; required&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>size</td>
+			<td>숫자</td>
+			<td>텍스트 필드 등의 너비 지정<br>&lt;input type = &quot;text&quot;
+				size =&quot;20&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>step</td>
+			<td>숫자</td>
+			<td>숫자 입력 &lt;input type = &quot;number&quot;&gt;에서 입력되는 숫자 간격을
+				지정<br>&lt;input type = &quot;number&quot; name = &quot;q&quot;
+				min = &quot;1&quot; max = &quot;10&quot; step = &quot;1&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>type</td>
+			<td>button, checkbox, color, date, datetime,
+				datetime-local,email, file, hidden, month, number, password, radio,
+				range, reset, search<br>
+			<br>submit, tel, text, time, url, week
+			</td>
+			<td>&lt;input type = &quot;text&quot;&gt;</td>
+		</tr>
+		<tr>
+			<td>value</td>
+			<td>text</td>
+			<td>웹 폼 태그의 기본 값을 지정<br>&lt;input type = &quot;text&quot; value = &quot;20&quot;&gt;</td>
+		</tr>
+
+	</table>
+	
+	<h2>&lt;input&gt; 태그 속성 - 패스워드</h2>
+	<table width = "600" border ="1" align = "center"><tr>
+	<td></td></tr></table>
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+div#visible{
+	width: 600px;
+	margin: auto;
+	background: gray;
+	padding: 10px;
+}
+div#unvisible{
+	width: 600px;
+	margin: auto;
+	visibility: hidden;
+	background: gray;
+	padding: 10px;
+}
+
+p#v{
+	padding: 10px;
+	display: inline-block;
+	background: blue;
+	color: yellow;
+	visibility: visible;
+}
+
+div#position{
+	width: 600px;
+	background: gray;
+	padding: 10px;
+}
+
+img#ih{
+	visibility: hidden;
+}
+
+img#ps{
+	position: static;
+	left: 200px;
+}
+img#pr{
+	position: relative;
+	left: 200px;
+	bottom: 40px;
+}
+
+img#pa{
+	width: 200px;
+	position: absolute;
+	left: 200px;
+	bottom: 40px;
+}
+
+
+p#p{
+	padding: 10px;
+	background: blue;
+	color: yellow;
+	
+}

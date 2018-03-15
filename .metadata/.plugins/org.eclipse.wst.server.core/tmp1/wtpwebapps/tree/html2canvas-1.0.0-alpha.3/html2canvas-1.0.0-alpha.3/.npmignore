@@ -1,0 +1,15 @@
+build/
+examples/
+scripts/
+src/
+tests/
+.github/
+*.iml
+.babelrc
+.idea/
+.npmignore
+.eslintrc
+.travis.yml
+karma.js
+karma.conf.js
+webpack.config.js

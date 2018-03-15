@@ -1,0 +1,81 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine	On
+        #Rewritebase localhost/
+        #Rewritecond %{REQUEST_FILENAME} -d
+        #Rewritebase /
+
+
+
+        Rewritecond %{REQUEST_URI} ^/jquery$
+        RewriteRule ^.*$ /studyhtml5/ch05/study_jquery.html [R]
+		
+		Rewritecond %{REQUEST_URI} ^/js$
+        RewriteRule ^.*$ /studyhtml5/ch05/study_javascript.html [R]  
+		
+        
+        Rewritecond %{REQUEST_URI} ^/css$
+        RewriteRule ^.*$ /studyhtml5/ch04/study_css.html [R]
+
+        Rewritecond %{REQUEST_URI} ^/html$
+        RewriteRule ^.*$ /studyhtml5/ch03/ [R]
+
+        Rewritecond %{REQUEST_URI} ^/canvas$
+        RewriteRule ^.*$ /studyhtml5/ch06/study_canvas.htm [R]
+
+        Rewritecond %{REQUEST_URI} ^/web$
+        RewriteRule ^.*$ /studyhtml5/ch07/study_web.html [R]
+
+        Rewritecond %{REQUEST_URI} ^/php$
+        RewriteRule ^.*$ /studyphp/ [R]
+		
+		
+		Rewritecond %{REQUEST_URI} !^/studyhtml5/webcontent/?.*$ [NC]
+		Rewritecond %{REQUEST_URI} ^/studyhtml5/?(.*)$ [NC]
+		RewriteRule ^.* /studyhtml5/webcontent/%1 [NC]
+		
+		Rewritecond %{REQUEST_URI} !^/tree/webcontent/?.*$ [NC]
+		Rewritecond %{REQUEST_URI} ^/tree/?(.*)$ [NC]
+		RewriteRule ^.* /tree/webcontent/%1 [NC]
+		
+		Rewritecond %{REQUEST_URI} !^/javastudyweb/webcontent/?.*$ [NC]
+		Rewritecond %{REQUEST_URI} ^/java/?(.*)$ [NC]
+		RewriteRule ^.* /javastudyweb/webcontent/%1 [NC]
+
+
+
+
+        
+
+ 
+
+           
+        #RewriteRule ^css$ /studyhtml5/webcontent/ch04/study_css.html       [R]
+        #RewriteRule ^html$ /studyhtml5/webcontent/ch03/                    [R]
+        #RewriteRule ^canvas$ /studyhtml5/webcontent/ch06/study_canvas.html [R]
+        #RewriteRule ^web$ /studyhtml5/webcontent/ch07/study_web.html [R]
+        #RewriteRule ^php$ /studyphp/ [R,L]
+
+
+ ## jq_p01 불러오기 rewirte 문
+
+       # Rewritecond %{REQUEST_URI} ^/jq_p01$
+       # RewriteRule ^.*$ /studyhtml5/WebContent/ch05/practice/jq_p01.html
+
+       # Rewritecond %{REQUEST_URI} ^/js/jquery-3.1.1.min.js$
+       # RewriteRule ^.*$   /studyhtml5/WebContent/js/jquery-3.1.1.min.js
+
+
+       # Rewritecond %{REQUEST_URI} !^/js/jquery-3.1.1.min.js$
+       # Rewritecond %{REQUEST_URI} !^/studyhtml5/WebContent/ch05/.*$
+       # Rewritecond %{REQUEST_URI} ^.*.[css|jpe?g|gif|png|js|ico]$ [NC]
+       # RewriteRule ^(.*)$     /studyhtml5/WebContent/ch05/practice/$1
+
+      
+
+        
+        
+       
+
+	
+ 
+</IfModule>

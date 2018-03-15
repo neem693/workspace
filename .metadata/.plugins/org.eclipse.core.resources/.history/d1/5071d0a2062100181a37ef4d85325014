@@ -1,0 +1,13 @@
+package practice016;
+
+public class Test4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String fs;
+		fs = String.format("The value of the float variable is " +
+		, args)
+
+	}
+
+}

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+div{
+	width : 300px;
+	height : 200px;
+	background-color: silver;
+	margin : 10px; /* 외부간격*/
+	padding : 5px; /* 내부간격*/
+}
+
+div#down{
+	border : 10px solid lime;/*dotted*/
+}
+
+.b{
+	font-weight: bold;
+}
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p>
+		Math.floor(Math.random() * 10); // returns a number
+		between 0 and 9<br>
+	</p>
+	<p id="demo1"></p>
+	<p>
+		Math.floor(Math.random() * 11); // returns a number
+		between 0 and 10<br>
+	</p>
+	<p id="demo2"></p>
+	<p>
+		Math.floor(Math.random() * 100); // returns a number
+		between 0 and 99<br>
+	</p>
+	<p id="demo3"></p>
+	<p>
+		Math.floor(Math.random() * 10) + 1; // returns a number
+		between 1 and 10<br>
+	</p>
+	<p id="demo4"></p>
+	<p>
+		Math.floor(Math.random() * 100) + 1; // returns a number
+		between 1 and 100<br>
+	</p>
+	<p id="demo5"></p>
+
+	<script>
+        document.getElementById("demo1").innerHTML = Math
+                .floor(Math.random() * 10);
+
+        document.getElementById("demo2").innerHTML = Math
+                .floor(Math.random() * 11);
+
+        document.getElementById("demo3").innerHTML = Math
+                .floor(Math.random() * 100);
+
+        document.getElementById("demo4").innerHTML = Math
+                .floor(Math.random() * 10) + 1;
+
+        document.getElementById("demo5").innerHTML = Math
+                .floor(Math.random() * 100) + 1;
+    </script>
+</body>
+</html>

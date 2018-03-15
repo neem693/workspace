@@ -1,0 +1,43 @@
+<?php
+
+$id = 29384;
+$x = 23;
+$y = 36;
+$str = "하하하하하씨부랄 하하하하하하";
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="/studyphp/style.css">
+<script src="/studyphp/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	var id = <?php echo $id; ?>;
+	var x = <?php echo $x; ?>;
+	var y = <?php echo $y; ?>;
+	var str = "<?php echo $str; ?>";
+	$(document).ready(function() {
+
+		$("#id").text(id);
+		$("#x").text(x);
+		$("#y").text(y);
+		$("#str").text(str);
+	})
+</script>
+<title>연습_PHP</title>
+</head>
+<body>
+	<div id="check"></div>
+	<div id="id"></div>
+	<div id="x"></div>
+	<div id="y"></div>
+	<div id="str"></div>
+
+
+
+</body>
+</html>

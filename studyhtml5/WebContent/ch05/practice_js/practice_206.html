@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+</head>
+<body>
+<p id = "demo1">0 == "" is </p>
+<p id = "demo2">1 == "1" is </p>
+<p id = "demo3">1 == true is </p>
+
+<p id = "demo4">0 === "" is </p>
+<p id = "demo5">1 === "1" is </p>
+<p id = "demo6">1 === true is </p>
+
+
+
+
+</body>
+<script>
+a =  (0=="");
+b =  (1=="1");
+c =  (1==true);
+
+d = (0==="");
+e = (1==="1");
+f = (1 === true);
+
+document.getElementById("demo1").innerHTML += a;
+document.getElementById("demo2").innerHTML += b;
+document.getElementById("demo3").innerHTML += c;
+
+document.getElementById("demo4").innerHTML += d;
+document.getElementById("demo5").innerHTML += e;
+document.getElementById("demo6").innerHTML += f;
+</script>
+
+
+
+</html>

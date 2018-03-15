@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width,initial-scale = 1.0"/>
+<title>Insert title here</title>
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $("p").on("myPara", function(event, param1, param2, param3){
+        alert(param1 + "\n" + param2 + "\n" + param3);
+    });
+    $("p").triggerHandler("myPara", ['Pass', 'Along', 'Parameters']);
+    });
+});
+</script>
+</head>
+<body>
+
+<p>Click to alert additional parameters.</p>
+
+</body>
+</html>

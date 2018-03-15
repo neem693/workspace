@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+
+@FONT-FACE {
+	font-family: notosans;
+	src: url(/studyphp/font/NotoSansCJKkr-Thin.otf);
+}
+
+
+body{
+	font-family: notosans;
+}
+div{
+	border: solid black 1px;
+}
+section{
+
+	width: 80%;
+	background-color: aqua;
+	margin: 0 auto;
+	
+	max-height: 300px;
+}
+
+
+.subject{
+	font-weight: bold;
+	font-size: xx-large;
+	padding: 2.5% 0;
+	
+	text-align: center;
+	
+}
+
+.script{
+	padding: 3% 0;
+	text-align: center;
+}

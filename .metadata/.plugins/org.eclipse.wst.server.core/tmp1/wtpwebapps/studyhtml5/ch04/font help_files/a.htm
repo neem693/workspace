@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html stopevents=",0,1,2,3,4,6,7,8,24,28,30,32," stoptimers="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<!-- base href="http://aboooks.tistory.com/like/?uid=1632216_144&sc=401%2CblogId_1632216&url=http%3A%2F%2Faboooks.tistory.com%2F144&published=1399651200" -->
+	<title>Like</title>
+	<style type="text/css">
+		body { margin: 0; padding: 0; }
+	</style>
+<link rel="stylesheet" type="text/css" href="a_data/uoclike.css" style="cursor: auto ! important;"></head>
+<body>
+	<div id="likeButton" data-uoc-svc="tistory" data-uoc-uid="1632216_144" data-uoc-sc="401,blogId_1632216" data-uoc-pcurl="http://aboooks.tistory.com/144" data-uoc-fetchurl="https://api.tistory.com/like/fetch?uid=1632216_144"><div class="empathy empathy_pc" id="empathy_pc">				<div class="inner_empathy uoc-icon">					<a href="#none" class="img_empathy btn_empathy uoc-button" style="cursor: auto ! important;">						<span class="img_empathy ico_heart"></span><span class="txt_empathy uoc-text screen_out" style="display:inline-block">공감</span><span class="num_empathy uoc-count" style="display:inline-block">8</span>						<span class="access_text screen_out">공감하기</span>					</a>					<a href="http://like.daum.net/best/daily" target="_top" class="img_empathy link_empathy uoc-best-button" style="cursor: auto ! important;">베스트공감 &gt;</a>				</div>			</div></div>
+	<script type="text/javascript" src="a_data/jquery-1.js"></script>
+	<script>
+		jQuery.noConflict();
+	</script>
+	<script src="a_data/uoclike.js"></script>
+	<script>
+	//<![CDATA[
+		jQuery.fn.UOCLike.defaults.updateServiceCategory = true;
+		
+		jQuery("#likeButton").UOCLike({
+			buttonType: 'pc',
+			created: '20140510010000',
+			showLayer: false,
+			useMinidaumTracker: false,
+			useAnimation: false,
+			useOperationText: false,
+			updateServiceCategory: true
+		});
+	//]]>
+	</script>
+
+</body></html>

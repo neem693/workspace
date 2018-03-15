@@ -1,0 +1,2543 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="style.css">
+<!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+<script src="js/php.js"></script>
+<title>Let's Study PHP!!</title>
+</head>
+<body>
+	<header>php_advanced</header>
+	<h1 id="index_subject">목차</h1>
+	<div id="list"></div>
+	<h1 id="index_bookmark">부록</h1>
+	<div id="bookmark_list"></div>
+
+	<h1 class="subject">PHP 5 Multidimensional Arrays</h1>
+	<p>Earlier in this tutorial, we have described arrays
+		that are a single list of key/value pairs. However,
+		sometimes you want to store values with more than one key.
+
+		This can be stored in multidimensional arrays.</p>
+	<h1>PHP - Multidimensional Arrays</h1>
+	<p>
+		A multidimensional array is an array containing one or
+		more arrays.<br> <br> PHP understands
+		multidimensional arrays that are two, three, four, five,
+		or more levels deep. However, arrays more than three
+		levels deep are hard to manage for most people.
+	</p>
+	<div class="code">
+		<span class="imp"> The dimension of an array
+			indicates the number of indices you need to select an
+			element.</span>
+		<ul>
+			<li>For a two-dimensional array you need two indices
+				to select an element</li>
+			<li>For a three-dimensional array you need three
+				indices to select an element</li>
+		</ul>
+
+
+
+	</div>
+	<h1>PHP - Two-dimensional Arrays</h1>
+	<p>
+		A two-dimensional array is an array of arrays (a
+		three-dimensional array is an array of arrays of arrays).
+		<br> <br> First, take a look at the following
+		table:
+	</p>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Stock</th>
+			<th>Sold</th>
+		</tr>
+		<tr>
+			<td>Volvo</td>
+			<td>22</td>
+			<td>18</td>
+		</tr>
+		<tr>
+			<td>BMW</td>
+			<td>15</td>
+			<td>13</td>
+		</tr>
+		<tr>
+			<td>Saab</td>
+			<td>5</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Land Rover</td>
+			<td>17</td>
+			<td>15</td>
+		</tr>
+	</table>
+	<p>We can store the data from the table above in a
+		two-dimensional array, like this:,</p>
+	<pre class="code">$cars = array
+  (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+  );
+  </pre>
+	<p>
+		Now the two-dimensional $cars array contains four arrays,
+		and it has two indices: row and column. <br> <br>
+		To get access to the elements of the $cars array we must
+		point to the two indices (row and column):
+	</p>
+	<pre class="code"> &lt;?php
+echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".&lt;br&gt;";
+echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".&lt;br&gt;";
+echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".&lt;br&gt;";
+echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".&lt;br&gt;";
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_01.php">프렉티스 1</a>
+	<p>We can also put a For loop inside another For loop
+		to get the elements of the $cars array (we still have to
+		point to the two indices):</p>
+
+
+
+
+	<pre class="code"> &lt;?php
+for ($row = 0; $row &lt; 4; $row++) {
+  echo "&lt;p&gt;&lt;b&gt;Row number $row&lt;/b&gt;&lt;/p&gt;";
+  echo "&lt;ul&gt;";
+  for ($col = 0; $col &lt; 3; $col++) {
+    echo "&lt;li&gt;".$cars[$row][$col]."&lt;/li&gt;";
+  }
+  echo "&lt;/ul&gt;";
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_02.php">프렉티스 2</a>
+	<h1 class="subject">PHP 5 Date and Time</h1>
+	<p>The PHP date() function is used to format a date
+		and/or a time.</p>
+	<h1>The PHP Date() Function</h1>
+	<p>The PHP date() function formats a timestamp to a
+		more readable date and time.</p>
+	<div class="code">
+		<span class="file">Syntax</span>date(format,timestamp)
+	</div>
+	<table>
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>format</td>
+			<td>Required. Specifies the format of the timestamp</td>
+		</tr>
+		<tr>
+			<td>timestamp</td>
+			<td>Optional. Specifies a timestamp. Default is the
+				current date and time</td>
+		</tr>
+	</table>
+	<div class="code">
+		<span class="imp">A timestamp is a sequence of
+			characters, denoting the date and/or time at which a
+			certain event occurred.</span>
+	</div>
+	<h1>Get a Simple Date</h1>
+	<p>
+		The required format parameter of the date() function
+		specifies how to format the date (or time). <br> <br>
+		Here are some characters that are commonly used for dates:
+	</p>
+	<ul>
+		<li>d - Represents the day of the month (01 to 31)</li>
+		<li>m - Represents a month (01 to 12)</li>
+		<li>Y - Represents a year (in four digits)</li>
+		<li>l (lowercase 'L') - Represents the day of the
+			week</li>
+	</ul>
+	<p>Other characters, like"/", ".", or "-" can also be
+		inserted between the characters to add additional
+		formatting. The example below formats today's date in
+		three different ways:</p>
+	<pre class="code">&lt;?php
+echo "Today is " . date("Y/m/d") . "&lt;br&gt;";
+echo "Today is " . date("Y.m.d") . "&lt;br&gt;";
+echo "Today is " . date("Y-m-d") . "&lt;br&gt;";
+echo "Today is " . date("l");
+?&gt;</pre>
+	<a class="center" href="practice_ad/php_03.php">프렉티스 3</a>
+	<h1>PHP Tip - Automatic Copyright Year</h1>
+	<p>Use the date() function to automatically update the
+		copyright year on your website:</p>
+	<pre class="code">&copy; 2010-&lt;?php echo date("Y");?&gt;</pre>
+	<a href="practice_ad/php_04.php" class="center">프렉티스 04</a>
+	<h1>Get a Simple Time</h1>
+	<p>Here are some characters that are commonly used for
+		times:</p>
+	<ul>
+		<li>h - 12-hour format of an hour with leading zeros
+			(01 to 12)</li>
+		<li>i - Minutes with leading zeros (00 to 59)</li>
+		<li>s - Seconds with leading zeros (00 to 59)</li>
+		<li>a - Lowercase Ante meridiem and Post meridiem (am
+			or pm)</li>
+	</ul>
+	<p>The example below outputs the current time in the
+		specified format:</p>
+	<pre class="code"> &lt;?php
+echo "The time is " . date("h:i:sa");
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_05.php">프렉티스 5</a>
+	<div class="code">
+		<span class="imp">Note that the PHP date() function
+			will return the current date/time of the server!</span>
+	</div>
+	<h1>Get Your Time Zone</h1>
+	<p>
+		If the time you got back from the code is not the right
+		time, it's probably because your server is in another
+		country or set up for a different timezone. <br> <br>
+		So, if you need the time to be correct according to a
+		specific location, you can set a timezone to use. <br>
+		<br> The example below sets the timezone to
+		"America/New_York", then outputs the current time in the
+		specified format:
+	</p>
+	<pre class="code"> &lt;?php
+date_default_timezone_set("America/New_York");
+echo "The time is " . date("h:i:sa");
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_06.php">프렉티스6</a>
+	<h1>Create a Date With PHP mktime()</h1>
+	<p>
+		The optional timestamp parameter in the date() function
+		specifies a timestamp. If you do not specify a timestamp,
+		the current date and time will be used (as shown in the
+		examples above). <br> <br> The mktime() function
+		returns the Unix timestamp for a date. The Unix timestamp
+		contains the number of seconds between the Unix Epoch
+		(January 1 1970 00:00:00 GMT) and the time specified.
+	</p>
+	<div class="code">
+		<span class="file">Syntax</span>mktime(hour,minute,second,month,day,year)
+	</div>
+	<p>The example below creates a date and time from a
+		number of parameters in the mktime() function:</p>
+	<pre class="code"> &lt;?php
+$d=mktime(11, 14, 54, 8, 12, 2014);
+echo "Created date is " . date("Y-m-d h:i:sa", $d);
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_07.php">프렉티스7</a>
+	<h1>Create a Date From a String With PHP strtotime()</h1>
+	<p>The PHP strtotime() function is used to convert a
+		human readable string to a Unix time.</p>
+	<div class="code">
+		<span class="file">Syntax</span>strtotime(time,now)
+	</div>
+	<p>The example below creates a date and time from the
+		strtotime() function:</p>
+	<pre class="code">  &lt;?php
+$d=strtotime("10:30pm April 15 2014");
+echo "Created date is " . date("Y-m-d h:i:sa", $d);
+?&gt; </pre>
+	<a href="practice_ad/php_08.php" class="center">프렉티스8</a>
+	<p>PHP is quite clever about converting a string to a
+		date, so you can put in various values:</p>
+	<pre class="code"> &lt;?php
+$d=strtotime("tomorrow");
+echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";
+
+$d=strtotime("next Saturday");
+echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";
+
+$d=strtotime("+3 Months");
+echo date("Y-m-d h:i:sa", $d) . "&lt;br&gt;";
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_09.php">프렉티스9</a>
+	<p>However, strtotime() is not perfect, so remember to
+		check the strings you put in there.</p>
+	<h1>More Date Examples</h1>
+	<p>The example below outputs the dates for the next six
+		Saturdays:</p>
+	<pre class="code"> &lt;?php
+$startdate = strtotime("Saturday");
+$enddate = strtotime("+6 weeks", $startdate);
+
+while ($startdate &lt; $enddate) {
+  echo date("M d", $startdate) . "&lt;br&gt;";
+  $startdate = strtotime("+1 week", $startdate);
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_10.php">프렉티스10</a>
+	<p>The example below outputs the number of days until
+		4th of July:</p>
+	<pre class="code"> &lt;?php
+$d1=strtotime("July 04");
+$d2=ceil(($d1-time())/60/60/24);
+echo "There are " . $d2 ." days until 4th of July.";
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_11.php">프렉티스11</a>
+
+
+	<h1 class="subject">time 메소드는 무엇인가?</h1>
+	<p>Return the current time as a Unix timestamp, then
+		format it to a date:</p>
+	<pre class="code">&lt;?php
+date_default_timezone_set("Asia/seoul");
+$t=time();
+
+echo($t . "&lt;br&gt;");
+echo(date("Y-m-d",$t))."&lt;br&gt;";
+
+
+$g = strtotime("saturday");
+echo $g-time() . "&lt;br&gt;";
+echo ceil(($g-time())/60/60/24);
+
+?&gt;  </pre>
+	<a href="practice_ad/php_12.php" class="center">php_12.php</a>
+	<h1>Definition and Usage</h1>
+	<p>
+		The time() function returns the current time in the <span
+			class="imp">number of seconds</span> since the Unix Epoch
+		(January 1 1970 00:00:00 GMT).
+	</p>
+	<div class="code">
+		<span class="file">Syntax</span> time();
+	</div>
+	<h1>Technical Details</h1>
+	<table>
+		<tr>
+			<th>Return Value:</th>
+			<td>Returns an integer containing the current time
+				as a Unix timestamp</td>
+		</tr>
+		<tr>
+			<th>PHP Version:</th>
+			<td>4+</td>
+		</tr>
+	</table>
+
+	<h1 class="subject">PHP ceil() 함수는 무엇인가?</h1>
+	<pre class="code">&lt;?php
+echo(ceil(0.60) . "&lt;br&gt;");
+echo(ceil(0.40) . "&lt;br&gt;");
+echo(ceil(5) . "&lt;br&gt;");
+echo(ceil(5.1) . "&lt;br&gt;");
+echo(ceil(-5.1) . "&lt;br&gt;");
+echo(ceil(-5.9));
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_13.php">프렉티스13</a>
+	<h1>Definition and Usage</h1>
+	<p>
+		The ceil() function <span class="imp">rounds a
+			number UP(올림)</span> to the nearest integer, if necessary. <br>
+		<br> Tip: To <span class="imp">round a number
+			DOWN(내림)</span> to the nearest integer, look at the floor()
+		function. <br> <br> Tip: To <span class="imp">round
+			a floating-point(반올림)</span> number, look at the round()
+		function.
+	</p>
+	<h1>Syntax</h1>
+	<div class="code">ceil(number);</div>
+	<table>
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><em>number</em></td>
+			<td>Required. Specifies the value to round up</td>
+		</tr>
+	</table>
+	<h1>Technical Details</h1>
+	<table>
+		<tr>
+			<th>Return Value:</th>
+			<td>The value rounded up to the nearest integer</td>
+		</tr>
+		<tr>
+			<th>Return Type:</th>
+			<td>Float</td>
+		</tr>
+		<tr>
+			<th>PHP Version:</th>
+			<td>4+</td>
+		</tr>
+	</table>
+	<h1>Complete PHP Date Reference</h1>
+	<p>
+		For a complete reference of all date functions, go to our
+		complete PHP Date Reference. <br> <br> The
+		reference contains a brief description, and examples of
+		use, for each function!
+	</p>
+	<h1 class="subject">PHP 5 Include Files</h1>
+	<p>
+		The include (or require) statement takes all the
+		text/code/markup that exists in the specified file and
+		copies it into the file that uses the include statement. <br>
+		<br> Including files is very useful when you want to
+		include the same PHP, HTML, or text on multiple pages of a
+		website.
+	</p>
+	<h1>PHP include and require Statements</h1>
+	<p>
+		It is possible to insert the content of one PHP file into
+		another PHP file (before the server executes it), with the
+		include or require statement.<br> <br>
+	</p>
+	<span class="impb">The include and require
+		statements are identical, except upon failure:</span>
+	<ul>
+		<li>require will produce a fatal error
+			(E_COMPILE_ERROR) and stop the script</li>
+		<li>include will only produce a warning (E_WARNING)
+			and the script will continue</li>
+	</ul>
+	<p>
+		So, if you want the execution to go on and show users the
+		output, even if the include file is missing, use the
+		include statement. Otherwise, in case of FrameWork, CMS,
+		or a complex PHP application coding, always use the
+		require statement to include a key file to the flow of
+		execution. This will help avoid compromising your
+		application's security and integrity, just in-case one key
+		file is accidentally missing. <br> <br>
+		Including files saves a lot of work. This means that you
+		can create a standard header, footer, or menu file for all
+		your web pages. Then, when the header needs to be updated,
+		you can only update the header include file.
+	</p>
+	<pre class="code">
+		<span class="file">Syntax</span>
+include 'filename';
+
+or
+
+require 'filename';
+	</pre>
+	<h1 class="subject">PHP include Examples</h1>
+	<h1>Example 1</h1>
+	<p>Assume we have a standard footer file called
+		"footer.php", that looks like this:</p>
+	<pre class="code">&lt;?php
+echo "&lt;p&gt;Copyright &copy; 2013-" . date("Y") . " tct.com&lt;/p&gt;";
+?&gt;</pre>
+	<p>To include the footer file in a page, use the
+		include statement:</p>
+	<pre class="code"> &lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+&lt;p&gt;Some text.&lt;/p&gt;
+&lt;p&gt;Some more text.&lt;/p&gt;
+&lt;?php include 'footer.php';?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a href="practice_ad/php_14.php" class="center">프렉티스14</a>
+	<h1>Example 2</h1>
+	<p>Assume we have a standard menu file called
+		"menu.php":</p>
+	<pre class="code">&lt;?php
+echo '&lt;a href="/studyhtml5/"&gt;Home&lt;/a&gt; -
+&lt;a href="/studyhtml5/ch03/"&gt;html&lt;/a&gt;
+&lt;a href="/stduyhtml5/ch04/study_css.html"&gt;CSS Tutorial&lt;/a&gt; -
+&lt;a href="/studyhtml5/ch05/study_jquery.html"&gt;JQUERY Tutorial&lt;/a&gt; -
+&lt;a href="/studyphp/"&gt;PHP Tutorial&lt;/a&gt;';
+?&gt;</pre>
+
+	<p>All pages in the Web site should use this menu file.
+		Here is how it can be done (we are using a &lt;div&gt;
+		element so that the menu easily can be styled with CSS
+		later):</p>
+
+
+	<pre class="code"> &lt;html&gt;
+&lt;body&gt;
+
+&lt;?php include 'menu.php';?&gt;
+
+&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+&lt;p&gt;Some text.&lt;/p&gt;
+&lt;p&gt;Some more text.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_15.php">프렉티스15</a>
+	<h1>Example 3</h1>
+	<p>Assume we have a file called "vars.php", with some
+		variables defined:</p>
+	<pre class="code">&lt;?php
+$color='red';
+$car='BMW';
+?&gt;</pre>
+	<p>Then, if we include the "vars.php" file, the
+		variables can be used in the calling file:</p>
+	<pre class="code"> &lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+&lt;?php include 'php_16_1.php';
+echo "I have a $color $car.";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_16.php">프렉티스16</a>
+
+	<h1 class="subject">PHP include vs. require</h1>
+	<p>
+		The require statement is also used to include a file into
+		the PHP code.<br> <br> However, there is one big
+		difference between include and require; when a file is
+		included with the include statement and PHP cannot find
+		it, the script will continue to execute:
+	</p>
+	<pre class="code"> &lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+&lt;?php include 'noFileExists.php';
+echo "I have a $color $car.";
+?&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_17.php">프렉티스17</a>
+	<p>If we do the same example using the require
+		statement, the echo statement will not be executed because
+		the script execution dies after the require statement
+		returned a fatal error:</p>
+	<pre class="code"> &lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+&lt;?php require 'noFileExists.php';
+echo "I have a $color $car.";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_18.php">프렉티스18</a>
+	<div class="code">
+		<span class="imp"> Use require when the file is
+			required by the application.<br> <br>Use
+			include when the file is not required and application
+			should continue when file is not found.
+		</span>
+	</div>
+	<div class="code">php.ini에 include_path 라는 경로가 있다. 이
+		경로가 include와 require를 통해서 활용될 수 있다. php.ini에서 이 값이 해제되어
+		있다면 자동으로 기본값이 적용되서, 디렉터리를 지정하여 사용할 때 다소 무리가 있을 수도 있다. 따라서
+		보안 겸 이 값을 설정해주면 좋다.</div>
+
+	<h1 class="subject">PHP 5 File Handling</h1>
+	<p>File handling is an important part of any web
+		application. You often need to open and process a file for
+		different tasks.</p>
+	<h1>PHP Manipulating Files</h1>
+	<p>PHP has several functions for creating, reading,
+		uploading, and editing files.</p>
+	<div class="code">
+		<span class="imp">Be careful when manipulating
+			files!</span><br> <br> When you are manipulating files
+		you must be very careful.<br> <br> You can do a
+		lot of damage if you do something wrong. Common errors
+		are: editing the wrong file, filling a hard-drive with
+		garbage data, and deleting the content of a file by
+		accident.
+	</div>
+	<h1>PHP readfile() Function</h1>
+	<p>
+		The readfile() function reads a file and writes it to the
+		output buffer. <br> <br> Assume we have a text
+		file called "news.txt", stored on the server, that looks
+		like this:
+	</p>
+	<pre class="code">AJAX = Asynchronous JavaScript and XML
+CSS = Cascading Style Sheets
+HTML = Hyper Text Markup Language
+PHP = PHP Hypertext Preprocessor
+SQL = Structured Query Language
+SVG = Scalable Vector Graphics
+XML = EXtensible Markup Language</pre>
+	<p>The PHP code to read the file and write it to the
+		output buffer is as follows (the readfile() function
+		returns the number of bytes read on success):</p>
+	<pre class="code"> &lt;?php
+echo readfile("news.txt");
+?&gt; </pre>
+	<a href="practice_ad/php_19.php" class="center">프렉티스19</a>
+	<p>The readfile() function is useful if all you want to
+		do is open up a file and read its contents. The next
+		chapters will teach you more about file handling.</p>
+	<h1 class="subject">PHP 5 File Open/Read/Close</h1>
+	<p>In this chapter we will teach you how to open, read,
+		and close a file on the server.</p>
+	<h1>PHP Open File - fopen()</h1>
+	<p>
+		A better method to open files is with the fopen()
+		function. This function gives you more options than the
+		readfile() function.<br> <br>We will use the
+		text file, "news.txt", during the lessons:
+	</p>
+	<pre class="code">AJAX = Asynchronous JavaScript and XML
+CSS = Cascading Style Sheets
+HTML = Hyper Text Markup Language
+PHP = PHP Hypertext Preprocessor
+SQL = Structured Query Language
+SVG = Scalable Vector Graphics
+XML = EXtensible Markup Language</pre>
+	<p>The first parameter of fopen() contains the name of
+		the file to be opened and the second parameter specifies
+		in which mode the file should be opened. The following
+		example also generates a message if the fopen() function
+		is unable to open the specified file:</p>
+	<pre class="code"> &lt;?php
+$myfile = fopen("news.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("news.txt"));
+fclose($myfile);
+?&gt; </pre>
+	<a href="practice_ad/php_20.php" class="center">프렉티스20</a>
+	<h1 class="bookmark">fopen 모드</h1>
+	<p>Tip: The fread() and the fclose() functions will be
+		explained below. The file may be opened in one of the
+		following modes:</p>
+
+	<table>
+		<tr>
+			<th>Modes</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>r</td>
+			<td><span class="impb">Open a file for read
+					only</span>. File pointer starts at the beginning of the file</td>
+		</tr>
+		<tr>
+			<td>w</td>
+			<td><span class="impb">Open a file for write
+					only</span>. Erases the contents of the file or creates a new
+				file if it doesn't exist. File pointer starts at the
+				beginning of the file</td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td><span class="impb">Open a file for write
+					only</span>. The existing data in file is preserved. File
+				pointer starts at the end of the file. Creates a new
+				file if the file doesn't exist</td>
+		</tr>
+		<tr>
+			<td>x</td>
+			<td><span class="impb">Creates a new file for
+					write only</span>. Returns FALSE and an error if file already
+				exists</td>
+		</tr>
+		<tr>
+			<td>r+</td>
+			<td><span class="impb">Open a file for
+					read/write</span>. File pointer starts at the beginning of the
+				file</td>
+		</tr>
+		<tr>
+			<td>w+</td>
+			<td><span class="impb">Open a file for
+					read/write</span>. Erases the contents of the file or creates
+				a new file if it doesn't exist. File pointer starts at
+				the beginning of the file</td>
+		</tr>
+		<tr>
+			<td>a+</td>
+			<td><span class="impb">Open a file for
+					read/write</span>. The existing data in file is preserved.
+				File pointer starts at the end of the file. Creates a
+				new file if the file doesn't exist</td>
+		</tr>
+		<tr>
+			<td>x+</td>
+			<td><span class="impb">Creates a new file for
+					read/write</span>. Returns FALSE and an error if file already
+				exists</td>
+		</tr>
+	</table>
+	<h1>PHP Read File - fread()</h1>
+	<p>
+		The fread() function reads from an open file. <br> <br>
+		The first parameter of fread() contains the name of the
+		file to read from and the second parameter specifies the
+		maximum number of bytes to read. <br> <br> The
+		following PHP code reads the "news.txt" file to the end:
+	</p>
+	<div class="code">fread($myfile,filesize("news.txt"));</div>
+	<h1>PHP Close File - fclose()</h1>
+	<p>The fclose() function is used to close an open file.</p>
+	<span class="imp">It's a good programming practice
+		to close all files after you have finished with them. You
+		don't want an open file running around on your server
+		taking up resources!</span>
+	<p>The fclose() requires the name of the file (or a
+		variable that holds the filename) we want to close:</p>
+	<pre class="code">
+&lt;?php
+$myfile = fopen("news.txt", "r");
+// some code to be executed....
+fclose($myfile);
+?&gt;
+		</pre>
+
+	<h1>PHP Read Single Line - fgets()</h1>
+	<p>The fgets() function is used to read a single line
+		from a file. The example below outputs the first line of
+		the "news.txt" file:</p>
+
+	<pre class="code"> &lt;?php
+$myfile = fopen("news.txt", "r") or die("Unable to open file!");
+echo fgets($myfile);
+fclose($myfile);
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_21.php">프렉티스21</a>
+	<p>
+		<span class="impb">NOTE: After a call to the
+			fgets() function, the file pointer has moved to the next
+			line.</span>
+	<h1>PHP Check End-Of-File - feof()</h1>
+	<p>
+		The feof() function checks if the "end-of-file" (EOF) has
+		been reached. <br> <br> The feof() function is
+		useful for looping through data of unknown length. <br>
+		<br> The example below reads the "webdictionary.txt"
+		file line by line, until end-of-file is reached:
+	</p>
+	<pre class="code"> &lt;?php
+$myfile = fopen("news.txt", "r") or die("Unable to open file!");
+// Output one line until end-of-file
+while(!feof($myfile)) {
+  echo fgets($myfile) . "&lt;br&gt;";
+}
+fclose($myfile);
+?&gt; </pre>
+	<a href="practice_ad/php_22.php" class="center">프렉티스22</a>
+	<h1>PHP Read Single Character - fgetc()</h1>
+	<p>
+		The fgetc() function is used to read a single character
+		from a file. <br> <br> The example below reads
+		the "webdictionary.txt" file character by character, until
+		end-of-file is reached:
+	</p>
+	<pre class="code"> &lt;?php
+$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+// Output one character until end-of-file
+while(!feof($myfile)) {
+  echo fgetc($myfile);
+}
+fclose($myfile);
+?&gt; </pre>
+	<a href="practice_ad/php_23.php" class="center">프렉티스23</a>
+	<p class="impb">Note: After a call to the fgetc()
+		function, the file pointer moves to the next character.</p>
+
+	<h1>Complete PHP Filesystem Reference</h1>
+	<p>For a complete reference of filesystem functions, go
+		to our complete PHP Filesystem Reference.</p>
+	<h1 class="subject">PHP 5 File Create/Write</h1>
+	<p>In this chapter we will teach you how to create and
+		write to a file on the server.</p>
+	<h1>PHP Create File - fopen()</h1>
+	<p>
+		The fopen() function is also used to create a file. Maybe
+		a little confusing, but in PHP, a file is created using
+		the same function used to open files. <br> <br>
+		If you use fopen() on a file that does not exist, it will
+		create it, given that the file is opened for writing (w)
+		or appending (a). <br> <br> The example below
+		creates a new file called "testfile.txt". The file will be
+		created in the same directory where the PHP code resides:
+	</p>
+	<div class="code">$myfile = fopen("testfile.txt",
+		"w")</div>
+	<h1>PHP File Permissions</h1>
+	<p>If you are having errors when trying to get this
+		code to run, check that you have granted your PHP file
+		access to write information to the hard drive.</p>
+	<h1>PHP Write to File - fwrite()</h1>
+	<p>
+		The fwrite() function is used to write to a file. <br>
+		<br> The first parameter of fwrite() contains the
+		name of the file to write to and the second parameter is
+		the string to be written. <br> <br> The example
+		below writes a couple of names into a new file called
+		"newfile.txt":
+	</p>
+	<pre class="code"> &lt;?php
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$txt = "John Doe\n";
+fwrite($myfile, $txt);
+$txt = "Jane Doe\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_24.php">프렉티스24</a>
+	<p>
+		Notice that we wrote to the file "newfile.txt" twice. Each
+		time we wrote to the file we sent the string $txt that
+		first contained "John Doe" and second contained "Jane
+		Doe". After we finished writing, we closed the file using
+		the fclose() function.<br> <br>If we open the
+		"newfile.txt" file it would look like this:
+	</p>
+	<div class="code">
+		John Doe<br> <br>Jane Doe
+	</div>
+	<h1>PHP Overwriting</h1>
+	<p>
+		Now that "newfile.txt" contains some data we can show what
+		happens when we open an existing file for writing. All the
+		existing data will be ERASED and we start with an empty
+		file. <br> <br> In the example below we open our
+		existing file "newfile.txt", and write some new data into
+		it:
+	</p>
+	<pre class="code"> &lt;?php
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$txt = "Mickey Mouse\n";
+fwrite($myfile, $txt);
+$txt = "Minnie Mouse\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+?&gt; </pre>
+	<a href="practice_ad/php_25.php" class="center">프렉티스25</a>
+	<p>If we now open the "newfile.txt" file, both John and
+		Jane have vanished, and only the data we just wrote is
+		present:</p>
+	<div class="code">
+		Mickey Mouse<br> <br> Minnie Mouse
+	</div>
+	<h1>Complete PHP Filesystem Reference</h1>
+	<p>For a complete reference of filesystem functions, go
+		to our complete PHP Filesystem Reference.</p>
+	<h1 class="subject">PHP 5 File Upload</h1>
+	<p>
+		With PHP, it is easy to upload files to the server. <br>
+		<br> However, with ease comes danger, so always be
+		careful when allowing file uploads!
+	</p>
+	<h1>Configure The "php.ini" File</h1>
+	<p>
+		First, ensure that PHP is configured to allow file
+		uploads. <br> <br> In your "php.ini" file,
+		search for the file_uploads directive, and set it to On:
+	</p>
+	<div class="code">file_uploads = On</div>
+	<h1>Create The HTML Form</h1>
+	<p>Next, create an HTML form that allow users to choose
+		the image file they want to upload:</p>
+	<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;form action="upload.php" method="post" enctype="multipart/form-data"&gt;
+    Select image to upload:
+    &lt;input type="file" name="fileToUpload" id="fileToUpload"&gt;
+    &lt;input type="submit" value="Upload Image" name="submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+		</pre>
+	<p>Some rules to follow for the HTML form above:</p>
+	<ul>
+		<li>Make sure that the form uses method="post"</li>
+		<li>The form also needs the following attribute:
+			enctype="multipart/form-data". It specifies which
+			content-type to use when submitting the form</li>
+	</ul>
+	<p>
+		Without the requirements above, the file upload will not
+		work. <br> <br> Other things to notice:
+	</p>
+	<ul>
+		<li>The type="file" attribute of the &lt;input&gt;
+			tag shows the input field as a file-select control, with
+			a "Browse" button next to the input control</li>
+	</ul>
+	<p>The form above sends data to a file called
+		"upload.php", which we will create next.</p>
+	<h1 class="bookmark">Create The Upload File PHP Script</h1>
+	<p>The "upload.php" file contains the code for
+		uploading a file:</p>
+	<pre class="code">
+&lt;?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+?&gt;
+	</pre>
+	<p>PHP script explained:</p>
+	<ul>
+		<li>$target_dir = "uploads/" - specifies the
+			directory where the file is going to be placed</li>
+		<li>$target_file specifies the path of the file to be
+			uploaded</li>
+		<li>$uploadOk=1 is not used yet (will be used later)</li>
+		<li>$imageFileType holds the file extension of the
+			file</li>
+		<li>Next, check if the image file is an actual image
+			or a fake image</li>
+	</ul>
+	<div class="code imp">Note: You will need to create a
+		new directory called "uploads" in the directory where
+		"upload.php" file resides. The uploaded files will be
+		saved there.</div>
+	<div class="code imp">
+		처음에 파일을 업로드 한다면, 그 결과물인 파일은 아파치 서버에서 접근하는 걸 제외하고는 모두 열수가
+		없게 되어있다. 그 이유는 윈도우에 있다. php.ini파일의 upload_tmp_dir가 주석처리 되어
+		있다면, 디폴트 값으로 적용이 되는데, 그 디폴트 값이 바로 windows/temp이다. 제한 구역에서
+		다시 나와 타겟팅 된 디렉토리로 향하게 되어서 결국 파일을 여는데 권한이 생겨 확실히 제한된다. 따라서
+		이 경우에는 upload_tmp_dir를 주석해제하고 어떤 데이터를 넣어서 수동으로 결정해야 한다.
+		그래서 해당 파일들을 잘 접근할 수 있다.<a
+			href="http://www.howyoudo.info/index.php/how-to-fix-windows-server-upload-file-inherit-permissions-error/">참고</a>
+	</div>
+	<div class="code">
+		$_FILES은 배열로 업로드 할 떄 사용하는 전역변수이다. 이에 대한 내용은 <a
+			href="http://docs.php.net/manual/kr/features.file-upload.php">여기
+		</a>를 참조 하라. <span class="file">$_FILES[1][2]</span> 여기서 1번은
+		기본적으로 배열은 넘겨 받을 때의 폼 형식의 이름(name)을 가지고 활용한다. 2번은 정해져 있는 값이
+		있다. 예를 들어 &lt;form type = "fle" name = "userfile"&gt;<br>
+		$_FILES["userfile"]["name"]; 이런식으로 말이다.
+	</div>
+	<pre class="code">
+		<span class="imp">
+$_FILES['userfile']['name']</span>
+    클라이언트 머신에 존재하는 파일의 원래 이름.
+    
+<span class="imp">$_FILES['userfile']['type']</span>
+   브라우저가 이 정보를 제공할 경우에, 파일의 mime 형식. 예를 들면 "image/gif". 
+   그러나 이 mime 형은 PHP 측에서 확인하지 않으므로 이 값을 신용하지 마십시오.
+
+<span class="imp">$_FILES['userfile']['size']</span>
+업로드된 파일의 바이트로 표현한 크기.
+
+<span class="imp">$_FILES['userfile']['tmp_name']</span>
+ 서버에 저장된 업로드된 파일의 임시 파일 이름.
+ 
+<span class="imp">$_FILES['userfile']['error']</span>
+    파일 업로드에 관련한 에러 코드. PHP 4.2.0에서 추가되었습니다.
+    </pre>
+
+
+
+	<h1>Check if File Already Exists</h1>
+	<p>
+		Now we can add some restrictions.<br> <br>First,
+		we will check if the file already exists in the "uploads"
+		folder. If it does, an error message is displayed, and
+		$uploadOk is set to 0:
+	</p>
+
+	<pre class="code">// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+} </pre>
+
+	<h1>Limit File Size</h1>
+	<p>
+		The file input field in our HTML form above is named
+		"fileToUpload".<br> <br> Now, we want to check
+		the size of the file. If the file is larger than 500KB, an
+		error message is displayed, and $uploadOk is set to 0:
+	</p>
+	<pre class="code"> // Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+} </pre>
+
+
+	<h1>Limit File Type</h1>
+	<p>The code below only allows users to upload JPG,
+		JPEG, PNG, and GIF files. All other file types gives an
+		error message before setting $uploadOk to 0:</p>
+	<pre class="code">// Allow certain file formats
+if($imageFileType != "jpg" &amp;&amp; $imageFileType != "png" &amp;&amp; $imageFileType != "jpeg"
+&amp;&amp; $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG &amp; GIF files are allowed.";
+    $uploadOk = 0;
+} </pre>
+
+
+	<h1>Complete Upload File PHP Script</h1>
+
+	<div class="code">
+		<h1 class="bookmark">PHP move_uploaded_file()
+			Function</h1>
+		<span class="file">Definition and Usage </span> The
+		move_uploaded_file() function moves an uploaded file to a
+		new location. This function returns TRUE on success, or
+		FALSE on failure. <span class="file">Syntax</span>
+		move_uploaded_file(file,newloc)
+		<table>
+			<tr>
+				<th>Parameter</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>file</td>
+				<td>Required. Specifies the file to be moved</td>
+			</tr>
+			<tr>
+				<td>newloc</td>
+				<td>Required. Specifies the new location for the
+					file</td>
+			</tr>
+		</table>
+		<span class="file">Tips and Notes</span> Note: This
+		function only works on files uploaded via HTTP POST.<br>Note:
+		If the destination file already exists, it will be
+		overwritten.
+	</div>
+	<p>The complete "upload.php" file now looks like this:</p>
+	<pre class="code">
+&lt;?php
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload"]["size"] &gt; 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" &amp;&amp; $imageFileType != "png" &amp;&amp; $imageFileType != "jpeg"
+&amp;&amp; $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG &amp; GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+?&gt;
+	</pre>
+	<a class="center" href="practice_ad/php_26.html">프렉티스26</a>
+	<a class="center" href="practice_ad/php_26_1.html">실제로
+		업로드 됬는가?</a>
+	<a class="center" href="practice_ad/php_26_2.html">실제로
+		업로드 됬는가 2</a>
+	<h1 class="subject">PHP 5 Cookies</h1>
+	<p>A cookie is often used to identify a user.</p>
+	<h1>What is a Cookie?</h1>
+	<p>A cookie is often used to identify a user. A cookie
+		is a small file that the server embeds on the user's
+		computer. Each time the same computer requests a page with
+		a browser, it will send the cookie too. With PHP, you can
+		both create and retrieve cookie values.</p>
+	<h1>Create Cookies With PHP</h1>
+	<p>A cookie is created with the setcookie() function.</p>
+	<div class="code">
+		<span class="file">Syntax</span>setcookie(name, value,
+		expire, path, domain, secure, httponly);
+	</div>
+	<p>Only the name parameter is required. All other
+		parameters are optional.</p>
+	<h1>PHP Create/Retrieve a Cookie</h1>
+	<p>The following example creates a cookie named "user"
+		with the value "John Doe". The cookie will expire after 30
+		days (86400 * 30). The "/" means that the cookie is
+		available in entire website (otherwise, select the
+		directory you prefer).</p>
+	<br>
+	<p>We then retrieve the value of the cookie "user"
+		(using the global variable $_COOKIE). We also use the
+		isset() function to find out if the cookie is set:</p>
+	<pre class="code"> &lt;?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!&lt;br&gt;";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_27.php">프렉티스27</a>
+	<div class="code imp">Note: The setcookie() function
+		must appear BEFORE the &lt;html&gt;tag.</div>
+	<span class="impb">Note: The value of the cookie is
+		automatically URLencoded when sending the cookie, and
+		automatically decoded when received (to prevent
+		URLencoding, use setrawcookie() instead).</span>
+	<h1>Modify a Cookie Value</h1>
+	<p>To modify a cookie, just set (again) the cookie
+		using the setcookie() function:</p>
+	<pre class="code"> &lt;?php
+$cookie_name = "user";
+$cookie_value = "Alex Porter";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!&lt;br&gt;";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_28.php">프렉티스28</a>
+	<h1>Delete Cookie</h1>
+	<p>To delete a cookie, use the setcookie() function
+		with an expiration date in the past:</p>
+	<pre class="code"> &lt;?php
+// set the expiration date to one hour ago
+setcookie("user", "", time() - 3600);
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+echo "Cookie 'user' is deleted.";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_29.php">프렉티스29</a>
+	<h1>Check if Cookies are Enabled</h1>
+	<p>The following example creates a small script that
+		checks whether cookies are enabled. First, try to create a
+		test cookie with the setcookie() function, then count the
+		$_COOKIE array variable:</p>
+	<pre class="code"> &lt;?php
+setcookie("test_cookie", "test", time() + 3600, '/');
+?&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+if(count($_COOKIE) &gt; 0) {
+    echo "Cookies are enabled.";
+} else {
+    echo "Cookies are disabled.";
+}
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_30.php">프렉티스30</a>
+	<h1>Complete PHP HTTP Reference</h1>
+	<p>For a complete reference of HTTP functions, go to
+		our complete PHP HTTP Reference.</p>
+	<a class="center" href="practice_ad/php_31.php">프렉티스31(시험해보자)</a>
+	<h1 class="subject">PHP 5 Sessions</h1>
+	<p>
+		A session is a way to store information (in variables) to
+		be used across multiple pages. <br> <br> Unlike
+		a cookie, the information is not stored on the users
+		computer.
+	</p>
+	<h1>What is a PHP Session?</h1>
+	<p>
+		When you work with an application, you open it, do some
+		changes, and then you close it. This is much like a
+		Session. The computer knows who you are. It knows when you
+		start the application and when you end. But on the
+		internet there is one problem: the web server does not
+		know who you are or what you do, because the HTTP address
+		doesn't maintain state. <br> <br> Session
+		variables solve this problem by storing user information
+		to be used across multiple pages (e.g. username, favorite
+		color, etc). By default, session variables last until the
+		user closes the browser. <br> <br> So; Session
+		variables hold information about one single user, and are
+		available to all pages in one application.
+	</p>
+	<div class="code imp">Tip: If you need a permanent
+		storage, you may want to store the data in a database.</div>
+	<h1>Start a PHP Session</h1>
+	<p>
+		A session is started with the session_start() function. <br>
+		<br> Session variables are set with the PHP global
+		variable: $_SESSION. <br> <br> Now, let's create
+		a new page called "demo_session1.php". In this page, we
+		start a new PHP session and set some session variables:
+	</p>
+	<pre class="code"> &lt;?php
+// Start the session
+session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+// Set session variables
+$_SESSION["favcolor"] = "green";
+$_SESSION["favanimal"] = "cat";
+echo "Session variables are set.";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_32.php">프렉티스32</a>
+	<div class="code imp">Note: The session_start()
+		function must be the very first thing in your document.
+		Before any HTML tags.</div>
+	<h1>Get PHP Session Variable Values</h1>
+	<p>
+		Next, we create another page called "demo_session2.php".
+		From this page, we will access the session information we
+		set on the first page ("demo_session1.php"). <br> <br>
+		Notice that session variables are not passed individually
+		to each new page, instead they are retrieved from the
+		session we open at the beginning of each page
+		(session_start()). <br> <br> Also notice that
+		all session variable values are stored in the global
+		$_SESSION variable:
+	</p>
+	<pre class="code"> &lt;?php
+session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+// Echo session variables that were set on previous page
+echo "Favorite color is " . $_SESSION["favcolor"] . ".&lt;br&gt;";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a href="practice_ad/php_33.php" class="center">프렉티스33</a>
+	<p>Another way to show all the session variable values
+		for a user session is to run the following code:</p>
+	<pre class="code"> &lt;?php
+session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+print_r($_SESSION);
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a href="practice_ad/php_34.php" class="center">프렉티스34</a>
+	<div class="code">
+		<span class="impb">How does it work? How does it
+			know it's me?</span><br> <br> Most sessions set a
+		user-key on the user's computer that looks something like
+		this: 765487cf34ert8dede5a562e4f3a7e12. Then, when a
+		session is opened on another page, it scans the computer
+		for a user-key. If there is a match, it accesses that
+		session, if not, it starts a new session.
+	</div>
+	<h1>Modify a PHP Session Variable</h1>
+	<p>To change a session variable, just overwrite it:</p>
+	<pre class="code"> &lt;?php
+session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+// to change a session variable, just overwrite it
+$_SESSION["favcolor"] = "yellow";
+print_r($_SESSION);
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a class="center" href="practice_ad/php_36.php">프렉티스36</a>
+	<h1>Destroy a PHP Session</h1>
+	<p>To remove all global session variables and destroy
+		the session, use session_unset() and session_destroy():</p>
+	<pre class="code"> &lt;?php
+session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+// remove all session variables
+session_unset();
+
+// destroy the session
+session_destroy();
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+	<a href="practice_ad/php_37.php" class="center">프렉티스37</a>
+
+	<h1 class="subject">PHP Filters</h1>
+	<p>
+		Validating data = Determine if the data is in proper form.
+		<br> <br> Sanitizing data = Remove any illegal
+		character from the data.
+	</p>
+	<h1>The PHP Filter Extension</h1>
+	<p>
+		PHP filters are used to validate and sanitize external
+		input. <br> <br> The PHP filter extension has
+		many of the functions needed for checking user input, and
+		is designed to make data validation easier and quicker. <br>
+		<br> The filter_list() function can be used to list
+		what the PHP filter extension offers:
+	</p>
+	<pre class="code"> &lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Filter Name&lt;/td&gt;
+    &lt;td&gt;Filter ID&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;?php
+  foreach (filter_list() as $id =&gt;$filter) {
+      echo '&lt;tr&gt;&lt;td&gt;' . $filter . '&lt;/td&gt;&lt;td&gt;' . filter_id($filter) . '&lt;/td&gt;&lt;/tr&gt;';
+  }
+  ?&gt;
+&lt;/table&gt; </pre>
+	<a class="center" href="practice_ad/php_38.php">프렉티스38</a>
+	<h1>Why Use Filters?</h1>
+	<p>Many web applications receive external input.
+		External input/data can be:</p>
+	<ul>
+		<li>User input from a form</li>
+		<li>Cookies</li>
+		<li>Web services data</li>
+		<li>Server variables</li>
+		<li>Database query results</li>
+	</ul>
+	<div class="code">
+		<span class="impb">You should always validate
+			external data!</span><br> <br> Invalid submitted data
+		can lead to security problems and break your webpage! By
+		using PHP filters you can be sure your application gets
+		the correct input!
+	</div>
+	<h1>PHP filter_var() Function</h1>
+	<p>
+		The filter_var() function both validate and sanitize data.
+		<br> <br> The filter_var() function filters a
+		single variable with a specified filter. It takes two
+		pieces of data:
+	</p>
+	<ul>
+		<li>The variable you want to check</li>
+		<li>The type of check to use</li>
+	</ul>
+	<h1>Sanitize a String</h1>
+	<p>The following example uses the filter_var() function
+		to remove all HTML tags from a string:</p>
+	<pre class="code"> &lt;?php
+$str = "&lt;h1&gt;Hello World!&lt;/h1&gt;";
+$newstr = filter_var($str, FILTER_SANITIZE_STRING);
+echo $newstr;
+?&gt; </pre>
+	<a href="practice_ad/php_39.php" class="center">프렉티스39</a>
+	<h1>Validate an Integer</h1>
+	<p>The following example uses the filter_var() function
+		to check if the variable $int is an integer. If $int is an
+		integer, the output of the code below will be: "Integer is
+		valid". If $int is not an integer, the output will be:
+		"Integer is not valid":</p>
+	<pre class="code"> &lt;?php
+$int = 100;
+
+if (!filter_var($int, FILTER_VALIDATE_INT) === false) {
+    echo("Integer is valid");
+} else {
+    echo("Integer is not valid");
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_40.php">프렉티스40</a>
+	<h1>Tip: filter_var() and Problem With 0</h1>
+	<p>In the example above, if $int was set to 0, the
+		function above will return "Integer is not valid". To
+		solve this problem, use the code below:</p>
+	<pre class="code"> &lt;?php
+$int = 0;
+
+if (filter_var($int, FILTER_VALIDATE_INT) === 0 || !filter_var($int, FILTER_VALIDATE_INT) === false) {
+    echo("Integer is valid");
+} else {
+    echo("Integer is not valid");
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_41.php">프렉티스41</a>
+	<h1>Validate an IP Address</h1>
+	<p>The following example uses the filter_var() function
+		to check if the variable $ip is a valid IP address:</p>
+	<pre class="code"> &lt;?php
+$ip = "127.0.0.1";
+
+if (!filter_var($ip, FILTER_VALIDATE_IP) === false) {
+    echo("$ip is a valid IP address");
+} else {
+    echo("$ip is not a valid IP address");
+}
+?&gt; </pre>
+	<a href="practice_ad/php_42.php" class="center">프렉티스42</a>
+	<h1>Sanitize and Validate an Email Address</h1>
+	<p>The following example uses the filter_var() function
+		to first remove all illegal characters from the $email
+		variable, then check if it is a valid email address:</p>
+	<pre class="code"> &lt;?php
+$email = "john.doe@example.com";
+
+// Remove all illegal characters from email
+$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+// Validate e-mail
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+    echo("$email is a valid email address");
+} else {
+    echo("$email is not a valid email address");
+}
+?&gt; </pre>
+	<a href="practice_ad/php_43.php" class="center">프렉티스43</a>
+	<h1>Sanitize and Validate a URL</h1>
+	<p>The following example uses the filter_var() function
+		to first remove all illegal characters from a URL, then
+		check if $url is a valid URL:</p>
+	<pre class="code"> &lt;?php
+$url = "https://www.w3schools.com";
+
+// Remove all illegal characters from a url
+$url = filter_var($url, FILTER_SANITIZE_URL);
+
+// Validate url
+if (!filter_var($url, FILTER_VALIDATE_URL) === false) {
+    echo("$url is a valid URL");
+} else {
+    echo("$url is not a valid URL");
+}
+?&gt; </pre>
+	<a href="practice_ad/php_44.php" class="center">프렉티스44</a>
+	<h1>Complete PHP Filter Reference</h1>
+	<p>
+		For a complete reference of all filter functions, go to
+		our complete PHP Filter Reference. Check each filter to
+		see what options and flags are available. <br> <br>
+		The reference contains a brief description, and examples
+		of use, for each function!
+	</p>
+	<h1 class="subject">PHP Filters Advanced</h1>
+	<h1>Validate an Integer Within a Range</h1>
+	<p>The following example uses the filter_var() function
+		to check if a variable is both of type INT, and between 1
+		and 200:</p>
+	<pre class="code"> &lt;?php
+$int = 122;
+$min = 1;
+$max = 200;
+
+if (filter_var($int, FILTER_VALIDATE_INT, array("options" =&gt; array("min_range"=&gt;$min, "max_range"=&gt;$max))) === false) {
+    echo("Variable value is not within the legal range");
+} else {
+    echo("Variable value is within the legal range");
+}
+?&gt; </pre>
+
+	<a href="practice_ad/php_45.php" class="center">프렉티스45</a>
+	<h1>Validate IPv6 Address</h1>
+	<p>The following example uses the filter_var() function
+		to check if the variable $ip is a valid IPv6 address:</p>
+	<pre class="code"> &lt;?php
+$ip = "2001:0db8:85a3:08d3:1319:8a2e:0370:7334";
+
+if (!filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) === false) {
+    echo("$ip is a valid IPv6 address");
+} else {
+    echo("$ip is not a valid IPv6 address");
+}
+?&gt; </pre>
+	<a href="practice_ad/php_46.php" class="center">프렉티스46</a>
+	<h1>Validate URL - Must Contain QueryString</h1>
+	<p>The following example uses the filter_var() function
+		to check if the variable $url is a URL with a querystring:</p>
+	<pre class="code"> &lt;?php
+$url = "https://www.w3schools.com";
+
+if (!filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_QUERY_REQUIRED) === false) {
+    echo("$url is a valid URL");
+} else {
+    echo("$url is not a valid URL");
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_47.php">프렉티스47</a>
+	<h1>Remove Characters With ASCII Value > 127</h1>
+	<p>The following example uses the filter_var() function
+		to sanitize a string. It will both remove all HTML tags,
+		and all characters with ASCII value > 127, from the
+		string:</p>
+	<pre class="code"> &lt;?php
+$str = "&lt;h1&gt;Hello WorldÆØÅ!&lt;/h1&gt;";
+
+$newstr = filter_var($str, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+echo $newstr;
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_48.php">프렉티스48</a>
+	<h1>Complete PHP Filter Reference</h1>
+	<p>
+		For a complete reference of all filter functions, go to
+		our complete PHP Filter Reference. Check each filter to
+		see what options and flags are available. <br> <br>
+		The reference contains a brief description, and examples
+		of use, for each function!
+	</p>
+	<h1 class="subject">PHP Error Handling</h1>
+	<p>The default error handling in PHP is very simple. An
+		error message with filename, line number and a message
+		describing the error is sent to the browser.</p>
+
+	<h1>PHP Error Handling</h1>
+	<p>
+		When creating scripts and web applications, error handling
+		is an important part. If your code lacks error checking
+		code, your program may look very unprofessional and you
+		may be open to security risks. <br> <br> This
+		tutorial contains some of the most common error checking
+		methods in PHP. <br> <br> We will show different
+		error handling methods:
+	</p>
+	<ul>
+		<li>Simple "die()" statements</li>
+		<li>Custom errors and error triggers</li>
+		<li>Error reporting</li>
+	</ul>
+	<h1>Basic Error Handling: Using the die() function</h1>
+	<p>The first example shows a simple script that opens a
+		text file:</p>
+	<pre class="code">&lt;?php
+$file=fopen("welcome.txt","r");
+?&gt; </pre>
+	<p>If the file does not exist you might get an error
+		like this:</p>
+	<pre class="code"> Warning: fopen(welcome.txt) [function.fopen]: failed to open stream:
+No such file or directory in C:\webfolder\test.php on line 2 </pre>
+	<p>To prevent the user from getting an error message
+		like the one above, we test whether the file exist before
+		we try to access it:</p>
+	<pre class="code">&lt;?php
+if(!file_exists("welcome.txt")) {
+  die("File not found");
+} else {
+  $file=fopen("welcome.txt","r");
+}
+?&gt; </pre>
+	<p>Now if the file does not exist you get an error like
+		this:</p>
+	<pre class="code">File not found </pre>
+	<p>
+		The code above is more efficient than the earlier code,
+		because it uses a simple error handling mechanism to stop
+		the script after the error. <br> <br> However,
+		simply stopping the script is not always the right way to
+		go. Let's take a look at alternative PHP functions for
+		handling errors.
+	</p>
+	<h1 class="bookmark">Creating a Custom Error Handler</h1>
+	<p>
+		Creating a custom error handler is quite simple. We simply
+		create a special function that can be called when an error
+		occurs in PHP. <br> <br> This function must be
+		able to handle a minimum of two parameters (error level
+		and error message) but can accept up to five parameters
+		(optionally: file, line-number, and the error context):
+	</p>
+	<h1>Syntax</h1>
+	<pre class="code">error_function(error_level,error_message,
+error_file,error_line,error_context) </pre>
+	<table>
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>error_level</td>
+			<td>Required. Specifies the error report level for
+				the user-defined error. Must be a value number. See
+				table below for possible error report levels</td>
+		</tr>
+		<tr>
+			<td>error_message</td>
+			<td>Required. Specifies the error message for the
+				user-defined error</td>
+		</tr>
+		<tr>
+			<td>error_file</td>
+			<td>Optional. Specifies the filename in which the
+				error occurred</td>
+		</tr>
+		<tr>
+			<td>error_line</td>
+			<td>Optional. Specifies the line number in which the
+				error occurred</td>
+		</tr>
+		<tr>
+			<td>error_context</td>
+			<td>Optional. Specifies an array containing every
+				variable, and their values, in use when the error
+				occurred</td>
+		</tr>
+	</table>
+	<h1 class="bookmark">Error Report levels</h1>
+	<p>These error report levels are the different types of
+		error the user-defined error handler can be used for:</p>
+	<table>
+		<tr>
+			<th>Value</th>
+			<th>Constant</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>E_WARNING</td>
+			<td>Non-fatal run-time errors. Execution of the
+				script is not halted</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>E_NOTICE</td>
+			<td>Run-time notices. The script found something
+				that might be an error, but could also happen when
+				running a script normally</td>
+		</tr>
+		<tr>
+			<td>256</td>
+			<td>E_USER_ERROR</td>
+			<td>Fatal user-generated error. This is like an
+				E_ERROR set by the programmer using the PHP function
+				trigger_error()</td>
+		</tr>
+		<tr>
+			<td>512</td>
+			<td>E_USER_WARNING</td>
+			<td>Non-fatal user-generated warning. This is like
+				an E_WARNING set by the programmer using the PHP
+				function trigger_error()</td>
+		</tr>
+		<tr>
+			<td>1024</td>
+			<td>E_USER_NOTICE</td>
+			<td>User-generated notice. This is like an E_NOTICE
+				set by the programmer using the PHP function
+				trigger_error()</td>
+		</tr>
+		<tr>
+			<td>4096</td>
+			<td>E_RECOVERABLE_ERROR</td>
+			<td>Catchable fatal error. This is like an E_ERROR
+				but can be caught by a user defined handle (see also
+				set_error_handler())</td>
+		</tr>
+		<tr>
+			<td>8191</td>
+			<td>E_ALL</td>
+			<td>All errors and warnings (E_STRICT became a part
+				of E_ALL in PHP 5.4)</td>
+		</tr>
+	</table>
+	<p>Now lets create a function to handle errors:</p>
+	<pre class="code">function customError($errno, $errstr) {
+  echo "&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr&lt;br&gt;";
+  echo "Ending Script";
+  die();
+} </pre>
+	<p>
+		The code above is a simple error handling function. When
+		it is triggered, it gets the error level and an error
+		message. It then outputs the error level and message and
+		terminates the script. <br> <br> Now that we
+		have created an error handling function we need to decide
+		when it should be triggered.
+	</p>
+	<h1>Set Error Handler</h1>
+	<p>
+		The default error handler for PHP is the built in error
+		handler. We are going to make the function above the
+		default error handler for the duration of the script. <br>
+		<br> It is possible to change the error handler to
+		apply for only some errors, that way the script can handle
+		different errors in different ways. However, in this
+		example we are going to use our custom error handler for
+		all errors:
+	</p>
+	<div class="code">set_error_handler("customError");</div>
+	<p>Since we want our custom function to handle all
+		errors, the set_error_handler() only needed one parameter,
+		a second parameter could be added to specify an error
+		level.</p>
+	<h1>Example</h1>
+	<p>Testing the error handler by trying to output
+		variable that does not exist:</p>
+	<pre class="code">&lt;?php
+//error handler function
+function customError($errno, $errstr) {
+  echo "&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr";
+}
+
+//set error handler
+set_error_handler("customError");
+
+//trigger error
+echo($test);
+?&gt; </pre>
+	<p>The output of the code above should be something
+		like this:</p>
+
+	<div class="code">Error: [8] Undefined variable: test
+	</div>
+	<a class="center" href="practice_ad/php_49.php">프렉티스 49</a>
+	<h1>Trigger an Error</h1>
+	<p>In a script where users can input data it is useful
+		to trigger errors when an illegal input occurs. In PHP,
+		this is done by the trigger_error() function.</p>
+	<h1>Example</h1>
+	<p>In this example an error occurs if the "test"
+		variable is bigger than "1":</p>
+	<pre class="code">&lt;?php
+$test=2;
+if ($test&gt;=1) {
+  trigger_error("Value must be 1 or below");
+}
+?&gt; </pre>
+	<p>The output of the code above should be something
+		like this:</p>
+	<div class="code">
+		Notice: Value must be 1 or below<br> in
+		C:\webfolder\test.php on line 6
+	</div>
+	<p>
+		An error can be triggered anywhere you wish in a script,
+		and by adding a second parameter, you can specify what
+		error level is triggered. <br> <br> Possible
+		error types:
+	</p>
+	<ul>
+		<li>E_USER_ERROR - Fatal user-generated run-time
+			error. Errors that can not be recovered from. Execution
+			of the script is halted</li>
+		<li>E_USER_WARNING - Non-fatal user-generated
+			run-time warning. Execution of the script is not halted</li>
+		<li>E_USER_NOTICE - Default. User-generated run-time
+			notice. The script found something that might be an
+			error, but could also happen when running a script
+			normally</li>
+	</ul>
+	<h1>Example</h1>
+	<p>In this example an E_USER_WARNING occurs if the
+		"test" variable is bigger than "1". If an E_USER_WARNING
+		occurs we will use our custom error handler and end the
+		script:</p>
+
+	<pre class="code">&lt;?php
+//error handler function
+function customError($errno, $errstr) {
+  echo "&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr&lt;br&gt;";
+  echo "Ending Script";
+  die();
+}
+
+//set error handler
+set_error_handler("customError",E_USER_WARNING);
+
+//trigger error
+$test=2;
+if ($test&gt;=1) {
+  trigger_error("Value must be 1 or below",E_USER_WARNING);
+}
+?&gt; </pre>
+	<p>The output of the code above should be something
+		like this:</p>
+	<div class="code">
+		Error: [512] Value must be 1 or below <br> Ending
+		Script
+	</div>
+	<p>Now that we have learned to create our own errors
+		and how to trigger them, lets take a look at error
+		logging.</p>
+	<a class="center" href="practice_ad/php_50.php">프렉티스50</a>
+
+	<h1>Error Logging</h1>
+
+	<p>
+		By default, PHP sends an error log to the server's logging
+		system or a file, depending on how the error_log
+		configuration is set in the php.ini file. By using the
+		error_log() function you can send error logs to a
+		specified file or a remote destination. <br> <br>
+		Sending error messages to yourself by e-mail can be a good
+		way of getting notified of specific errors.
+	</p>
+	<h1>Send an Error Message by E-Mail</h1>
+	<p>In the example below we will send an e-mail with an
+		error message and end the script, if a specific error
+		occurs:</p>
+	<pre class="code">&lt;?php
+// error handler function
+function customError($errno, $errstr) {
+	echo "&lt;b&gt;Error:&lt;/b&gt; [$errno] $errstr&lt;br&gt;";
+	echo "Webmaster has been notified";
+	error_log ( "Error: [$errno] $errstr", 1, "neem693@gmail.com", "From:oratree@bratwint.com" );
+}
+
+// set error handler
+set_error_handler ( "customError", E_USER_WARNING );
+
+// trigger error
+$test = 2;
+if ($test &gt;= 1) {
+	trigger_error ( "Value must be 1 or below", E_USER_WARNING );
+}
+?&gt;  </pre>
+	<a class="center" href="practice_ad/php_51.php">프렉티스51</a>
+	<p>The output of the code above should be something
+		like this:</p>
+	<div class="code">
+		Error: [512] Value must be 1 or below<br> Webmaster
+		has been notified
+	</div>
+	<p>And the mail received from the code above looks like
+		this:</p>
+	<div class="code">Error: [512] Value must be 1 or
+		below</div>
+	<p>This should not be used with all errors. Regular
+		errors should be logged on the server using the default
+		PHP logging system.</p>
+	<h1 class="bookmark">메일 보내는 방법</h1>
+	<p>
+		위 작업은 에러가 발생했을 때, 메일을 보내서 호스트에게 알리는 걸 말한다. 왠만한 운영체제에서는
+		smtp를 자체적으로 보낼 수 있는 소프트웨어가 내장되어있다. windows환경에서 도 또한 이를
+		위해서는 자체적으로 내장되어있는 smtp서버를 구현하여 포트 25를 통해서 메일을 보낼 수 있다. 그러나
+		windows 8.1환경에서 튜토리얼을 진행하는데, 7을 초과하는 윈도우 운영체제 에서는 smtp 서버가
+		기본적으로 구현이 되어 있지 않다. 따라서 따로 mailenable이라는 소프트웨어를 설치하여 서버를
+		만들어 메일을 외부로 보내야 한다.<br> <br>다음의 링크를 이용해서 이 설치과정을
+		알 수 있다.
+	</p>
+	<ul>
+		<li><a target="_blank"
+			href="http://blog.naver.com/PostView.nhn?blogId=choda100&logNo=220848908601">IIS설치&amp;MailEnable설치
+				및 이용</a></li>
+		<li><a target="_blank"
+			href="https://www.ruhanirabin.com/php-sendmail-setup-with-smtp-iis-and-windows-servers/">MailEnable
+				테스트</a></li>
+	</ul>
+	<p>windows 환경에서 메일을 보낼 때는 어림잡아 다음이 필요하다. 필요작업</p>
+	<ol>
+		<li>IIS(인터넷정보서비스)관리자</li>
+		<li>mailEnable</li>
+		<li>php.ini 편집</li>
+		<li>메일 받기 위해선 포트포워드 DDNS작업필요(선택)(<a target="_blank"
+			href="http://blog.naver.com/choda100/220848904009">참조</a>)
+		</li>
+	</ol>
+	<p>
+		mailEnable과 IIS관리자 설치는 앞서 참조된 설치링크를 통해서 할 수 있다. 하지만 제대로
+		나오지 않는 곳이 바로 php.ini편집이다. mailEnable을 사용하면, 따로 새로운 메일함을
+		운영할 수도 있지만, php상에서 오류가 발생했을 시 그부분에 대해서만 따로 메일을 발송하거나 할 때는
+		메일함을 통해 발송하는 것이 아니라 php에서 바로 발송한다는 점을 숙고하자. 따라서 php.ini을
+		들어가서 <span class="imp">sendmail_from</span>항목을 메일을 보내는 곳을
+		따로 삽입해서 표시를 해줘야 한다. 이렇게 해야지만 php에서 메일을 '잘' 발송해준다. 밑의 프렉티스가
+		ok라고 뜬다면 현재 mail 발송이 잘 진행되고 있다는 것이다.
+	</p>
+	<a class="center" href="practice_ad/php_51_1.php">정말
+		발송이 되는가?(프렉티스 51_1)</a>
+	<p>메일을 받는 방법은 위의 필요작업 목록중 4번에 해당한다. 이 작업은 아직 하지 않았다.
+		포트포워딩은 이미 해봤기 때문에 어떤건지 알 고 있다. 다만, DDNS에 대한 건 한번도 안해봤기 때문에
+		여기에 대한 경험을 좀 가져야 할 것으로 보인다. 이점에 대해서는 추후에 해보던가 추가하자.</p>
+	<h1 class="subject">PHP Exception Handling</h1>
+	<p>Exceptions are used to change the normal flow of a
+		script if a specified error occurs.</p>
+	<h1>What is an Exception</h1>
+	<p>
+		With PHP 5 came a new object oriented way of dealing with
+		errors. <br> <br> Exception handling is used to
+		change the normal flow of the code execution if a
+		specified error (exceptional) condition occurs. This
+		condition is called an exception. <br> <br> This
+		is what normally happens when an exception is triggered:
+	</p>
+	<ul>
+		<li>The current code state is saved</li>
+		<li>The code execution will switch to a predefined
+			(custom) exception handler function</li>
+		<li>Depending on the situation, the handler may then
+			resume the execution from the saved code state, terminate
+			the script execution or continue the script from a
+			different location in the code</li>
+	</ul>
+	<p>We will show different error handling methods:</p>
+	<ul>
+		<li>Basic use of Exceptions</li>
+		<li>Creating a custom exception handler</li>
+		<li>Multiple exceptions</li>
+		<li>Re-throwing an exception</li>
+		<li>Setting a top level exception handler</li>
+	</ul>
+	<p>
+		<span class="impb">Note:</span> Exceptions should only be
+		used with error conditions, and should not be used to jump
+		to another place in the code at a specified point.
+	</p>
+	<h1>Basic Use of Exceptions</h1>
+	<p>
+		When an exception is thrown, the code following it will
+		not be executed, and PHP will try to find the matching
+		"catch" block. <br> <br> If an exception is not
+		caught, a fatal error will be issued with an "Uncaught
+		Exception" message. <br> <br> Lets try to throw
+		an exception without catching it:
+	</p>
+	<pre class="code">&lt;?php
+//create function with an exception
+function checkNum($number) {
+  if($number&gt;1) {
+    throw new Exception("Value must be 1 or below");
+  }
+  return true;
+}
+
+//trigger exception
+checkNum(2);
+?&gt; </pre>
+	<p>The code above will get an error like this:</p>
+	<div class="code">
+		Fatal error: Uncaught exception 'Exception'<br> with
+		message 'Value must be 1 or below' in
+		C:\webfolder\test.php:6<br> Stack trace: #0
+		C:\webfolder\test.php(12):<br> checkNum(28) #1 {main}
+		thrown in C:\webfolder\test.php on line 6
+	</div>
+	<a class="center" href="practice_ad/php_52.php">프렉티스 52</a>
+	<h1>Try, throw and catch</h1>
+	<p>
+		To avoid the error from the example above, we need to
+		create the proper code to handle an exception. <br> <br>
+		Proper exception code should include:
+	</p>
+	<ul>
+		<li>Try - A function using an exception should be in
+			a "try" block. If the exception does not trigger, the
+			code will continue as normal. However if the exception
+			triggers, an exception is "thrown"</li>
+		<li>Throw - This is how you trigger an exception.
+			Each "throw" must have at least one "catch"</li>
+		<li>Catch - A "catch" block retrieves an exception
+			and creates an object containing the exception
+			information</li>
+	</ul>
+	<p>Lets try to trigger an exception with valid code:</p>
+	<pre class="code">&lt;?php
+//create function with an exception
+function checkNum($number) {
+  if($number&gt;1) {
+    throw new Exception("Value must be 1 or below");
+  }
+  return true;
+}
+
+//trigger exception in a "try" block
+try {
+  checkNum(2);
+  //If the exception is thrown, this text will not be shown
+  echo 'If you see this, the number is 1 or below';
+}
+
+//catch exception
+catch(Exception $e) {
+  echo 'Message: ' .$e-&gt;getMessage();
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_53.php">프렉티스53</a>
+	<p>The code above will get an error like this:</p>
+	<div class="code">Message: Value must be 1 or below</div>
+	<h1>Example explained:</h1>
+	<p>The code above throws an exception and catches it:</p>
+	<ol>
+		<li>The checkNum() function is created. It checks if
+			a number is greater than 1. If it is, an exception is
+			thrown</li>
+		<li>The checkNum() function is called in a "try"
+			block</li>
+		<li>The exception within the checkNum() function is
+			thrown</li>
+		<li>The "catch" block retrieves the exception and
+			creates an object ($e) containing the exception
+			information</li>
+		<li>The error message from the exception is echoed by
+			calling $e->getMessage() from the exception object</li>
+	</ol>
+	<p>However, one way to get around the "every throw must
+		have a catch" rule is to set a top level exception handler
+		to handle errors that slip through.</p>
+	<h1>Creating a Custom Exception Class</h1>
+	<p>
+		To create a custom exception handler you must create a
+		special class with functions that can be called when an
+		exception occurs in PHP. The class must be an extension of
+		the exception class.<br> <br>The custom
+		exception class inherits the properties from PHP's
+		exception class and you can add custom functions to it.<br>
+		<br>Lets create an exception class:
+	</p>
+
+	<pre class="code">&lt;?php
+class customException extends Exception {
+  public function errorMessage() {
+    //error message
+    $errorMsg = 'Error on line '.$this-&gt;getLine().' in '.$this-&gt;getFile()
+    .': &lt;b&gt;'.$this-&gt;getMessage().'&lt;/b&gt; is not a valid E-Mail address';
+    return $errorMsg;
+  }
+}
+
+$email = "someone@example...com";
+
+try {
+  //check if
+  if(filter_var($email, FILTER_VALIDATE_EMAIL) === FALSE) {
+    //throw exception if email is not valid
+    throw new customException($email);
+  }
+}
+
+catch (customException $e) {
+  //display custom message
+  echo $e-&gt;errorMessage();
+}
+?&gt; </pre>
+	<p>The new class is a copy of the old exception class
+		with an addition of the errorMessage() function. Since it
+		is a copy of the old class, and it inherits the properties
+		and methods from the old class, we can use the exception
+		class methods like getLine() and getFile() and
+		getMessage().</p>
+	<a class="center" href="practice_ad/php_54.php">프렉티스54</a>
+	<h1>Example explained:</h1>
+	<p>The code above throws an exception and catches it
+		with a custom exception class:</p>
+	<ol>
+		<li>The customException() class is created as an
+			extension of the old exception class. This way it
+			inherits all methods and properties from the old
+			exception class</li>
+		<li>The errorMessage() function is created. This
+			function returns an error message if an e-mail address is
+			invalid</li>
+		<li>The $email variable is set to a string that is
+			not a valid e-mail address</li>
+		<li>The "try" block is executed and an exception is
+			thrown since the e-mail address is invalid</li>
+		<li>The "catch" block catches the exception and
+			displays the error message</li>
+	</ol>
+	<h1>Multiple Exceptions</h1>
+	<p>
+		It is possible for a script to use multiple exceptions to
+		check for multiple conditions. <br> <br> It is
+		possible to use several if..else blocks, a switch, or nest
+		multiple exceptions. These exceptions can use different
+		exception classes and return different error messages:
+	</p>
+
+	<pre class="code">&lt;?php
+class customException extends Exception {
+  public function errorMessage() {
+    //error message
+    $errorMsg = 'Error on line '.$this-&gt;getLine().' in '.$this-&gt;getFile()
+    .': &lt;b&gt;'.$this-&gt;getMessage().'&lt;/b&gt; is not a valid E-Mail address';
+    return $errorMsg;
+  }
+}
+
+$email = "someone@example.com";
+
+try {
+  //check if
+  if(filter_var($email, FILTER_VALIDATE_EMAIL) === FALSE) {
+    //throw exception if email is not valid
+    throw new customException($email);
+  }
+  //check for "example" in mail address
+  if(strpos($email, "example") !== FALSE) {
+    throw new Exception("$email is an example e-mail");
+  }
+}
+
+catch (customException $e) {
+  echo $e-&gt;errorMessage();
+}
+
+catch(Exception $e) {
+  echo $e-&gt;getMessage();
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_55.php">프렉티스55</a>
+	<h1>Example explained:</h1>
+	<p>The code above tests two conditions and throws an
+		exception if any of the conditions are not met:</p>
+	<ol>
+		<li>The customException() class is created as an
+			extension of the old exception class. This way it
+			inherits all methods and properties from the old
+			exception class</li>
+		<li>The errorMessage() function is created. This
+			function returns an error message if an e-mail address is
+			invalid</li>
+		<li>The $email variable is set to a string that is a
+			valid e-mail address, but contains the string "example"</li>
+		<li>The "try" block is executed and an exception is
+			not thrown on the first condition</li>
+		<li>The second condition triggers an exception since
+			the e-mail contains the string "example"</li>
+		<li>The "catch" block catches the exception and
+			displays the correct error message</li>
+	</ol>
+	<p>If the exception thrown were of the class
+		customException and there were no customException catch,
+		only the base exception catch, the exception would be
+		handled there.</p>
+	<h1>Re-throwing Exceptions</h1>
+	<p>
+		Sometimes, when an exception is thrown, you may wish to
+		handle it differently than the standard way. It is
+		possible to throw an exception a second time within a
+		"catch" block. <br> <br> A script should hide
+		system errors from users. System errors may be important
+		for the coder, but are of no interest to the user. To make
+		things easier for the user you can re-throw the exception
+		with a user friendly message:
+	</p>
+	<pre class="code">&lt;?php
+class customException extends Exception {
+  public function errorMessage() {
+    //error message
+    $errorMsg = $this-&gt;getMessage().' is not a valid E-Mail address.';
+    return $errorMsg;
+  }
+}
+
+$email = "someone@example.com";
+
+try {
+  try {
+    //check for "example" in mail address
+    if(strpos($email, "example") !== FALSE) {
+      //throw exception if email is not valid
+      throw new Exception($email);
+    }
+  }
+  catch(Exception $e) {
+    //re-throw exception
+    throw new customException($email);
+  }
+}
+
+catch (customException $e) {
+  //display custom message
+  echo $e-&gt;errorMessage();
+}
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_56.php">프렉티스56</a>
+	<h1>Example explained:</h1>
+	<p>The code above tests if the email-address contains
+		the string "example" in it, if it does, the exception is
+		re-thrown:</p>
+	<ol>
+		<li>The customException() class is created as an
+			extension of the old exception class. This way it
+			inherits all methods and properties from the old
+			exception class</li>
+		<li>The errorMessage() function is created. This
+			function returns an error message if an e-mail address is
+			invalid</li>
+		<li>The $email variable is set to a string that is a
+			valid e-mail address, but contains the string "example"</li>
+		<li>The "try" block contains another "try" block to
+			make it possible to re-throw the exception</li>
+		<li>The exception is triggered since the e-mail
+			contains the string "example"</li>
+		<li>The "catch" block catches the exception and
+			re-throws a "customException"</li>
+		<li>The "customException" is caught and displays an
+			error message</li>
+	</ol>
+	<p>If the exception is not caught in its current "try"
+		block, it will search for a catch block on "higher
+		levels".</p>
+	<h1>Set a Top Level Exception Handler</h1>
+	<p>The set_exception_handler() function sets a
+		user-defined function to handle all uncaught exceptions.</p>
+	<pre class="code">&lt;?php
+function myException($exception) {
+  echo "&lt;b&gt;Exception:&lt;/b&gt; " . $exception-&gt;getMessage();
+}
+
+set_exception_handler('myException');
+
+throw new Exception('Uncaught Exception occurred');
+?&gt; </pre>
+	<a class="center" href="practice_ad/php_57.php">프렉티스57</a>
+	<p>The output of the code above should be something
+		like this:</p>
+	<div class="code">
+		<b>Exception</b>: Uncaught Exception occurred
+	</div>
+	<p>In the code above there was no "catch" block.
+		Instead, the top level exception handler triggered. This
+		function should be used to catch uncaught exceptions.</p>
+	<h1>Rules for exceptions</h1>
+	<ul>
+		<li>Code may be surrounded in a try block, to help
+			catch potential exceptions</li>
+		<li>Each try block or "throw" must have at least one
+			corresponding catch block</li>
+		<li>Multiple catch blocks can be used to catch
+			different classes of exceptions</li>
+		<li>Exceptions can be thrown (or re-thrown) in a
+			catch block within a try block</li>
+	</ul>
+	<p>A simple rule: If you throw something, you have to
+		catch it.</p>
+
+	<h1 class="bookmark">Javascript(Jquery)와 PHP 변수 공유 법</h1>
+	<p>Javascript(Jquery)와 php의 변수를 공유하는 법에 대한 부분을 프렉티스로 함
+		만들어보자.</p>
+	<a
+		href="https://stackoverflow.com/questions/1808108/how-to-access-php-variables-in-javascript-or-jquery-rather-than-php-echo-vari"
+		class="center">링크</a>
+	<pre class="code">&lt;?php
+    $simple = 'simple string';
+    $complex = array('more', 'complex', 'object', array('foo', 'bar'));
+?&gt;
+&lt;script type="text/javascript"&gt;
+    var simple = '&lt;?php echo $simple; ?&gt;';
+    var complex = &lt;?php echo json_encode($complex); ?&gt;;
+&lt;/script&gt;</pre>
+	<pre class="code">
+&lt;?php
+
+$id = 29384;
+$x = 23;
+$y = 36;
+$str = "하하하하하씨부랄 하하하하하하";
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" /&gt;
+&lt;link rel="stylesheet" href="/studyphp/style.css"&gt;
+&lt;script src="/studyphp/js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	var id = &lt;?php echo $id; ?&gt;;
+	var x = &lt;?php echo $x; ?&gt;;
+	var y = &lt;?php echo $y; ?&gt;;
+	var str = "&lt;?php echo $str; ?&gt;";
+	$(document).ready(function() {
+
+		$("#id").text(id);
+		$("#x").text(x);
+		$("#y").text(y);
+		$("#str").text(str);
+	})
+&lt;/script&gt;
+&lt;title&gt;연습_PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id="check"&gt;&lt;/div&gt;
+	&lt;div id="id"&gt;&lt;/div&gt;
+	&lt;div id="x"&gt;&lt;/div&gt;
+	&lt;div id="y"&gt;&lt;/div&gt;
+	&lt;div id="str"&gt;&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+	<a href="/studyphp/practice_ad/php_58.html" class="center">프렉티스58</a>
+	<h1 class="bookmark">PHP explode() Function</h1>
+	<h1>Example</h1>
+	<pre class="code">
+&lt;?php
+$str = "Hello world. It's a beautiful day.";
+print_r (explode(" ",$str));
+?&gt;</pre>
+<a href = "/studyphp/practice_ad/php_59.php" class = "center">프렉티스59</a>
+	<h1>Definition and Usage</h1>
+	<p>
+		The explode() function breaks a string into an array. <br>
+		<br> Note: The "separator" parameter cannot be an
+		empty string. <br>
+		<br> Note: This function is binary-safe.
+	</p>
+	<h1>Syntax</h1>
+	<div class="code">explode(separator,string,limit)</div>
+	<table>
+		<tr>
+			<th>Parameter</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td><em>separator</em></td>
+			<td>Required. Specifies where to break the string</td>
+		</tr>
+		<tr>
+			<td><em>string</em></td>
+			<td>Required. The string to split</td>
+		</tr>
+		<tr>
+			<td><em>limit</em></td>
+			<td>Optional. Specifies the number of array elements
+				to return.
+				<p>Possible values:</p>
+				<ul>
+					<li>Greater than 0 - Returns an array with a
+						maximum of <em>limit</em> element(s)
+					</li>
+					<li>Less than 0 - Returns an array except for the
+						last <em>-limit</em> elements()
+					</li>
+					<li>0 - Returns an array with one element</li>
+				</ul>
+			</td>
+		</tr>
+	</table>
+	<h1>Technical Details</h1>
+
+	<table>
+		<tr>
+			<th>Return Value:</th>
+			<td>Returns an array of strings</td>
+		</tr>
+		<tr>
+			<th>PHP Version:</th>
+			<td>4+</td>
+		</tr>
+		<tr>
+			<th>Changelog:</th>
+			<td>The <em>limit</em> parameter was added in PHP
+				4.0.1, and support for negative <em> limits</em> were
+				added in PHP 5.1.0
+			</td>
+		</tr>
+	</table>
+<h1>More Examples</h1>
+<pre class = "code">
+&lt;?php
+$str = 'one,two,three,four';
+
+// zero limit
+print_r(explode(',',$str,0));
+
+// positive limit
+print_r(explode(',',$str,2));
+
+// negative limit
+print_r(explode(',',$str,-1));
+?&gt; </pre>
+<a href = "/studyphp/practice_ad/php_60.php" class = "center">프렉티스60</a>
+<div class = "code">Array ( [0] => one,two,three,four ) Array ( [0] => one [1] => two,three,four ) Array ( [0] => one [1] => two [2] => three ) </div>
+<h1>응용 example</h1>
+<pre class = "code">
+
+
+&lt;?php
+
+$l=0;//line
+ob_start();
+
+?&gt;
+&lt;?php
+
+$id = 29384;
+$x = 23;
+$y = 36;
+$str = "하하하하하씨부랄 하하하하하하";
+
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" /&gt;
+&lt;link rel="stylesheet" href="/studyphp/style.css"&gt;
+&lt;script src="/studyphp/js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	var id = &lt;?php echo $id; ?&gt;;
+	var x = &lt;?php echo $x; ?&gt;;
+	var y = &lt;?php echo $y; ?&gt;;
+	var str = "&lt;?php echo $str; ?&gt;";
+	$(document).ready(function() {
+
+		$("#id").text(id);
+		$("#x").text(x);
+		$("#y").text(y);
+		$("#str").text(str);
+	})
+&lt;/script&gt;
+&lt;title&gt;연습_PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div id="check"&gt;&lt;/div&gt;
+	&lt;div id="id"&gt;&lt;/div&gt;
+	&lt;div id="x"&gt;&lt;/div&gt;
+	&lt;div id="y"&gt;&lt;/div&gt;
+	&lt;div id="str"&gt;&lt;/div&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;?php
+
+$string = ob_get_contents();
+ob_end_clean();
+echo "&lt;br&gt;";
+//echo var_dump($string);
+$string = explode(PHP_EOL, $string);
+//echo "&lt;br&gt;";
+//echo var_dump($string);
+echo "&lt;table&gt;";
+foreach ($string as $v){
+	$l++;
+	echo "&lt;tr&gt;&lt;td&gt;$l&nbsp;&nbsp;&lt;/td&gt;&lt;td&gt;$v&lt;/td&gt;&lt;/tr&gt;";
+}
+echo "&lt;/table&gt;";
+
+?&gt;
+</pre>
+
+<a href = "/studyphp/php_61.php" class = "center">프렉티스61</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<aside>
+		<a href="#index_subject">위로</a>
+	</aside>
+	<footer>PHP_ADVANCED END</footer>
+</body>
+</html>

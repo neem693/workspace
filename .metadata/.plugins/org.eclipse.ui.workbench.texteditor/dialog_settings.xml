@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.wst.html.ui.internal.preferences.ui.HTMLTemplatePreferencePage$HTMLEditTemplateDialog_dialogBounds">
+		<item value="1229" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="519" key="DIALOG_HEIGHT"/>
+		<item value="62" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.wst.css.ui.internal.preferences.ui.CSSTemplatePreferencePage$CSSEditTemplateDialog_dialogBounds">
+		<item value="717" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="419" key="DIALOG_HEIGHT"/>
+		<item value="176" key="DIALOG_X_ORIGIN"/>
+		<item value="154" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="532" key="DIALOG_X_ORIGIN"/>
+		<item value="280" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item value="717" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="559" key="DIALOG_HEIGHT"/>
+		<item value="104" key="DIALOG_X_ORIGIN"/>
+		<item value="-123" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.php.internal.ui.preferences.PHPTemplatesPreferencePage$PHPEditTemplateDialog_dialogBounds">
+		<item value="717" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="439" key="DIALOG_HEIGHT"/>
+		<item value="451" key="DIALOG_X_ORIGIN"/>
+		<item value="240" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="document.getElementById(id).style.property = new style" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="document.getElementById(id).style.property = new style"/>
+			<item value="enhanced for"/>
+			<item value="enhenced for"/>
+			<item value="str_18"/>
+			<item value="str_17"/>
+			<item value="str_3"/>
+			<item value="str_4"/>
+			<item value="fix"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&amp;gt;"/>
+			<item value="&amp;lt;"/>
+			<item value="/studyhtml5/images/jeju_island.jpg"/>
+			<item value="jeju_island.jpg"/>
+			<item value="&lt;/h2&gt;"/>
+			<item value="&lt;h2&gt;"/>
+			<item value="half_div"/>
+			<item value="poll.png"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="340" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="454" key="DIALOG_HEIGHT"/>
+		<item value="460" key="DIALOG_X_ORIGIN"/>
+		<item value="266" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

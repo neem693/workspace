@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+@FONT-FACE {
+	font-family: notosans;
+	src: url("../../font/NotoSansCJKkr-Thin.otf");
+}
+
+body {
+	font-family: notosans;
+	width: 80%;
+	margin: 0 auto;
+}
+
+label {
+	color: white;
+	background: black;
+}
+
+section {
+	//border: black 2px solid;
+	width: 100%;
+	text-align: center;
+}
+
+article {
+	/*border: black 2px solid;*/
+	display: inline-block;
+	width: 80%;
+	text-align: center;
+}
+
+canvas {
+	text-align: center;
+	//border: black 2px solid;
+	padding: 5px;
+	height: 400px;
+
+	
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            newpos = new Object();
+            newpos.left = 0;
+            newpos.top = 100;
+            $("p").offset(newpos);
+        });
+    });
+</script>
+<title>Set the offset coordinates for an element
+	using an object</title>
+</head>
+<body>
+
+	<p>This is a paragraph.</p>
+
+	<button>Set offset coodinates of the p element
+		using an object</button>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+p {
+    color: #000000;
+}
+
+:not(p) {
+    color: #ff0000;
+}

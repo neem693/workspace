@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<title>테이블</title>
+</head>
+<body>
+	<p>테이블 태그는 표 영역만을 설정하는 태그이다.</p>
+	<p>
+		표를 이루려면 행, 열을 표시하는 tr td 태그를 사용해야한다. 테이블 태그는 고정 크기의 웹 사이트를 개발하는 경우
+		사용하는 것이 권장된다.<br> 반응형 웹 사이트와 같이 유동형 구조의 표현에는 거의 사용되지 않는다. 속성 태그의
+		표현과 관련된 것은 CSS파일에서의 지정하는 것을 권장한다.
+	</p>
+
+
+	<h2>주요속성</h2>
+	<p>
+		align = "left/right/center" : 전체 표가 정렬되는 위치 지정, 태그 표현 <br>
+		bgcolor = "색상코드" : 배경색, 태그 표현 <br> background="배경이미지의 파일명" 배경이미지,
+		태그 표현 <br>border =&quot;n&quot; : 칸과 칸 사이의 간격, 태그 표현 <br>cellspacing=&quot;n&quot;
+		: 칸과 칸 사이의 간격, 태그 표현 <br>cellpadding = &quot;n&quot; : 칸의 테두리선과
+		실제 안에 기록되는 내용과의 간격, 태그 표현 <br>width = &quot;n%&quot; 혹은
+		&quot;n&quot; : 테이블의 너비, 태그 표현 <br>
+	</p>
+	<h2>tr 태그</h2>
+	<p>행을 표시하는 태그. 속성은 CSS파일에서 지정하는 것을 권장함.</p>
+	<h3>주요속성</h3>
+	<p>
+		align = &quot;left | right |center&quot; : 해당 행의 가로 정렬, 태그 표현<br>valign
+		= &quot;top | middle | bottom&quot; : 해당 행의 세로 정렬, 태그 표현<br>height
+		= &quot;n%&quot; 혹은 &quot;n&quot; : 해당 행의 높이. 행의 높이는 주로 &lt;tr&gt;
+		태그에서 지정함. 태그표현.
+	</p>
+
+	<h2>< td > 태그</h2>
+	<p>표의 열 즉, 하나의 셀을 정의하는 태그이다. 정의하지 않은 속성은 상위 태그인 < table > 또는 < tr >
+		태그에서 상속 받는다. 속성 중 태그의 표현과 관련된 것은 CSS파일에서 지정하는 것을 권장한다.</p>
+		<h3>주요속성</h3>
+		<p>align = "left/right/center" : 해당 셀 안의 가로 정렬. 태그 표현<br>
+		valign="top/middle/bottom": 해당 셀 안의 세로 정렬, 태그 표현
+		width="n%" 혹은 "n" : 해당셀의 너비. 태그 표현<br>
+		colspan ="n": n으로 지정한 수만큼 열을 합침. 셀 합치기는 < td >태그에서 지정함.<br>
+		rowspan = "n": n으로 지정한 수만큼 행을 합침. 셀 합치기는 < td >태그에서 지정함.<br>
+		
+		<table border ="1" width = "200" height = "200" align = "center">
+		<tr><td colspan="2">타이틀</td>
+		</tr>
+		<tr><td>내용1</td><td>내용2</td></tr>
+		</table>
+
+
+
+</body>
+</html>

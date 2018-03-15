@@ -1,0 +1,5 @@
+127.0.0.1 - - [12/Dec/2017:06:06:39 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [12/Dec/2017:06:06:40 +0900] "GET /tree/html2canvas-1.0.0-alpha.3/html2canvas-1.0.0-alpha.3/examples/demo.html HTTP/1.1" 200 4186
+0:0:0:0:0:0:0:1 - - [12/Dec/2017:06:06:40 +0900] "GET /tree/html2canvas-1.0.0-alpha.3/html2canvas-1.0.0-alpha.3/dist/html2canvas.js HTTP/1.1" 404 1146
+0:0:0:0:0:0:0:1 - - [12/Dec/2017:06:06:40 +0900] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [12/Dec/2017:06:06:40 +0900] "GET /favicon.ico HTTP/1.1" 404 1016

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>animate 메소드</title>
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $("#box").animate({
+                height : "300px"
+            });
+        });
+        $("#btn2").click(function () {
+            $("#box").animate({
+                height : "100px"
+            });
+        });
+    });
+</script>
+</head>
+<body>
+
+	<button id="btn1">Animate height</button>
+	<button id="btn2">Reset height</button>
+
+	<div id="box"
+		style="background: #98bf21; height: 100px; margin: 6px;">
+	</div>
+</body>
+</html>

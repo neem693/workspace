@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>charAt()</h1>
+	<p id ="original">teoFile</p>
+	<p id="demo"></p>
+	
+	<button onclick="charat()">charAt</button><button onclick="charcodeat()">charCodeAt</button>
+	<script>
+	
+        var str = document.getElementById("original").innerHTML;
+        function charat(){
+            document.getElementById("demo").innerHTML = str.charAt(0);
+        }
+        function charcodeat(){
+            document.getElementById('demo').innerHTML = str.charCodeAt(0);
+        }
+    </script>
+
+</body>
+</html>

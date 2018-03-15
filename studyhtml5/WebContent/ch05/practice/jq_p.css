@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+@FONT-FACE {
+	font-family: notosans;
+	src: url(../../font/NotoSansCJKkr-Thin.otf);
+}
+
+body{
+	width: 80%;
+	margin: 0 auto;
+	font-family: notosans;
+}
+
+header {
+	clear: both;
+	background: #c1c1c1;
+	width: 100%;
+	font-size: xx-large;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+section {
+	text-align: center;
+}
+
+
+article{
+	text-align: left;
+	width: 80%;
+	display: inline-block;
+}
+
+div#displayArea {
+	width: 100%;
+	min-height: 250px;
+	max-height: 1000px;
+	margin: 0 auto;
+	border: 5px double #9d9dff;
+}
+img{
+	width: 100%;
+}
+button{
+	display: inline-block;
+}

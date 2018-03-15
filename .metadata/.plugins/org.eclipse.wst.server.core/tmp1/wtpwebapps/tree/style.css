@@ -1,0 +1,293 @@
+@CHARSET "UTF-8";
+
+@FONT-FACE {
+	font-family: notosans;
+	src: url(/studyphp/font/NotoSansCJKkr-Thin.otf);
+}
+
+@FONT-FACE {
+	font-family: notosans_R;
+	src: url(/studyphp/font/NotoSansCJKkr-Regular.otf);
+}
+
+@FONT-FACE {
+	font-family: notosans_b;
+	src: url(/studyphp/font/NotoSansMonoCJKkr-Bold.otf);
+}
+@FONT-FACE {
+	font-family: cour;
+	src: url(/studyphp/font/cour.ttf);	
+}
+@FONT-FACE {
+	font-family: courbd;
+	src: url(/studyphp/font/courbd.ttf);
+	
+}
+
+a {
+	font-family: notosans_b;
+}
+a:LINK{
+	color: blue;
+}
+a:VISITED{
+	color: blue;
+}
+
+.center {
+	background-color: #ffffce;
+	display: block;
+	text-align: center;
+	transition: background-color 0.5s;
+	/*border: black 1px solid;
+	margin: 0 auto;
+	width: 10%;*/
+}
+
+.center:HOVER {
+	background-color: #ffff6c;
+}
+
+.imp {
+	font-family: notosans_b;
+	color: red;
+}
+
+.impb {
+	font-family: notosans_b;
+	color: black;
+	font-size: large;
+}
+
+b {
+	font-size: large;
+	text-decoration: underline;
+}
+
+span.file {
+	color: #8080ff;
+	font-family: notosans_b;
+	text-align: center;
+	display: block;
+}
+
+img {
+	font-family: notosans_b;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+table img{
+	margin: 0;
+}
+
+body {
+	font-family: notosans;
+	text-align: left;
+	width: 80%;
+	margin: 0 auto;
+}
+
+header, section, , footer {
+	display: inline-block;
+}
+
+header {
+	clear: both;
+	background: #c1c1c1;
+	width: 100%;
+	font-size: xx-large;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+section {
+	clear: both;
+	width: 100%;
+}
+
+input.name {
+	
+}
+
+article {
+	text-align: left;
+	width: 100%;
+}
+
+h1 {
+	font-weight: normal;
+	font-family: notosans_b;
+	background: #c1c1c1;
+	width: 100%;
+	font-size: x-large;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 10px 0px;
+}
+
+h2 {
+	font-weight: normal;
+	font-family: notosans_b;
+	background: #ced0fb;
+	width: 80%;
+	font-size: large;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 10px auto;
+	border-radius: 10px;
+}
+
+.subject {
+	background: #a9df04;
+	padding: 20px 0px;
+}
+
+.bookmark a {
+	color: black;
+	text-decoration: none;
+}
+
+.bookmark a:HOVER {
+	text-decoration: underline;
+}
+
+.bookmark_color {
+	font-size: small;
+	color: yellow;
+	background-color: black;
+}
+
+aside {
+	bottom: 0px;
+	right: 0px;
+	position: fixed;
+	width: 50px;
+	padding: 10px 0;
+	background-color: fuchsia;
+	font-family: notosans_b;
+	text-align: center;
+}
+
+aside a {
+	text-decoration: none;
+	color: yellow;
+}
+
+.side {
+	background: #838383;
+	width: 100%;
+	font-size: large;
+	padding: 25px 0px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #ffff1e;
+}
+
+footer {
+	color: white;
+	text-align: center;
+	clear: both;
+	width: 100%;
+	padding: 300px 0px 100px 0;
+	background: #808080;
+	font-size: xx-large;
+}
+
+table {
+	width: 80%;
+	border-collapse: collapse;
+	/*box-shadow: 0px 0px 5px black;*/
+	margin: 5px auto;
+	border-bottom: 5px solid #53d7fd;
+	border-left: hidden;
+	border-right: hidden;
+	table-layout: auto;
+}
+
+.not_br {
+	white-space: pre;
+}
+
+tr {
+	font-family: notosans_R;
+	/*border-left: thin solid #53d7fd;
+	border-right: thin solid #53d7fd;*/
+}
+
+th {
+	font-weight: normal;
+	font-family: notosans_b;
+	padding: 15px;
+	text-align: center;
+	background: #7575ff;
+	color: white;
+	border: thin solid #a0fefc;
+}
+
+td {
+	padding: 15px;
+	border: thin solid #53d7fd;
+}
+
+li {
+	margin: 5px 0;
+	font-family: notosans_b;
+}
+
+.code {
+	font-family: courbd,notosans_R;
+	border: 1px solid #ababab;
+	border-radius: 10px;
+	padding: 10px;
+	width: 80%;
+	margin: 5px auto;
+}
+pre{
+	white-space: pre-wrap;
+}
+
+
+.erase {
+	text-decoration: line-through;
+}
+
+.textcenter {
+	text-align: center;
+}
+
+.boxlist {
+	display: inline-block;
+	width: 20%;
+	margin: 50px 3%;
+	transition: transform 1s, filter 1s, box-shadow 1s;
+	cursor: pointer;
+	/*border: black 1px solid;*/
+}
+
+.boxlist_HOVER {
+	transform: scale(1.2, 1.2);
+	filter: sepia(120%);
+	-ms-filter: sepia(120%);
+	-webkit-filter: sepia(120%);
+	box-shadow: 0px 0px 10px 1px black;
+}
+
+.width100 {
+	width: 100%;
+}
+
+div.text_subject {
+	padding: 10px 10px;
+	font-family: notosans_b;
+	font-size: large;
+	letter-spacing: 0.25em;
+	word-spacing: 0.25em;
+}
+
+@MEDIA screen and (max-width: 480px) {
+	body {
+		width: 95%;
+	}
+
+}

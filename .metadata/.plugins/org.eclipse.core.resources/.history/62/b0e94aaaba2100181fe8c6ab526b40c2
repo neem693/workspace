@@ -1,0 +1,11 @@
+package practice016_ex;
+
+public class Test5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s = "strings are immutable";
+
+	}
+
+}

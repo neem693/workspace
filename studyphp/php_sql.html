@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="style.css">
+<!--  <script src="/studyphp/js/jquery-3.2.1.min.js"></script>-->
+<script src="/studyphp/js/php.js"></script>
+<title>Let's Study SQL</title>
+</head>
+<body>
+
+	<header>PHP_SQL</header>
+
+	<h1 id="index_subject">목차</h1>
+	<div id="list"></div>
+	<h1 id="index_bookmark">부록</h1>
+	<div id="bookmark_list"></div>
+	<h1 class="subject">MYSQL PHP 연동</h1>
+	<p>이제 그 동안 해 묵었던, MYSQL + PHP 연동에 대해서 알아보고자 한다.</p>
+	<ol>
+		<li>일단 MYSQL을 설치를 해야 한다. <a
+			href="https://dev.mysql.com/downloads/installer/"
+			target="_blank">다운로드 하는 곳</a>은 이곳이다. 다운로드와 자세한 내용은 <a
+			href="http://jwgye.tistory.com/40" target="_blank">블로그1</a>에서
+			확인하라.
+		</li>
+		<li>다 받았으면 설치하는데, 내가 블로그1이라고 링크를 걸어둔 곳을 가보면 딱 적절한 것만
+			설치하는 법을 알려준다. 기본적으로 이거 3개다.
+			<div class="code">
+				- MySQL Server 57.11 - X64 : 64비트 MySQL 서버입니다. 기본적인
+				서버입니다.<br> - MySQL Workbench 6.3.6 - X64 : 64비트 DB
+				연결 클라이언트입니다. MySQL 에 연결하여 DB 제어, 쿼리 등 모든 작업을 하게됩니다.<br>
+
+				- Conntector/J 5.1.38 - X86 : Java 에서 MySQL 연결하기위한 JDBC
+				입니다.<br>
+			</div>
+		</li>
+		<li>설치를 다 마치고 나서 root라는 제일 높은 등급의 아이디에 대한 패스워드를 등록하고,
+			될 수 있다면, 높은 권한을 가지고 있는 유저를 한명 더 만드는 것이 좋을 것이다.(맨날 root로
+			로그인 할 것인가?)</li>
+		<li>이제 php를 볼 차례. 이미 이 이전까지 php에 대한 설정과 eclipse로
+			기본적으로 새끈한 php가 있을 것이다.<br> 이 이후부터 가장 중요한 점은 다음과 같은
+			함수를 php파일에 옮겨넣고 정보를 참조하며 같이 실행하면 좋다는 것이다.
+			<div class="code">
+				phpinfo();<br> /*이에 대한 실습은 이미 <a
+					href="practice/practice01.php">프렉티스1</a>에서 한바 있다.*/
+			</div>
+		</li>
+		<li>해당 함수를 들여다 보게 된다면, 먼저 눈에 보이는 것이 바로 Configuration
+			File (php.ini) Path 와 Loaded Configuration File 에 대한 값이다.
+			<div class="code">
+				각각의 값은 모두 php.ini에 대한 파일의 위치를 나타낸다. 보통 설치하고 나서 사람들은
+				php.ini파일을 windows로 집어넣는 것이 일반적이라고 생각해왔나보다. 그래서 보통은
+				windows로 configuration이 정해져 있다.<br> Loaded
+				Configuration File(이하 LCF)은 결국은 php.ini파일을 불러온 경로를 말한다.
+				아파치 + PHP 연동파트에서 이 부분을 정의하는 부분이 있다. 거기서 php.ini 파일을 불러오고
+				그 경로가 이곳 LCF에 기록되는 것이다.
+			</div>
+		</li>
+		<li>LCF의 php.ini을 연다. 찾기(CTRL + F)로 extension_dir을
+			검색한다.</li>
+		<li>옆에 ;를 지워주고 활성화 해준다. php가 설치된 그곳에 ext폴더에 대한 절대경로를
+			" " 안에 입력하고 저장한다.
+			<div class="code">ext가 있는 곳은 바로 여러가지 언어에 대한 프로토콜
+				역할을 하는 에드온 파일이 있는 곳이다. mysqli 나 mysql 모두 이 에드온이 필요하다.
+				따라서 이곳에 대한 명확한 경로를 설정을 해줘야 한다. 그냥 ext 라고만 해주면 좋겠지만, 그게 잘
+				안된다. 그래서 절대 경로가 필요한 걸로 보인다.</div>
+		</li>
+
+		<li>extension=php_mysqli.dll 을 검색하고 ;를 지워 활성화 해준다.
+			여기서는 pdo에 대한 실습도 진행할 것이기에 pdo_mysql도 똑같이 활성화 해준다.</li>
+		<li>아파치를 재실행하여 변경된 설정값을 반영시킨다.</li>
+		<li>다시 phpinfo() 페이지로 간다. 거기서 mysqli를 검색한다. 만약 없다면 뭔가
+			잘못된 것이고, 있다면 이제 사용가능하다. pdo_mysql도 검색한다. 제목이 있고 테이블이 있으며
+			null값이 아니라면 이제 사용가능하다.</li>
+		<li>mysqli를 검색했을 때, 무슨 제작자 이름 나오면 그건 잘못된 것이다. 한번 체크
+			해봐야 한다. php.ini파일의 내용은 거의 모두 phpinfo()에 들어가니, 많이 참고하라.</li>
+	</ol>
+	<h1 class="subject">PHP MySQL Database</h1>
+	<p>
+		With PHP, you can connect to and manipulate databases. <br>
+		<br> MySQL is the most popular database system used
+		with PHP.
+	</p>
+	<h1>What is MySQL?</h1>
+	<ul>
+		<li>MySQL is a database system used on the web</li>
+		<li>MySQL is a database system that runs on a server</li>
+		<li>MySQL is ideal for both small and large
+			applications</li>
+		<li>MySQL is very fast, reliable, and easy to use</li>
+		<li>MySQL uses standard SQL</li>
+		<li>MySQL compiles on a number of platforms</li>
+		<li>MySQL is free to download and use</li>
+		<li>MySQL is developed, distributed, and supported by
+			Oracle Corporation</li>
+		<li>MySQL is named after co-founder Monty Widenius's
+			daughter: My</li>
+	</ul>
+	<p>
+		The data in a MySQL database are stored in tables. A table
+		is a collection of related data, and it consists of
+		columns and rows. <br> <br> Databases are useful
+		for storing information categorically. A company may have
+		a database with the following tables:
+	</p>
+	<ul>
+		<li>Employees</li>
+		<li>Products</li>
+		<li>Customers</li>
+		<li>Orders</li>
+
+	</ul>
+	<h1>PHP + MySQL Database System</h1>
+	<ul>
+		<li>PHP combined with MySQL are cross-platform (you
+			can develop in Windows and serve on a Unix platform)</li>
+	</ul>
+	<h1>Database Queries</h1>
+	<p>
+		A query is a question or a request. <br> <br> We
+		can query a database for specific information and have a
+		recordset returned. <br> <br> Look at the
+		following query (using standard SQL):
+	</p>
+	<div class="code">SELECT LastName FROM Employees</div>
+	<p>
+		The query above selects all the data in the "LastName"
+		column from the "Employees" table. To learn more about
+		SQL, please visit our <a
+			href="https://www.w3schools.com/sql/default.asp">SQL
+			tutorial.</a>
+	</p>
+	<h1>Download MySQL Database</h1>
+	<p>If you don't have a PHP server with a MySQL
+		Database, you can download it for free here:
+		http://www.mysql.com</p>
+	<h1>Facts About MySQL Database</h1>
+	<p>
+		MySQL is the de-facto standard database system for web
+		sites with HUGE volumes of both data and end-users (like
+		Facebook, Twitter, and Wikipedia). <br> <br>
+		Another great thing about MySQL is that it can be scaled
+		down to support embedded database applications. <br>
+		<br> Look at http://www.mysql.com/customers/ for an
+		overview of companies using MySQL.
+	</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h1 class="subject">PHP Connect to MySQL</h1>
+	<p>PHP 5 and later can work with a MySQL database
+		using:</p>
+	<ul>
+		<li>MySQLi extension (the "i" stands for improved)</li>
+		<li>PDO (PHP Data Objects)</li>
+	</ul>
+
+
+
+	<p>Earlier versions of PHP used the MySQL extension.
+		However, this extension was deprecated in 2012.</p>
+	<h1>PHP + MySQL Database System</h1>
+	<p>PHP combined with MySQL are cross-platform (you can
+		develop in Windows and serve on a Unix platform)</p>
+	<h1>Should I Use MySQLi or PDO?</h1>
+	<p>
+		If you need a short answer, it would be "Whatever you
+		like".<br> <br> Both MySQLi and PDO have their
+		advantages:<br> <br> PDO will work on 12
+		different database systems, where as MySQLi will only work
+		with MySQL databases.<br> <br> So, if you have
+		to switch your project to use another database, PDO makes
+		the process easy. You only have to change the connection
+		string and a few queries. With MySQLi, you will need to
+		rewrite the entire code - queries included.<br> <br>
+		Both are object-oriented, but MySQLi also offers a
+		procedural API.<br> Both support Prepared Statements.
+		Prepared Statements protect from SQL injection, and are
+		very important for web application security.
+	</p>
+	<h1>MySQL Examples in Both MySQLi and PDO Syntax</h1>
+	<p>In this, and in the following chapters we
+		demonstrate three ways of working with PHP and MySQL:</p>
+	<ul>
+		<li>MySQLi (object-oriented)</li>
+		<li>MySQLi (procedural)</li>
+		<li>PDO</li>
+	</ul>
+	<h1>Open a Connection to MySQL</h1>
+	<p>Before we can access data in the MySQL database, we
+		need to be able to connect to the server:</p>
+	<h2>Example (MySQLi Object-Oriented)</h2>
+	<div class="code">
+
+		&lt;?php<br> $servername = "localhost";<br>
+		$username = "username";<br> $password = "password";<br>
+		<br> // Create connection<br> $conn = new
+		mysqli($servername, $username, $password);<br> <br>
+		// Check connection<br> if ($conn-&gt;connect_error)
+		{<br> die("Connection failed: " .
+		$conn-&gt;connect_error);<br> }<br> echo
+		"Connected successfully";<br> ?&gt;
+	</div>
+	<a class="center" href="practice_sql/sql_01.php">프렉티스01</a>
+	<p class="imp">
+
+		PHP is an amazing and popular language!<br> <br>
+		Note on the object-oriented example above: $connect_error
+		was broken until PHP 5.2.9 and 5.3.0. If you need to
+		ensure compatibility with PHP versions prior to 5.2.9 and
+		5.3.0, use the following code instead:<br> <br>
+		// Check connection<br> if (mysqli_connect_error()) {<br>
+		die("Database connection failed: " .
+		mysqli_connect_error());<br> }<br>
+	</p>
+
+
+	<h2>Example (MySQLi Procedural)</h2>
+	<div class="code">
+
+		&lt;?php<br> $servername = "localhost";<br>
+		$username = "username";<br> $password = "password";<br>
+		<br> // Create connection<br> $conn =
+		mysqli_connect($servername, $username, $password);<br>
+		<br> // Check connection<br> if (!$conn) {<br>
+		die("Connection failed: " . mysqli_connect_error());<br>
+		}<br> echo "Connected successfully";<br> ?&gt;
+	</div>
+	<a class="center" href="practice_sql/sql_02.php">프렉티스02</a>
+
+	<h2>Example (PDO)</h2>
+	<pre class="code">
+&lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e-&gt;getMessage();
+    }
+?&gt; </pre>
+
+	<a class="center" href="practice_sql/sql_03.php">프렉티스03</a>
+	<p class="imp">
+		Notice that in the PDO example above we have also
+		specified a database (myDB). PDO require valid database to
+		connect to. If no database is specified, an exception is
+		thrown.(이건 문제가 있어 보인다. 사실 DB로 접속하지 않더라도 예외가 던져지거나 하지는
+		않는다.) <span class="file"> 여기서는 mydb대신 creator라는
+			데이터베이스를 mysql로 생성하여 접속했으나, 이제는 없어도 접속할 수 있다.</span>
+	</p>
+
+	<p>Tip: A great benefit of PDO is that it has an
+		exception class to handle any problems that may occur in
+		our database queries. If an exception is thrown within the
+		try{ } block, the script stops executing and flows
+		directly to the first catch(){ } block.</p>
+	<h1>Close the Connection</h1>
+	<div class="code">
+		<h1>Example (MySQLi Object-Oriented)</h1>
+		$conn->close();
+	</div>
+	<div class="code">
+		<h1>Example (MySQLi Procedural)</h1>
+		mysqli_close($conn);
+	</div>
+	<div class="code">
+		<h1>Example (PDO)</h1>
+		$conn = null;
+	</div>
+	<h1 class="subject">PHP Create a MySQL Database</h1>
+	<p class="imp">여기서부터는 하나의 코드에 하나의 프렉티스를 만들지 않을 것이다.
+		기본적으로 pdo를 바탕으로 프렉티스를 시작할 것이다. 이유는 한번 실행한 프렉티스를 코드를 바꾸지 않는
+		이상 오류가 날 수 있는 프렉티스가 많아질 것이기 때문이다. 그러나 만들긴 만들것이다.</p>
+	<p>
+		A database consists of one or more tables. <br> <br>
+		You will need special CREATE privileges to create or to
+		delete a MySQL database.
+	</p>
+	<h1>Create a MySQL Database Using MySQLi and PDO</h1>
+	<p>
+		The CREATE DATABASE statement is used to create a database
+		in MySQL. <br> <br> The following examples
+		create a database named "myDB":
+	</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+// Create database
+$sql = "CREATE DATABASE myDB";
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<div class="code imp">
+		Note: When you create a new database, you must only
+		specify the first three arguments to the mysqli object
+		(servername, username and password). <br> <br>
+		Tip: If you have to use a specific port, add an empty
+		string for the database-name argument, like this: new
+		mysqli("localhost", "username", "password", "", port)
+	</div>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create database
+$sql = "CREATE DATABASE myDB";
+if (mysqli_query($conn, $sql)) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<p class="imp">Note: The following PDO example create a
+		database named "myDBPDO":</p>
+	<h2>Example (PDO)</h2>
+
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+    $conn = new PDO("mysql:host=$servername;", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "CREATE DATABASE myDBPDO";
+    // use exec() because no results are returned
+    $conn-&gt;exec($sql);
+    echo "Database created successfully&lt;br&gt;";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<p class="code imp">Tip: A great benefit of PDO is that
+		it has exception class to handle any problems that may
+		occur in our database queries. If an exception is thrown
+		within the try{ } block, the script stops executing and
+		flows directly to the first catch(){ } block. In the catch
+		block above we echo the SQL statement and the generated
+		error message.</p>
+	<a href="practice_sql/sql_04.php" class="center">프렉티스4</a>
+	<a href="practice_sql/sql_04_grant.php" class="center">프렉티스4_grant_to_oratree</a>
+	<div class="code">
+		<span class="imp">$conn = new
+			PDO("mysql:host=$servername;", $username, $password);</span><br>
+		여기서 mysql:host=$servername 부분에서 오류가 계속 걸렸다. 이부분 잘 알아두자. <br>
+		만약 <span class="imp">"mysql:host= $servername;"</span>이라고
+		한다면 오류가 걸린다. 왜냐? host가 "ㅁlocalhost"가 되기 때문이다. 즉 스페이스바
+		때문이다. 따라서 <span class="imp">"mysql:host=$servername"</span>으로
+		하는게 옳다. 이것때문에 2시간 고생했다. <br> "이렇게"따음표로 되어 있는 부분은
+		스페이스바 주의하자.
+	</div>
+	<div class="code">Tip: A great benefit of PDO is that
+		it has exception class to handle any problems that may
+		occur in our database queries. If an exception is thrown
+		within the try{ } block, the script stops executing and
+		flows directly to the first catch(){ } block. In the catch
+		block above we echo the SQL statement and the generated
+		error message.</div>
+	<h1 class="subject">PHP Create MySQL Tables</h1>
+	<p>A database table has its own unique name and
+		consists of columns and rows.</p>
+	<h1>Create a MySQL Table Using MySQLi and PDO</h1>
+	<p>
+		The CREATE TABLE statement is used to create a table in
+		MySQL. <br> <br> We will create a table named
+		"MyGuests", with five columns: "id", "firstname",
+		"lastname", "email" and "reg_date":
+	</p>
+	<pre class="code">CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+) </pre>
+	<p class="impb">Notes on the table above:</p>
+	<p>
+		The data type specifies what type of data the column can
+		hold. For a complete reference of all the available data
+		types, go to our Data Types reference.<br> <br>After
+		the data type, you can specify other optional attributes
+		for each column:
+	</p>
+	<ul>
+		<li>NOT NULL - Each row must contain a value for that
+			column, null values are not allowed</li>
+		<li>DEFAULT value - Set a default value that is added
+			when no other value is passed</li>
+		<li>UNSIGNED - Used for number types, limits the
+			stored data to positive numbers and zero</li>
+		<li>AUTO INCREMENT - MySQL automatically increases
+			the value of the field by 1 each time a new record is
+			added</li>
+		<li>PRIMARY KEY - Used to uniquely identify the rows
+			in a table. The column with PRIMARY KEY setting is often
+			an ID number, and is often used with AUTO_INCREMENT</li>
+	</ul>
+	<p>
+		Each table should have a primary key column (in this case:
+		the "id" column). Its value must be unique for each record
+		in the table.<br> <br>The following examples
+		shows how to create the table in PHP:
+	</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+)";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to create table
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // sql to create table
+    $sql = "CREATE TABLE MyGuests (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP
+    )";
+
+    // use exec() because no results are returned
+    $conn-&gt;exec($sql);
+    echo "Table MyGuests created successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_05.php">프렉티스5</a>
+	<h1 class="subject">PHP Insert Data Into MySQL</h1>
+	<h1>Insert Data Into MySQL Using MySQLi and PDO</h1>
+	<p>
+		After a database and a table have been created, we can
+		start adding data in them. <br> <br> Here are
+		some syntax rules to follow:
+	</p>
+	<ul>
+		<li>The SQL query must be quoted in PHP</li>
+		<li>String values inside the SQL query must be quoted</li>
+		<li>Numeric values must not be quoted</li>
+		<li>The word NULL must not be quoted</li>
+	</ul>
+	<p>The INSERT INTO statement is used to add new records
+		to a MySQL table:</p>
+	<pre class="code">INSERT INTO table_name (column1, column2, column3,...)
+VALUES (value1, value2, value3,...) </pre>
+	<p>
+		To learn more about SQL, please visit our SQL tutorial. <br>
+		<br> In the previous chapter we created an empty
+		table named "MyGuests" with five columns: "id",
+		"firstname", "lastname", "email" and "reg_date". Now, let
+		us fill the table with data.
+	</p>
+	<div class="code imp">Note: If a column is
+		AUTO_INCREMENT (like the "id" column) or TIMESTAMP (like
+		the "reg_date" column), it is no need to be specified in
+		the SQL query; MySQL will automatically add the value.</div>
+	<p>The following examples add a new record to the
+		"MyGuests" table:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')";
+    // use exec() because no results are returned
+    $conn-&gt;exec($sql);
+    echo "New record created successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_06.php">프렉티스6</a>
+	<a href="practice_sql/sql_06_mysqli.php" class="center">프렉티스6_mysqli</a>
+	<h1 class="subject">PHP Get ID of Last Inserted Record</h1>
+	<h1>Get ID of The Last Inserted Record</h1>
+	<p>
+		If we perform an INSERT or UPDATE on a table with an
+		AUTO_INCREMENT field, we can get the ID of the last
+		inserted/updated record immediately.<br> <br>In
+		the table "MyGuests", the "id" column is an AUTO_INCREMENT
+		field:
+	</p>
+	<pre class="code">CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+) </pre>
+
+	<p>The following examples are equal to the examples
+		from the previous page (PHP Insert Data Into MySQL),
+		except that we have added one single line of code to
+		retrieve the ID of the last inserted record. We also echo
+		the last inserted ID:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    $last_id = $conn-&gt;insert_id;
+    echo "New record created successfully. Last inserted ID is: " . $last_id;
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if (mysqli_query($conn, $sql)) {
+    $last_id = mysqli_insert_id($conn);
+    echo "New record created successfully. Last inserted ID is: " . $last_id;
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')";
+    // use exec() because no results are returned
+    $conn-&gt;exec($sql);
+    $last_id = $conn-&gt;lastInsertId();
+    echo "New record created successfully. Last inserted ID is: " . $last_id;
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a href="practice_sql/sql_07.php" class="center">프렉티스7</a>
+
+	<h1 class="subject">PHP Insert Multiple Records Into
+		MySQL</h1>
+	<p>
+		Multiple SQL statements must be executed with the
+		mysqli_multi_query() function. <br> <br> The
+		following examples add three new records to the "MyGuests"
+		table:
+	</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Mary', 'Moe', 'mary@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Julie', 'Dooley', 'julie@example.com')";
+
+if ($conn-&gt;multi_query($sql) === TRUE) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<p class="imp">Note that each SQL statement must be
+		separated by a semicolon.</p>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Mary', 'Moe', 'mary@example.com');";
+$sql .= "INSERT INTO MyGuests (firstname, lastname, email)
+VALUES ('Julie', 'Dooley', 'julie@example.com')";
+
+if (mysqli_multi_query($conn, $sql)) {
+    echo "New records created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<p>The PDO way is a little bit different:</p>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // begin the transaction
+    $conn-&gt;beginTransaction();
+    // our SQL statements
+    $conn-&gt;exec("INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')");
+    $conn-&gt;exec("INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('Mary', 'Moe', 'mary@example.com')");
+    $conn-&gt;exec("INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('Julie', 'Dooley', 'julie@example.com')");
+
+    // commit the transaction
+    $conn-&gt;commit();
+    echo "New records created successfully";
+    }
+catch(PDOException $e)
+    {
+    // roll back the transaction if something failed
+    $conn-&gt;rollback();
+    echo "Error: " . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_08.php">프렉티스8</a>
+	<h1 class="subject">PHP Prepared Statements</h1>
+	<p>Prepared statements are very useful against SQL
+		injections.</p>
+	<h1>Prepared Statements and Bound Parameters</h1>
+	<p>
+		A prepared statement is a feature used to execute the same
+		(or similar) SQL statements repeatedly with high
+		efficiency. <br> <br> Prepared statements
+		basically work like this:
+	</p>
+	<ol>
+		<li>Prepare: An SQL statement template is created and
+			sent to the database. Certain values are left
+			unspecified, called parameters (labeled "?"). Example:
+			INSERT INTO MyGuests VALUES(?, ?, ?)</li>
+		<li>The database parses, compiles, and performs query
+			optimization on the SQL statement template, and stores
+			the result without executing it</li>
+		<li>Execute: At a later time, the application binds
+			the values to the parameters, and the database executes
+			the statement. The application may execute the statement
+			as many times as it wants with different values</li>
+	</ol>
+	<ul>
+		<li>Prepared statements reduces parsing time as the
+			preparation on the query is done only once (although the
+			statement is executed multiple times)</li>
+		<li>Bound parameters minimize bandwidth to the server
+			as you need send only the parameters each time, and not
+			the whole query</li>
+		<li>Prepared statements are very useful against SQL
+			injections, because parameter values, which are
+			transmitted later using a different protocol, need not be
+			correctly escaped. If the original statement template is
+			not derived from external input, SQL injection cannot
+			occur.</li>
+
+	</ul>
+	<h1>Prepared Statements in MySQLi</h1>
+	<p>The following example uses prepared statements and
+		bound parameters in MySQLi:</p>
+	<h2>Example (MySQLi with Prepared Statements)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+// prepare and bind
+$stmt = $conn-&gt;prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
+$stmt-&gt;bind_param("sss", $firstname, $lastname, $email);
+
+// set parameters and execute
+$firstname = "John";
+$lastname = "Doe";
+$email = "john@example.com";
+$stmt-&gt;execute();
+
+$firstname = "Mary";
+$lastname = "Moe";
+$email = "mary@example.com";
+$stmt-&gt;execute();
+
+$firstname = "Julie";
+$lastname = "Dooley";
+$email = "julie@example.com";
+$stmt-&gt;execute();
+
+echo "New records created successfully";
+
+$stmt-&gt;close();
+$conn-&gt;close();
+?&gt; </pre>
+	<p>Code lines to explain from the example above:</p>
+	<div class="code">"INSERT INTO MyGuests (firstname,
+		lastname, email) VALUES (?, ?, ?)"</div>
+	<p>
+		In our SQL, we insert a question mark (?) where we want to
+		substitute in an integer, string, double or blob value. <br>
+		<br> Then, have a look at the bind_param() function:
+	</p>
+	<div class="code">$stmt->bind_param("sss",
+		$firstname, $lastname, $email);</div>
+	<p>
+		This function binds the parameters to the SQL query and
+		tells the database what the parameters are. The "sss"
+		argument lists the types of data that the parameters are.
+		The s character tells mysql that the parameter is a
+		string. <br> <br> The argument may be one of
+		four types:
+	</p>
+	<ul>
+		<li>i - integer</li>
+		<li>d - double</li>
+		<li>s - string</li>
+		<li>b - BLOB</li>
+	</ul>
+	<p>
+		We must have one of these for each parameter. <br> <br>
+		By telling mysql what type of data to expect, we minimize
+		the risk of SQL injections.
+	</p>
+	<div class="code imp">Note: If we want to insert any
+		data from external sources (like user input), it is very
+		important that the data is sanitized and validated.</div>
+	<h1>Prepared Statements in PDO</h1>
+	<p>The following example uses prepared statements and
+		bound parameters in PDO:</p>
+	<h2>Example (PDO with Prepared Statements)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // prepare sql and bind parameters
+    $stmt = $conn-&gt;prepare("INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES (:firstname, :lastname, :email)");
+    $stmt-&gt;bindParam(':firstname', $firstname);
+    $stmt-&gt;bindParam(':lastname', $lastname);
+    $stmt-&gt;bindParam(':email', $email);
+
+    // insert a row
+    $firstname = "John";
+    $lastname = "Doe";
+    $email = "john@example.com";
+    $stmt-&gt;execute();
+
+    // insert another row
+    $firstname = "Mary";
+    $lastname = "Moe";
+    $email = "mary@example.com";
+    $stmt-&gt;execute();
+
+    // insert another row
+    $firstname = "Julie";
+    $lastname = "Dooley";
+    $email = "julie@example.com";
+    $stmt-&gt;execute();
+
+    echo "New records created successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Error: " . $e-&gt;getMessage();
+    }
+$conn = null;
+?&gt; </pre>
+	<a href="practice_sql/sql_09_mysqli.php" class="center">프렉티스9
+		mysqli</a>
+	<a href="practice_sql/sql_09.php" class="center">프렉티스 9
+		PDO</a>
+	<h1 class="subject">PHP Select Data From MySQL</h1>
+	<h1>Select Data From a MySQL Database</h1>
+	<p>The SELECT statement is used to select data from one
+		or more tables:</p>
+	<div class="code">SELECT column_name(s) FROM
+		table_name</div>
+	<p>or we can use the * character to select ALL columns
+		from a table:</p>
+	<div class="code">SELECT * FROM table_name</div>
+	<p>To learn more about SQL, please visit our SQL
+		tutorial.</p>
+	<h1>Select Data With MySQLi</h1>
+	<p>The following example selects the id, firstname and
+		lastname columns from the MyGuests table and displays it
+		on the page:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn-&gt;query($sql);
+
+if ($result-&gt;num_rows &gt; 0) {
+    // output data of each row
+    while($row = $result-&gt;fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "&lt;br&gt;";
+    }
+} else {
+    echo "0 results";
+}
+$conn-&gt;close();
+?&gt; </pre>
+	<a href="practice_sql/sql_10.php" class="center">프렉티스10
+		mysqli</a>
+	<p>
+		mysqli Code lines to explain from the example above: <br>
+		<br> First, we set up an SQL query that selects the
+		id, firstname and lastname columns from the MyGuests
+		table. The next line of code runs the query and puts the
+		resulting data into a variable called $result. <br> <br>
+		Then, the function num_rows() checks if there are more
+		than zero rows returned. <br> <br> If there are
+		more than zero rows returned, the function fetch_assoc()
+		puts all the results into an associative array that we can
+		loop through. The while() loop loops through the result
+		set and outputs the data from the id, firstname and
+		lastname columns. <br> <br> The following
+		example shows the same as the example above, in the MySQLi
+		procedural way:
+	</p>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) &gt; 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "&lt;br&gt;";
+    }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<p>You can also put the result in an HTML table:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "SELECT id, firstname, lastname FROM MyGuests";
+$result = $conn-&gt;query($sql);
+
+if ($result-&gt;num_rows &gt; 0) {
+    echo "&lt;table&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;";
+    // output data of each row
+    while($row = $result-&gt;fetch_assoc()) {
+        echo "&lt;tr&gt;&lt;td&gt;".$row["id"]."&lt;/td&gt;&lt;td&gt;".$row["firstname"]." ".$row["lastname"]."&lt;/td&gt;&lt;/tr&gt;";
+    }
+    echo "&lt;/table&gt;";
+} else {
+    echo "0 results";
+}
+$conn-&gt;close();
+?&gt; </pre>
+	<h1>Select Data With PDO (+ Prepared Statements)</h1>
+	<p>
+		The following example uses prepared statements. <br>
+		<br> It selects the id, firstname and lastname
+		columns from the MyGuests table and displays it in an HTML
+		table:
+	</p>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+echo "&lt;table style='border: solid 1px black;'&gt;";
+echo "&lt;tr&gt;&lt;th&gt;Id&lt;/th&gt;&lt;th&gt;Firstname&lt;/th&gt;&lt;th&gt;Lastname&lt;/th&gt;&lt;/tr&gt;";
+
+class TableRows extends RecursiveIteratorIterator {
+    function __construct($it) {
+        parent::__construct($it, self::LEAVES_ONLY);
+    }
+
+    function current() {
+        return "&lt;td style='width:150px;border:1px solid black;'&gt;" . parent::current(). "&lt;/td&gt;";
+    }
+
+    function beginChildren() {
+        echo "&lt;tr&gt;";
+    }
+
+    function endChildren() {
+        echo "&lt;/tr&gt;" . "\n";
+    }
+}
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn-&gt;prepare("SELECT id, firstname, lastname FROM MyGuests");
+    $stmt-&gt;execute();
+
+    // set the resulting array to associative
+    $result = $stmt-&gt;setFetchMode(PDO::FETCH_ASSOC);
+    foreach(new TableRows(new RecursiveArrayIterator($stmt-&gt;fetchAll())) as $k=&gt;$v) {
+        echo $v;
+    }
+}
+catch(PDOException $e) {
+    echo "Error: " . $e-&gt;getMessage();
+}
+$conn = null;
+echo "&lt;/table&gt;";
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_10_pdo.php">프렉티스10
+		PDO</a>
+	<h1 class="bookmark">PDO:FETCH와 속성이름에 대한 설명</h1>
+	<h2>mysqli</h2>
+	<p>mysqli는 검색해서 배열로 결과를 얻어올때 다음과 같이 한다.</p>
+	<pre class="code">$result = $conn-&gt;query($sql);
+
+if ($result-&gt;num_rows &gt; 0) {
+    // output data of each row
+    while($row = $result-&gt;fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "&lt;br&gt;";
+    }</pre>
+	<p>$result->fetch_assoc()로 불러와서 배열이 된다는 점을 확실히 알아둬라.
+		fetch_all()을 할경우 한번에 불러와진다. 그러나 assoc라는 이름->값 어소시케이트 배열이
+		아닌 그저 1,2,3으로 하는 배열이라는 점을 알아둬라.</p>
+	<h2>pdo</h2>
+	<pre class="code">  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);</pre>
+	<p>$result는 bool이다. True아니면 False이다.<br>FETCH_ASSOC는 배열이고, FETCH_NUM 으로 하면 그냥 숫자 01234 이런식의
+		배열로 나온다.</p>
+	<pre class="code">	while ( $rows = $stmt-&gt;fetch () ) {
+		echo "&lt;tr&gt;&lt;td&gt;" . $rows["id"] . "&lt;/td&gt;&lt;td&gt;" . $rows["firstname"] . "&lt;/td&gt;&lt;td&gt;" . $rows["lastname"] . "&lt;/td&gt;&lt;td&gt;" . $rows["email"] . "&lt;/td&gt;&lt;td&gt;" . $rows["reg_date"] . "&lt;/td&gt;&lt;/tr&gt;";
+	}</pre>
+	<p>$rows = $stmt-&gt;fetch ()로 했을 때, 결과에서 하나를 빼게
+		되며(결과물에서 첫번째 결과가 사라진다.) $rows는 array 즉 배열이 된다. 그리고 이걸
+		echo를 통해서 출력하는 것이다.</p>
+	<pre class="code">echo "&lt;table&gt;&lt;tr&gt;&lt;th&gt;ID&lt;/th&gt;&lt;th&gt;Firstname&lt;/th&gt;&lt;th&gt;Lastname&lt;/th&gt;&lt;th&gt;email&lt;/th&gt;&lt;th&gt;time&lt;/th&gt;&lt;/tr&gt;";
+class tablerows extends RecursiveIteratorIterator {
+	function __construct($it) {
+		parent::__construct ( $it, self::LEAVES_ONLY );
+	}
+	function current() {
+		return "&lt;td&gt;" . parent::current () . "&lt;/td&gt;";
+	}
+	function beginChildren() {
+		echo "&lt;tr&gt;";
+	}
+	function endChildren() {
+		echo "&lt;/tr&gt;";
+	}
+}</pre>
+	<p>이런식으로 제귀적으로 table로 나타날때는 RecursiveIteratorIterator라는
+		클래스를 사용할 수도 있다.</p>
+	<pre class="code">foreach ( new TableRows ( new RecursiveArrayIterator ( $stmt-&gt;fetchAll () ) ) as $k =&gt; $v ) {
+	  echo $v;
+	  }</pre>
+	<p>그리고 이렇게 사용할 수가 있다.</p>
+	<h2>테이블이름과 컬럼이름</h2>
+	<p>이건 확실히 알아두자</p>
+	<div class="code">INFORMATION_SCHEMA.COLUMNS</div>
+	<p>INFOMATION_SCHEMA는 데이터베이스 이름이고, COLUMNS는 그 안의 테이블
+		이름이다.이곳은 테이블이름과 컬럼이름. 컬럼_타입을 확인할 수 있다.</p>
+	<pre class="code">select TABLE_NAME,column_name
+from INFORMATION_SCHEMA.COLUMNS
+where table_name = "myguests";</pre>
+	<p>이렇게 하면 뭐가 나올까? myguests테이블 명과 이 테이블에 나와있는 열 이름이 나온다.</p>
+	<h1 class="subject">PHP Delete Data From MySQL</h1>
+	<h1>Delete Data From a MySQL Table Using MySQLi and
+		PDO</h1>
+	<p>The DELETE statement is used to delete records from
+		a table:</p>
+	<pre class="code">DELETE FROM table_name
+WHERE some_column = some_value </pre>
+	<div class="code imp">Notice the WHERE clause in the
+		DELETE syntax: The WHERE clause specifies which record or
+		records that should be deleted. If you omit the WHERE
+		clause, all records will be deleted!</div>
+	<p>
+		To learn more about SQL, please visit our SQL tutorial. <br>
+		<br> Let's look at the "MyGuests" table:
+	</p>
+	<?php 
+echo "<table><tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>email</th><th>reg_date</th></tr>";
+
+
+require 'sql_info_2.php';
+
+try {
+	
+	$conn = new PDO ( "mysql:host=$host;dbname=$dbname", $id, $password );
+	$conn->setAttribute ( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	$sql = "select * from myguests";
+	$stmt = $conn->prepare ( $sql );
+	$stmt->execute ();
+	
+	$result = $stmt->setFetchMode ( PDO::FETCH_ASSOC );
+	while ( $rows = $stmt->fetch () ) {
+		echo "<tr><td>" . $rows["id"] . "</td><td>" . $rows["firstname"] . "</td><td>" . $rows["lastname"] . "</td><td>" . $rows["email"] . "</td><td>" . $rows["reg_date"] . "</td></tr>";
+	}
+echo "</table>";
+	
+} 
+catch ( PDOException $e ) {
+	echo "Error:" . $e->getMessage ();
+}
+
+
+?>
+	<p>The following examples delete the record with id=12
+		in the "MyGuests" table:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+// sql to delete a record
+$sql = "DELETE FROM MyGuests WHERE id=12";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_11.php">프렉티스11</a>
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// sql to delete a record
+$sql = "DELETE FROM MyGuests WHERE id=3";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // sql to delete a record
+    $sql = "DELETE FROM MyGuests WHERE id=11";
+
+    // use exec() because no results are returned
+    $conn-&gt;exec($sql);
+    echo "Record deleted successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a class="center" href="practice_sql/sql_11_pdo.php">프렉티스11
+		PDO</a>
+	<p>After the record is deleted, the table will look
+		like this:</p>
+	<h1 class="subject">PHP Update Data in MySQL</h1>
+	<h1>Update Data In a MySQL Table Using MySQLi and PDO</h1>
+	<p>The UPDATE statement is used to update existing
+		records in a table:</p>
+	<pre class="code">UPDATE table_name
+SET column1=value, column2=value2,...
+WHERE some_column=some_value</pre>
+	<div class="code imp">Notice the WHERE clause in the
+		UPDATE syntax: The WHERE clause specifies which record or
+		records that should be updated. If you omit the WHERE
+		clause, all records will be updated!</div>
+	<p>
+		To learn more about SQL, please visit our SQL tutorial. <br>
+		<br> Let's look at the "MyGuests" table:
+	</p>
+	<?php 
+echo "<table><tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>email</th><th>reg_date</th></tr>";
+
+try {
+	$stmt->execute ();
+	
+	$result = $stmt->setFetchMode ( PDO::FETCH_ASSOC );
+	while ( $rows = $stmt->fetch () ) {
+		echo "<tr><td>" . $rows["id"] . "</td><td>" . $rows["firstname"] . "</td><td>" . $rows["lastname"] . "</td><td>" . $rows["email"] . "</td><td>" . $rows["reg_date"] . "</td></tr>";
+	}
+echo "</table>";
+	
+} 
+catch ( PDOException $e ) {
+	echo "Error:" . $e->getMessage ();
+}
+
+
+?>
+	<p>The following examples update the record with id=2
+		in the "MyGuests" table:</p>
+	<h2>Example (MySQLi Object-oriented)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn-&gt;connect_error) {
+    die("Connection failed: " . $conn-&gt;connect_error);
+}
+
+$sql = "UPDATE MyGuests SET lastname='NONE' WHERE id=3";
+
+if ($conn-&gt;query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn-&gt;error;
+}
+
+$conn-&gt;close();
+?&gt; </pre>
+	<a href="practice_sql/sql_12.php" class="center">프렉티스12</a>
+
+	<h2>Example (MySQLi Procedural)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?&gt; </pre>
+	<h2>Example (PDO)</h2>
+	<pre class="code"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = "UPDATE MyGuests SET lastname='SEMU' WHERE id=8";
+
+    // Prepare statement
+    $stmt = $conn-&gt;prepare($sql);
+
+    // execute the query
+    $stmt-&gt;execute();
+
+    // echo a message to say the UPDATE succeeded
+    echo $stmt-&gt;rowCount() . " records UPDATED successfully";
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "&lt;br&gt;" . $e-&gt;getMessage();
+    }
+
+$conn = null;
+?&gt; </pre>
+	<a href="practice_sql/sql_12_pdo.php" class="center">프렉티스
+		12 PDO</a>
+	<p>After the record is updated, the table will look
+		like this:</p>
+	<?php
+echo "<table><tr><th>ID</th><th>Firstname</th><th>Lastname</th><th>email</th><th>reg_date</th></tr>";
+
+try {
+	$stmt->execute ();
+	
+	$result = $stmt->setFetchMode ( PDO::FETCH_ASSOC );
+	while ( $rows = $stmt->fetch () ) {
+		echo "<tr><td>" . $rows["id"] . "</td><td>" . $rows["firstname"] . "</td><td>" . $rows["lastname"] . "</td><td>" . $rows["email"] . "</td><td>" . $rows["reg_date"] . "</td></tr>";
+	}
+echo "</table>";
+	
+} 
+catch ( PDOException $e ) {
+	echo "Error:" . $e->getMessage ();
+}
+
+
+
+?>
+	<h2>PDOStatement::rowCount</h2>
+	<p>PDOStatement::rowCount — Returns the number of rows
+		affected by the last SQL statement</p>
+	<div class="code">public int PDOStatement::rowCount (
+		void )</div>
+	<p>
+		PDOStatement::rowCount() returns the number of rows
+		affected by the last DELETE, INSERT, or UPDATE statement
+		executed by the corresponding PDOStatement object. <br>
+		<br> If the last SQL statement executed by the
+		associated PDOStatement was a SELECT statement, some
+		databases may return the number of rows returned by that
+		statement. However, this behaviour is not guaranteed for
+		all databases and should not be relied on for portable
+		applications.
+	</p>
+
+	<h1 class="subject">PHP Limit Data Selections From
+		MySQL</h1>
+	<h1>Limit Data Selections From a MySQL Database</h1>
+	<p>
+		MySQL provides a LIMIT clause that is used to specify the
+		number of records to return. <br> <br> The LIMIT
+		clause makes it easy to code multi page results or
+		pagination with SQL, and is very useful on large tables.
+		Returning a large number of records can impact on
+		performance. <br> <br> Assume we wish to select
+		all records from 1 - 30 (inclusive) from a table called
+		"Orders". The SQL query would then look like this:
+	</p>
+	<div class="code">$sql = "SELECT * FROM Orders LIMIT
+		30";</div>
+	<p>
+		When the SQL query above is run, it will return the first
+		30 records. <br> What if we want to select records 16
+		- 25 (inclusive)? <br> Mysql also provides a way to
+		handle this: by using OFFSET. <br> The SQL query
+		below says "return only 10 records, start on record 16
+		(OFFSET 15)":
+	</p>
+	<div class="code">$sql = "SELECT * FROM Orders LIMIT
+		10 OFFSET 15";</div>
+	<p>You could also use a shorter syntax to achieve the
+		same result:</p>
+	<div class="code">$sql = "SELECT * FROM Orders LIMIT
+		15, 10";</div>
+	<p>Notice that the numbers are reversed when you use a
+		comma.</p>
+
+	<footer>PHP_SQL END</footer>
+	<aside>
+		<a href="#index_subject">위로</a>
+	</aside>
+	<?php
+	 
+	$conn=null;
+	
+	?>
+
+</body>
+</html>

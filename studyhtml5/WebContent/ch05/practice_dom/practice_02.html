@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p>Hello World!</p>
+
+	<p>The DOM is very useful.</p>
+	<p>
+		This example demonstrates the <b>getElementsByTagName</b>
+		method
+	</p>
+
+	<p id="demo"></p>
+
+	<script>
+        var x = document.getElementsByTagName("p");
+                document.getElementById("demo").innerHTML = 'The First paragraph (index 0) is: '
+                        + x[0].innerHTML;
+                
+    </script>
+
+
+
+</body>
+</html>

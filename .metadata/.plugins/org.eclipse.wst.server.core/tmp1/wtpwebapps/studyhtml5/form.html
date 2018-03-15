@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+<body>
+
+	<h1>TCT 회원가입신청서</h1>
+	<form method="get" action="http://hungje.miree.com/join4.php"
+		enctype="text/plain">
+		<!-- 폼은 여기에 있어야 한다. 이 주소는 자기자신의 서버 주소로 해야 하는게 좋다. 여기서 php에 대해서 알아보면 된다.  -->
+		<table width="600" border="1">
+			<tr>
+				<th colspan="2">회원가입신청서</th>
+			<tr>
+			<tr>
+				<th width="150">항목</th>
+				<th>입력내용</th>
+			</tr>
+
+			<tr>
+				<td align="center">닉네임</td>
+				<td>&nbsp;&nbsp;<input type="text" maxlength="15" size="30"
+					name="id" value="닉네임 입력하세요"></td>
+
+			</tr>
+
+			<tr>
+				<td align="center">비밀번호</td>
+				<td>&nbsp;&nbsp;<input type="password" maxlength="30" size="30"
+					name="secret_no" value="비밀번호입력하세요"></td>
+			</tr>
+			<tr>
+				<td align="center">확인</td>
+				<td>&nbsp;&nbsp;<input type="password" maxlength="30" size="30"
+					name="secret_no"></td>
+			</tr>
+			<tr>
+
+				<td align="center">이름</td>
+				<td>&nbsp;&nbsp;<input type="text" maxlength="5" size="8"
+					name="Kor_name" value="이름입력">
+				</td>
+			</tr>
+
+			<td align="center">메일</td>
+			<td>&nbsp;&nbsp;<input type="text" maxlength="5" size="8"
+				name="mail_back" value="메일입력">@</input> <input type="text"
+				maxlength="30" size="35" name="mail_after" value="뒷주소 입력">
+			</td>
+			</tr>
+
+			<td align="center">전화번호</td>
+			<td>&nbsp;&nbsp;<input type="text" maxlength="11" size="14"
+				name="phone_number"
+				onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" value="-없이 입력">
+			</td>
+			</tr>
+
+
+			<!-------------------------------------------------------------
+<tr>
+<td>성별</td>
+<td>&nbsp;&nbsp;남자<input type="radio" maxlength ="5" name = "gender" value="male">&nbsp;&nbsp;여자<input type="radio" maxlength ="8" name = "gender" value="female" checked="checked"></td>
+</tr>
+
+
+
+
+
+
+
+<tr>
+
+<th colspan="2">여기서 중요한건 name을 한 그룹으로 묶어야 한다는 것.</th> 
+</tr>
+
+<tr>
+<td align = "center">성별</td>
+<td>&nbsp;&nbsp;남자<input type="radio" maxlength ="8" name = "gender1" value="male">&nbsp;&nbsp;여자<input type="radio" maxlength ="8" name = "gender" value="female" ></td>
+</tr>
+
+<tr>
+<th colspan="2">안그러면 위와 같이 됨.(둘다 선택됨)</th> 
+</tr>
+------------------------------------------------------------>
+
+			<tr>
+				<td align="center">WPI</td>
+				<td>&nbsp; &nbsp; 리얼리스트<input type="radio" maxlength="8"
+					name="wpi" value="realist"> &nbsp; &nbsp; 로맨티스트<input
+					type="radio" maxlength="8" name="wpi" value="romantist">
+					&nbsp; &nbsp; 휴머니스트<input type="radio" maxlength="8" name="wpi"
+					value="humanist"> <br> &nbsp; &nbsp; 아이디얼리스트<input
+					type="radio" maxlength="8" name="wpi" value="idealist">
+					&nbsp; &nbsp; 에이젼트<input type="radio" maxlength="8" name="wpi"
+					value="agent"></td>
+			</tr>
+
+
+
+
+
+
+			<tr>
+				<td align="center">선호하는 저작물</td>
+				<td>&nbsp; &nbsp; 영화<input type="radio" maxlength="4"
+					name="prefer" value="movie"> &nbsp; &nbsp; 게임<input
+					type="radio" maxlength="4" name="prefer" value="game">
+					&nbsp; &nbsp; 음악<input type="radio" maxlength="4" name="prefer"
+					value="music"> &nbsp; &nbsp; 공연<input type="radio"
+					maxlength="4" name="prefer" value="concert"> <br>
+					&nbsp; &nbsp; 다큐멘터리<input type="radio" maxlength="4" name="prefer"
+					value="documentary"> &nbsp; &nbsp; 학술<input
+					type="radio" maxlength="4" name="prefer" value="academic"></td>
+			</tr>
+
+			<tr>
+				<td align="center">선호하는 저작물<br>두번째
+				</td>
+				<td>&nbsp; &nbsp; 영화<input type="radio" maxlength="4"
+					name="prefer_two" value="movie"> &nbsp; &nbsp; 게임<input
+					type="radio" maxlength="4" name="prefer_two" value="game">
+					&nbsp; &nbsp; 음악<input type="radio" maxlength="4" name="prefer_two"
+					value="music"> &nbsp; &nbsp; 공연<input type="radio"
+					maxlength="4" name="prefer_two" value="concert"> <br>
+					&nbsp; &nbsp; 다큐멘터리<input type="radio" maxlength="4"
+					name="prefer_two" value="documentary"> &nbsp; &nbsp;
+					학술<input type="radio" maxlength="4" name="prefer_two"
+					value="academic"></td>
+			</tr>
+
+
+			<tr>
+				<td align="center">선호하는 저작물<br>세번째
+				</td>
+				<td>&nbsp; &nbsp; 영화<input type="radio" maxlength="4"
+					name="prefer_three" value="movie"> &nbsp; &nbsp; 게임<input
+					type="radio" maxlength="4" name="prefer_three" value="game">
+					&nbsp; &nbsp; 음악<input type="radio" maxlength="4"
+					name="prefer_three" value="music"> &nbsp; &nbsp; 공연<input
+					type="radio" maxlength="4" name="prefer_three" value="concert">
+					<br> &nbsp; &nbsp; 다큐멘터리<input type="radio" maxlength="4"
+					name="prefer_three" value="documentary"> &nbsp;
+					&nbsp; 학술<input type="radio" maxlength="4" name="prefer_three"
+					value="academic"></td>
+			</tr>
+
+
+
+			<tr>
+				<td align="center">메일로 받아 보고<br> 싶은 정보
+				</td>
+				<td>&nbsp;&nbsp;새로운 평가<input type="checkbox" maxlength="8"
+					name="new_info" value="ok">&nbsp;&nbsp; 신뢰평가<input
+					type="checkbox" maxlength="8" name="important_eveluation"
+					value="ok"> &nbsp;&nbsp; 새로운 콘텐츠<input
+					type="checkbox" maxlength="8" name="new_con" value="ok">&nbsp;&nbsp;공지사항<input
+					type="checkbox" maxlength="8" name="official_announcement"
+					value="ok">
+				</td>
+			</tr>
+
+			<tr>
+				<td align="center">프로필 사진 첨부</td>
+				<td>&nbsp;&nbsp;파일첨부<input type="file" name="photo">
+				</td>
+			</tr>
+
+			<tr>
+				<td align="center">직업</td>
+				<td>&nbsp; <select name="degree">
+						<option value="1학년">학생</option>
+						<option value="2학년" selected>직장인</option>
+						<option value="3학년">프리랜서</option>
+						<option value="4학년">공무원</option>
+						<option value="졸업생">의사</option>
+						<option value="졸업생">CEO</option>
+				</select>
+				</td>
+			</tr>
+
+
+			<td align="center">자기소개</td>
+			<td>&nbsp; <textarea name="greeting" rows="5" cols="50">
+간단한 자기소개
+</textarea>
+			</td>
+			</tr>
+
+			<tr>
+				<td align="center">회원가입 기준 영상</td>
+				<td><video width="480" height="270" controls="controls">
+						<source src="media/movie.mp4"></td>
+			</tr>
+
+			<tr>
+				<td align="center">위영상에<br>동의하십니까?
+				</td>
+				<td>&nbsp; &nbsp; 네 <input type="radio" maxlength="8"
+					name="opinion" value="yes"> &nbsp; &nbsp; 아니오<input
+					type="radio" maxlength="8" name="opinion" value="no">
+				</td>
+			</tr>
+
+			<td align="center">의견</td>
+			<td>&nbsp; <textarea name="greeting" rows="5" cols="50">
+주관적 의견
+</textarea>
+			</td>
+			</tr>
+
+			<tr>
+				<td align="center">다음 침공은 어디</td>
+				<td>
+					 <img src ="images/next_invansion.jpg" width = "480">
+				</td>
+			</tr>
+
+			<tr>
+				<td align="center">위 영화를<br>보셨습니까?
+				</td>
+				<td>&nbsp; &nbsp; 네 <input type="radio" maxlength="8"
+					name="are_u_see" value="yes"> &nbsp; &nbsp; 아니오<input
+					type="radio" maxlength="8" name="are_u_see" value="no">
+				</td>
+			</tr>
+
+
+			<!--
+<tr>
+<td>가입일</td>
+<td><input id="statedate"</td>
+</tr>
+-->
+
+
+
+
+		</table>
+
+
+		<hr>
+		<p>
+			<input type="hidden" name="where" value="b211">
+		</p>
+		<table width="600">
+			<tr>
+				<td><input type="submit" value="완료"></td>
+				<td width="50">&nbsp;</td>
+				<td><input type="reset" value="취소"></td>
+				<!-- 취소 왜 안되냐? -->
+
+			</tr>
+		</table>
+
+	</form>
+	
+
+
+</body>
+</head>
+
+
+</html>
+
+<!------------------------------이렇게 주석임.
+html은 특별한 기본값
+
+인덱스라는 페이지가 가장 먼저 뜨는 기본값을 말한다.
+
+만약 index.asp라고 작성했을때,여하튼index가 첫화면
+
+첫번쨰 <!독타입 이런게 html5타입이다.
+
+시멘틱웹구현. 의미있는 웹구현.
+
+h1~h6까지는 의미를 부여해야함
+
+헤드라인이라는 의미를 말한다는것.
+
+글씨를 작고 크게 하는게 아님.
+
+h1은 하나만 있는게 좋다.
+
+<p></p>
+내용을적기
+
+
+
+
+주석은 길게해야한다. 
+그래서 눈에 잘띄게 해야 한다는것.
+
+<p>는 문단을 새로 정하는것
+<br>은 라인을 하나 넘기기 braking line
+스페이스바는 하나밖에 허용안하는데, 이걸 언락하는 방법.&nbsp;
+
+<h3><h3>의 의미</h3>
+이렇게하면 엿같이나옴.
+<h3>&lt;h3&gt;의 의미</h3>
+ 그런데 이렇게하면됨.
+
+<hr>
+라인하나를 추가하는것.
+
+<p> 예 : <a href="..\HTML\second.html">상대주소 두번째페이지로 이동</a></p>
+현재폴더보다 상위폴더로 가서 거기서 html폴더의 세컨드 html로 드감
+<p> 예 : <a href="..\HTML\second.html">상대주소 두번째페이지로 이동</a></p>
+현재더에서 세컨드html로 드감.
+
+-------------------------->

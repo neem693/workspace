@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+@media screen {
+	section{
+	text-align: center;
+	}
+	article {
+		display: inline-block;
+		box-shadow: 5px 5px 5px gray, -5px -5px 5px lightgray;
+	}
+	article img{
+	width: 500px;
+	}
+	.img_name{
+	padding: 10px 0px;
+	}
+}

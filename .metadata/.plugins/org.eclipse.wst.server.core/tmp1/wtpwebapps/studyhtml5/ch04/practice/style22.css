@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+
+
+/*#goty{
+	width: 25%;
+	curosr: pointer;
+}
+#goty:hover{
+
+	
+}*/
+
+
+#img1{
+	width: 140px;
+	height: 190px;
+	cursor: pointer; /*마우스 포인터가 손가락 모양*/
+	transition: 0.2s;
+}
+
+#img1:hover{
+	box-shadow: 5px 5px 5px black;
+}
+
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.9);
+}
+
+.modalcontent{
+	display: block;
+	margin: auto;
+	width: 70%;
+	max-width: 480px;
+	
+}
+
+.caption{
+	display: block;
+	margin: auto;
+	width: 70%;
+	max-width: 480px;
+	text-align: center;
+	color: lightgray;
+	padding: 10px 0;
+	height: 150px;
+}
+
+
+
+.closebutton{
+	position: absolute;
+	top: 5px;
+	left: 35px;
+	color: #f0f0f0;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	
+}
+
+.closebutton:hover, .closebutton:focus{
+	color: gray;
+	cursor: pointer;
+}
+
+/*대화상자의 이미지와 설명글이 화면에 표시될때: 에니메이션효과 추가*/
+/*추가된 에니메이션 효과: 이미지가 앞으로 튀어나오듯이 표시*/
+
+.modalcontent, .caption{
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.5s;
+	animation-name: zoom;
+	animation-duration: 0.5s;
+}
+
+@-webkit-keyframes zoom{/* IE,크롬,사파리*/
+
+	from{transform:scale(0.1)}
+	to {transform: scale(1)}
+	
+}
+
+@-moz-keyframes zoom{/* 파폭*/
+
+	from{transform:scale(0.1)}
+	to {transform: scale(1)}
+	
+}
+
+@keyframes zoom{
+	from{transform:scale(0.1)}
+	to{transform: scale(1)}
+}

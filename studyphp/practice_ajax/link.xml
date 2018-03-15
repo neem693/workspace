@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pages>
+	<link>
+		<title>HTML</title>
+		<url>http://localhost/html</url>
+	</link>
+	<link>
+		<title>CSS</title>
+		<url>http://localhost/css</url>
+	</link>
+	<link>
+		<title>javascript</title>
+		<url>http://localhost/javascript</url>
+	</link>
+	<link>
+		<title>jquery</title>
+		<url>http://localhost/jquery</url>
+	</link>
+	<link>
+		<title>canvas</title>
+		<url>http://localhost/canvas</url>
+	</link>
+	<link>
+		<title>php</title>
+		<url>http://localhost/php</url>
+	</link>
+</pages>

@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+
+div {
+	background: url(../../images/witcher_3.jpg) right bottom no-repeat,
+		url(../../images/boder.jpg) left top repeat;
+		height: 300px;
+}

@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+
+p{
+	margin: 12px 12px 12px 12px;
+	padding: 5px 5px 5px 5px;
+	border: dashed 2px black;
+}

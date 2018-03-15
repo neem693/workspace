@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css25.css">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>냠냠냠</title>
+</head>
+<body>
+
+	<p class="center">display: block; margin: 0 auto;</p>
+
+	<div class="oh"></div>
+	<br>
+	<div class="oh"></div>
+	<br>
+	<p class="center">display: inline-block; 밖 div는 center</p>
+	<div class="center">
+		<div class="oh1"></div>
+		<div class="oh1"></div>
+	</div>
+
+	<p class="center">display: inline-block; margin: 0 10%;
+		밖 div는 center</p>
+	<div class="center">
+		<div class="oh2"></div>
+		<div class="oh2"></div>
+	</div>
+
+	<p class="center">
+		box-sizing:borderbox먹이고 display: inline-block; div 안에
+		width 30%와 70% 이다.<br> ※중요한점은 inline-block은 코드 정렬 따위로
+		스페이스바(띄어쓰기)가 어쩔 수 없이 먹혀질 수도 있다. 따라서 중간에 공간이 있다. 결국 이 공간으로
+		인해 회색 box width를 69%로 만들었다.그렇지 않으면 회색이 밑으로 밀려난다.
+	</p>
+	<div>
+		<div class="oh3">30%</div>
+		<div class="oh3_plus">69%</div>
+	</div>
+
+	<p class="center">
+		box-sizing:borderbox먹이고 float: left; div 안에 width 30%와 70%<br>
+		※중요한점은 float: left는 중력이 바뀌는 것으로 인해 다른 것과는 다르게 좀 혼란스럽게
+		전개된다. 그러나 border box를 먹이고 float left는 겁나게 깔끔하게 전개된다. 코드
+		정렬에도 상관없이..
+	</p>
+	<div>
+		<div class="oh4">30%</div>
+		<div class="oh4_plus">70%</div>
+	</div>
+	<p class="center">
+		box-sizing:borderbox먹이고 float: left; 2000px div 안에 width 30%와 70%<br>
+	</p>
+	<div class="center_px">
+		<div class="oh4">30%</div>
+		<div class="oh4_plus">70%</div>
+	</div>
+
+
+</body>
+</html>

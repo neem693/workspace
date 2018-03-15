@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<title>form</title>
+</head>
+<body style="height: 7501px;">
+
+	<h1>
+		&lt;form&gt;와 &lt;/form&gt;사이에 위치하는 태그<br>
+	</h1>
+	<h2>input text</h2>
+	<p>
+		모든 폼 태그는 원칙적으로 &lt;form&gt; 과 &lt;/form&gt; 사이에 위치한다. Ajax 기능을 사용하는 경우
+		등의 프로그램을 코딩하는 방법에 따라서 &lt;form&gt; 태그를 생략해도 된다.<br>레이블이 없는
+		&lt;input&gt; , &lt;select&gt;와 같은 폼 태그에는 &lt;label&gt;태그를 붙여서 작성한다.
+	<table border="1" width="200" style="width: 291px;">
+		<tr>
+			<td>&lt;label for = &quot;name&quot;&gt;이름&lt;/label&gt;<br>&lt;input
+				type = &quot;text&quot; id = &quot;name&quot;/&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<h2>fieldset 태그 사용</h2>
+	<table border="1" width="200" style="width: 479px;">
+		<tr>
+			<td>&lt;fieldset&gt;<br>&lt;legend&gt;취미&lt;/legend&gt;<br>&lt;input
+				type = &quot;checkbox&quot; name =&quot;h1&quot; id =
+				&quot;h1&quot;/&gt; <br>&lt;/fieldset&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<h2>HTML 5에서 웹 폼 구성 예시</h2>
+	<h3>form태그를 사용해서 웹 폼을 구성할 경우</h3>
+	<p>
+		&lt;div&gt;태그 등의 영역을 나누는 태그로 싸준 후 &lt;button&gt; 태그등을 사용해서 폼에 입력한 내용을
+		전달할 페이지로 넘겨준다. <br>이때 자바스크립트에서 Ajax코드 등을 기술해서 처리해서 사용한다.
+		&lt;form&gt; 태그에 action 속성을 쓰지 않고 구성해도 된다.
+	</p>
+	<table border="1" width="200" style="width: 479px;">
+		<tr>
+			<td>......... <br>&lt;/fieldset&gt; <br>&lt;input type
+				= &quot;submit&quot; value = &quot;전송&quot;&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<h3>form태그를 사용하지 않을 경우</h3>
+	<br>
+	<table border="1" width="200" style="width: 621px;">
+		<tr>
+			<td>&lt;script&gt;<br>$(document).ready(function(){<br>$(&quot;button&quot;).click(function()//페이지
+				이동 기술});<br>});<br>&lt;/script&gt;<br> <br> <br>&lt;div&gt;<br>
+				<br>......... <br>&lt;/fieldset&gt; <br>&lt;button&gt;전송&lt;/button&gt;<br>&lt;/div&gt;
+			</td>
+		</tr>
+	</table>
+
+	<h3>form 태그 웹포 영역 설정</h3>
+	<p>
+		html에서 폼은 사용자 입력을 받기 위해서 사용하며 폼은 &lt;form&gt;태그를 사용해서 정의한다.<br>&lt;form&gt;태그를
+		정의할 때 속성을 사용할 수 있다. 예를 들어 name 속성은 폼에 일므을 부여해서 폼을 구별할 때 사용하며,
+		action속성은 사용자가 입력한 값을 처리할 페이지명을 값으로 갖는다. 사용자가 입력한 값은 주로 DB에 저장되기 때문에
+		처리할 페이지 명을 값으로 주로 DB에 저장되기 떄문에 처리할 페이지는 jsp, asp, php와 같은 서버사이드 스크립트를
+		쓴다. 처리할 페이지가 서버사이트 스크립트여서 서버에서 처리되기 때문에 입력한 값을 서버로 제출한다고 표현 할 수 있다.<br>
+	<table border="1" width="200" style="width: 621px;">
+		<tr>
+			<td>&lt;form name = &quot;aForm&quot; action =
+				&quot;a.jsp&quot;&gt;<br>웹폼 태그 나열<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>대충 어떤 속성들이 있는지 알자.
+	<br>
+	<br>
+	<h4>&lt;form 태그 속성&gt;</h4>
+	<br>
+	<br>accept-charset : 폼의 캐릭터 셋을 지정
+	<br>action : 폼에 입력된 값을 처리할 페이지의 url을지정한다.
+	<br>autocomplete : html5 에서 추가된 속성으로 폼에 입력 값을 자동 완성할지를 지정
+	<br>enctype: 폼에 입력된 값을 처리 페이지로 넘길 때 인코팅 방식을 지정한다.
+	<br>method: 폼에 입력된 값을 처리페이지로 넘길 때 HTTP방식을 지정한다.
+	<br>name: 폼의 이름을 지정한다.
+	<br>novalidate: html5 에서 추가된 속성으로 폼에 입력된 값을 처리 페이지로 넘길 때 입증된 데이터가
+	아니라는 것을 지정한다.
+	<br>target: action속성에 있는 처리페이지의 타깃을 지정한다.
+	<br>
+	<br>
+	<br>웹폼 태그들을 사용하여, 사용자 입력을 묶어서 처리한다.
+	<h4>웹 폼 태그의 종류</h4>
+	input: 텍스트 필드, 체크박스, 라디오 버튼등을 만들 때 사용
+	<br>select: 콤보 박스를 만들 때 사용
+	<br>textarea: 여러줄을 입력하는 입력 필드인 텍스트 에리어를 만들 때 사용
+	<br>button: 버튼을 만들 때 사용
+	<br>datalist: 텍스트 필드에 입력할 값의 목록인 데이터 리스트를 만들 때 사용
+	<br>keygen: 키젠은 보안키를 만들 때 사용
+	<br>output: 수학적 계산 결과를 표시할 떄 아웃풋을 사용
+	<br>
+	<br>
+	<br>
+	<h2>&lt;input&gt; 태그 속성 - 아이디</h2>
+
+	<table border="1" width="800" align="center">
+		<tr>
+			<td>&lt;input&gt;태그 속성</td>
+			<td>값</td>
+			<td>설명</td>
+		</tr>
+		<tr>
+			<td>accept</td>
+			<td>.png .doc 등의 확장자<br>audio/*<br>video/*<br>image/*<br>미디어타입
+			</td>
+			<td>파일 선택기인 &lt;input type=&quot;file&quot;&gt; 에서만 사용하는 속성으로,
+				서버가 받아들일 수 있는 파일의 타입을 지정<br>예) &lt;input type =&quot;file&quot;
+				name=&quot;afile&quot; accept =&quot;image/*&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>autocomplete</td>
+			<td>on<br>off
+			</td>
+			<td>텍스트 필드과 같이 직접 값을 입력하는 웹 폼태그에서 자동완성 기능을 사용할 수 있도록 지정, 자동 완성을
+				지정하려면 autocomplete = &quot;on&quot;, 자동완성을 끌면 autocomplete =
+				&quot;off&quot;로 지정<br>예)&lt;input type = &quot;text&quot;
+				autocomplete = &quot;on&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>autofocus</td>
+			<td>autofocus</td>
+			<td>웹 페이지가 화면에 표시될 때 자동으로 특정 웹 폼 태그에 포커스를 지정, 포커스를 지정할 태그에
+				autofocus를 기술<br>예)&lt;input type = &quot;text&quot;
+				autofocus&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>checked</td>
+			<td>checked</td>
+			<td>체크박스 또는 라디오 버튼에서 선택 항목을 미리 지정할 때 사용, 주요 항목이나 필수 항목등에 사용됨<br>예)&lt;input
+				type =&quot;radio&quot; name =&quot;g&quot; value =&quot;f&quot;
+				checked&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>disabled</td>
+			<td>웹 폼 태그를 사용할 수 없도록 지정<br>예) &lt;input type
+				=&quot;text&quot; disabled&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>데이터 리스트의 id</td>
+			<td>데이터 리스트에서 선택한 항목을 표시<br>예) input list =
+				&quot;m_units&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>max</td>
+			<td>숫자, 날짜</td>
+			<td>숫자 입력&lt;input type =&quot;number&quot;&gt; 나 날짜 입력<br>&lt;input
+				type = &quot;date&quot; 등에서 최댓값을 지정<br>예) &lt;input type =
+				&quot;number&quot; name =&quot;q&quot; min =&quot;1&quot;
+				max=&quot;10&quot;&gt; <br>&lt;input type =&quot;date&quot;
+				name =&quot;birth&quot; max = &quot;2015-12-31&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>maxlength</td>
+			<td>숫자</td>
+			<td>텍스트 필드나 패스워드 필드에서 입력할 문자의 수를 제한하기 위해서 사용. maxlength =
+				&quot;10&quot; 이면 최대 10개의 문자를 입력할 수 있다는 의미임.<br>&lt;input type
+				= &quot;text&quot; maxlength = &quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>min</td>
+			<td>숫자, 날짜</td>
+			<td>숫자 입력이나 날짜 입력등에서 최솟값을 지정한다.<br>예) &lt;input type
+				=&quot;number&quot; name =&quot;q&quot; min = &quot;1&quot;
+				max=&quot;10&quot;<br>&lt;input type = &quot;date&quot; name =
+				&quot;birth&quot; min =&quot;2010-01-01&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>multiple</td>
+			<td>multiple</td>
+			<td>1개 이상의 값을 입력 받을 때 사용. 주로 파일 선택기인 &lt;input type
+				=&quot;file&quot;&gt; 에서 여러 파일을 선택할 때 사용<br>&lt;input type =
+				&quot;file&quot; name = &quot;imgs&quot; multiple maxlength =
+				&quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>이름</td>
+			<td>웹 폼 태그의 이름을 지저어<br>&lt;input type = &quot;text&quot;
+				name = &quot;imgs&quot; maxlength = &quot;10&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>pattern</td>
+			<td>정규표현식</td>
+			<td>유효한 값이 입력되도록 정규표현식을 지정. 입력되느느 글자 수를 6자 이상 요구하는 경우
+				pattern=&quot;.{6.}&quot;과 같이 지정할 수 있음<br>&lt;input type =
+				&quot;password&quot; pattern = &quot;.{6.}&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>placeholder</td>
+			<td>힌트</td>
+			<td>텍스트 필드 같이 값을 직접 입력하는 웹 등 태그에 입력 힌트 값을 지정<br>&lt;input
+				type = &quot;text&quot; id=&quot;id&quot; placeholder
+				=&quot;aaa@aaaa.com&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>required</td>
+			<td>required</td>
+			<td>반드시 입력해야 하는 필수 항목을 지정<br>&lt;input type =
+				&quot;text&quot; id = &quot;id&quot; placeholder =
+				&quot;aaa@aaaa.com&quot; required&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>size</td>
+			<td>숫자</td>
+			<td>텍스트 필드 등의 너비 지정<br>&lt;input type = &quot;text&quot;
+				size =&quot;20&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>step</td>
+			<td>숫자</td>
+			<td>숫자 입력 &lt;input type = &quot;number&quot;&gt;에서 입력되는 숫자 간격을
+				지정<br>&lt;input type = &quot;number&quot; name = &quot;q&quot;
+				min = &quot;1&quot; max = &quot;10&quot; step = &quot;1&quot;&gt;
+			</td>
+		</tr>
+		<tr>
+			<td>type</td>
+			<td>button, checkbox, color, date, datetime,
+				datetime-local,email, file, hidden, month, number, password, radio,
+				range, reset, search<br> <br>submit, tel, text, time, url,
+				week
+			</td>
+			<td>&lt;input type = &quot;text&quot;&gt;</td>
+		</tr>
+		<tr>
+			<td>value</td>
+			<td>text</td>
+			<td>웹 폼 태그의 기본 값을 지정<br>&lt;input type = &quot;text&quot;
+				value = &quot;20&quot;&gt;
+			</td>
+		</tr>
+
+	</table>
+
+	<h2>&lt;input&gt; 태그 속성 - 패스워드 및 검색어 패턴 등에 사용되는 글자 나열</h2>
+	<table width="800" border="1" align="center">
+		<tr>
+			<td>문자</td>
+			<td>의미</td>
+		</tr>
+		<tr>
+			<td>/</td>
+			<td>/문자 다음에 나오는 문자를 처리하지 말고, 문자 그대로 표시하라는 의미로 사용한다.<br> 예를
+				들어, /a\*/는 'a*'문자를 매치하라는 의미이다. '*'는 정규표현식 지정 문자가 아니라 단순한 '*'문자로
+				취급하라는 의미이다. 즉, /a\*/는 문자열 'a*dkkfe'에 매치된다.
+			</td>
+		</tr>
+		<tr>
+			<td>$</td>
+			<td>$문자는 $ 앞에 나오는 문자를 문자열의 끝부부닝나 여러 줄의 경우 줄의 마지막 부분에 매치시킨다.<br>예를
+				들어 /k$/는 마지막 문자가 소문자 'k'인 경우 매치되는 것으로, 문자열 'cook'에는 매치되나 'baker'에는
+				매치되지 않는다. 또한 대소문자를 구별하기 때문에 'cook'에는 매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>*</td>
+			<td>*문자는 *문자 앞에 나오는 문자가 0번 이상 나온다는 것을 의미한다.<br>예를 들어 /of*/의
+				경우 소문자 'o'는 반드시 나와야 하고 * 바로 앞에 있는 소문자 'f'는 0번 이상이므로 안나와도 되고 여러번 나와도
+				된다는 의미이다.<br>&quot;of&quot;매치, &quot;off&quot; 매치 ,
+				&quot;odd&quot;도 매치. 그러나 반드시 나와야 하는 'o'가 나오지 않으면 안된다. 따라서 'farm'은
+				매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>+</td>
+			<td>+문자는 + 문자 앞에 나오는 문자가 1번 이상 나온다는 것을 의미한다. 즉, {1.}과 같다. 예를 들어
+				/a+/의 경우 소문자 'a'가 반드시 1번이상 나와야 한다. apple 매치, haaa 매치, doctor는 매치x</td>
+		</tr>
+		<tr>
+			<td>?</td>
+			<td>? 문자는 ?문자 앞에 나오는 문자가 0번 또는 1번 나온다는 것을 의미한다. 즉, 안나올 수도 있고,
+				나오면 1번 나온다는 의미이다.<br>예를 들어 /mo?/는 소문자 'm'은 반드시 나와야 하고, ?바로 앞에
+				있는 소문자 'o'는 안나와도 되고, 나오면 1번 나와야 한다. 즉, 'monk', 'mink'는 매치 되지만,
+				'pilot'는 매치되지 않는다.
+			</td>
+		</tr>
+
+		<tr>
+			<td><b>.</b></td>
+			<td>.(decimal point)는 . 의 위치에 줄바꿈 문자를 제외한 하나의 문자를 매치한다. 예를 들어
+				/.o/은 'o'앞에 반드시 하나의 문자가 나와야 한다. 즉, 'po','oo', 'pot'는 매치되지만 'ot'는
+				매치되지 않는다.</td>
+		</tr>
+		<tr>
+			<td><b>(x)</b></td>
+			<td>그룹화로써 그룹화할 문자를 x위치에 기술한다. x위치에 기술한 문자를 매치하고 후에 참조하기 위해 이 그룹에
+				매치된 문자열을 기억한다. <br>/(full)/은 'full' 과 'full driver'에서 매치되고
+				기억된다. 매치된 부분 문자열을 배열의 elements[1], ....,[n] 또는 미리 정의된 RegExp 객체 속성
+				$1, ..... $9를 사용해서 다시 호출 할 수 있다.
+			</td>
+		</tr>
+		<tr>
+			<td>x|y</td>
+			<td>'x'혹은 'y'의 위치에 기술한 문자를 매치한다. 즉, 들 중의 하나의 문자만 포함해도 된다. <br>예를
+				들어 /bus|taxi/은 문자열 'bus driver'에서는 'bus'가 매치되고 'taxi driver'에서는
+				'taxi'가 매치된다. 또한 'take a bus'와 'take a taxi'도 매치된다.
+			</td>
+		</tr>
+		<tr>
+			<td>{n}</td>
+			<td>{n} 앞의 항목이 정확하게 n번 나온다. 그러나 n번 이상 나와도 n번 나온 시저에서 매치가 되기 때문에
+				가능하다. 이때 n은 횟수로 양의 정수만 올 수 있다.<br>/o{2}/ 소문자 'o'가 두번 나오는 'oo'가
+				반드시 주어진 문자열 나와야 매치가 된다. 'cook' 매치 'coook'매치 comedian 매치가 되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>{n.}</td>
+			<td>{n} 앞의 항목이 정확하게 n번 나온다. 그러나 n번 이상 나와도 n번 나온 시저에서 매치가 되기 때문에
+				가능하다. 이때 n은 횟수로 양의 정수만 올 수 있다.<br>/o{2}/ 소문자 'o'가 두번 이상 나오는
+				'oo'혹은 'ooo..'가 반드시 주어진 문자열에 나와야 매치가 된다. <br>즉, 'cook'과
+				'coook'은 매치
+			</td>
+		</tr>
+		<tr>
+			<td>{n,m}<br></td>
+			<td>{n,m}은 이것 앞의 문자가 n번 이상 m번 이하로 나오면 매치된다. 즉, n은 최소한 나와야 할
+				횟수이고, m은 최대한 나올 수 있는 횟수이다. 그러나 m번 이상 나와도 m번 나온 시점에 매치되기 때문에 가능하다.<br>예를
+				들어 /f{1,4}/로 지정하면 'f'는 1번 이상 4번 이하로 나와야 한다. 즉, 'of','off','offff'는
+				매치 'offffff' 매치<br> 'ffff'가 나온 시점에서 매치가 일어남<br> 'odd'는 매치
+				x
+			</td>
+		</tr>
+		<tr>
+			<td>[xyz]<br></td>
+			<td>[xyz]은 대괄호 안에 있는 문자가 포홤되어 있으면 매치된다. [ab]는 문자열에 'a'또는 'b'가
+				포함되면 매치 된다.하이픈(-)을 써서 [a-z]는 알파벳 소문자가 포함되면 매치된다. 또한 하이픈(-)을 사용해서 포함
+				문자를 표시할 수 있는데, [a-z]는 알파벳 소문자가 포하되면 매치된다.<br> <br>/[abc]/는
+				곧 /[a-c]/라고도 표기할 수 있음, 문자열에 'a','b','c'중 하나의 문자라도 포하되면 매치된다.
+				'apple', 'bag', 'cake'등은 매치, 'pilot'는 매치 x
+			</td>
+		</tr>
+		<tr>
+			<td>[^xyz]<br></td>
+			<td>[^xyz]은 대괄호 ([])안에 문자가 포함되지 않았으면 매치된다. [^ab]는 문자열에 'a' 또는
+				'b' 이외의 문자가 포함되지 않으면 매치됨. 하이픈(-)을 사용해서 포함되지 않아야 할 문자를 표시할 수 있음.
+				[^a-z]는 알파벳 소문자 이외의 문자가 포하되어 있으면 매치 됨.<br>/[^a-c]/ 문자열에 'a',
+				'b', 'c' 이외의 문자가 하나라도 있으면 매치됨. 'farm' 'bag' 'monk' 매치<br>'baa'
+				매치 x<br>
+			</td>
+		</tr>
+		<tr>
+			<td>[\b]<br></td>
+			<td>백스페이스(back space)와 매치된다.<br>예를 들어 /[\b]/는 문자열에 '\b'가
+				있으면 매치된다. <br>즉, 'f\baa' 'faa\b'등은 매치
+			</td>
+		</tr>
+		<tr>
+			<td>\b<br></td>
+			<td>일반 단어 범위에서 공백으로써 매치가 된다. 즉, 문자가 하나라도 있으면 매치된다.<br>예를 들어
+				/\b/의 경우 'a' , '1' , 'abc' 'a a' 모두 매치된다. 그러나 '\b'와 같은 특수문자만 있는 경우
+				매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>\B<br></td>
+			<td>일반 단어 범위가 아닌 \b등과 같은 문자가 아닌 것이 있는 경우 매치된다. <br>예를 들어
+				/\B/의 경우 '\ndm', 'a\bc'는 매치되지만, 'aaa'와 같이 모두 문자로 이루어져 있는 경우 매치가 되지
+				않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>\cX<br></td>
+			<td>\cX는 문자열 안에 위치한 제어문자와 매치된다. 이떄 c는 control의 약자이고 X는 문자이다.<br>\cM은
+				문자열 내에 있는 control-M과 매치된다.<br>예를 들어 /\CJ/는 control-J로 줄바꿈 문자
+				'\n'과 매치된다. 즉, 'a\nc' 매치된다.
+			</td>
+		</tr>
+		<tr>
+			<td>\d<br></td>
+			<td>\d는 숫자와 매치되는 것으로 [0-9]와 같다. 즉, 주어진 문자열에 숫자가 하나라도 있으면 매치된다.<br>예를들어
+				/\d/는 'f','c4y'와 매치
+			</td>
+		</tr>
+		<tr>
+			<td>\D<br></td>
+			<td>\D는 숫자가 아닌 것과 매치되는 것으로 [^0-9]과 같다. 즉, 주어진 문자열에 문자가 하나라도 있으면
+				매치된다.<br>예를 들어 /\D/는 'a112'의 'a'와 매치되며, 'aaa', '13d' 등과도 매치된다.
+				그러나 숫자로만 이루어진 '123'과는 매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>\f<br></td>
+			<td>폼피드(form-feed)와 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\n<br></td>
+			<td>라인피드(linefedd)와 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\r<br></td>
+			<td>캐리지 리턴(carriage return)과 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\s<br></td>
+			<td>\s는 하나의 공백 문자(white space character)와 매치되는데, 여기에 공백, 탭, 폼피드,
+				라인 피드가 포함된다. 즉\s는 [\f\n\r\f\v]와 같다.<br>예를 들어 /\s/는 'ab c'와
+				매치된다.
+			</td>
+		</tr>
+		<tr>
+			<td>\S<br></td>
+			<td>\S는 하나의 공백 문자가 아닌 하나의 문자와 매치됨. \S는 [^\f\n\r\t\v]과 같다.<br>예를
+				들어 /\S/는 'a b', ' f'등과 같이 공백 문자가 아닌 문자가 하나라도 있는 경우 매치가 되나 ' '과 같이
+				공백만으로 이루어져 있는 문자열과는 매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>\t<br></td>
+			<td>탭(tab)과 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\v<br></td>
+			<td>수직 탭(vertical tab)과 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\w<br></td>
+			<td>\w은 어떤 알파벳 및 숫자(alphanumeric)와도 매치가 되는 것으로 [A-Za-z0-9_]와 같다.
+				예를 들어 /\w/은 'abc', '1de', '123', '$10,000', 'a\b' 등과 매치된다. 즉, 알파벳 및
+				숫자가 하나라도 있으면 매치된다. 그러나 '$$'등과 같이 알파벳 및 숫자가 아닌 것으로만 이루어진 경우에는 매치되지
+				않는다.</td>
+		</tr>
+		<tr>
+			<td>\W<br></td>
+			<td>\W은 어떤 알파벳 및 숫자(alphanumeric)가 아닌 것과 매치가 되는 것으로
+				[^A-Za-z0-9_]과 같다.<br>예를 들어 /\W/는 '15%' 에서 '%'와 매치되며, '$10',
+				'12.7'등과도 매치된다. 즉, 알파벳 및 숫자가 아닌 것이 하나라도 있으면 매치된다. 그러나 모두 알파벳 및 숫자로만
+				이루어진 '1a'는 매치되지 않는다.
+			</td>
+		</tr>
+		<tr>
+			<td>\n<br></td>
+			<td>\n에서 n에서 양의 정수값이 들어가며, 그룹번호 n의 바로 앞에 지정한 문자를 사용해서 매치를 수행한다.
+				그룹은 괄호를 사용해서 한다. 예를 들어 /a(,)b\1/은 문자열 내에 'a,b,'를 포함하는 경우 매치됨. 즉,
+				'a,b,c,d'는 매치됨</td>
+		</tr>
+		<tr>
+			<td>\0<br></td>
+			<td>\w은 어떤 알파벳 및 숫자(alphanumeric)와도 매치가 되는 것으로 [A-Za-z0-9_]와 같다.
+				예를 들어 /\w/은 'abc', '1de', '123', '$10,000', 'a\b' 등과 매치된다. 즉, 알파벳 및
+				숫자가 하나라도 있으면 매치된다. 그러나 '$$'등과 같이 알파벳 및 숫자가 아닌 것으로만 이루어진 경우에는 매치되지
+				않는다.</td>
+		</tr>
+		<tr>
+			<td>\w<br></td>
+			<td>\w은 어떤 알파벳 및 숫자(alphanumeric)와도 매치가 되는 것으로 [A-Za-z0-9_]와 같다.
+				예를 들어 /\w/은 'abc', '1de', '123', '$10,000', 'a\b' 등과 매치된다. 즉, 알파벳 및
+				숫자가 하나라도 있으면 매치된다. 그러나 '$$'등과 같이 알파벳 및 숫자가 아닌 것으로만 이루어진 경우에는 매치되지
+				않는다.</td>
+		</tr>
+		<tr>
+			<td>\n<br></td>
+			<td>\n에서 n에는 양의 정수값이 들어가며, 그룹번호 n의 바로 앞에 지정한 문자를 사용해서 매치를 수행한다.
+				그룹은 괄호를 사용해서 한다. 예를 들어 /a(,)b\1/은 문자열 내에 'a,b,'를 포함하는 경우 매치가 된다. 즉,
+				'a,b,c,d'는 매치 된다.</td>
+		</tr>
+		<tr>
+			<td>\0<br></td>
+			<td>널(NULL)문자와 매치된다.</td>
+		</tr>
+		<tr>
+			<td>\xhh<br></td>
+			<td>2개의 16진수(hexadecimal digits) 코드에 해당하는 라틴문자와 매치된다. 이때 hh는
+				16진수로 '0A', 'FF'등과 같이 쓸 수 있다.<br>예를 들어 /\x0A/은 줄바꿈을 의미하는 '\n'과
+				같은 값으로 주어진 문자열에 '\n'과 같은 값으로 주어진 문자열에 '\n'을 포함하면 매치된다. 즉,
+				'aaa\nddd'는 매치된다.
+			</td>
+		</tr>
+
+		<tr>
+			<td>\uhhhh<br></td>
+			<td>4개의 16진수(hexadecimal digits)코드에 해당하는 유니코드 문자와 매치된다. 이때 hhhh는
+				16진수로 '000A', 'F0F1'등과 같이 쓸 수 있다.<br>예를 들어 /\u0041/은 대문자 'A'와
+				같은 값으로 주어진 무자열에 'A'을 포함하면 매치된다.<br>즉, 'aAff'는 매치된다.
+			</td>
+		</tr>
+
+
+
+
+
+
+	</table>
+
+	<h2>체크박스</h2>
+
+
+	<p>태그는 0개 이상의 항목을 선택해서 여러 값을 입력받을 수 있는 수 있는 체크박스를 만들 때 사용한다.</p>
+
+	<table width="500px" align="center" border="1">
+		<tr>
+			<td>&lt;form&gt;<br>&lt;input type = &quot;checkbox&quot;
+				name = &quot;h1&quot; id = &quot;h1&quot;/&gt;<br>&lt;label for
+				= &quot;h1&quot;&gt; 낮잠&lt;/label&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+
+	<p>
+		체크박스가 여러 항목을 갖는 경우에는 &lt;fieldset&gt; 태그를 사용해서 그룹화 한다.<br>
+	<table width="500px" align="center" border="1'">
+		<tr>
+			<td>&lt;form&gt;<br>&lt;fieldset&gt;<br>&lt;legend&gt;취미&lt;/legend&gt;<br>&lt;input
+				type = &quot;checkbox&quot; name = &quot;h1&quot; id =
+				&quot;h1&quot; value = &quot;al&quot;/&gt;<br>&lt;label for =
+				&quot;h1&quot;&gt; 낮잠&lt;/label&gt;<br>&lt;input type =
+				&quot;checkbox&quot; name = &quot;h1&quot; id = &quot;h1&quot; value
+				= &quot;a2&quot;/&gt;<br>&lt;label for = &quot;h1&quot;&gt;
+				TV시청&lt;/label&gt;<br>&lt;input type = &quot;checkbox&quot;
+				name = &quot;h1&quot; id = &quot;h1&quot; value =
+				&quot;a3&quot;/&gt;<br>&lt;label for =
+				&quot;h1&quot;&gt;만화보기&lt;/label&gt;<br>&lt;/fieldset&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+
+	</table>
+	<p>미리 체그해서 체크박스가 표시되게 할 수도 있다.</p>
+	<table width="500px" align="center" border="1">
+		<tr>
+			<td>&lt;form&gt;<br>&lt;input type = &quot;checkbox&quot;
+				name = &quot;h1&quot; id = &quot;h1&quot; checked /&gt;<br>&lt;label
+				for = &quot;h1&quot;&gt; 낮잠&lt;/label&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+
+	<h2>라디오 버튼</h2>
+
+	여기서 value값은 서로 달라야지 해당 값에 대해서 추가할 수 있다.
+	<br>&lt;input type = &quot;radio&quot;&gt; 태그는 여러 항목 중 반드시 1개의 값을
+	선택할 수 있는 라디오 버튼을 만들 때 사용한다. 반드시 1개의 항목이 선택되어야 하기 때문에 항목 중 1개는 반드시
+	checked를 사용해서 만든다.
+	<br>
+	<table border="1" width="600" align="center">
+		<tr>
+			<td>&lt;form&gt;<br>&lt;input type = &quot;radio&quot; name
+				= &quot;g&quot; id = &quot;g&quot; value = &quot;m&quot; checked
+				/&gt;<br>&lt;label for = &quot;g&quot;&gt; 남&lt;/label&gt;<br>&lt;input
+				type = &quot;radio&quot; name = &quot;g&quot; id = &quot;g&quot;
+				value = &quot;f&quot; checked /&gt;<br>&lt;label for =
+				&quot;g&quot;&gt; 여&lt;/label&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<p>이것도 똑같이 여러개일 경우 &lt;fieldset&gt;을 이용하여 묶는다.</p>
+	<p>그러나 fileset태그를 사용하지 않고도 name 속성에 같은 값을 줘서 논리적으로 그룹화 할 수 있다. 이
+		논리적인 그룹화는 [남] 라디어버튼 항목을 선택하면 [여] 라디오 버튼 항목이 자동으로 해체되고, 다시 [여]라디오 버튼
+		항목을 선택하면 [남] 라디오버튼 하옥이 자동으로 해체된다.</p>
+
+	<table align="center" width="600">
+		<tr>
+			<td>&lt;input type = &quot;radio&quot; name = &quot;g&quot; id
+				=&quot;g&quot; value = &quot;m&quot; checked/&gt;<br>&lt;input
+				type = &quot;radio&quot; name = &quot;g&quot; id =&quot;g&quot;
+				value = &quot;f&quot;/&gt;
+			</td>
+		</tr>
+	</table>
+	<h2>&lt;input type = &quot;file&quot;&gt; : 파일 탐색기</h2>
+	<p>
+		&lt;input type =&quot;text&quot;&gt; 태그는 파일을 선택하고 업로드 할 수 있는 필드를 제공한다.
+		<br>여기서 form의 method속성과 enctype 속성이 중요해진다. <br>
+	<h3>Method 속성</h3>
+	<p>서버에 요청 방식을 지정하는 것으로 생략이 가능하며, 생략 시 기본 값 get을 사용한다. 파일을 업로드 할 때는
+		이 속성을 생략할 수 없으며, 반드시 post로 지정해야 한다.</p>
+	<h3>enctype 속성</h3>
+	<p>서버에 폼 데이터를 전송 시 인코딩 방식을 지정하는 것으로 생략 가능하다. 생략시 기본값
+		application/x-www-form-urlencoded로 지정되어 공백은 +로, 특수문자는 아스키 16진수(ASCII
+		HEX)로 변경한 후 전송된다. 이 속성의 값으로는 multipart/form-data, text/plain도 있다.
+		multipart/form-data는 전송데이터를 인코딩 하지 않으며, 업로드할 때 사용한다. text/plain은 공백은
+		+로 변환하나 특수문자는 인코딩 하지 않는다.</p>
+	<h3>action 속성</h3>
+	<p>입력할 값을 처리할 서버페이지명을 기술한다. 여기서는 "filePro.jsp"가 서버페이지이다.</p>
+	<br>
+	<br>
+	<table align="center" width="600" border="1">
+		<tr>
+			<td>&lt;form name =&quot;form1&quot; action =
+				&quot;filePro.jsp&quot; method = &quot;post&quot; enctype =
+				&quot;multipart/form-data&quot;&gt;<br>&lt;label for =
+				&quot;id&quot;&gt; 파일선택: &lt;/label&gt;<br>&lt;input type =
+				&quot;file&quot; id = &quot;file1&quot; name =
+				&quot;file1&quot;/&gt;<br>&lt;input type = &quot;submit&quot;
+				value = &quot;전송&quot;&gt;<br>&lt;/form&gt;
+			</td>
+		</tr>
+	</table>
+	<h3>multiple(다중 선택) 속성</h3>
+	<p>
+		&lt;input&gt;태그를 사용하는 웹 폼 태그에 값을 1개 이상 넣을 수 있게 해준다.<br>-&lt;input
+		type = &quot;file&quot; multiple&gt; 에서와 같이 파일을 여러 러 개 선택하는 경우에는 ctrl
+		또는 shift 를 같이 사용한다. 여러 파일은, &lt;쉼표&gt;를 사용해서 나열되어 진다.<br>-&lt;input
+		type = &quot;email&quot; multiple&gt;의 경우에는 이메일 입력 필드에 ddd@aaa.com,
+		aaa@aaa.com등과 같이 여러 이메일 주소를, (쉼표)를 사용해서 나열한다.
+	</p>
+	<table align="center" width="600" border="3">
+		<tr>
+			<td>
+				<h2>파일 선택 심화학습 과정</h2>
+				<p>
+					파일을 서버로 업로드하기 위해서는 폼의 데이터를 분석하고 처리하는 라이브러리를 사용하거나 직접 프로그래밍 코드를 사용해서
+					업로드 하는 로직을 코딩해야 한다. 또한 업로드된 정보를 화면에 표시하거나 DB에 저장하기 위한 서버페이지도 필요하다.
+					간단하게 업로드할 수 있는 라이브러리로 cos.jar가 있으며 라이브러리는 파일을 업로드하고 폼으로부터 넘어오는 데이터를
+					얻어내는데 사용된다. 이 라이브러리는 <a href="http://www.servlets.com/cos"
+						target="_blank">http://www.servlets.com/cos</a>사이트에서 다운로드 받을 수 있다.
+					또한 업로드 한 파일을 관리하는 별도의 폴더도 필요하다.
+				</p>
+				<h3>1. cos.jar 배치</h3>
+				<p>웹콘텐츠\web-inf\lib</p>
+				<h3>2. 업로드 파일이 위치할 폴더 작성</h3>
+				<p>파일세이브 폴더를 만든다.</p>
+				<h3>3. 파일 업로드 작성</h3>
+				<p>fileForm.jsp 페이지의 폼에 업로드할 파일을 선택한 후 [파일 올리기 ]버튼을 클릭하면
+					fileUpload.jsp페이지에서 파일을 업로드 폴더로 업로드 해주는 예제이다. 파일을 직접 작성하지 않고 제공되는
+					파일을 그냥 실행해도 된다.</p>
+			</td>
+		</tr>
+	</table>
+	<h2>&lt;input type ="submit"&gt; : submit 버튼</h2>
+	<p>폼에 값을 입력하고 submit 버튼을 누르면 form 태그의 action속성에서 기술한 페이지로 입력한 폼의 값을
+		넘긴다. 다음은 폼에서 아이디를 입력하고 submit 버튼인 [전송]버튼을 클릭하면 입력한 값을 갖고
+		submitpro.jsp페이지로 이동한다. submitpro.jsp에서는 폼에서 넘어온 값을
+		request.getprarameter("id") 메소드를 사용해서 얻어낸다.</p>
+
+
+	<p>method 속성을 생략한다면 get방식으로 너어가서 주소 줄에 넘겨지는 값이 표시된다. 즉, 예를 들자면,
+		http://xxx/submitpro.jsp?id=aaa@aaa.com와 같이 처리 페이지인 submitpro.jsp 뒤에는
+		값의 리스트 형태인 ?id=aaa@aaa.com와 같은 형태로 넘어간다.</p>
+
+	<p>method = "get"방식일 경우 처리 페이지로 넘어가는 중요한 데이터가 주소 줄에 노출되기 때문에 보안상
+		중요한 데이터가 있는 경우 method="post"방식으로 보내거나 암호화하는 것이 좋다. method="post"방식인 경우
+		주소줄에 데이터가 노출되지 않는다.</p>
+
+	<p>submit 버튼에서는 글로벌 속성인 id,title과 input태그의 name, value등의 속성을 사용할 수
+		있다. submit버튼에서 value속성은 버튼의 레이블을 지정하기 위해서 사용한다.</p>
+	<p>여기서 중요한게 있다면, submit 태그로 value가 있다. 이 value는 해당 버튼의 이름이다.</p>
+
+	<h2>&lt;input type = &quot;reset&quot;&gt; :[reset]버튼</h2>
+	<p>input type = "rest" 태그는 입력한 내용을 모두 초기화하는 리셋 버튼을 만들 때 사용한다.</p>
+
+	<h2>&lt;input type = "button"&gt; : [button]버튼</h2>
+	<p>input type = "button" 태그는 일반적인 버튼을 만들 때 사용한다.</p>
+	<p>button버튼은 글로벌 속성인 id, title과 input태그의 name, value 등의 속성을 사용할 수
+		있다. button 버튼에서도 value속성은 버튼의 레이블을 지정하기 위해서 사용한다. button 버튼은 oneclick
+		속성 등을 사용해서 자바스크립트와 연결되는 이벤트 처리에 주로 사용된다. oneclick 속성 값에는 자바스크립트 함수나
+		코드를 기술한다.</p>
+
+	<h2>&lt;input type = "email"&gt; : 이메일 필드</h2>
+	<p>input type = "email" 태그는 이메일을 입력받을 수 있는 1줄짜리 입력 필드를 만들 때 사용한다. 이
+		태그는 스마트기기의 모바일 브라우저에서 실행하면 키보드에 @가 표시된다.</p>
+	<p>이메일 필드에서는 id title autocomplete autofocus maxlength namee
+		placeholder required size 등의 속성을 사용가능하다.</p>
+
+
+	<h2>&lt;input type = "url"&gt; : URL 필드</h2>
+	<p>input type = "url" 태그는 인터넷 주소인 URL을 입력받을 수 있는 1줄 짜리 입력 필드를 만들 때
+		사용한다. 이 태그는 스마트 기기의 모바일 브라우저에서 실행하면 키보드에 [.com]이 표시된다.</p>
+	<p>URL필드에서는 글로벌 속성인 id(아이디), title(설명추가)과 input태그의 autofocus
+		autocomplete maxlength name placeholder required size 등의 속성을 사용할 수 있다.</p>
+
+	<h2>&lt;input type = "tel"&gt; : 전화번호 필드</h2>
+	<p>input type = "tel" 태그는 전화번호를 입력받을 수 있는 1줄 짜리 입력 필드를 만들 때 사용한다. 이
+		태그는 스마트기기의 모바일 브라우저에 실행하면 키ㅗ드가 전화번호를 입력할 수 있는 숫자와 전화번호 입력 및 ARS 응답 등에
+		사용되는 특수문자가 같이 표시된다.</p>
+	<p>id(아이디), title(설명추가)과 input태그의 autofocus autocomplete maxlength
+		name placeholder required size 등의 속성을 사용할 수 있다.</p>
+
+
+	<h2>&lt;input type = "number"&gt; : 숫자피드, 눌러 선택</h2>
+	<p>input type = "number" 태그는 숫자만 입력받을 수 있는 1줄 짜리 입력필드를 만들때 사용한다. 숫자
+		필드는 위, 아래를 제공하는데 이를 이용하여 숫자를 증감할 수 있다. name min max placeholder id
+		title required size step value 등의 속성을 사용</p>
+	<p>setp(단계 값)속성은 숫자를 증감할 때 증감 값을 지정할 수 있다. 생략하면 기본적으로 1증감이다.</p>
+
+	<h2>&lt;input type = "range"&gt; : 숫자 필드, 슬라이드 막대를 사용해 숫자 선택</h2>
+	<p>input type = "range" 태그는 슬라이드 막대를 사용해서 숫자 범위에서 숫자를 선택하는 필드를 만들 때
+		사용한다.</p>
+	<p>id title name min max required size step value</p>
+
+	<h2>&lt;input type = "date"&gt; : 날짜 선택 필드</h2>
+	<p>input type = "date" 태그는 날짜를 선택 및 입력할 수 있는 1줄 짜리 날짜 선택 필드를 만들 때
+		사용한다. IE와 파이어폭스에서는 아직 지원되지 않았다.</p>
+
+	<h2>&lt;input type = "week"&gt; : 특정 연도의 주 선택 필드</h2>
+	<p>input type = "time" 태그는 특정 연도의 주를 선택 및 입력할 수 있는 1줄 짜리 날짜 선택 필드를
+		만들 때 사용한다. IE와 파이어폭스에서는 아직 지원되지 않았다.</p>
+	<p>id title name required</p>
+
+
+	<h2>&lt;input type = "search"&gt; : 검색 필드</h2>
+	<p>input type = "search" 태그는 검색 필드를 만들 때 사용한다. 검색어를 입력하면 [x]버튼이
+		생기는데, 이 버튼을 누르면 검색어가 제거된다. firefox , ie지원 안된다.</p>
+
+	<h2>&lt;input type = "color"&gt; : 색상 선택 필드</h2>
+	<p>input type = "color" 태그는 색상을 선택 할 수 있는 필드를 만들 때 사용한다. IE는 아직 지원
+		되지 않는다.</p>
+	<p>id title name</p>
+
+
+	<h2>&lt;input type = "select"&gt; : 드롭다운 리스트</h2>
+	<p>input type = "type" 콤보 상자인 드롭다운 리스트를 만들 때 사용한다. 여기서
+		&lt;option&gt;태그를 사용해서 각 목록을 만든다.</p>
+	<p>select 태그는 name 속성을 갖고 드롭다운 리스트의 이름을 정의하고 option태그는 value속성을 갖고
+		각 항목의 값을 갖는다. 이것은 option태그의 항목을 선택하면 select 태그의 name에 정의된 변수에 선택항목의
+		value값이 저장된다.</p>
+
+	<table align="center" width="600" border="3">
+		<tr>
+			<td>&lt;form&gt;<br> &lt;label for
+				="lang"&gt;언어선택&lt;/label&gt;<br> &lt;select name = "lang"&gt;<br>
+				&lt;option value = "ko"&gt;한국어<br> &lt;option value =
+				"en"&gt;영어<br> &lt;option value = "ch"&gt;중국어<br>
+				&lt;/select&gt;<br> &lt;/form&gt;<br>
+			</td>
+		</tr>
+	</table>
+
+	<p>slected 속성을 사용하면 기본값으로 선택 된다.</p>
+
+	<table align="center" width="600" border="3">
+		<tr>
+			<td>&lt;form&gt;<br> &lt;label for
+				="lang"&gt;언어선택&lt;/label&gt;<br> &lt;select name = "lang"&gt;<br>
+				&lt;option value = "ko"&gt;한국어<br> &lt;option value = "en"
+				selected&gt;영어<br> &lt;option value = "ch"&gt;중국어<br>
+				&lt;/select&gt;<br> &lt;/form&gt;<br>
+			</td>
+		</tr>
+	</table>
+
+	<h2>&lt;textarea&gt;태그 : 여러 줄 입력 항목</h2>
+	<p>textarea 태그는 여러 줄을 입력할 수 있는 필드를 제공한다. name 속성을 사용해서 이름을 정의하고
+		rows속성을 사용해서 화면에 보이는 줄 수, cols속성을 사용해서 화면에 보이는열 수를 지정할 수 있다. 지정한 줄 수
+		입력한 경우에는 자동으로 스크롤 바가 표시된다.</p>
+	<p>select 태그는 name 속성을 갖고 드롭다운 리스트의 이름을 정의하고 option태그는 value속성을 갖고
+		각 항목의 값을 갖는다. 이것은 option태그의 항목을 선택하면 select 태그의 name에 정의된 변수에 선택항목의
+		value값이 저장된다.</p>
+
+	<table align="center" width="600" border="3">
+		<tr>
+			<td>&lt;form&gt;<br> &lt;label for
+				="text"&gt;내용&lt;/label&gt;<br> &lt;textarea name = "text" id =
+				"text" rows = "5" cols = "30"&gt;<br> &lt;/form&gt;<br>
+			</td>
+		</tr>
+	</table>
+
+	<h2>&lt;button&gt;태그 : 버튼</h2>
+	<p>name 또는 id 속성을 사용해서 이름 또는 ID를 정의한다. &lt;button&gt; 태그와 같은 일반 버튼은
+		주로 자바 스크립트 제어를 사용하기 때문에 id 속성을 부여해서 자바스크립트에서 사용한다.</p>
+
+	<table align="center" width="600" border="3">
+		<tr>
+			<td>&lt;form&gt;<br> &lt;button id= "result"&gt;
+				결과처리&lt;/button&gt;<br> &lt;/form&gt;<br>
+			</td>
+		</tr>
+	</table>
+
+	<h2>&lt;datalist&gt;태그 : 데이터 목록</h2>
+	<p>&lt;datalist&gt; 태그는 사용자가 텍스트 필드에 값을 입력할 때 선택할 수 있는 값의 목록을 제공한다.
+		이 태그를 사용하려면 datalist를 사용하는 input 태그를 먼저 정의해야 한다.</p>
+
+	<p>이건 실습한다. practice18_datalist.html</p>
+
+
+	<h2>&lt;output&gt;태그</h2>
+	<p>실습으로 대체 한다. practice20_output</p>
+	
+
+
+
+
+
+	<div>
+		<hr>
+		<br> <br> <br> <br> <br> <br>
+	</div>
+
+</body>
+
+
+
+
+
+
+
+
+</html>

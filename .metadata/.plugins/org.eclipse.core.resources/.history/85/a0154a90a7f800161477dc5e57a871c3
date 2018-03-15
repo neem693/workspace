@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+article#d1{
+	display: inline;
+	width: 600px;
+	height: 300px;
+	
+	
+}

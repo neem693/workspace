@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="style.css">
+<script src="/studyphp/js/php.js"></script>
+<title>Ajax</title>
+</head>
+<body>
+	<header>php_AJAX</header>
+	<h1 id="index_subject">목차</h1>
+	<div id="list"></div>
+	<h1 id="index_bookmark">부록</h1>
+	<div id="bookmark_list"></div>
+	<section>
+		<article>
+			<h1 class="subject">AJAX Introduction</h1>
+			<p>AJAX is about updating parts of a web page,
+				without reloading the whole page.</p>
+			<h1>What is AJAX?</h1>
+			<p>
+				AJAX = Asynchronous JavaScript and XML. <br> <br>
+				AJAX is a technique for creating fast and dynamic web
+				pages. <br> <br> AJAX allows web pages to be
+				updated asynchronously by exchanging small amounts of
+				data with the server behind the scenes. This means that
+				it is possible to update parts of a web page, without
+				reloading the whole page. <br> <br> Classic
+				web pages, (which do not use AJAX) must reload the
+				entire page if the content should change. <br> <br>
+				Examples of applications using AJAX: Google Maps, Gmail,
+				Youtube, and Facebook tabs.
+			</p>
+			<h1>How AJAX Works</h1>
+			<img alt="ajax_img" src="/studyphp/image/ajax.gif">
+			<h1>AJAX is Based on Internet Standards</h1>
+			<p>AJAX is based on internet standards, and uses a
+				combination of:</p>
+			<ul>
+				<li>XMLHttpRequest object (to exchange data
+					asynchronously with a server)</li>
+				<li>JavaScript/DOM (to display/interact with the
+					information)</li>
+				<li>CSS (to style the data)</li>
+				<li>XML (often used as the format for transferring
+					data)</li>
+			</ul>
+			<div class="code imp">AJAX applications are
+				browser- and platform-independent!</div>
+			<h1>Google Suggest</h1>
+			<p>
+				AJAX was made popular in 2005 by Google, with Google
+				Suggest. <br> <br> Google Suggest is using
+				AJAX to create a very dynamic web interface: When you
+				start typing in Google's search box, a JavaScript sends
+				the letters off to a server and the server returns a
+				list of suggestions.
+			</p>
+			<h1>Start Using AJAX Today</h1>
+			<p>
+				In our PHP tutorial, we will demonstrate how AJAX can
+				update parts of a web page, without reloading the whole
+				page. The server script will be written in PHP. <br>
+				<br> If you want to learn more about AJAX, visit
+				our <a
+					href="https://www.w3schools.com/xml/ajax_intro.asp"
+					target="_blank">AJAX tutorial.</a>
+			</p>
+			<h1 class="subject">PHP - AJAX and PHP</h1>
+			<p>AJAX is used to create more interactive
+				applications.</p>
+			<h1>AJAX PHP Example</h1>
+			<p>The following example will demonstrate how a web
+				page can communicate with a web server while a user type
+				characters in an input field:</p>
+			<a href="practice_ajax/ajax_01.html" class="center">프렉티스1</a>
+			<h1>Example Explained</h1>
+			<p>
+				In the example above, when a user types a character in
+				the input field, a function called "showHint()" is
+				executed. <br> <br> The function is triggered
+				by the onkeyup event. <br> <br> Here is the
+				HTML code:
+			</p>
+			<pre class="code"> &lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function showHint(str) {
+    if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 &amp;&amp; this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;&lt;b&gt;Start typing a name in the input field below:&lt;/b&gt;&lt;/p&gt;
+&lt;form&gt;
+First name: &lt;input type="text" onkeyup="showHint(this.value)"&gt;
+&lt;/form&gt;
+&lt;p&gt;Suggestions: &lt;span id="txtHint"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p>
+				Code explanation: <br> <br> First, check if
+				the input field is empty (str.length == 0). If it is,
+				clear the content of the txtHint placeholder and exit
+				the function. <br> <br> However, if the input
+				field is not empty, do the following:
+			</p>
+			<ul>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a PHP file
+					(gethint.php) on the server</li>
+				<li>Notice that q parameter is added to the url
+					(gethint.php?q="+str)</li>
+				<li>And the str variable holds the content of the
+					input field</li>
+			</ul>
+			<h1>The PHP File - "gethint.php"</h1>
+			<p>
+				여기서는 ajax_01.php이다.<br> <br>The PHP file
+				checks an array of names, and returns the corresponding
+				name(s) to the browser:
+			</p>
+			<pre class="code">&lt;?php
+// Array with names
+$a[] = "Anna";
+$a[] = "Brittany";
+$a[] = "Cinderella";
+$a[] = "Diana";
+$a[] = "Eva";
+$a[] = "Fiona";
+$a[] = "Gunda";
+$a[] = "Hege";
+$a[] = "Inga";
+$a[] = "Johanna";
+$a[] = "Kitty";
+$a[] = "Linda";
+$a[] = "Nina";
+$a[] = "Ophelia";
+$a[] = "Petunia";
+$a[] = "Amanda";
+$a[] = "Raquel";
+$a[] = "Cindy";
+$a[] = "Doris";
+$a[] = "Eve";
+$a[] = "Evita";
+$a[] = "Sunniva";
+$a[] = "Tove";
+$a[] = "Unni";
+$a[] = "Violet";
+$a[] = "Liza";
+$a[] = "Elizabeth";
+$a[] = "Ellen";
+$a[] = "Wenche";
+$a[] = "Vicky";
+
+// get the q parameter from URL
+$q = $_REQUEST["q"];
+
+$hint = "";
+
+// lookup all hints from array if $q is different from ""
+if ($q !== "") {
+    $q = strtolower($q);
+    $len=strlen($q);
+    foreach($a as $name) {
+        if (stristr($q, substr($name, 0, $len))) {
+            if ($hint === "") {
+                $hint = $name;
+            } else {
+                $hint .= ", $name";
+            }
+        }
+    }
+}
+
+// Output "no suggestion" if no hint was found or output correct values
+echo $hint === "" ? "no suggestion" : $hint;
+?&gt; </pre>
+
+			<h1 class="bookmark">여기서 잠깐 - FIREFOX 2바이트문제 &amp;
+				디코더 문제</h1>
+			<p>
+				내가 firefox를 쓴다. 그런데 말이다. 내가 php에 한글을 추가해서 한글로 ajax 검색을
+				하고자 했다. 그런데 이게 잘 안된다. 월래 한글이 안되나 하면서 찾아보고 있던 찰나, 한글을
+				입력해놓고 화살표를 눌러서 방향을 옮기니까 그제서야 되는 것이다. 이게 뭐지 라는 생각에 한글을
+				입력시 안되는거 같아 그 기준으로 검색했더니 firefox브라우저에대한 버그가 존재한다는 글을
+				발견했다. 링크는 <a href="http://blog.shar.kr/35">이곳</a>이다. <br>
+				<br> 즉 여기서의 해결책은 focus와 blur 이벤트를 활용한 시간초 단위로 해당하는
+				ajax로 php에서 단어가 있는지 확인하는 것이다.<br> <br> 이 외에도
+				말이다. keydown을 keypress로 바꾸면 된다는 <a
+					href="http://meetup.toast.com/posts/41">곳도</a> 있으나, 이에
+				대해서는 확인을 해보지 않았다. 나중에 한번 해보던가 하자. 싫으면 말고. 그러면 수정한 코드에
+				대해서 확인을 해보도록 하자. 짧게 말하면 다음과 같다.
+			</p>
+			<h2>2바이트 문제 해결</h2>
+			<p>해당 text-input이 활성화 될시-&lt;해당 값을 특정시간(몇초)마다 new와
+				old에 저장&amp;ajax실행-&lt;새로운 값이 저장된 new와 old를 비교하여 다를 시에
+				ajax실행</p>
+			<pre class="code">	
+var dd = 0;
+var dd2 = 0;
+var hint;
+var value_old = "";
+
+$("input").on("focus", repeat);//focus이벤트시 repeat 함수 실행
+function repeat() {//repeat함수
+
+	hint = setInterval(function() {//setInterval함수를 전역변수 hint에 저장
+		var value = $("#text_input").val();//new에 저장
+		$("#input").text(value);//입력된 문자 표시(테스트용)
+		if (value_old !== value)//처음 value_old는 ""이다.
+			showHint(value);//ajax실행
+		value_old = value;//value_old는에 new를 저장함.
+	}, 1000);//즉, 만약 old변수가 new변수와 다를 경우 1초에 한번씩 실행
+
+}
+$("input").on("blur", offshowHint);//blur시에 할것들
+function offshowHint() {
+	dd++;//blur한 회수를 나타내기 위한 것(테스트용)
+	$("#blur").text(dd);//테스트용
+	clearInterval(hint);//전역변수 hint에 클리어 인터벌로 중지시키는 역할(중요!! 전역변수로 이걸 저장해야지 안그러면 이거 안먹힘)
+}
+</pre>
+			<h2>디코더 문제</h2>
+			<pre class="code">
+if ($hint === "") {
+	$hint = $name;
+} else {
+	$hint .= ", $name";
+}</pre>
+			<p>
+				php 부분에서 매치되는 단어가 하나일 경우에는 그저 $name만 들어가지만 하나가 아닌 경우에는
+				따음표를 하고 하나가 더 들어가게 되어있다. 그런데 따음표를 한후에 띄어쓰기가 들어간다. url로
+				전송될 때 따음표가 '+'라는 글자로 바뀌게 되어 있다. uri상에서 띄어쓰기가 '+'라는 언어이기
+				때문이다.<br> <br> +라는 단어는 다른 특수문자와 결합되어 어떤 문자를
+				만들어낸다. 따라서 그냥 +문자만 덩그러니 있으면 +는 그저 단순한 하나의 문자 +일 뿐이다. 그러기
+				때문에 URICOMPONENT도 +를 그저 +로 본다.<br> <br> 따라서
+				+라는 글자가 원래의 의미인 띄어쓰기'%20'라는 언어로 바꾸주어야 한다. 아래에 해당 코드가 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			<pre class="code">
+function showHint(str) {
+	dd2++;
+	$("#ajax").text(dd2);
+	if (str.length == 0) {
+		document.getElementById("txtHint").innerHTML = "";
+		return;
+	} else {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4
+					&amp;&amp; this.status == 200) {
+				var output = this.responseText;
+				output = output.replace(/\+/g, "%20");//여기서 스페이스바로 바꿔줄 수 있다. replace는 javascript 튜토리얼을 참고하시라.
+				output = decodeURIComponent(output);//여기서 디코더가 이루어진다. 특수문자까지 모두 다 디코더 된다.
+				document.getElementById("output").innerHTML = output;//테스트용
+				document.getElementById("txtHint").innerHTML = output;//디코더된 결과물을 나타낸다.
+			}
+		};</pre>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" /&gt;
+&lt;link rel="stylesheet" href="/studyphp/style.css"&gt;
+&lt;script src="/studyphp/js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+
+	var dd = 0;
+	var dd2 = 0;
+	var hint;
+	var value_old = "";
+
+	$("input").on("focus", repeat);
+	function repeat() {
+
+		hint = setInterval(function() {
+			var value = $("#text_input").val();
+			$("#input").text(value);
+			if (value_old !== value)
+				showHint(value);
+			value_old = value;
+		}, 1000);
+
+	}
+	$("input").on("blur", offshowHint);
+	function offshowHint() {
+		dd++;
+		$("#blur").text(dd);
+		clearInterval(hint);
+	}
+
+	function showHint(str) {
+		dd2++;
+		$("#ajax").text(dd2);
+		if (str.length == 0) {
+			document.getElementById("txtHint").innerHTML = "";
+			return;
+		} else {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4
+						&amp;&amp; this.status == 200) {
+					var output = this.responseText;
+					output = output.replace(/\+/g, "%20");//스페이스바를 하는것
+					output = decodeURIComponent(output);
+					document.getElementById("output").innerHTML = output;
+					document.getElementById("txtHint").innerHTML = output;
+				}
+			};
+			xmlhttp.open("GET", "ajax_01.php?q="
+					+ encodeURIComponent(str), true);
+			xmlhttp.send();
+		}
+	}
+});
+&lt;/script&gt;
+&lt;title&gt;Ajax&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+	&lt;p&gt;
+		&lt;b&gt;이름을 입력해 보세요.&lt;/b&gt;
+	&lt;/p&gt;
+	&lt;form&gt;
+		First name: &lt;input id="text_input" type="text"&gt;
+	&lt;/form&gt;
+	&lt;p&gt;
+		Suggestions : &lt;span id="txtHint"&gt;&lt;/span&gt;
+	&lt;/p&gt;
+	&lt;table&gt;&lt;/table&gt;
+	&lt;table&gt;
+		&lt;tr&gt;
+			&lt;th&gt;항목&lt;/th&gt;
+			&lt;th&gt;수&lt;/th&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;blur 횟수:&lt;/td&gt;
+			&lt;td id="blur"&gt;칸에 포커스를 해제 할 때 마다 1씩 늘어난다.
+		&lt;/tr&gt;
+
+		&lt;tr&gt;
+			&lt;td&gt;ajax 횟수:&lt;/td&gt;
+			&lt;td id="ajax"&gt;칸에 입력되면 1초마다 반복될 것이고, blur하면 중지 된다.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;입력된 문자:&lt;/td&gt;
+			&lt;td id="input"&gt;위에 input 텍스트에 입력된 곳은 이곳에 나타내어진다.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;넘오온 글자&lt;/td&gt;
+			&lt;td id="output"&gt;위에 input 텍스트에 입력된 곳은 이곳에 나타내어진다.&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;!-- &lt;tr&gt;
+			&lt;td&gt;value_old&lt;/td&gt;
+			&lt;td id="value_old"&gt;임의의 테스트&lt;/td&gt;
+		&lt;/tr&gt;
+	  --&gt;
+	&lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<h1 class="subject">PHP - AJAX and MySQL</h1>
+			<p>AJAX can be used for interactive communication
+				with a database.</p>
+			<h1>Example Explained - The MySQL Database</h1>
+			<p>The database table we use in the example above
+				looks like this:</p>
+			<table>
+				<tr>
+					<th>id</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Age</th>
+					<th>Hometown</th>
+					<th>Job</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Peter</td>
+					<td>Griffin</td>
+					<td>41</td>
+					<td>Quahog</td>
+					<td>Brewery</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Lois</td>
+					<td>Griffin</td>
+					<td>40</td>
+					<td>Newport</td>
+					<td>Piano Teacher</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Joseph</td>
+					<td>Swanson</td>
+					<td>39</td>
+					<td>Quahog</td>
+					<td>Police Officer</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Glenn</td>
+					<td>Quagmire</td>
+					<td>41</td>
+					<td>Quahog</td>
+					<td>Pilot</td>
+				</tr>
+			</table>
+			<h1>Example Explained</h1>
+			<p>
+				In the example above, when a user selects a person in
+				the dropdown list above, a function called "showUser()"
+				is executed. <br> <br> The function is
+				triggered by the onchange event. <br> <br>
+				Here is the HTML code:
+			</p>
+			<pre class="code"> &lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function showUser(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 &amp;&amp; this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getuser.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+&lt;select name="users" onchange="showUser(this.value)"&gt;
+  &lt;option value=""&gt;Select a person:&lt;/option&gt;
+  &lt;option value="1"&gt;Peter Griffin&lt;/option&gt;
+  &lt;option value="2"&gt;Lois Griffin&lt;/option&gt;
+  &lt;option value="3"&gt;Joseph Swanson&lt;/option&gt;
+  &lt;option value="4"&gt;Glenn Quagmire&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;div id="txtHint"&gt;&lt;b&gt;Person info will be listed here...&lt;/b&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p>
+				Code explanation: <br> <br> First, check if
+				person is selected. If no person is selected (str ==
+				""), clear the content of txtHint and exit the function.
+				If a person is selected, do the following:
+			</p>
+			<ul>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a file on the server</li>
+				<li>Notice that a parameter (q) is added to the URL
+					(with the content of the dropdown list)</li>
+			</ul>
+			<h1>The PHP File</h1>
+			<p>
+				The page on the server called by the JavaScript above is
+				a PHP file called "getuser.php". <br> <br> The
+				source code in "getuser.php" runs a query against a
+				MySQL database, and returns the result in an HTML table:
+			</p>
+			<pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {text-align: left;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;?php
+$q = intval($_GET['q']);
+
+$con = mysqli_connect('localhost','peter','abc123','my_db');
+if (!$con) {
+    die('Could not connect: ' . mysqli_error($con));
+}
+
+mysqli_select_db($con,"ajax_demo");
+$sql="SELECT * FROM user WHERE id = '".$q."'";
+$result = mysqli_query($con,$sql);
+
+echo "&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;Firstname&lt;/th&gt;
+&lt;th&gt;Lastname&lt;/th&gt;
+&lt;th&gt;Age&lt;/th&gt;
+&lt;th&gt;Hometown&lt;/th&gt;
+&lt;th&gt;Job&lt;/th&gt;
+&lt;/tr&gt;";
+while($row = mysqli_fetch_array($result)) {
+    echo "&lt;tr&gt;";
+    echo "&lt;td&gt;" . $row['FirstName'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['LastName'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['Age'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['Hometown'] . "&lt;/td&gt;";
+    echo "&lt;td&gt;" . $row['Job'] . "&lt;/td&gt;";
+    echo "&lt;/tr&gt;";
+}
+echo "&lt;/table&gt;";
+mysqli_close($con);
+?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<p>Explanation: When the query is sent from the
+				JavaScript to the PHP file, the following happens:</p>
+			<ul>
+				<li>PHP opens a connection to a MySQL server</li>
+				<li>The correct person is found</li>
+				<li>An HTML table is created, filled with data, and
+					sent back to the "txtHint" placeholder</li>
+			</ul>
+			<a href="/studyphp/practice_ajax/ajax_02.html"
+				class="center">프렉티스2</a>
+			<h1 class="subject">PHP Example - AJAX and XML</h1>
+			<p>AJAX can be used for interactive communication
+				with an XML file.</p>
+			<h1>AJAX XML Example</h1>
+			<p>The following example will demonstrate how a web
+				page can fetch information from an XML file with AJAX:</p>
+			<h1>Example Explained - The HTML Page</h1>
+			<p>When a user selects a CD in the dropdown list
+				above, a function called "showCD()" is executed. The
+				function is triggered by the "onchange" event:</p>
+			<pre class="code">&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function showCD(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 &amp;&amp; this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getcd.php?q="+str,true);
+  xmlhttp.send();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+Select a CD:
+&lt;select name="cds" onchange="showCD(this.value)"&gt;
+&lt;option value=""&gt;Select a CD:&lt;/option&gt;
+&lt;option value="Bob Dylan"&gt;Bob Dylan&lt;/option&gt;
+&lt;option value="Bee Gees"&gt;Bee Gees&lt;/option&gt;
+&lt;option value="Cat Stevens"&gt;Cat Stevens&lt;/option&gt;
+&lt;/select&gt;
+&lt;/form&gt;
+&lt;div id="txtHint"&gt;&lt;b&gt;CD info will be listed here...&lt;/b&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<p>The showCD() function does the following:</p>
+			<ul>
+				<li>Check if a CD is selected</li>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a file on the server</li>
+				<li>Notice that a parameter (q) is added to the URL
+					(with the content of the dropdown list)</li>
+			</ul>
+			<h1>The PHP File</h1>
+			<p>
+				The page on the server called by the JavaScript above is
+				a PHP file called "ajax_03.php". <br> <br> The
+				PHP script loads an XML document, <a
+					href="/studyphp/practice_ajax/CD_Catalog.xml">"cd_catalog.xml"</a>,
+				runs a query against the XML file, and returns the
+				result as HTML:
+			</p>
+
+			<pre class="code">&lt;?php
+$q=$_GET["q"];
+
+$xmlDoc = new DOMDocument();
+$xmlDoc-&gt;load("cd_catalog.xml");
+
+$x=$xmlDoc-&gt;getElementsByTagName('ARTIST');
+
+for ($i=0; $i&lt;=$x-&gt;length-1; $i++) {
+  //Process only element nodes
+  if ($x-&gt;item($i)-&gt;nodeType==1) {
+    if ($x-&gt;item($i)-&gt;childNodes-&gt;item(0)-&gt;nodeValue == $q) {
+      $y=($x-&gt;item($i)-&gt;parentNode);
+    }
+  }
+}
+
+$cd=($y-&gt;childNodes);
+
+for ($i=0;$i&lt;$cd-&gt;length;$i++) {
+  //Process only element nodes
+  if ($cd-&gt;item($i)-&gt;nodeType==1) {
+    echo("&lt;b&gt;" . $cd-&gt;item($i)-&gt;nodeName . ":&lt;/b&gt; ");
+    echo($cd-&gt;item($i)-&gt;childNodes-&gt;item(0)-&gt;nodeValue);
+    echo("&lt;br&gt;");
+  }
+}
+?&gt; </pre>
+			<p>
+				When the CD query is sent from the JavaScript to the PHP
+				page, the following happens: <br> <br>
+			</p>
+
+			<ol>
+				<li>PHP creates an XML DOM object</li>
+				<li>Find all &lt;artist&gt; elements that matches
+					the name sent from the JavaScript</li>
+				<li>Output the album information (send to the
+					"txtHint" placeholder)</li>
+			</ol>
+			<a href="/studyphp/practice_ajax/ajax_03.html"
+				class="center">프렉티스3</a>
+			<h1 class="subject">PHP Example - AJAX Live Search</h1>
+			<p>AJAX can be used to create more user-friendly and
+				interactive searches.</p>
+			<h1>AJAX Live Search</h1>
+			<p>
+				The following example will demonstrate a live search,
+				where you get search results while you type. <br> <br>
+				Live search has many benefits compared to traditional
+				searching:
+			</p>
+			<ul>
+				<li>Results are shown as you type</li>
+				<li>Results narrow as you continue typing</li>
+				<li>If results become too narrow, remove characters
+					to see a broader result</li>
+			</ul>
+			<h1>Example Explained - The HTML Page</h1>
+			<p>When a user types a character in the input field
+				above, the function "showResult()" is executed. The
+				function is triggered by the "onkeyup" event:</p>
+			<pre class="code">&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function showResult(str) {
+  if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 &amp;&amp; this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+&lt;input type="text" size="30" onkeyup="showResult(this.value)"&gt;
+&lt;div id="livesearch"&gt;&lt;/div&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p>
+				Source code explanation: <br> <br> If the
+				input field is empty (str.length==0), the function
+				clears the content of the livesearch placeholder and
+				exits the function. <br> <br> If the input
+				field is not empty, the showResult() function executes
+				the following:
+			</p>
+			<ul>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a file on the server</li>
+				<li>Notice that a parameter (q) is added to the URL
+					(with the content of the input field)</li>
+			</ul>
+			<h1>The PHP File</h1>
+			<p>
+				The page on the server called by the JavaScript above is
+				a PHP file called "livesearch.php". <br> <br>
+				The source code in "livesearch.php" searches an XML file
+				for titles matching the search string and returns the
+				result:
+			</p>
+			<pre class="code">&lt;?php
+$xmlDoc=new DOMDocument();
+$xmlDoc-&gt;load("links.xml");
+
+$x=$xmlDoc-&gt;getElementsByTagName('link');
+
+//get the q parameter from URL
+$q=$_GET["q"];
+
+//lookup all links from the xml file if length of q&gt;0
+if (strlen($q)&gt;0) {
+  $hint="";
+  for($i=0; $i&lt;($x-&gt;length); $i++) {
+    $y=$x-&gt;item($i)-&gt;getElementsByTagName('title');
+    $z=$x-&gt;item($i)-&gt;getElementsByTagName('url');
+    if ($y-&gt;item(0)-&gt;nodeType==1) {
+      //find a link matching the search text
+      if (stristr($y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue,$q)) {
+        if ($hint=="") {
+          $hint="&lt;a href='" .
+          $z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue .
+          "' target='_blank'&gt;" .
+          $y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . "&lt;/a&gt;";
+        } else {
+          $hint=$hint . "&lt;br /&gt;&lt;a href='" .
+          $z-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue .
+          "' target='_blank'&gt;" .
+          $y-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue . "&lt;/a&gt;";
+        }
+      }
+    }
+  }
+}
+
+// Set output to "no suggestion" if no hint was found
+// or to the correct values
+if ($hint=="") {
+  $response="no suggestion";
+} else {
+  $response=$hint;
+}
+
+//output the response
+echo $response;
+?&gt; </pre>
+			<p>If there is any text sent from the JavaScript
+				(strlen($q) > 0), the following happens:</p>
+			<ul>
+				<li>Load an XML file into a new XML DOM object</li>
+				<li>Loop through all &lt;title&gt; elements to find
+					matches from the text sent from the JavaScript</li>
+				<li>Sets the correct url and title in the
+					"$response" variable. If more than one match is found,
+					all matches are added to the variable</li>
+				<li>If no matches are found, the $response variable
+					is set to "no suggestion"</li>
+			</ul>
+			<a class="center"
+				href="/studyphp/practice_ajax/ajax_04.html">프렉티스4</a>
+			<h1 class="subject">PHP Example - AJAX RSS Reader</h1>
+			<p>An RSS Reader is used to read RSS Feeds.</p>
+			<h1>AJAX RSS Reader</h1>
+			<p>The following example will demonstrate an RSS
+				reader, where the RSS-feed is loaded into a webpage
+				without reloading:</p>
+			<h1>Example Explained - The HTML Page</h1>
+			<p>When a user selects an RSS-feed in the dropdown
+				list above, a function called "showRSS()" is executed.
+				The function is triggered by the "onchange" event:</p>
+			<pre class="code">&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function showRSS(str) {
+  if (str.length==0) {
+    document.getElementById("rssOutput").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 &amp;&amp; this.status==200) {
+      document.getElementById("rssOutput").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getrss.php?q="+str,true);
+  xmlhttp.send();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form&gt;
+&lt;select onchange="showRSS(this.value)"&gt;
+&lt;option value=""&gt;Select an RSS-feed:&lt;/option&gt;
+&lt;option value="Google"&gt;Google News&lt;/option&gt;
+&lt;option value="NBC"&gt;NBC News&lt;/option&gt;
+&lt;/select&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;div id="rssOutput"&gt;RSS-feed will be listed here...&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p>The showRSS() function does the following:</p>
+			<ul>
+				<li>Check if an RSS-feed is selected</li>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a file on the server</li>
+				<li>Notice that a parameter (q) is added to the URL
+					(with the content of the dropdown list)</li>
+			</ul>
+			<h1>The PHP File</h1>
+			<p>The page on the server called by the JavaScript
+				above is a PHP file called "getrss.php":</p>
+			<pre class="code">&lt;?php
+//get the q parameter from URL
+$q=$_GET["q"];
+
+//find out which feed was selected
+if($q=="Google") {
+  $xml=("http://news.google.com/news?ned=us&amp;topic=h&amp;output=rss");
+} elseif($q=="NBC") {
+  $xml=("http://rss.msnbc.msn.com/id/3032091/device/rss/rss.xml");
+}
+
+$xmlDoc = new DOMDocument();
+$xmlDoc-&gt;load($xml);
+
+//get elements from "&lt;channel&gt;"
+$channel=$xmlDoc-&gt;getElementsByTagName('channel')-&gt;item(0);
+$channel_title = $channel-&gt;getElementsByTagName('title')
+-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+$channel_link = $channel-&gt;getElementsByTagName('link')
+-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+$channel_desc = $channel-&gt;getElementsByTagName('description')
+-&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+
+//output elements from "&lt;channel&gt;"
+echo("&lt;p&gt;&lt;a href='" . $channel_link
+  . "'&gt;" . $channel_title . "&lt;/a&gt;");
+echo("&lt;br&gt;");
+echo($channel_desc . "&lt;/p&gt;");
+
+//get and output "&lt;item&gt;" elements
+$x=$xmlDoc-&gt;getElementsByTagName('item');
+for ($i=0; $i&lt;=2; $i++) {
+  $item_title=$x-&gt;item($i)-&gt;getElementsByTagName('title')
+  -&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+  $item_link=$x-&gt;item($i)-&gt;getElementsByTagName('link')
+  -&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+  $item_desc=$x-&gt;item($i)-&gt;getElementsByTagName('description')
+  -&gt;item(0)-&gt;childNodes-&gt;item(0)-&gt;nodeValue;
+  echo ("&lt;p&gt;&lt;a href='" . $item_link
+  . "'&gt;" . $item_title . "&lt;/a&gt;");
+  echo ("&lt;br&gt;");
+  echo ($item_desc . "&lt;/p&gt;");
+}
+?&gt; </pre>
+			<p>When a request for an RSS feed is sent from the
+				JavaScript, the following happens:</p>
+			<ul>
+				<li>Check which feed was selected</li>
+				<li>Create a new XML DOM object</li>
+				<li>Load the RSS document in the xml variable</li>
+				<li>Extract and output elements from the channel
+					element</li>
+				<li>Extract and output elements from the item
+					elements</li>
+			</ul>
+			<a href="/studyphp/practice_ajax/ajax_05.html"
+				class="center">프렉티스05</a>
+			<h1 class="subject">PHP Example - AJAX Poll</h1>
+			<h1>AJAX Poll</h1>
+			<p>The following example will demonstrate a poll
+				where the result is shown without reloading.</p>
+			<h1>Example Explained - The HTML Page</h1>
+			<p>When a user chooses an option above, a function
+				called "getVote()" is executed. The function is
+				triggered by the "onclick" event:</p>
+			<pre class="code">&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function getVote(int) {
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 &amp;&amp; this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+  xmlhttp.send();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="poll"&gt;
+&lt;h3&gt;Do you like PHP and AJAX so far?&lt;/h3&gt;
+&lt;form&gt;
+Yes:
+&lt;input type="radio" name="vote" value="0" onclick="getVote(this.value)"&gt;
+&lt;br&gt;No:
+&lt;input type="radio" name="vote" value="1" onclick="getVote(this.value)"&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p>The getVote() function does the following:</p>
+			<ul>
+				<li>Create an XMLHttpRequest object</li>
+				<li>Create the function to be executed when the
+					server response is ready</li>
+				<li>Send the request off to a file on the server</li>
+				<li>Notice that a parameter (vote) is added to the
+					URL (with the value of the yes or no option)</li>
+			</ul>
+			<h1>The PHP File</h1>
+			<p>The page on the server called by the JavaScript
+				above is a PHP file called "poll_vote.php":</p>
+			<pre class="code">&lt;?php
+$vote = $_REQUEST['vote'];
+
+//get content of textfile
+$filename = "poll_result.txt";
+$content = file($filename);
+
+//put content in array
+$array = explode("||", $content[0]);
+$yes = $array[0];
+$no = $array[1];
+
+if ($vote == 0) {
+  $yes = $yes + 1;
+}
+if ($vote == 1) {
+  $no = $no + 1;
+}
+
+//insert votes to txt file
+$insertvote = $yes."||".$no;
+$fp = fopen($filename,"w");
+fputs($fp,$insertvote);
+fclose($fp);
+?&gt;
+
+&lt;h2&gt;Result:&lt;/h2&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;Yes:&lt;/td&gt;
+&lt;td&gt;
+&lt;img src="poll.gif"
+width='&lt;?php echo(100*round($yes/($no+$yes),2)); ?&gt;'
+height='20'&gt;
+&lt;?php echo(100*round($yes/($no+$yes),2)); ?&gt;%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;No:&lt;/td&gt;
+&lt;td&gt;
+&lt;img src="poll.gif"
+width='&lt;?php echo(100*round($no/($no+$yes),2)); ?&gt;'
+height='20'&gt;
+&lt;?php echo(100*round($no/($no+$yes),2)); ?&gt;%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt; </pre>
+			<p>The value is sent from the JavaScript, and the
+				following happens:</p>
+			<ol>
+				<li>Get the content of the "poll_result.txt" file</li>
+				<li>Put the content of the file in variables and
+					add one to the selected variable</li>
+				<li>Write the result to the "poll_result.txt" file</li>
+				<li>Output a graphical representation of the poll
+					result</li>
+			</ol>
+			<h1>The Text File</h1>
+			<p>
+				The text file (poll_result.txt) is where we store the
+				data from the poll. <br> <br> It is stored
+				like this:
+			</p>
+			<div class="code">0||0</div>
+			<p>The first number represents the "Yes" votes, the
+				second number represents the "No" votes.</p>
+			<div class="code imp">Note: Remember to allow your
+				web server to edit the text file. Do NOT give everyone
+				access, just the web server (PHP).</div>
+			<a href="/studyphp/practice_ajax/ajax_06.html"
+				class="center">프렉티스6</a>
+			<h1 class="bookmark">Post로 ajax - PHP로 넘김</h1>
+			<h2>개요</h2>
+			<p>
+				이 문서에는 post로 ajax할 시에 대한 예시같은건 개나 줘버려서 없다. 사실 post로 ajax
+				하는 것 따위를 그다지 권장하지 않는 듯 하다. post는 민감한 데이터를 넘겨주는 것인데, 이를
+				ajax로 한번 거쳐서 전달한다면, 보안상으로도 더더욱이 꼬아질 수 밖에 없는 것이다.<br>
+				<br>뭐 어찌되었든 진행은 한다.
+			</p>
+			<h2>데이터</h2>
+			<p>
+				post는 기본적으로 주소로 데이터를 보내는 것이 아니기 때문에 php에 넘겨줘야할 데이터가 있을
+				경우 이를 직접 파라미터 형식으로 해서 넘겨줘야 한다.<br> <br>다음은 쌩
+				오리지날 자바스크립트에서 post로 데이터를 넘기는 코드이다.
+			</p>
+			<pre class="code" id="post_ajax_code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The XMLHttpRequest Object&lt;/h2&gt;
+
+&lt;button type="button" onclick="loadDoc()"&gt;Request data&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+ 
+&lt;script&gt;
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "demo_post2.asp", true);
+  <span class = "impu">xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");</span>
+  <a href="#post_ajax_code_desc">돌아가기</a>
+  xhttp.send(<span class="imp" >"fname=Henry&amp;lname=Ford"</span>);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			
+			</pre>
+			<p>
+				보다 시피 <span class="imp">"fname=Henry&amp;lname=Ford"</span>
+				라는 것으로 되어 있다. 여기서 fname은 html상에서 <span class="imp">name</span>에
+				해당한다. 그리고 그 값 Henry는 <span class="imp">value</span>에
+				해당한다. 이런 식으로 name = value 값으로 값을 넘겨주고 <span class="imp">&amp;</span>로
+				변수를 구분짓는다. 이걸 사람손으로 일일이 입력하거나 여러 자바스크립트 도구를 통해서 스스로 편집을
+				할 수도 있을 것이다. 그러나 이렇게 name value를 구분지어 하나하나 작성하거나 함수를 만드는
+				것은 정말 효율적이지 못하다.(어쩌면 이런 이유로 post ajax는 많이 안하는듯 하다.)
+			</p>
+			<h2>serialize함수_jQuery</h2>
+			<p>
+				이를 자동적으로 파라마터 형식으로 만들어주는 함수가 있긴하나, 이는 javascript세상이 아닌
+				jquery 세상으로 가야 한다. 따라서 보통 post ajax는 jquery를 사용하는 것으로
+				보인다.<br> <br>그 함수는 serialize()라는 함수이고 아래 그
+				사용법의 예시를 기록하겠다.
+			</p>
+			<pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+<span class="imp">$(document).ready(function(){
+    $("button").click(function(){
+        $("div").text($("form").serialize());
+    });
+});</span>
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action=""&gt;
+  First name: &lt;input type="text" name="FirstName" value="Mickey"&gt;&lt;br&gt;
+  Last name: &lt;input type="text" name="LastName" value="Mouse"&gt;&lt;br&gt;
+&lt;/form&gt;
+
+&lt;button&gt;Serialize form values&lt;/button&gt;
+
+&lt;div&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<p>버튼을 눌렀을 시 결과는 다음과 같다.</p>
+			<pre class="code">FirstName=Mickey&amp;LastName=Mouse
+			<a
+					href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_serialize">해당 테스트</a>
+			</pre>
+			<p>즉, 자동으로 name과 해당 하는 실렉터의 value를 뽑아 &amp;로 구분지어
+				파라미터를 만들어준다. form내로 제한되며, input과 textarea 등 기타 form 형식에
+				맞는 커스텀 설정이면 모두 뽑아다가 한줄 파라미터로 만들어버린다.</p>
+			<h2 id="post_ajax_code_desc">Ajax에서 추가하는 것. 리퀘스트 헤더 설정</h2>
+			<p>
+				다시 한번 상단에 있는 코드에서 밑줄쳐진 곳을 보자.<a href="#post_ajax_code">이곳(새창으로
+					열지 말것)</a> 해당 코드를 보면 다음과 같은 코드를 볼 수 있다.
+			</p>
+			<pre class="code">var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 &amp;&amp; this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "ajax_test.asp", true);
+<span class="imp">xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");</span>
+xhttp.send("fname=Henry&amp;lname=Ford"); </pre>
+			<p>
+				위 코드에서 강조되어 있는 리퀘스트헤더설정 setRequestHeader를 post로 데이터를 전달
+				할때 반드시 설정을 해줘야 한다. 하지만 위의 내용은 javascript코드에서만 쓰인다. 나는
+				자바스크립트로만 이 내용을 진행할 듯 한다.<br> <br>jQuery에서는 다음과
+				같은 코드로 쓰이니 참조하라.
+			</p>
+			<pre class="code">
+				<span class="code">$.post(URL,data,callback);</span>
+			
+$(document).ready(function(){
+    $("button").click(function(){
+        $.post("demo_test_post.asp",
+        {
+          name: "Donald Duck",
+          city: "Duckburg"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});</pre>
+			<h2>예시</h2>
+			<p>다음은 tree에서 search로 진행을 했는데 post ajax를 쓴건 프렉티스 12로
+				진행했다. 해당 코드와 링크를 소개하며 이 챕터를 마친다.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="/tree/js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="/tree/practice/tree12.css"&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" /&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;script&gt;
+$(document).ready(function(){
+	$("#search").click(function(){
+		var str = $("#form1").serialize();
+		
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 &amp;&amp; this.status == 200) {
+                document.getElementById("main").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("POST", "/tree/practice/tree11.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send(str);
+	})
+		
+});
+
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="topnav" id="myTopnav"&gt;
+		&lt;a href="#home" class="active"&gt;Home&lt;/a&gt; &lt;a href="#news"&gt;News&lt;/a&gt;
+		&lt;a href="#about"&gt;About&lt;/a&gt;&lt;a href="#contact"&gt;Contant&lt;/a&gt;
+		&lt;button id="search"&gt;Search&lt;/button&gt;
+		&lt;form id = "form1" action=""&gt;
+			&lt;input name="search_text" type="text" placeholder="search.."&gt;
+			
+		&lt;/form&gt;
+	&lt;/div&gt;
+	&lt;div style = "clear: both;" id = "main"&gt;&lt;/div&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<a href="/tree/practice/tree12.html" class="center">tree_프렉티스_12</a>
+		</article>
+	</section>
+	<footer>PHP_AJAX END</footer>
+	<aside>
+		<a href="#index_subject">위로</a>
+	</aside>
+</body>
+</html>

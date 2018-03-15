@@ -1,0 +1,90 @@
+@CHARSET "UTF-8";
+
+
+
+table{
+	min-width: 600px;
+	border-collapse: collapse;
+	table-layout: auto;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+tr{
+	border: 3px solid black;
+	height: 50px;
+}
+
+td{
+	border: 3px solid black;
+	height: 50px;
+}
+
+.baseline{
+	vertical-align: baseline;
+}
+
+.top{
+	vertical-align: top;
+}
+
+.middle{
+	vertical-align: middle;
+}
+
+.bottom{
+	vertical-align: bottom;
+}
+
+.left{
+	text-align: left;
+}
+
+.right{
+	text-align: right;
+}
+
+
+.center{
+	text-align: center;
+}
+
+.separated{
+	
+	border-collapse: separate;
+	border: outset 3px;
+	font-size: xx-large;
+	font-weight: bold;
+	
+}
+
+.tdseparated{
+	border: inset 5pt;
+	width: 300px;
+}
+
+.emp_show{
+	empty-cells: show;
+}
+.emp_hide{
+	empty-cells: hide;
+}
+
+table#t1{
+	border: 5px dotted yellow;
+	width: auto;
+}
+
+tr#r1{
+	border: 5px dashed blue;
+}
+
+td#d1{
+	border: 5px solid black;
+}
+
+td#d2{
+	border: 5px dotted red;
+}

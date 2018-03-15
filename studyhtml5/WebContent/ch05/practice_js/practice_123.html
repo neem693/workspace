@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="function1()">sort Random</button>
+	<p id = "demo"></p>
+	<p>가장 큰 값 (return Math.max.apply(null,array)) 이용</p>
+	<p id = "demo1"></p>
+	<script>
+        var points = [ 40, 100, 1, 5, 25, 10 ];
+        document.getElementById("demo").innerHTML = points;
+        function function1(){
+            document.getElementById("demo1").innerHTML = Math.max.apply(null,points);            
+        }
+        </script>
+
+
+</body>
+</html>

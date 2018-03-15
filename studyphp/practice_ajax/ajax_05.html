@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="/studyphp/style.css">
+<script src="/studyphp/js/jquery-3.2.1.min.js"></script>
+<script src="/studyphp/practice_ajax/ajax_05.js"></script>
+<title>연습_PHP</title>
+</head>
+<body>
+	<form>
+		<select id="select_rss">
+			<option value="">Select an RSS-feed:</option>
+			<option value="Google">Google News</option>
+			<option value="hani">한겨레</option>
+			<option value="ddanzi">딴지일보</option>
+			<option value="sisain">시사인</option>
+			<option value="pressian">프레시안</option>
+		</select>
+	</form>
+	<div
+		style="display: none; text-align: center;  font-size: 40px;"
+		id="loading">
+		<img alt="loading" src="/studyphp/image/ajax_loading.gif"
+			width="200">LOADING
+	</div>
+	<br>
+	<div id="rssOutput">RSS-feed will be listed here...</div>
+</body>
+</html>
