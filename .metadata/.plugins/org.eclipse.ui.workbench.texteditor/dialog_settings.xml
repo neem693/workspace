@@ -34,12 +34,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="document.getElementById(id).style.property = new style" key="selection"/>
+		<item value="bookmark" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="bookmark"/>
 			<item value="document.getElementById(id).style.property = new style"/>
 			<item value="enhanced for"/>
 			<item value="enhenced for"/>
@@ -47,7 +48,6 @@
 			<item value="str_17"/>
 			<item value="str_3"/>
 			<item value="str_4"/>
-			<item value="fix"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&amp;gt;"/>

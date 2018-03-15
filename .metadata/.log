@@ -9201,3 +9201,121 @@ java.lang.ClassNotFoundException: org.eclipse.jst.server.jetty.xml.ui.internal.c
 
 !ENTRY org.eclipse.ui 2 2 2018-03-13 14:22:47.685
 !MESSAGE Invalid property category path:  (bundle: net.vtst.ow.eclipse.less.ui, propertyPage: net.vtst.ow.eclipse.less.ui.properties.LessProjectPropertyPage)
+!SESSION 2018-03-15 16:58:59.189 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-03-15 16:59:23.350
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\UIO'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.xml.search.editor 4 0 2018-03-15 16:59:32.634
+!MESSAGE   Could not load contentAssists for id: jetty.default.info
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in org.eclipse.jst.server.jetty.xml.ui was unable to load class org.eclipse.jst.server.jetty.xml.ui.internal.contentassist.JettyContentAssistAdditionalProposalInfoProvider.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.addContentAssists(ContentAssistsManager.java:66)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.loadContentAssists(ContentAssistsManager.java:100)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.getProvider(ContentAssistsManager.java:82)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencePathFactory.getAdditionalProposalInfoProvider(XMLReferencePathFactory.java:232)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencePathFactory.createTo(XMLReferencePathFactory.java:159)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.parseReferenceDecl(XMLReferencesManager.java:279)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.addXMLReferences(XMLReferencesManager.java:248)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.loadXMLReferences(XMLReferencesManager.java:218)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.loadXMLReferencesIfNeeded(XMLReferencesManager.java:388)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.getXMLReferences(XMLReferencesManager.java:121)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.getXMLReference(XMLReferencesManager.java:73)
+	at org.eclipse.wst.xml.search.editor.references.XMLReferencesUtil.getXMLReference(XMLReferencesUtil.java:36)
+	at org.eclipse.wst.xml.search.editor.references.XMLReferencesUtil.getXMLReference(XMLReferencesUtil.java:32)
+	at org.eclipse.wst.xml.search.editor.validation.XMLReferencesValidator.doValidateXMLContent(XMLReferencesValidator.java:63)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractTagValidator.doValidate(AbstractTagValidator.java:28)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:140)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:122)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:106)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.validate(ReconcileStepForValidator.java:331)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.reconcileModel(ReconcileStepForValidator.java:205)
+	at org.eclipse.jface.text.reconciler.AbstractReconcileStep.reconcile(AbstractReconcileStep.java:89)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:269)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:258)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:691)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.jst.server.jetty.xml.ui.internal.contentassist.JettyContentAssistAdditionalProposalInfoProvider cannot be found by org.eclipse.jst.server.jetty.xml.ui_1.0.0.201410302229
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	... 28 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2018-03-15 16:59:32.637
+!MESSAGE Plug-in org.eclipse.jst.server.jetty.xml.ui was unable to load class org.eclipse.jst.server.jetty.xml.ui.internal.contentassist.JettyContentAssistAdditionalProposalInfoProvider.
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.jst.server.jetty.xml.ui.internal.contentassist.JettyContentAssistAdditionalProposalInfoProvider cannot be found by org.eclipse.jst.server.jetty.xml.ui_1.0.0.201410302229
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.addContentAssists(ContentAssistsManager.java:66)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.loadContentAssists(ContentAssistsManager.java:100)
+	at org.eclipse.wst.xml.search.editor.internal.contentassist.ContentAssistsManager.getProvider(ContentAssistsManager.java:82)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencePathFactory.getAdditionalProposalInfoProvider(XMLReferencePathFactory.java:232)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencePathFactory.createTo(XMLReferencePathFactory.java:159)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.parseReferenceDecl(XMLReferencesManager.java:279)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.addXMLReferences(XMLReferencesManager.java:248)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.loadXMLReferences(XMLReferencesManager.java:218)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.loadXMLReferencesIfNeeded(XMLReferencesManager.java:388)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.getXMLReferences(XMLReferencesManager.java:121)
+	at org.eclipse.wst.xml.search.editor.internal.references.XMLReferencesManager.getXMLReference(XMLReferencesManager.java:73)
+	at org.eclipse.wst.xml.search.editor.references.XMLReferencesUtil.getXMLReference(XMLReferencesUtil.java:36)
+	at org.eclipse.wst.xml.search.editor.references.XMLReferencesUtil.getXMLReference(XMLReferencesUtil.java:32)
+	at org.eclipse.wst.xml.search.editor.validation.XMLReferencesValidator.doValidateXMLContent(XMLReferencesValidator.java:63)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractTagValidator.doValidate(AbstractTagValidator.java:28)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:140)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:122)
+	at org.eclipse.wst.xml.search.editor.validation.AbstractValidator.validate(AbstractValidator.java:106)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.validate(ReconcileStepForValidator.java:331)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ReconcileStepForValidator.reconcileModel(ReconcileStepForValidator.java:205)
+	at org.eclipse.jface.text.reconciler.AbstractReconcileStep.reconcile(AbstractReconcileStep.java:89)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:269)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:258)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:691)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:54:00.959
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:54:00.966
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:55:06.161
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 18:55:06.164
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 19:00:10.145
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-03-15 19:00:10.147
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.ui 2 2 2018-03-15 19:53:18.432
+!MESSAGE Invalid property category path:  (bundle: net.vtst.ow.eclipse.less.ui, propertyPage: net.vtst.ow.eclipse.less.ui.properties.LessProjectPropertyPage)

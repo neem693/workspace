@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+<style>
+body{
+background-color:yellow;
+color:red;
+}
+</style>
+
+</head>
+<body>
+
+<button onclick = "myFunction()">Try it</button>
+
+<p id = "demo"></p>
+
+<script>
+function myFunction(){
+    var x = document.getElementsByTagName("STLYE")[0];
+    document.getElementById("demo").innerHTML = x.innerHTML;
+}
+</script>
+
+
+</body>
+</html>
