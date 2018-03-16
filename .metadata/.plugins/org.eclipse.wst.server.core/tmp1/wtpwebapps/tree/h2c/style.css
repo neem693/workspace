@@ -1,0 +1,84 @@
+@CHARSET "UTF-8";
+
+@FONT-FACE {
+	font-family: notosans_b;
+	src: url(/studyphp/font/NotoSansMonoCJKkr-Bold.otf);
+}
+
+img{
+	width:640px;
+}
+
+#div1{
+	font-family:notosans_b;
+	color:black;
+	width: 640px;
+	height: 960px;
+	background-image: url("/tree/images/한발자국/lenz-top-2809268_1920.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+#down{
+
+	clear:both;
+	position:relative;
+	text-align: center;
+	width:100%;
+	top:65%;
+	box-sizing: border-box;
+	text-shadow: 0 0 5px #ffffff,0 0 5px white,0 0 5px white;
+	font-weight: bold;
+	font-size:large;
+}
+
+/*p2
+#down{
+
+	clear:both;
+	position:relative;
+	text-align: center;
+	width:100%;
+	top:60%;
+	box-sizing: border-box;
+	text-shadow: 0 0 5px #ffffff,0 0 5px white,0 0 5px white,0 0 5px white;
+	font-weight: bold;
+	font-size:large;
+}
+
+/*p1
+#down{
+
+	clear:both;
+	position:relative;
+	text-align: center;
+	width:100%;
+	top:60%;
+	box-sizing: border-box;
+	text-shadow: 0 0 5px #ffffff,0 0 5px white,0 0 5px white,0 0 5px white;
+	font-weight: bold;
+	font-size:large;
+}
+
+/*벤야민
+#right{
+	position:relative;
+	text-align: center;
+	width:31%;
+	float:right;
+	right:5px;
+	top: 40%;
+	box-sizing: border-box;
+	text-shadow: 0 0 1px #000000;
+}
+
+#down{
+	clear:both;
+	position:relative;
+	text-align: center;
+	width:100%;
+	top:65%;
+	box-sizing: border-box;
+	text-shadow: 0 0 5px #ffffff,0 0 5px white,0 0 5px white;
+	font-weight: bold;
+}*/

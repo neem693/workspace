@@ -19,6 +19,7 @@
 			<div id="list"></div>
 			<h1 id="bookmark_subject">부록</h1>
 			<div id="bookmark_list"></div>
+			<p class="subject_fix" id="subject_line"></p>
 			<h1 class="subject">자바스크립트란?</h1>
 			<p>여기서는 자바스크립트의 개요 및 Jquery 라이브러리를 사용한 태그 제어에 대해
 				살펴본다. 자바스크립트의 문법과 내용은 방대하다. 또한 문법 중 객체 제어 부분은 복잡하다. 이것을
@@ -312,6 +313,18 @@
 				때문이다.
 			</div>
 			<h1 class="bookmark">제이쿼리 이벤트 처리</h1>
+			<h2>기본적인 예</h2>
+			<p>
+				In jQuery, most DOM events have an equivalent jQuery
+				method. <br> <br> To assign a click event to
+				all paragraphs on a page, you can do this:
+			</p>
+			<pre class="code">$("p").click(); </pre>
+			<p>The next step is to define what should happen when
+				the event fires. You must pass a function to the event:</p>
+			<pre class="code">$("p").click(function(){
+  // action goes here!!
+}); </pre>
 			<p>웹 페이지에서의 이베트는 주로 마우스를 이동하거나 엘리먼트를 클릭 또는 라디오 버튼등을
 				클릭하는 동작에 의해 발생한다. JQuery에서도 웹 페이지에서 발생한 이벤트를 제어하는 방법을
 				제공하며 자주 사용하는 이벤트들은 다음과 같다.</p>
@@ -666,8 +679,7 @@
 				판단하는 것이 바로 stu이다. xhr은 해당 페이지에 대한 상태를 보다 구체적으로 나타낸다.
 			</p>
 			<p>실습 09에 ajax를 써서 진행한다.</p>
-			<h1 class="subject">부록</h1>
-			<h1 class="bookmark">attr</h1>
+			<h1 class="subject">attr</h1>
 			<p>
 
 				arrt 메소드는 선택된 엘리먼트의 메소드의 속성을 설정하거나 리턴값을 되돌리는 메소드이다. <br>
@@ -693,7 +705,7 @@
 				$("button").click(function(){<br>
 				$("img").attr("width","500"); <br>});
 			</div>
-			<h1 class="bookmark">append</h1>
+			<h1 class="subject">append</h1>
 			메소드는 선택된 엘리먼트의 끝 부분에 특정한 콘텐츠를 삽입하는 메소드.<br> 엘리먼트 앞
 			부분에 삽입하려면 prepend()메소드를 사용할것!<br>
 
@@ -704,7 +716,7 @@
 				$("button").click(function(){<br> $("p").append("<b>Appended
 					text</b>");<br> });
 			</div>
-			<h1 class="bookmark">bind 함수</h1>
+			<h1 class="subject">bind 함수</h1>
 			<p>
 				<br> bind()메소드는 버젼 3.0에서 중요도가 떨어져 있다. 대신 on 메소드를
 				사용하라. <br>bind 메소드는 선택된 엘리먼트의 하나 또는 그 이상의 이벤트 헨들러를
@@ -738,7 +750,7 @@
 				handlerName)<br> });<br> &lt;/script&gt;
 			</div>
 
-			<h1 class="bookmark">on 메소드</h1>
+			<h1 class="subject">on 메소드</h1>
 			<p></p>
 			<br>on()메소드는 선택된 엘리먼트와 차일드 엘리먼트에 하나 또는 그 이상의 헨들러를
 			붙이는 메소드이다.<br> Jquery 버젼 1.7처럼 on()메소드는 bind()메소드의
@@ -818,7 +830,7 @@
 				$("button").click(function(){<br>
 				$("p").off("click");<br> });<br> }); <br>&lt;/script&gt;
 			</div>
-			<h1 class="bookmark">one 메소드</h1>
+			<h1 class="subject">one 메소드</h1>
 			<p>
 				선택된 엘리먼트에 하나 또는 그 이상의 이벤트 헨들러를 붙이는 걸 말하며, 이벤트가 발생했을 때,
 				함수를 정의한다.<br> one()메소드를 사용할 때, 이벤트 헨들러 함수는 오직 각각의
@@ -841,7 +853,7 @@
 				per element per event type (one click, and one
 				dblclick).&lt;/p&gt;<br> &lt;/body&gt;<br>
 			</div>
-			<h1 class="bookmark">off 메소드</h1>
+			<h1 class="subject">off 메소드</h1>
 			<p>
 				<br> off메소드는 on메소드와 함께 이벤트 헨들러를 제거하는데 자주사용되는 메소드이다.<br>
 				jquery 버젼 1.7버젼부터 off메소드는 unbind,die,undelegate메소드를 대신하는
@@ -911,120 +923,714 @@ $(document).ready(function(){
 });
 &lt;/script&gt;</pre>
 			</div>
-			<h1 class="bookmark">animate 메소드</h1>
+			<h1 class="subject">animate 메소드</h1>
+			<h1>기본 Example예제</h1>
+			<pre class='code'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="jquery.js 경로"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        $("#box").animate({height: "300px"});
+    });
+    $("#btn2").click(function(){
+        $("#box").animate({height: "100px"});
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button id="btn1"&gt;Animate height&lt;/button&gt;
+&lt;button id="btn2"&gt;Reset height&lt;/button&gt;
+
+&lt;div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice/jq_p16.html">프렉티스16</a>
+			<h1>Definition and Usage</h1>
 			<p>
-				animate()메소드는 css 특성을 임의로 정의된 에니메이션을 수행하는 메소드이다. 이러한
-				메소드는 하나의 엘리먼트를 css스타일 상의 하나의 상태에서 다른 상태로 변화시킨다. css특성 값은
-				점진적으로 변화시켜간다. 에니메이션 이펙트를 만들어가면서 말이다.<br>오직 숫자 값만이
-				에니메이션화 될 수 있다. (예)) "margin: 30px" )<br> 문자값은
-				에니메이션화 될 수 없다. (예)"background-color:red")<br> 그러나
-				몇몇 문자열 값은 에니메이션화 될 수 있다.<br> ( "show", "hide",
-				"toggle") 이러한 값은 에니메이션화된 엘리먼트를 숨길수 있고, 보여줄 수 있다. <br>
-				Tip: "+="또는"-="를 에니메이션 관련되서 사용하라.
+				The animate() method performs a custom animation of a
+				set of CSS properties. <br> <br> This method
+				changes an element from one state to another with CSS
+				styles. The CSS property value is changed gradually, to
+				create an animated effect. <br> <br> Only
+				numeric values can be animated (like "margin:30px").
+				String values cannot be animated (like
+				"background-color:red"), except for the strings "show",
+				"hide" and "toggle". These values allow hiding and
+				showing the animated element. <br> <br> Tip:
+				Use "+=" or "-=" for relative animations.
 			</p>
-			<div class="code">(selector).animate({styles},speed,easing,callback)</div>
+			<h1>Syntax</h1>
+			<p class="code">(selector).animate({styles},speed,easing,callback)</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Parameter</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><em>styles</em></td>
+						<td>Required. Specifies one or more CSS
+							properties/values to animate.
+							<p>
+								<b>Note:</b> The property names must be camel-cased
+								when used with the animate() method: You will need
+								to write paddingLeft instead of padding-left,
+								marginRight instead of margin-right, and so on.
+							</p>
+							<p>Properties that can be animated:</p>
+							<ul>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_backgroundpositionxy">backgroundPositionX</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_backgroundpositionxy">backgroundPositionY</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_borderwidth">borderWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_borderbottomwidth">borderBottomWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_borderleftwidth">borderLeftWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_borderrightwidth">borderRightWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_bordertopwidth">borderTopWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_borderspacing">borderSpacing</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_margin">margin</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_marginbottom">marginBottom</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_marginleft">marginLeft</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_marginright">marginRight</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_margintop">marginTop</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_outlinewidth">outlineWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_padding">padding</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_paddingbottom">paddingBottom</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_paddingleft">paddingLeft</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_paddingright">paddingRight</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_paddingtop">paddingTop</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_height">height</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_width">width</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_maxheight">maxHeight</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_maxwidth">maxWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_minheight">minHeight</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_minwidth">minWidth</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_fontsize">fontSize</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_bottom">bottom</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_left">left</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_right">right</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_top">top</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_letterspacing">letterSpacing</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_wordspacing">wordSpacing</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_lineheight">lineHeight</a></li>
+								<li><a target="_blank"
+									href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_ani_textindent">textIndent</a></li>
+							</ul> <br> Only numeric values can be animated (like
+							"margin:30px"). String values cannot be animated
+							(like "background-color:red"), except for the strings
+							"show", "hide" and "toggle". These values allow
+							hiding and showing the animated element.<br>
+						</td>
+					</tr>
+					<tr>
+						<td><em>speed</em></td>
+						<td>Optional. Specifies the speed of the
+							animation. Default value is 400 milliseconds
+							<p>Possible values:</p>
+							<ul>
+								<li>milliseconds (like 100, 1000, 5000, etc)</li>
+								<li>"slow"</li>
+								<li>"fast"</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td><em>easing</em></td>
+						<td>Optional. Specifies the speed of the element
+							in different points of the animation. Default value
+							is "swing". Possible values:
+							<ul>
+								<li>"swing" - moves slower at the
+									beginning/end, but faster in the middle</li>
+								<li>"linear" - moves in a constant speed</li>
+							</ul> <b>Tip:</b> More easing functions are available in
+							external plugins.
+						</td>
+					</tr>
+					<tr>
+						<td><em>callback</em></td>
+						<td>Optional. A function to be executed after the
+							animation completes. To learn more about callback,
+							please read our <a
+							href="https://www.w3schools.com/jquery/jquery_callback.asp">jQuery
+								Callback</a> chapter
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Alternate Syntax</h1>
+			<p class="code">(selector).animate({styles},{options})</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Parameter</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><em>styles</em></td>
+						<td>Required. Specifies one or more CSS
+							properties/values to animate (See possible values
+							above)</td>
+					</tr>
+					<tr>
+						<td><em>options</em></td>
+						<td>Optional. Specifies additional options for
+							the animation. Possible values:
+							<ul>
+								<li>duration - sets the speed of the animation</li>
+								<li>easing - specifies the easing function to
+									use</li>
+								<li>complete - specifies a function to be
+									executed after the animation completes</li>
+								<li>step - specifies a function to be executed
+									for each step in the animation</li>
+								<li>progress - specifies a function to be
+									executed after each step in the animation</li>
+								<li>queue - a Boolean value specifying whether
+									or not to place the animation in the effects queue</li>
+								<li>specialEasing - a map of one or more CSS
+									properties from the <i>styles</i> parameter, and
+									their corresponding easing functions
+								</li>
+								<li>start - specifies a function to be executed
+									when the animation begins</li>
+								<li>done - specifies a function to be executed
+									when the animation ends</li>
+								<li>fail - specifies a function to be executed
+									if the animation fails to complete</li>
+								<li>always - specifies a function to be
+									executed if the animation stops without completing</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>advanced Example</h1>
+			<h2>Using animate() with a callback function</h2>
+			<p>How to use animate() with a callback function that
+				repeats the animation.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="제이쿼리 경로"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        var div = $("div");
+        startAnimation();
+        function startAnimation(){
+            div.animate({height: 300}, "slow");
+            div.animate({width: 300}, "slow");
+            div.css("background-color", "blue");  
+            div.animate({height: 100}, "slow");
+            div.animate({width: 100}, "slow", startAnimation);
+        }
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  
+&lt;button&gt;Start Animation&lt;/button&gt;
+
+&lt;div style="width:50px;height:50px;position:absolute;left:10px;top:50px;background-color:red;"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+
+			<h2 class="bookmark">중요!! 제귀함수 사용에 유의</h2>
+
+			<pre class="code">
+			...
+function <span class="imp">startAnimation()</span>{
+            div.animate({height: 300}, "slow");
+            div.animate({width: 300}, "slow");
+            div.css("background-color", "blue");  
+            div.animate({height: 100}, "slow");
+            div.animate({width: 100}, "slow", <span
+					class="imp">startAnimation</span>);
+        }
+        ....
+			</pre>
 			<p>
-				스타일에 들어갈 수 있는 값들 <br>backgroundPositionX <br>backgroundPositionY
-				<br>borderWidth <br>borderBottomWidth <br>borderLeftWidth
-				<br>borderRightWidth <br>borderTopWidth <br>borderSpacing
-				<br>margin <br>marginBottom <br>marginLeft
-				<br>marginRight <br>marginTop <br>outlineWidth
-				<br>padding <br>paddingBottom <br>paddingLeft
-				<br>paddingRight <br>paddingTop <br>height
-				<br>width <br>maxHeight <br>maxWidth <br>minHeight
-				<br>minWidth <br>fontSize <br>bottom <br>left
-				<br>right <br>top <br>letterSpacing <br>wordSpacing
-				<br>lineHeight <br>textIndent
+				자 해당하는 코드를 보자. 여기서 의도하는 바는 startAnimation함수가 <b>끝나고</b>,
+				<b>바로 다시 시작</b>하는 것이다. <br> <br>콜백함수 부분에 <span
+					class="imp">startAnimation</span>가 있다. () 즉, 괄호가 없다.
+				이러한 부분이 바로 끝나면 바로 시작한다는 걸 의미한다. 만약 여기에
+				startAnimation()라고 적는다면, 함수가 이어지지 않고, 제귀함수 모양형태로 간다.
 			</p>
+			<table>
+				<tr>
+					<th>함수이어짐</th>
+					<th>제귀함수</th>
+				</tr>
+				<tr>
+					<td>f->리턴->f->리턴->f->리턴->f->리턴....</td>
+					<td>f->f->f->f->....->(조건적 중단 또는 한계적 오류 발생시)리턴</td>
+				</tr>
+			</table>
 			<p>
-				speed에 들어갈 수 있는 것들<br> milliseconds (like 100,
-				1000, 5000, etc)<br> "slow"<br> "fast"<br>
+				이 두 가지는 분명 차이가 있다. 위에 말했듯이 콜백함수 부분에 startAnimation()를
+				기재해버리면, 시스템이 겁나게 느려지면서 에니메이션도 순서대로 작동하지 않고, 결과적으로 4가지
+				동작이 2가지 동작으로 이상하게 줄어든다. 이에대한 원인은 리턴을 중간에 하거나 하지 않는 즉,
+				함수이어짐과 제귀함수를 분명히 구분하는 것으로 파악이 가능할 것이다.<br> <br>
+				문제는 그냥 startAnimation 이라고 딸랑 한줄만 써놓는 것으로 콜백함수를 대체하는 건
+				간단하긴 하나, 헷갈릴수가 있다. 거듭 말하자면, 이는 콜백함수가 아니라 progress 즉, 다음
+				단계로 넘어가는 것으로 보인다. 또한 더 복잡한 콜백함수를 원할 때에는 고민할수가 있다. 따라서
+				이것은 별로 좋은 방법이 아니다.<br> 그럼 어떻게 해야 하는가? function을 써서
+				callback함수로 확실히 못을 박아 버리는 것이다. 즉 위의 코드는 다음과 같이 대체가 가능하다.
 			</p>
+			<pre class="code">
+...
+function startAnimation(){
+            div.animate({height: 300}, "slow");
+            div.animate({width: 300}, "slow");
+            div.css("background-color", "blue");  
+            div.animate({height: 100}, "slow");
+            div.animate({width: 100}, "slow", <span
+					class="imp">function()</span>{
+            <span class="imp">startAnimation();</span>
+        });
+    }
+        ....</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p17.html"
+				class="center">프렉티스17</a>
+			<h2>Alternate Syntax Example</h2>
+			<p>Using the alternate syntax to specify multiple
+				animation styles and options.</p>
+			<pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="ajax 경로"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $("#box").animate({
+      height: "300px",
+      width: "300px"
+    }, {
+      duration: 5000,
+      easing: "linear",
+      complete: function(){
+        $(this).after("&lt;p&gt;Animation is complete!&lt;/p&gt;");
+      }
+    });
+  });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button id="btn"&gt;Animate height &amp; width&lt;/button&gt;
+
+&lt;div id="box" style="background:#98bf21;height:100px;width:100px;margin:6px;"&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p18.html"
+				class="center">프렉티스18</a>
+			<h2>Using animate() to create a progress bar</h2>
+			<p>How to use the animate() method to create a
+				progress bar.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="ajax 경로 "&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $("#box").animate({
+      width: "400px"
+    }, {
+      duration: 5000,
+      easing: "linear",
+      step: function(x) {
+        $("#demo").text(Math.round(x * 100 / 400)  + "%");  
+      }
+    });
+  });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;button id="btn"&gt;Start Progress Bar&lt;/button&gt;
+
+&lt;div style="border:1px solid green;margin:10px;width:400px;"&gt;
+  &lt;div id="box" style="background:#98bf21;height:50px;width:1px;border:1px solid green;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p19.html"
+				class="center">프렉티스19</a>
+			<p>여기서 x매개변수는 각 단계의 밀리초라고 생각하면 될 듯 하다.</p>
+			<h2>Add smooth scrolling to page anchors</h2>
+			<p>How to use animate() to add smooth scrolling to
+				links.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="ajax 경로: 예)https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+&lt;/script&gt;
+ &lt;style&gt;
+body, html, .main {
+    height: 100%;
+}
+
+section {
+    min-height: 100%;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;a href="#section2"&gt;Click Me to Smooth Scroll to Section 2 Below&lt;/a&gt;
+
+&lt;div class="main"&gt;
+  &lt;section&gt;&lt;/section&gt;
+&lt;/div&gt;
+
+&lt;div class="main" id="section2"&gt;
+  &lt;section style="background-color:blue"&gt;&lt;/section&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p20.html"
+				class="center">프렉티스20</a>
+			<h1 class="bookmark">jQuery HTML / CSS
+				Methods</h1>
+			<h3>jQuery HTML / CSS Methods</h3>
 			<p>
-				easing에 대해서는 읽어보시라<br> Optional. Specifies the
-				speed of the element in different points of the
-				animation. Default value is "swing". Possible values:<br>
-
-				"swing" - moves slower at the beginning/end, but faster
-				in the middle <br>"linear" - moves in a constant
-				speed <br>Tip: More easing functions are available
-				in external plugins.
+				<span
+					class="imp">해당 속성은 모두 animate 속성으로 사용할 수 있다. 그러기에 중요하다.<br> 사용법은 해당 속성들을 사용할 때 css 사용하듯이
+					{width:300px, scrollTop:500px}이런식으로 사용해야 한다는 것이다.</span><br>
+				<br>The following table lists all the methods used
+				to manipulate the HTML and CSS. <br> <br> The
+				methods below work for both HTML and XML documents.
+				Exception: the html() method.
 			</p>
-			<div class="code">(selector).animate({styles},{options})</div>
-			<p>
-				option에 들어갈수 있는 것들 <br> duration - sets the speed
-				of the animation <br> easing - specifies the easing
-				function to use <br> complete - specifies a
-				function to be executed after the animation completes <br>
-				step - specifies a function to be executed for each step
-				in the animation <br> progress - specifies a
-				function to be executed after each step in the animation
-				<br> queue - a Boolean value specifying whether or
-				not to place the animation in the effects queue <br>
-				specialEasing - a map of one or more CSS properties from
-				the styles parameter, and their corresponding easing
-				functions <br> start - specifies a function to be
-				executed when the animation begins <br> done -
-				specifies a function to be executed when the animation
-				ends <br> fail - specifies a function to be
-				executed if the animation fails to complete always -
-				specifies a function to be executed if the animation
-				stops without completing
-
-			</p>
-
-			<div class="code">
-
-				어떻게 에니메이션을 반복하는 콜벡 함수에 animate메소드를 사용하는가?<br>
-				$(document).ready(function(){<br>
-				$("button").click(function(){<br> var div =
-				$("div");<br> startAnimation();<br> function
-				startAnimation(){<br> div.animate({height: 300},
-				"slow");<br> div.animate({width: 300}, "slow");<br>
-				div.css("background-color", "blue"); <br>
-				div.animate({height: 100}, "slow");<br>
-				div.animate({width: 100}, "slow", startAnimation);<br>
-				}<br> });<br> });<br>
-			</div>
-			<div class="code">
-				몇가지 에니메이션 스타일과 옵션을 특정화하기 위한 대안 신텍스 사용하기<br>$(document).ready(function(){<br>
-				$("#btn").click(function(){<br> $("#box").animate({<br>
-				height: "300px",<br> width: "300px"<br> }, {<br>
-				duration: 5000,<br> easing: "linear",<br>
-				complete: function(){<br> $(this).after("
-				<p>Animation is complete!</p>
-				");<br> }<br> });<br> });<br> });<br>
-			</div>
-
-			<div class="code">
-				어떻게 프로세스 바를 만드는데 animate()메소드를 사용하는가?<br>
-				$(document).ready(function(){<br>
-				$("#btn").click(function(){<br> $("#box").animate({<br>
-				width: "400px"<br> }, {<br> duration: 5000,<br>
-				easing: "linear",<br> step: function(x) {<br>
-				$("#demo").text(Math.round(x * 100 / 400) + "%");<br>
-				}<br> });<br> });<br> });<br>
-			</div>
-			<div class="code">
-				스무스 스크롤링 링크 에니메이트 메소드를 어떻게 사용하는가?<br>
-				$(document).ready(function(){<br> // Add smooth
-				scrolling to all links<br> $("a").on('click',
-				function(event) {<br> <br> // Make sure
-				this.hash has a value before overriding default behavior<br>
-				if (this.hash !== "") {<br> // Prevent default
-				anchor click behavior<br> event.preventDefault();<br>
-				<br> // Store hash<br> var hash = this.hash;<br>
-				<br> // Using jQuery's animate() method to add
-				smooth page scroll<br> // The optional number (800)
-				specifies the number of milliseconds it takes to scroll
-				to the specified area<br> $('html, body').animate({<br>
-				scrollTop: $(hash).offset().top<br> }, 800,
-				function(){<br> // Add hash (#) to URL when done
-				scrolling (default click behavior)<br>
-				window.location.hash = hash;<br> });<br> } //
-				End if<br> });<br> });<br>
-			</div>
-
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_addclass.asp">addClass()</a></td>
+						<td>Adds one or more class names to selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_after.asp">after()</a></td>
+						<td>Inserts content after selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_append.asp">append()</a></td>
+						<td>Inserts content at the end of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_appendto.asp">appendTo()</a></td>
+						<td>Inserts HTML elements at the end of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_attr.asp">attr()</a></td>
+						<td>Sets or returns attributes/values of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_before.asp">before()</a></td>
+						<td>Inserts content before selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_clone.asp">clone()</a></td>
+						<td>Makes a copy of selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_css.asp">css()</a></td>
+						<td>Sets or returns one or more style properties
+							for selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_detach.asp">detach()</a></td>
+						<td>Removes selected elements (keeps data and
+							events)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_empty.asp">empty()</a></td>
+						<td>Removes all child nodes and content from
+							selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_hasclass.asp">hasClass()</a></td>
+						<td>Checks if any of the selected elements have a
+							specified class name</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_height.asp">height()</a></td>
+						<td>Sets or returns the height of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_html.asp">html()</a></td>
+						<td>Sets or returns the content of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_innerheight.asp">innerHeight()</a></td>
+						<td>Returns the height of an element (includes
+							padding, but not border)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_innerwidth.asp">innerWidth()</a></td>
+						<td>Returns the width of an element (includes
+							padding, but not border)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_insertafter.asp">insertAfter()</a></td>
+						<td>Inserts HTML elements after selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_insertbefore.asp">insertBefore()</a></td>
+						<td>Inserts HTML elements before selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_offset.asp">offset()</a></td>
+						<td>Sets or returns the offset coordinates for
+							selected elements (relative to the document)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_offsetparent.asp">offsetParent()</a></td>
+						<td>Returns the first positioned parent element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_outerheight.asp">outerHeight()</a></td>
+						<td>Returns the height of an element (includes
+							padding and border)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_outerwidth.asp">outerWidth()</a></td>
+						<td>Returns the width of an element (includes
+							padding and border)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_position.asp">position()</a></td>
+						<td>Returns the position (relative to the parent
+							element) of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_prepend.asp">prepend()</a></td>
+						<td>Inserts content at the beginning of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_prependto.asp">prependTo()</a></td>
+						<td>Inserts HTML elements at the beginning of
+							selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_prop.asp">prop()</a></td>
+						<td>Sets or returns properties/values of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_remove.asp">remove()</a></td>
+						<td>Removes the selected elements (including data
+							and events)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_removeattr.asp">removeAttr()</a></td>
+						<td>Removes one or more attributes from selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_removeclass.asp">removeClass()</a></td>
+						<td>Removes one or more classes from selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_removeprop.asp">removeProp()</a></td>
+						<td>Removes a property set by the prop() method</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_replaceall.asp">replaceAll()</a></td>
+						<td>Replaces selected elements with new HTML
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_replacewith.asp">replaceWith()</a></td>
+						<td>Replaces selected elements with new content</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_scrollleft.asp">scrollLeft()</a></td>
+						<td>Sets or returns the horizontal scrollbar
+							position of selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_scrolltop.asp">scrollTop()</a></td>
+						<td>Sets or returns the vertical scrollbar
+							position of selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_text.asp">text()</a></td>
+						<td>Sets or returns the text content of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_toggleclass.asp">toggleClass()</a></td>
+						<td>Toggles between adding/removing one or more
+							classes from selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_unwrap.asp">unwrap()</a></td>
+						<td>Removes the parent element of the selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_val.asp">val()</a></td>
+						<td>Sets or returns the value attribute of the
+							selected elements (for form elements)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/css_width.asp">width()</a></td>
+						<td>Sets or returns the width of selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_wrap.asp">wrap()</a></td>
+						<td>Wraps HTML element(s) around each selected
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_wrapall.asp">wrapAll()</a></td>
+						<td>Wraps HTML element(s) around all selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/html_wrapinner.asp">wrapInner()</a></td>
+						<td>Wraps HTML element(s) around the content of
+							each selected element</td>
+					</tr>
+				</tbody>
+			</table>
 			<h1 class="bookmark">제이쿼리: 실렉터</h1>
 			<table>
 				<tr>
@@ -1209,6 +1815,7 @@ $(document).ready(function(){
 					<td>$(":contains('Hello')")</td>
 					<td>All elements which contains the text "Hello"</td>
 				</tr>
+
 				<tr>
 					<td>:has(selector)
 					<td>$("div:has(p)")</td>
@@ -1520,290 +2127,391 @@ $(document).ready(function(){
 						subset specified by a range of indices</td>
 				</tr>
 			</table>
-			<h1 class="bookmark">event method</h1>
+			<h1 class="bookmark">event method 레퍼런스</h1>
 			<table>
-				<tr>
-					<th>Method / Property</th>
-					<th>Description</th>
-				</tr>
-				<tr>
-					<td><a>bind()</a></td>
-					<td><span class="imp">file in version 3.0.
-							Use the <a>on()</a> method instead.
-					</span> Attaches event handlers to elements</td>
-				</tr>
-				<tr>
-					<td><a>blur()</a></td>
-					<td>Attaches/Triggers the blur event</td>
-				</tr>
-				<tr>
-					<td><a>change()</a></td>
-					<td>Attaches/Triggers the change event</td>
-				</tr>
-				<tr>
-					<td><a>click()</a></td>
-					<td>Attaches/Triggers the click event</td>
-				</tr>
-				<tr>
-					<td><a>dblclick()</a></td>
-					<td>Attaches/Triggers the double click event</td>
-				</tr>
-				<tr>
-					<td><a>delegate()</a></td>
-					<td><span class="imp">file in version 3.0.
-							Use the <a href="event_on.asp">on()</a> method
-							instead.
-					</span> Attaches a handler to current, or future, specified
-						child elements of the matching elements</td>
-				</tr>
-				<tr>
-					<td><a>die()</a></td>
-					<td><span class="file">Removed in version
-							1.9.</span> Removes all event handlers added with the live()
-						method</td>
-				</tr>
-				<tr>
-					<td><a>error()</a></td>
-					<td><span class="file">Removed in version
-							3.0.</span> Attaches/Triggers the error event</td>
-				</tr>
-				<tr>
-					<td><a>event.currentTarget</a></td>
-					<td>The current DOM element within the event
-						bubbling phase</td>
-				</tr>
-				<tr>
-					<td><a>event.data</a></td>
-					<td>Contains the optional data passed to an event
-						method when the current executing handler is bound</td>
-				</tr>
-				<tr>
-					<td><a>event.delegateTarget</a></td>
-					<td>Returns the element where the currently-called
-						jQuery event handler was attached</td>
-				</tr>
-				<tr>
-					<td><a>event.isDefaultPrevented()</a></td>
-					<td>Returns whether event.preventDefault() was
-						called for the event object</td>
-				</tr>
-				<tr>
-					<td><a>event.isImmediatePropagationStopped()</a></td>
-					<td>Returns whether
-						event.stopImmediatePropagation() was called for the
-						event object</td>
-				</tr>
-				<tr>
-					<td><a>event.isPropagationStopped()</a></td>
-					<td>Returns whether event.stopPropagation() was
-						called for the event object</td>
-				</tr>
-				<tr>
-					<td><a>event.namespace</a></td>
-					<td>Returns the namespace specified when the event
-						was triggered</td>
-				</tr>
-				<tr>
-					<td><a>event.pageX</a></td>
-					<td>Returns the mouse position relative to the
-						left edge of the document</td>
-				</tr>
-				<tr>
-					<td><a>event.pageY</a></td>
-					<td>Returns the mouse position relative to the top
-						edge of the document</td>
-				</tr>
-				<tr>
-					<td><a>event.preventDefault()</a></td>
-					<td>Prevents the default action of the event</td>
-				</tr>
-				<tr>
-					<td><a>event.relatedTarget</a></td>
-					<td>Returns which element being entered or exited
-						on mouse movement.</td>
-				</tr>
-				<tr>
-					<td><a>event.result</a></td>
-					<td>Contains the last/previous value returned by
-						an event handler triggered by the specified event</td>
-				</tr>
-				<tr>
-					<td><a>event.stopImmediatePropagation()</a></td>
-					<td>Prevents other event handlers from being
-						called</td>
-				</tr>
-				<tr>
-					<td><a>event.stopPropagation()</a></td>
-					<td>Prevents the event from bubbling up the DOM
-						tree, preventing any parent handlers from being
-						notified of the event</td>
-				</tr>
-				<tr>
-					<td><a>event.target</a></td>
-					<td>Returns which DOM element triggered the event</td>
-				</tr>
-				<tr>
-					<td><a>event.timeStamp</a></td>
-					<td>Returns the number of milliseconds since
-						January 1, 1970, when the event is triggered</td>
-				</tr>
-				<tr>
-					<td><a>event.type</a></td>
-					<td>Returns which event type was triggered</td>
-				</tr>
-				<tr>
-					<td><a>event.which</a></td>
-					<td>Returns which keyboard key or mouse button was
-						pressed for the event</td>
-				</tr>
-				<tr>
-					<td><a>focus()</a></td>
-					<td>Attaches/Triggers the focus event</td>
-				</tr>
-				<tr>
-					<td><a>focusin()</a></td>
-					<td>Attaches an event handler to the focusin event</td>
-				</tr>
-				<tr>
-					<td><a>focusout()</a></td>
-					<td>Attaches an event handler to the focusout
-						event</td>
-				</tr>
-				<tr>
-					<td><a>hover()</a></td>
-					<td>Attaches two event handlers to the hover event</td>
-				</tr>
-				<tr>
-					<td><a>keydown()</a></td>
-					<td>Attaches/Triggers the keydown event</td>
-				</tr>
-				<tr>
-					<td><a>keypress()</a></td>
-					<td>Attaches/Triggers the keypress event</td>
-				</tr>
-				<tr>
-					<td><a>keyup()</a></td>
-					<td>Attaches/Triggers the keyup event</td>
-				</tr>
-				<tr>
-					<td><a>live()</a></td>
-					<td><span class="file">Removed in version
-							1.9.</span> Adds one or more event handlers to current, or
-						future, selected elements</td>
-				</tr>
-				<tr>
-					<td><a>load()</a></td>
-					<td><span class="file">Removed in version
-							3.0.</span> Attaches an event handler to the load event</td>
-				</tr>
-				<tr>
-					<td><a>mousedown()</a></td>
-					<td>Attaches/Triggers the mousedown event</td>
-				</tr>
-				<tr>
-					<td><a>mouseenter()</a></td>
-					<td>Attaches/Triggers the mouseenter event</td>
-				</tr>
-				<tr>
-					<td><a>mouseleave()</a></td>
-					<td>Attaches/Triggers the mouseleave event</td>
-				</tr>
-				<tr>
-					<td><a>mousemove()</a></td>
-					<td>Attaches/Triggers the mousemove event</td>
-				</tr>
-				<tr>
-					<td><a>mouseout()</a></td>
-					<td>Attaches/Triggers the mouseout event</td>
-				</tr>
-				<tr>
-					<td><a>mouseover()</a></td>
-					<td>Attaches/Triggers the mouseover event<a
-						href="/studyhtml5/ch05/practice/jq_p10.html">mouseenter와
-							비교</a></td>
-				</tr>
-				<tr>
-					<td><a>mouseup()</a></td>
-					<td>Attaches/Triggers the mouseup event</td>
-				</tr>
-				<tr>
-					<td><a>off()</a></td>
-					<td>Removes event handlers attached with the on()
-						method</td>
-				</tr>
-				<tr>
-					<td><a>on()</a></td>
-					<td>Attaches event handlers to elements</td>
-				</tr>
-				<tr>
-					<td><a>one()</a></td>
-					<td>Adds one or more event handlers to selected
-						elements. This handler can only be triggered once per
-						element</td>
-				</tr>
-				<tr>
-					<td><a>$.proxy()</a></td>
-					<td>Takes an existing function and returns a new
-						one with a particular context</td>
-				</tr>
-				<tr>
-					<td><a>ready()</a></td>
-					<td>Specifies a function to execute when the DOM
-						is fully loaded</td>
-				</tr>
-				<tr>
-					<td><a>resize()</a></td>
-					<td>Attaches/Triggers the resize event</td>
-				</tr>
-				<tr>
-					<td><a>scroll()</a></td>
-					<td>Attaches/Triggers the scroll event</td>
-				</tr>
-				<tr>
-					<td><a>select()</a></td>
-					<td>Attaches/Triggers the select event</td>
-				</tr>
-				<tr>
-					<td><a>submit()</a></td>
-					<td>Attaches/Triggers the submit event</td>
-				</tr>
-				<tr>
-					<td><a>toggle()</a></td>
-					<td><span class="file">Removed in version
-							1.9.</span> Attaches two or more functions to toggle between
-						for the click event</td>
-				</tr>
-				<tr>
-					<td><a>trigger()</a></td>
-					<td>Triggers all events bound to the selected
-						elements</td>
-				</tr>
-				<tr>
-					<td><a>triggerHandler()</a></td>
-					<td>Triggers all functions bound to a specified
-						event for the selected elements</td>
-				</tr>
-				<tr>
-					<td><a>unbind()</a></td>
-					<td><span class="imp">file in version 3.0.
-							Use the <a>off()</a> method instead.
-					</span> Removes an added event handler from selected elements</td>
-				</tr>
-				<tr>
-					<td><a>undelegate()</a></td>
-					<td><span class="imp">file in version 3.0.
-							Use the <a>off()</a> method instead.
-					</span> Removes an event handler to selected elements, now or
-						in the future</td>
-				</tr>
-				<tr>
-					<td><a>unload()</a></td>
-					<td><span class="file">Removed in version
-							3.0.</span> Attaches an event handler to the unload event</td>
-				</tr>
+				<tbody>
+					<tr>
+						<th style="width: 23%">Mouse Events</th>
+						<th style="width: 25%">Keyboard Events</th>
+						<th style="width: 22%">Form Events</th>
+						<th>Document/Window Events</th>
+					</tr>
+					<tr>
+						<td>click</td>
+						<td>keypress</td>
+						<td>submit</td>
+						<td>load</td>
+					</tr>
+					<tr>
+						<td>dblclick</td>
+						<td>keydown</td>
+						<td>change</td>
+						<td>resize</td>
+					</tr>
+					<tr>
+						<td>mouseenter</td>
+						<td>keyup</td>
+						<td>focus</td>
+						<td>scroll</td>
+					</tr>
+					<tr>
+						<td>mouseleave</td>
+						<td>&nbsp;</td>
+						<td>blur</td>
+						<td>unload</td>
+					</tr>
 				</tbody>
 			</table>
-			<h1 class="bookmark">addClass</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 35%">Method / Property</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_bind.asp">bind()</a></td>
+						<td><span class="marked">Deprecated in
+								version 3.0. Use the <a
+								href="https://www.w3schools.com/jquery/event_on.asp">on()</a>
+								method instead.
+						</span> Attaches event handlers to elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_blur.asp">blur()</a></td>
+						<td>Attaches/Triggers the blur event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_change.asp">change()</a></td>
+						<td>Attaches/Triggers the change event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_click.asp">click()</a></td>
+						<td>Attaches/Triggers the click event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_dblclick.asp">dblclick()</a></td>
+						<td>Attaches/Triggers the double click event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_delegate.asp">delegate()</a></td>
+						<td><span class="marked">Deprecated in
+								version 3.0. Use the <a
+								href="https://www.w3schools.com/jquery/event_on.asp">on()</a>
+								method instead.
+						</span> Attaches a handler to current, or future, specified
+							child elements of the matching elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_die.asp">die()</a></td>
+						<td><span class="deprecated">Removed in
+								version 1.9.</span> Removes all event handlers added with
+							the live() method</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_error.asp">error()</a></td>
+						<td><span class="deprecated">Removed in
+								version 3.0.</span> Attaches/Triggers the error event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_currenttarget.asp">event.currentTarget</a></td>
+						<td>The current DOM element within the event
+							bubbling phase</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_data.asp">event.data</a></td>
+						<td>Contains the optional data passed to an event
+							method when the current executing handler is bound</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_delegatetarget.asp">event.delegateTarget</a></td>
+						<td>Returns the element where the
+							currently-called jQuery event handler was attached</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_isdefaultprevented.asp">event.isDefaultPrevented()</a></td>
+						<td>Returns whether event.preventDefault() was
+							called for the event object</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_isimmediatepropagationstopped.asp">event.isImmediatePropagationStopped()</a></td>
+						<td>Returns whether
+							event.stopImmediatePropagation() was called for the
+							event object</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_ispropagationstopped.asp">event.isPropagationStopped()</a></td>
+						<td>Returns whether event.stopPropagation() was
+							called for the event object</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_namespace.asp">event.namespace</a></td>
+						<td>Returns the namespace specified when the
+							event was triggered</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_pagex.asp">event.pageX</a></td>
+						<td>Returns the mouse position relative to the
+							left edge of the document</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_pagey.asp">event.pageY</a></td>
+						<td>Returns the mouse position relative to the
+							top edge of the document</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_preventdefault.asp">event.preventDefault()</a></td>
+						<td>Prevents the default action of the event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_relatedtarget.asp">event.relatedTarget</a></td>
+						<td>Returns which element being entered or exited
+							on mouse movement.</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_result.asp">event.result</a></td>
+						<td>Contains the last/previous value returned by
+							an event handler triggered by the specified event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_stopimmediatepropagation.asp">event.stopImmediatePropagation()</a></td>
+						<td>Prevents other event handlers from being
+							called</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_stoppropagation.asp">event.stopPropagation()</a></td>
+						<td>Prevents the event from bubbling up the DOM
+							tree, preventing any parent handlers from being
+							notified of the event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_target.asp">event.target</a></td>
+						<td>Returns which DOM element triggered the event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_timestamp.asp">event.timeStamp</a></td>
+						<td>Returns the number of milliseconds since
+							January 1, 1970, when the event is triggered</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_type.asp">event.type</a></td>
+						<td>Returns which event type was triggered</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_which.asp">event.which</a></td>
+						<td>Returns which keyboard key or mouse button
+							was pressed for the event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_focus.asp">focus()</a></td>
+						<td>Attaches/Triggers the focus event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_focusin.asp">focusin()</a></td>
+						<td>Attaches an event handler to the focusin
+							event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_focusout.asp">focusout()</a></td>
+						<td>Attaches an event handler to the focusout
+							event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_hover.asp">hover()</a></td>
+						<td>Attaches two event handlers to the hover
+							event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_keydown.asp">keydown()</a></td>
+						<td>Attaches/Triggers the keydown event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_keypress.asp">keypress()</a></td>
+						<td>Attaches/Triggers the keypress event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_keyup.asp">keyup()</a></td>
+						<td>Attaches/Triggers the keyup event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_live.asp">live()</a></td>
+						<td><span class="deprecated">Removed in
+								version 1.9.</span> Adds one or more event handlers to
+							current, or future, selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_load.asp">load()</a></td>
+						<td><span class="deprecated">Removed in
+								version 3.0.</span> Attaches an event handler to the load
+							event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mousedown.asp">mousedown()</a></td>
+						<td>Attaches/Triggers the mousedown event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mouseenter.asp">mouseenter()</a></td>
+						<td>Attaches/Triggers the mouseenter event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mouseleave.asp">mouseleave()</a></td>
+						<td>Attaches/Triggers the mouseleave event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mousemove.asp">mousemove()</a></td>
+						<td>Attaches/Triggers the mousemove event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mouseout.asp">mouseout()</a></td>
+						<td>Attaches/Triggers the mouseout event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mouseover.asp">mouseover()</a></td>
+						<td>Attaches/Triggers the mouseover event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_mouseup.asp">mouseup()</a></td>
+						<td>Attaches/Triggers the mouseup event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_off.asp">off()</a></td>
+						<td>Removes event handlers attached with the on()
+							method</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_on.asp">on()</a></td>
+						<td>Attaches event handlers to elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_one.asp">one()</a></td>
+						<td>Adds one or more event handlers to selected
+							elements. This handler can only be triggered once per
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_proxy.asp">$.proxy()</a></td>
+						<td>Takes an existing function and returns a new
+							one with a particular context</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_ready.asp">ready()</a></td>
+						<td>Specifies a function to execute when the DOM
+							is fully loaded</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_resize.asp">resize()</a></td>
+						<td>Attaches/Triggers the resize event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_scroll.asp">scroll()</a></td>
+						<td>Attaches/Triggers the scroll event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_select.asp">select()</a></td>
+						<td>Attaches/Triggers the select event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_submit.asp">submit()</a></td>
+						<td>Attaches/Triggers the submit event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_toggle.asp">toggle()</a></td>
+						<td><span class="deprecated">Removed in
+								version 1.9.</span> Attaches two or more functions to
+							toggle between for the click event</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_trigger.asp">trigger()</a></td>
+						<td>Triggers all events bound to the selected
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_triggerhandler.asp">triggerHandler()</a></td>
+						<td>Triggers all functions bound to a specified
+							event for the selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_unbind.asp">unbind()</a></td>
+						<td><span class="marked">Deprecated in
+								version 3.0. Use the <a
+								href="https://www.w3schools.com/jquery/event_off.asp">off()</a>
+								method instead.
+						</span> Removes an added event handler from selected elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_undelegate.asp">undelegate()</a></td>
+						<td><span class="marked">Deprecated in
+								version 3.0. Use the <a
+								href="https://www.w3schools.com/jquery/event_off.asp">off()</a>
+								method instead.
+						</span> Removes an event handler to selected elements, now or
+							in the future</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jquery/event_unload.asp">unload()</a></td>
+						<td><span class="deprecated">Removed in
+								version 3.0.</span> Attaches an event handler to the unload
+							event</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1 class="subject">addClass</h1>
 			<p>사실 이건 hover를 대신해서 쓰며, 클릭이벤트로 원하는 걸 표현할 수 있는 메소드라고
 				할 수 있다.
 			<div class="code">
@@ -1923,7 +2631,7 @@ myFunction($('#my_div'));</pre>
 				이후에는 잘 작동이 된다.<br> <span class="imp">대체 왜
 					이럴까?</span><br>나도 모른다. 혹시 알게 되면 여기에 기재하자.
 			</div>
-			<h1 class="bookmark">Trigger() Method</h1>
+			<h1 class="subject">Trigger() Method</h1>
 			<pre class="code">&lt;script&gt;
 $(document).ready(function(){
     $("input").select(function(){
@@ -1942,11 +2650,11 @@ $(document).ready(function(){
 &lt;button&gt;Trigger the select event for the input field&lt;/button&gt;
 
 &lt;/body&gt;</pre>
-<p>여기서 소개된 예에서 select라는 이벤트가 있는데, 이 이벤트를 따로 발생 시킨다는
+			<p>여기서 소개된 예에서 select라는 이벤트가 있는데, 이 이벤트를 따로 발생 시킨다는
 				의미이다.</p>
 			<a href="/studyhtml5/ch05/practice/jq_p11.html"
 				class="center">프렉티스11</a>
-				
+
 
 			<h1>Definition and Usage</h1>
 			<p>
@@ -2008,7 +2716,7 @@ $(document).ready(function(){
 &lt;/html&gt;</pre>
 			<a href="/studyhtml5/ch05/practice/jq_p12.html"
 				class="center">프렉티스12</a>
-			
+
 			<h2>The difference between trigger() and
 				triggerHandler()</h2>
 			<p>Demonstrates the difference between trigger() and
@@ -2049,7 +2757,7 @@ $(document).ready(function(){
 				trigger메소드는 이벤트를 발생시키면서 이벤트시 작동하는 작업들을 한다. <br>triggerhandler메소드는
 				이벤트 없이 이벤트시 작동하는 작업들을 한다.<br>이게 바로 차이점이다.
 			</p>
-			<h1 class="bookmark">triggerHandler() Method</h1>
+			<h1 class="subject">triggerHandler() Method</h1>
 			<pre class="code">&lt;script&gt;
 $(document).ready(function(){
     $("input").select(function(){
@@ -2073,10 +2781,10 @@ $(document).ready(function(){
 			<h1>Definition and Usage</h1>
 			<p>
 				The triggerHandler() method triggers the specified event
-				for the selected element. <br>
-				<br> This method is similar to the trigger()
-				method, except that trigger() also triggers the default
-				behavior of an event (like form submission).
+				for the selected element. <br> <br> This
+				method is similar to the trigger() method, except that
+				trigger() also triggers the default behavior of an event
+				(like form submission).
 			</p>
 			<h1>Syntax</h1>
 			<p class="code">$(selector).triggerHandler(event,param1,param2,...)
@@ -2102,7 +2810,8 @@ $(document).ready(function(){
 			</table>
 			<h1>example</h1>
 			<h2>Pass additional parameters on to a custom event</h2>
-			<p>How to pass along additional parameters to a custom event handler.</p>
+			<p>How to pass along additional parameters to a
+				custom event handler.</p>
 			<pre class="code">&lt;script&gt;
 $(document).ready(function(){
     $("p").click(function(){
@@ -2119,8 +2828,9 @@ $(document).ready(function(){
 &lt;p&gt;Click to alert additional parameters.&lt;/p&gt;
 
 &lt;/body&gt;</pre>
-<a href = "/studyhtml5/ch05/practice/jq_p15.html" class ="center">프렉티스15</a>
-<h2>The difference between trigger() and
+			<a href="/studyhtml5/ch05/practice/jq_p15.html"
+				class="center">프렉티스15</a>
+			<h2>The difference between trigger() and
 				triggerHandler()</h2>
 			<p>Demonstrates the difference between trigger() and
 				triggerHandler().</p>
@@ -2160,22 +2870,233 @@ $(document).ready(function(){
 				trigger메소드는 이벤트를 발생시키면서 이벤트시 작동하는 작업들을 한다. <br>triggerhandler메소드는
 				이벤트 없이 이벤트시 작동하는 작업들을 한다.<br>이게 바로 차이점이다.
 			</p>
+			<h1 class="subject">jQuery offset() Method</h1>
+			<h1>Example</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        var x = $("p").offset();
+        alert("Top: " + x.top + " Left: " + x.left);
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;button&gt;Return the offset coordinates of the p element&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice/jq_p21.html">프렉티스21</a>
+			<h1>Definition and Usage</h1>
+			<p>
+				coordinate 대학교기본어 <br> <b>1.좌표</b> 2.조정하다 3.조직하다
+				4.협력하다 5.관장하다 <br> <br> The offset() method
+				set or returns the offset coordinates for the selected
+				elements, relative to the document. <br> <br>
+				<b>When used to return the offset:</b><br> This
+				method returns the offset coordinates of the FIRST
+				matched element. It returns an object with 2 properties;
+				the top and left positions in pixels. <br> <br>
+				<b>When used to set the offset:</b><br> This method
+				sets the offset coordinates of ALL matched elements.
+			</p>
+			<h1>Syntax</h1>
+			<p>Return the offset coordinates:</p>
+			<div class="code">$(selector).offset()</div>
+			<p>Set the offset coordinates:</p>
+			<div class="code">$(selector).offset({top:value,left:value})</div>
+			<p>Set offset coordinates using a function:</p>
+			<div class="code">$(selector).offset(function(index,currentoffset))
+			</div>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 30%">Parameter</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>{top:<i>value</i>,left:<i>value</i>}
+						</td>
+						<td>Required when setting the offset. Specifies
+							the top and left coordinates in pixels.<br> <br>Possible
+							values:
+							<ul>
+								<li>Name/Value pairs, like {top:100,left:100}</li>
+								<li>An object with top and left properties (<a
+									target="_blank"
+									href="tryit.asp?filename=tryjquery_css_offset_object">example</a>)
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>function(<i>index,currentoffset</i>)
+						</td>
+						<td>Optional. Specifies a function that returns
+							an object containing the top and left coordinates
+							<ul>
+								<li><i>index</i> - Returns the index position
+									of the element in the set</li>
+								<li><i>currentoffset</i> - Returns the current
+									coordinates of the selected element</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Advanced Example</h1>
+			<h2>Set the offset coordinates</h2>
+			<p>How to set the offset coordinates of an element.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").offset({top: 200, left: 200});
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;button&gt;Set the offset coordinates of the p element&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p22.html"
+				class="center">프렉티스22</a>
 
 
 
+			<h2>Set offset coordinates using a function</h2>
+			<p>Using a function to set the offset coordinates of
+				an element.</p>
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").offset(function(n, c){
+            newPos = new <span class="imp">Object();</span>
+            newPos.left = c.left + 100;
+            newPos.top = c.top + 100;
+            return newPos;
+        });
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;button&gt;Set offset coordinates of the p element&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p23.html"
+				class="center">프렉티스23</a>
+			<p>
+				<span class="imp">newpos=new Object</span>에서 오브젝트할 때 o는
+				대문자임을 기억하라
+			</p>
 
 
 
+			<h2>Set the offset coordinates for an element using
+				an object</h2>
+			<p>How to set the offset coordinates for an element
+				using a new object.</p>
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        newPos = new Object();
+        newPos.left = "0";
+        newPos.top = "100";
+        $("p").offset(newPos);
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;button&gt;Set offset coordinates of the p element using an object&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p24.html"
+				class="center">프렉티스24</a>
+
+
+
+			<h2>Set the offset coordinates for an element using
+				the offset coordinates of another element</h2>
+			<p>How to set the offset coords for an element using
+				the offset coords of an existing element.</p>
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").offset($("span").offset());
+    });
+});
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+
+&lt;button&gt;Set the offset coordinates of the p element equal to the span element&lt;/button&gt;
+
+&lt;span style="position:absolute;left:100px;top:150px;"&gt;This is a span&lt;/span&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice/jq_p25.html"
+				class="center">프렉티스25</a>
 
 		</article>
 	</section>
 	<div class="fixed">
 		<a href="#index_subject">위로</a>
 	</div>
-	<aside>
-		<p class="side">SIDE</p>
-	</aside>
-	<footer>아드레날린</footer>
+	<footer style="margin-top: 100px;">jQuery 끝</footer>
 
 
 

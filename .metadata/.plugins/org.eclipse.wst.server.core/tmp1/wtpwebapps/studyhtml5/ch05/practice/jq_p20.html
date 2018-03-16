@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("a").on("click", function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();//링크된 곳으로 점프하는걸 막는다.(기본값 방지)
+                var hash = this.hash;
+                $('html,body').animate({
+                    scrollTop: $(hash).offset().top;
+                }, 800, function () {
+                    window.location.hash = hash;//window url plus hash something
+                });
+            }
+        });
+    });
+</script>
+<style>
+body, html, .main {
+	height: 100%;
+}
+
+section {
+	min-height: 100%;
+}
+section a{
+color:white;
+}
+</style>
+<title>Add smooth scrolling to page anchors</title>
+</head>
+<body>
+	<a id = "section1" href="#section2">Click Me to Smooth scroll to
+		section 2 below</a>
+	<div class="main">
+		<section></section>
+	</div>
+	<div class="main" id="section2">
+		<section style="background-color: blue"><a href = "#section1">go to the first link</a></section>
+	</div>
+
+</body>
+</html>

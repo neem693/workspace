@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<button onclick="convert()">convert</button>
+	<p id ="demo"></p>
+	<script>
+	function convert(){
+	    var str = "a,b,c,d,e,f";
+	    var arr = str.split(",");
+	    document.getElementById("demo").innerHTML = arr[0];
+	}</script>
+
+</body>
+</html>

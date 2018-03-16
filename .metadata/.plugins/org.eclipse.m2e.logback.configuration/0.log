@@ -129,3 +129,5 @@ Caused by: java.lang.NullPointerException: null
 	... 53 common frames omitted
 2017-07-03 17:14:20,719 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@4b14a2c4{HTTP/1.1,[http/1.1]}{127.0.0.1:0}
 2017-07-03 17:14:20,802 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@828bc27{/help,null,UNAVAILABLE}
+2018-03-16 09:37:35,382 [Worker-7] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-03-16 10:11:59,120 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

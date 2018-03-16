@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\UIO\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\UIO\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\studyhtml5" path="/studyhtml5" reloadable="true" source="org.eclipse.jst.jee.server:studyhtml5"/><Context docBase="C:\Users\UIO\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\mfav" path="/mfav" reloadable="true" source="org.eclipse.jst.jee.server:mfav"/><Context docBase="C:\Users\UIO\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\tree" path="/tree" reloadable="true" source="org.eclipse.jst.jee.server:tree"/></Host>
+      <Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\studyhtml5" path="/studyhtml5" reloadable="true" source="org.eclipse.jst.jee.server:studyhtml5"/><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\mfav" path="/mfav" reloadable="true" source="org.eclipse.jst.jee.server:mfav"/><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps\tree" path="/tree" reloadable="true" source="org.eclipse.jst.jee.server:tree"/></Host>
     </Engine>
   </Service>
 </Server>

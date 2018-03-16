@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<button onclick="function1()">lowest value</button>
+	<p id = "demo"></p>
+	<p>가장 작은 값 minarray함수 이용</p>
+	<p id = "demo1"></p>
+	<script>
+        var points = [ 40, 100, 1, 5, 25, 10 ];
+        document.getElementById("demo").innerHTML = points;
+        function function1(){
+            document.getElementById("demo1").innerHTML = minarray(points);            
+        }
+        function minarray(arr){
+            var len = arr.length;
+            var min = Infinity;
+            while(len--){
+                if(arr[len]<min){
+                    min=arr[len];
+                }
+            }
+            return min;
+        }
+        
+        </script>
+
+
+</body>
+</html>

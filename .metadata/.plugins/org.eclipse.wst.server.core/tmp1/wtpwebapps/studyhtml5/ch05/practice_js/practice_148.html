@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="demo"></p>
+
+
+<script>
+var text="";
+
+text += "John".constructor + "<br>";
+text += (3.14).constructor + "<br>";
+text += false.constructor + "<br>";
+text += [1,2,3,4].constructor + "<br>";
+text += {name:"John",age: 34}.constructor + "<br>";
+text += new Date().constructor + "<br>";
+text += function() {}.constructor + "<br>";
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

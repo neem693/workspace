@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+<script>
+function isDate(x){
+    return x.constructor === Date;
+}
+
+</script>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+	var ourTime = new Date();
+	document.getElementById("demo").innerHTML = isDate(ourTime);
+	</script>
+
+
+</body>
+</html>

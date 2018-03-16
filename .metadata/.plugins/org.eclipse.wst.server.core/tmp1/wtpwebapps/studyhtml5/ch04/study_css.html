@@ -7,14 +7,14 @@
 	content="width=device-width,initial-scale = 1.0" />
 <title>study css</title>
 <script src="../js/jquery-3.1.1.min.js"></script>
-<script src="study_css.js"></script>
+<script src="css.js"></script>
 </head>
 <body>
-	<p class="subject" id="index_subject">목차</p>
+	<h1 id="index_subject">목차</h1>
 	<div id="list"></div>
-	<p class="subject" id="index_bookmark">부록</p>
+	<h1 id="bookmark_subject">부록</h1>
 	<div id="bookmark_list"></div>
-
+	<p class="subject_fix" id="subject_line"></p>
 
 	<div id="b">
 		<p id="width">current width:</p>
@@ -27,7 +27,7 @@
 			같은 선언을 기술하는 것이다.
 		</p>
 
-		<h1>실렉터의 종류</h1>
+		<h1 class="subject">실렉터의 종류</h1>
 		<h2>타입 실렉터</h2>
 		<p>타입 실렉터는 HTML 태그명으로 스타일시트 집합을 작성한다.</p>
 
@@ -62,7 +62,7 @@
 		</table>
 		<p>이런 경우 먼저 div태그에 먼저 나온 id="display"스타일이 적용되고, class
 			="area"속성은 적용되지 않는다. 따라서 1개의 태그에 스타일을2개 이상 중첩하면 안된다.</p>
-		<h1>css의 주요 속성과 값</h1>
+		<h1 class="subject">css의 주요 속성과 값</h1>
 		<p>
 			다음은 css에서 제공하는 스타일 시트의 선언에 사용되는 속성과 값을 표시하는 사이트이다. 스타일을
 			정의할 때 제시된 스타일시트 속성에 대한 값을 참고해서 작성한다. <br> <a
@@ -70,7 +70,7 @@
 			<br> <a href="study_csstable.html" target="_blank">테이블
 				보기</a>
 		</p>
-		<h1>색상과 배경 지정</h1>
+		<h1 class="subject">색상과 배경 지정</h1>
 		<h2>글자색(Foreground Color)</h2>
 		<table>
 			<tr>
@@ -169,7 +169,9 @@
 				</td>
 			</tr>
 		</table>
-		<h1>폰트 지정</h1>
+		<a href="#background-size" class="center">background-size
+			속성에 대한 부분(해당 부분은 css3부분에 따로 있다.)</a>
+		<h1 class="subject">폰트 지정</h1>
 		<h2>1. font-family 속성</h2>
 		<p>이 속성은 엘리먼트에 설정할 폰트의 종류를 지정하는데, 지정하는 값은 'Gill',
 			'Helve tica', 'serif', 'sans-serif', 'cursive',
@@ -252,7 +254,7 @@
 			</tr>
 		</table>
 
-		<h1>텍스트(Text)지정</h1>
+		<h1 class="subject">텍스트(Text)지정</h1>
 		<h2>1.text-indent 속성</h2>
 		<p>이 속성은 문단에서 첫 번째 줄의 들여쓰기를 지정한다.</p>
 		<p>다음은 '2em' 정도 문단 들여쓰기를 하는 예이다. 여기서 em은 전각 대문자 M의 크기를
@@ -361,8 +363,362 @@
 			</tr>
 		</table>
 
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 14%">Value</th>
+					<th>Description</th>
+					<th>Play it</th>
+				</tr>
+				<tr>
+					<td>normal</td>
+					<td>Sequences of whitespace will collapse into a
+						single whitespace. Text will wrap when necessary. This
+						is default</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>nowrap</td>
+					<td>Sequences of whitespace will collapse into a
+						single whitespace. Text will never wrap to the next
+						line. The text continues on the same line until a
+						&lt;br&gt; tag is encountered</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&amp;preval=nowrap">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>pre</td>
+					<td>Whitespace is preserved by the browser. Text
+						will only wrap on line breaks. Acts like the
+						&lt;pre&gt; tag in HTML</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&amp;preval=pre">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>pre-line</td>
+					<td>Sequences of whitespace will collapse into a
+						single whitespace. Text will wrap when necessary, and
+						on line breaks</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&amp;preval=pre-line">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>pre-wrap</td>
+					<td>Whitespace is preserved by the browser. Text
+						will wrap when necessary, and on line breaks</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&amp;preval=pre-wrap">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>initial</td>
+					<td>Sets this property to its default value. <a
+						href="https://www.w3schools.com/cssref/css_initial.asp">Read
+							about <em>initial</em>
+					</a></td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space&amp;preval=initial">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>inherit</td>
+					<td>Inherits this property from its parent
+						element. <a
+						href="https://www.w3schools.com/cssref/css_inherit.asp">Read
+							about <em>inherit</em>
+					</a>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
 
-		<h1>테이블(table) 지정</h1>
+		<h1 class="subject">텍스트 자동 개행(word-break-property)</h1>
+		<span id="word-break"></span>
+		<h2>Definition and Usage</h2>
+		<p>
+			The word-break property specifies line breaking rules for
+			non-CJK scripts. <br> <br> Tip: CJK scripts are
+			Chinese, Japanese and Korean ("CJK") scripts.
+		</p>
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 25%">Default value:</th>
+					<td>normal</td>
+				</tr>
+				<tr>
+					<th>Inherited:</th>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<th>Animatable:</th>
+					<td>no. <a href="css_animatable.asp">Read
+							about <em>animatable</em>
+					</a></td>
+				</tr>
+				<tr>
+					<th>Version:</th>
+					<td>CSS3</td>
+				</tr>
+				<tr>
+					<th>JavaScript syntax:</th>
+					<td><i>object</i>.style.wordBreak="break-all" <a
+						target="_blank"
+						href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_js_word-break">Try
+							it</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Browser Support</h2>
+		<p>The numbers in the table specify the first browser
+			version that fully supports the property.</p>
+		<table class="browserref notranslate">
+			<tbody>
+				<tr style="height: 80px;">
+					<th
+						style="width: 25%; font-size: 16px; text-align: left;">Property</th>
+					<th style="width: 15%;" class="bsChrome" title="Chrome"></th>
+					<th style="width: 15%;" class="bsEdge"
+						title="Internet Explorer / Edge"></th>
+					<th style="width: 15%;" class="bsFirefox"
+						title="Firefox"></th>
+					<th style="width: 15%;" class="bsSafari" title="Safari"></th>
+					<th style="width: 15%;" class="bsOpera" title="Opera"></th>
+				</tr>
+				<tr>
+					<td style="text-align: left;">word-break</td>
+					<td>4.0</td>
+					<td>5.5</td>
+					<td>15.0</td>
+					<td>3.1</td>
+					<td>15.0</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>CSS Syntax</h2>
+		<pre class="code">word-break: normal|break-all|keep-all|initial|inherit;</pre>
+		<h2>Property Values</h2>
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 15%">Value</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>normal</td>
+					<td>Default value. Break words according to their
+						usual rules</td>
+				</tr>
+				<tr>
+					<td>break-all</td>
+					<td>Lines may break between any two letters</td>
+				</tr>
+				<tr>
+					<td>keep-all&nbsp;</td>
+					<td>Breaks are prohibited between pairs of letters</td>
+				</tr>
+				<tr>
+					<td>initial</td>
+					<td>Sets this property to its default value. <a
+						href="https://www.w3schools.com/cssref/css_initial.asp">Read
+							about <em>initial</em>
+					</a></td>
+				</tr>
+				<tr>
+					<td>inherit</td>
+					<td>Inherits this property from its parent
+						element. <a
+						href="https://www.w3schools.com/cssref/css_inherit.asp">Read
+							about <em>inherit</em>
+					</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h1 class="subject">CSS line-height Property (줄 높이)</h1>
+		<h2>Example</h2>
+		<pre class='code'>
+div.a {
+    line-height: normal;
+}
+
+div.b {
+    line-height: 1.6;
+}
+
+div.c {
+    line-height: 80%;
+}
+
+div.d {
+    line-height: 200%;
+}</pre>
+		<h2>Definition and Usage</h2>
+		<p>
+			The line-height property specifies the line height. <br>
+			<br> Note: Negative values are not allowed.
+		</p>
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 25%">Default value:</th>
+					<td>normal</td>
+				</tr>
+				<tr>
+					<th>Inherited:</th>
+					<td>yes</td>
+				</tr>
+				<tr>
+					<th>Animatable:</th>
+					<td>yes. <a
+						href="https://www.w3schools.com/cssref/css_animatable.asp">Read
+							about <em>animatable</em>
+					</a> <a target="_blank" class="w3-btn btnsmall"
+						href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_anim_line-height">Try
+							it</a>
+					</td>
+				</tr>
+				<tr>
+					<th>Version:</th>
+					<td>CSS1</td>
+				</tr>
+				<tr>
+					<th>JavaScript syntax:</th>
+					<td><i>object</i>.style.lineHeight="30px" <a
+						target="_blank" class="w3-btn btnsmall"
+						href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_js_line-height">Try
+							it</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Browser Support</h2>
+		<p>The numbers in the table specify the first browser
+			version that fully supports the property.</p>
+		<table>
+			<tbody>
+				<tr>
+					<th
+						style="width: 20%; font-size: 16px; text-align: left;">Property</th>
+					<th style="width: 16%;" class="bsChrome" title="Chrome"></th>
+					<th style="width: 16%;" class="bsEdge"
+						title="Internet Explorer / Edge"></th>
+					<th style="width: 16%;" class="bsFirefox"
+						title="Firefox"></th>
+					<th style="width: 16%;" class="bsSafari" title="Safari"></th>
+					<th style="width: 16%;" class="bsOpera" title="Opera"></th>
+				</tr>
+				<tr>
+					<td style="text-align: left;">line-height</td>
+					<td>1.0</td>
+					<td>4.0</td>
+					<td>1.0</td>
+					<td>1.0</td>
+					<td>7.0</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>CSS Syntax</h2>
+		<pre class="code">
+		line-height: normal|number|length|initial|inherit;</pre>
+		<h2>Property Values</h2>
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 14%">Value</th>
+					<th>Description</th>
+					<th>Play it</th>
+				</tr>
+				<tr>
+					<td>normal</td>
+					<td>A normal line height. This is default</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_line-height">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td><i>number</i></td>
+					<td>A number that will be multiplied with the
+						current font-size to set the line height</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_line-height&amp;preval=3">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td><i>length</i></td>
+					<td>A fixed line height in px, pt, cm, etc.</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_line-height&amp;preval=25px">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td><i>%</i></td>
+					<td>A line height in percent of the current font
+						size</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_line-height&amp;preval=150%25">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>initial</td>
+					<td>Sets this property to its default value. <a
+						href="https://www.w3schools.com/cssref/css_initial.asp">Read
+							about <em>initial</em>
+					</a></td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_line-height&amp;preval=initial">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>inherit</td>
+					<td>Inherits this property from its parent
+						element. <a
+						href="https://www.w3schools.com/cssref/css_inherit.asp">Read
+							about <em>inherit</em>
+					</a>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>More Examples</h2>
+		<pre class='code'>
+div.a {
+    line-height: 10px;
+}
+
+div.b {
+    line-height: 30px;
+}
+
+div.c {
+    line-height: 0.5cm;
+}
+
+div.d {
+    line-height: 1cm;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p65.html"
+			class="center">프렉티스 65</a>
+			<pre class = "code">
+div.a {
+    line-height: 0.5;
+}
+
+div.b {
+    line-height: 1.6;
+}
+
+div.c {
+    line-height: 2;
+}</pre>
+<a href = "/studyhtml5/ch04/practice/css_p66.html" class = 'center'>프렉티스 66</a>
+		<h1 class="subject">테이블(table) 지정</h1>
 		<h2>1. 테이블의 개요</h2>
 		<p>테이블 관련 작업은 CSS에서 테이블을 위한 레이아웃을 정의하는 것이다. CSS테이블에서는
 			특별한 테이블 레이아웃을 실행시킬 수 있는데, 경우에 따라서 html문서에서 테이블 관련
@@ -408,7 +764,7 @@
 			CSS모델은 이런 각각의 컴포넌트들 엘리먼트로 포함시키기 위한 문서 언어(XML 애플리케이션 등)을
 			필요로 하지 않는다. 단지 이들을 'display'속성을 사용해서 처리하면 된다.<br>다음은
 			테이블 관련 엘리먼트들과 그에 대응되는 'display'속성 값을 표시한 것이다. 단, display
-			속성을 사용해서 talbe-column과 table-column-group를 표시 할 수 없다.
+			속성을 사용해서 table-column과 table-column-group를 표시 할 수 없다.
 		</p>
 		<table>
 			<tr>
@@ -483,7 +839,92 @@
 		<p>이 속성은 테이블의 셀을 배치하는데 사용하는것으로 'fixed', 'auto' 중 하나의
 			값을 사용한다. 값이 양이 오버 되었을 때, 테이블 크기가 저절로 커지는 현상이 있다. 이 현상을 막기
 			위해서는 table-layout을 fixed로 설정해놔야 한다.</p>
-
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 14%">Value</th>
+					<th>Description</th>
+					<th>Play it</th>
+				</tr>
+				<tr>
+					<td>auto</td>
+					<td>Automatic table layout algorithm (this is
+						default):
+						<ul>
+							<li>The column width is set by the widest
+								unbreakable content in the cells</li>
+							<li>Can be slow, since it needs to read through
+								all the content in the table, before determining the
+								final layout</li>
+						</ul>
+					</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_table-layout">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>fixed</td>
+					<td>Fixed table layout algorithm:
+						<ul>
+							<li>The horizontal layout only depends on the
+								table's width and the width of the columns, not the
+								contents of the cells</li>
+							<li>Allows a browser to lay out the table faster
+								than the automatic table layout</li>
+							<li>The browser can begin to display the table
+								once the first row has been received</li>
+						</ul>
+					</td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_table-layout&amp;preval=fixed">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>initial</td>
+					<td>Sets this property to its default value. <a
+						href="https://www.w3schools.com/cssref/css_initial.asp">Read
+							about <em>initial</em>
+					</a></td>
+					<td><a target="_blank" class="w3-btn btnplayit"
+						href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_table-layout&amp;preval=initial">Play
+							it »</a></td>
+				</tr>
+				<tr>
+					<td>inherit</td>
+					<td>Inherits this property from its parent
+						element. <a
+						href="https://www.w3schools.com/cssref/css_inherit.asp">Read
+							about <em>inherit</em>
+					</a>
+					</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<h4 class="bookmark">테이블에 width 먹이기(table-layout)</h4>
+		<pre class="code">
+table {
+		width: 100%;
+	}</pre>
+		<p>
+			아무리 위와 같이 width를 정해진 창에 맞게 먹인다고 해도, 테이블 안의 td,th 가로값에
+			텍스트가 알맞게 개행되지 않기 때문에 아무런 변화가 없는 경우가 많다.(이 문제는
+			CJK(중국,일본,한국)가 아닌 언어권에서만 존재한다.) 이 문제는 <a
+				href="#word-break"><span class="code">word-break</span></a>를
+			통해서만 해결될 수 있다. 그러나 이 문제는 대략적으로 언어(대부분 영어)를 파괴시켜 의미를 병신같이
+			전달될 수 있는 부작용을 낳는다. 따라서 그냥 width를 강제화 해버리는 table-layout을
+			사용하기도 한다. 참고:(The table-layout property sets the table
+			layout algorithm to be used for a table.)
+		</p>
+		<pre class="code">
+table {
+		width: 100%;
+		table-layout: fixed;
+	}
+		</pre>
+		<p>그러나 이를 할 경우 table에 대한 모든 width 비율이 강제화 되서 텍스트가 밖으러
+			빠져 나온다는 단점이 있다. 이래나 저래나 부작용이 있는 건 똑같으니 overflow-x 먹인 div로
+			table을 씌워서 정상적으로 표기하는 것도 하나의 방법이라고 할 수 있다.</p>
 		<h2>테이블의 높이(height)와 너비(width)</h2>
 		<p>
 			테이블의 세로 높이는 'table'또는 'inline-table'의 'height'속성에 의해서
@@ -492,12 +933,15 @@
 			'middle', 'bottom'값을 사용해서 배치할 수 있다.
 		</p>
 
-		<p>이 부분은 css_p4에 실습으로 진행한다.</p>
+		<p>
+			이 부분은 <a href="/studyhtml5/ch04/practice/css_p4.html">css_p4</a>에
+			실습으로 진행한다.
+		</p>
 
 		<p>수평 맞춤(horizaontal alignment) - text-align 속성을 사용한다.
 			이것도 css_p4실습 진행</p>
 
-		<h1>테두리(border)지정</h1>
+		<h1 class="subject">테두리(border)지정</h1>
 		<p>css에서는 테두리를 설정하는 데 2가지가 모델을 제공한다. 하나는 각각의 셀로 구성된
 			"separated" 보더 모델이고 다른 하나는 셀들이 연속되어 한 덩어리로 합쳐진 듯한 모양을 갖는
 			"collaspsing" 보더 모델이다.</p>
@@ -649,7 +1093,8 @@
 			border-style: solid dotted dashed double
 		</p>
 		<p>
-		<h1>가시성(visibility)와 위치(positioning)지정</h1>
+		<h1 class="subject">가시성(visibility)와
+			위치(positioning)지정</h1>
 		<p>CSS에서는 태그를 화면에 표시할지의 여부와 표시한다면 어떻게 표시할지, 어떻게 배치할지
 			등에 대해서도 고려해야한다.</p>
 		<h2>1. display 속성</h2>
@@ -750,6 +1195,8 @@
 		</table>
 
 		<p>실습은 css_c8에서 진행함</p>
+		<a href="/studyhtml5/ch04/practice/css_p8.html"
+			class="center">프렉티스8</a>
 
 		<h2>4. z-index 속성</h2>
 		<p>이 속성은 태그들이 겹쳐졌을 때, 어떤 태그가 앞에 표시되고 뒤에 표시되는지의 태그간의
@@ -792,7 +1239,7 @@
 			float를 해제해 준다.</p>
 
 
-		<h1>미디어 쿼리</h1>
+		<h1 class="subject">미디어 쿼리</h1>
 		<h2>1. 미디어 쿼리의 개요</h2>
 		<p>
 			미디어 쿼리는 미디어 및 화면의 크기에 따라 다른 스타일시트가 적용되도록 지원한다. 지금까지 작성한
@@ -967,7 +1414,7 @@
 			</tr>
 		</table>
 
-		<h1>CSS3의 개요</h1>
+		<h1 class="subject">CSS3의 개요</h1>
 		<p>CSS3에 대해 살펴보고 디자인 프로그램을 대체하는 추가기능을 학습한다. CSS3는 스타일
 			시트의 최신 표준으로, 초기의 버전들과도 완벽하게 호환된다. 즉, 현재의 CSS는 "기존의 CSS+
 			CSS3(추가된 신기능)"인 것이다. 또한 CSS3의 업데이트를 쉽게할 수 있도록 실렉터, 박스모델,
@@ -1023,8 +1470,119 @@
 			때문이다.</p>
 		<p>모든 벤더 프리픽스를 나열해서 프로그래밍 하는 것은 현실적으로 쉽지 않기 때문에 가장 많이
 			사용하는 브라우저 위주로 쓰는 것이 좋다.</p>
-		<h1>5. CSS3의 추가기능</h1>
-		<h1>테두리와 배경</h1>
+		<h1 class="subject">CSS The object-fit
+			Property(img-채우기)</h1>
+		<p>
+			The CSS <span class="code">object-fit</span> property is
+			used to specify how an &lt;img&gt; or &lt;video&gt;
+			should be resized to fit its container.
+		</p>
+		<h2>Browser Support</h2>
+		<p>The numbers in the table specify the first browser
+			version that fully supports the property.</p>
+		<table>
+			<tbody>
+				<tr>
+					<th style="height: 80px;">Property</th>
+					<th style="width: 15%;" class="bsChrome" title="Chrome"></th>
+					<th style="width: 15%;" class="bsEdge"
+						title="Internet Explorer / Edge"></th>
+					<th style="width: 15%;" class="bsFirefox"
+						title="Firefox"></th>
+					<th style="width: 15%;" class="bsSafari" title="Safari"></th>
+					<th style="width: 15%;" class="bsOpera" title="Opera"></th>
+				</tr>
+				<tr>
+					<td style="text-align: left;">object-fit</td>
+					<td>31.0</td>
+					<td>16.0</td>
+					<td>36.0</td>
+					<td>7.1</td>
+					<td>19.0</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>The CSS object-fit Property</h2>
+		<p>
+			The CSS <span class="code">object-fit</span> property is
+			used to specify how an &lt;img&gt; or &lt;video&gt;
+			should be resized to fit its container. <br> <br>
+			This property tells the content to fill the container in
+			a variety of ways; such as "preserve that aspect ratio"
+			or "stretch up and take up as much space as possible". <br>
+			<br> Look at the following image from Paris, which
+			is 400x300 pixels:
+		</p>
+		<img alt="풍경화" src="/studyhtml5/images/풍경화.jpg"
+			style="width: 400px; height: 300px;">
+		<p>However, if we style the image above to be 200x400
+			pixels, it will look like this:</p>
+		<img alt="풍경화" src="/studyhtml5/images/풍경화.jpg"
+			style="width: 200px; height: 400px;">
+		<p>We see that the image is being squeezed to fit the
+			container of 200x400 pixels, and its original aspect
+			ratio is destroyed.</p>
+		<p>
+			If we use <span class="code">object-fit: cover;</span> it
+			will cut off the sides of the image, preserving the
+			aspect ratio, and also filling in the space, like this:
+		</p>
+		<img alt="풍경화" src="/studyhtml5/images/풍경화.jpg"
+			style="object-fit: cover; width: 200px; height: 400px;">
+		<h2>Another Example</h2>
+		<p>
+			Here we have two images and we want them to fill the
+			width of 50% of the browser window and 100% of the
+			height. <br> <br> In the following example we
+			do NOT use <span class="code">object-fit</span>, so when
+			we resize the browser window, the aspect ratio of the
+			images will be destroyed. <br> <br> In the next
+			example, we use object-fit: cover;, so when we resize the
+			browser window, the aspect ratio of the images is
+			preserved.
+		</p>
+		<a href="/studyhtml5/ch04/practice/css_p63.html"
+			class="center">프렉티스 63</a>
+		<h2>All Values of The CSS object-fit Property</h2>
+		<p>
+			The <span class="code">object-fit</span> property can
+			have the following values:
+		</p>
+		<ul>
+			<li><span class="code">fill</span> - This is
+				default. The replaced content is sized to fill the
+				element's content box. If necessary, the object will be
+				stretched or squished to fit</li>
+			<li><span class="code">contain</span> - The replaced
+				content is scaled to maintain its aspect ratio while
+				fitting within the element's content box</li>
+			<li><span class="code">cover</span> - The replaced
+				content is sized to maintain its aspect ratio while
+				filling the element's entire content box. The object
+				will be clipped to fit</li>
+			<li><span class="code">none</span> - The replaced
+				content is not resized</li>
+			<li><span class="code">scale-down</span> - The
+				content is sized as if none or contain were specified
+				(would result in a smaller concrete object size)</li>
+		</ul>
+		<p>
+			The following example demonstrates all the possible
+			values of the <span class="code">object-fit</span>
+			property:
+		</p>
+		<pre class="code">
+.fill {object-fit: fill;}
+.contain {object-fit: contain;}
+.cover {object-fit: cover;}
+.scale-down {object-fit: scale-down;}
+.none {object-fit: none;}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p64.html"
+			class="center">프렉티스 64</a>
+
+
+
+		<h1 class="subject">CSS3의 추가기능:테두리와 배경</h1>
 		<p>테두리 기능에는 영역을 갖는 특정 태그(div )와 같은 태그에 둥근 모서리를 지정하거나
 			그림자 효과 등을 주어 입체감을 줄 수 있다. 또한 이미지 파일을 테두리로 사용할 수 도 있다. 태그가
 			영역을 갖도록 하려면 스타일 시트에서 width, height에 값을 지정한다.</p>
@@ -1167,7 +1725,8 @@
 			</tr>
 		</table>
 
-		<h1>배경: 배경 이미지 중첩 , background-size</h1>
+		<h1 class="subject">CSS3의 추가기능: 배경- 배경 이미지 중첩 ,
+			background-size</h1>
 		<h2>배경 이미지 중첩</h2>
 		<p>CSS에서는 여러 배경 이미지를 중첩해서 표현할 수 있다. 여러 배경 이미지를 중첩할 때는
 			각 속성에 여러 이미지의 값을 나열한다. 이미지를 2개 중첩할 때는 background-image:
@@ -1175,7 +1734,7 @@
 			반복 여부도 추가한 이미지 순서대로 속성 값을 주어서 나열한다.</p>
 		<p>css_p14.html에서 실습을 한다.</p>
 
-		<h2>background-size 속성</h2>
+		<h2 id="background-size">background-size 속성</h2>
 		<p>CSS3에서는 background-size 속성을 사용해서 배경 이미지의 크기를 조절할 수
 			있다.</p>
 		<table>
@@ -1321,7 +1880,7 @@
 
 		<p>실습 15를 만들어서 해보자.</p>
 
-		<h1>트랜지션: Transition</h1>
+		<h1 class="subject">CSS3의 추가기능:트랜스폼 - Transform</h1>
 		<p>transform 속성은 개체나 이미지 등의 이동, 회전, 확대/축소, 왜곡 등의 효과를
 			제공한다. 이들 효과는 translate(), reotate(), scale(), skew() 메소드를
 			사용해서 한다. 벤더 프리픽스는 아직 생략하지 않는다.</p>
@@ -1410,128 +1969,910 @@
 				</td>
 			</tr>
 		</table>
-
-		<h2>트랜지션:transition</h2>
-		<p>어떤 형태에서 다른 형태로의 변환을 주는 기능으로, 예를 들어 사각형에 마우스 포인터를
-			가져다 대면 줄어들거나 커지는 등의 변환을 줄 수 있다. 벤더 프리픽스는 아직 생략하지 않는다.</p>
-		<p>CSS3트랜지션 기능을 사용하려면 원하는 형태 변환을 기술하고, 그 형태로 변환될 때의 지속
-			시간을 기술해야 한다. 예를 들어 다음과 같은 경우, 형태 변환이 가로 너비(width)이고 이 변환의
-			지속 시간이 2초(2s)이다.</p>
+		<h2>CSS Transform Properties</h2>
+		<p>The following table lists all the 2D transform
+			properties:</p>
 		<table>
-			<tr>
-				<td>div{//형태변환 - width, 지속시간 -2s<br>transition:
-					width 2s; //형태변환 지속시간<br>}
-				</td>
-			</tr>
+			<tbody>
+				<tr>
+					<th style="width: 23%">Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transform.asp">transform</a></td>
+					<td>Applies a 2D or 3D transformation to an
+						element</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp">transform-origin</a></td>
+					<td>Allows you to change the position on
+						transformed elements</td>
+				</tr>
+			</tbody>
 		</table>
-		<p>이 내용은 실습 16에서 진행한다.</p>
-		<p class="bookmark">중요-트랜지션 시 div 높이나 넓이 변환</p>
-		<p class="imp">트랜지션을 이용하여 후버를 통해서 div같은 어떤 영역의 넓이나 높이를
-			변화시키려 한다면 우선 변화하기 전의 픽셀과 변한 후의 픽셀을 정확히 정의해야 한다.</p>
-
-		<h2 class="bookmark">에니메이션: @keyframes, animation</h2>
-		<p>CSS3의 에니메이션 기능은 개체나 이미지 등에 움직임 효과를 주는 것으로 기존의
-			자바스크립트나 플래시 등에서 하던 작업을 대체한다. 벤더 프리픽스는 아직 생략하지 않는다.</p>
-		<p>CSS3에서 에니메이션은 사용하려면 에니케이션 규칙 등을 @keyframes 규칙에 정의하고
-			이 정의한 규칙을 필요한 곳에서 animation을 사용해서 쓴다.</p>
-		<p>@keyframes규칙을 사용해서 에니메이션을 정의하는 방법은 다음과 같다.</p>
+		<h2>2D Transform Methods</h2>
 		<table>
-			<tr>
-				<td>@keyframes moveRec{//moveRec은 에니메이션 규칙이름. 임의로
-					지정<br> start //start는 에니메이션이 시작할 때 형태등을 지정<br>
-					...//특정 지점에서의 형태 등을 지정<br> end//start는 에니메이션이 끝날 때
-					형태 등을 지정<br> }
-				</td>
-			</tr>
+			<tbody>
+				<tr>
+					<th style="width: 23%">Function</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>matrix(<i>n,n,n,n,n,n</i>)
+					</td>
+					<td>Defines a 2D transformation, using a matrix of
+						six values</td>
+				</tr>
+				<tr>
+					<td>translate(<i>x,y</i>)
+					</td>
+					<td>Defines a 2D translation, moving the element
+						along the X- and the Y-axis</td>
+				</tr>
+				<tr>
+					<td>translateX(<i>n</i>)
+					</td>
+					<td>Defines a 2D translation, moving the element
+						along the X-axis</td>
+				</tr>
+				<tr>
+					<td>translateY(<i>n</i>)
+					</td>
+					<td>Defines a 2D translation, moving the element
+						along the Y-axis</td>
+				</tr>
+				<tr>
+					<td>scale(<i>x,y</i>)
+					</td>
+					<td>Defines a 2D scale transformation, changing
+						the elements width and height</td>
+				</tr>
+				<tr>
+					<td>scaleX(<i>n</i>)
+					</td>
+					<td>Defines a 2D scale transformation, changing
+						the element's width</td>
+				</tr>
+				<tr>
+					<td>scaleY(<i>n</i>)
+					</td>
+					<td>Defines a 2D scale transformation, changing
+						the element's height</td>
+				</tr>
+				<tr>
+					<td>rotate(<i>angle</i>)
+					</td>
+					<td>Defines a 2D rotation, the angle is specified
+						in the parameter</td>
+				</tr>
+				<tr>
+					<td>skew(<i>x-angle,y-angle</i>)
+					</td>
+					<td>Defines a 2D skew transformation along the X-
+						and the Y-axis</td>
+				</tr>
+				<tr>
+					<td>skewX(<i>angle</i>)
+					</td>
+					<td>Defines a 2D skew transformation along the
+						X-axis</td>
+				</tr>
+				<tr>
+					<td>skewY(<i>angle</i>)
+					</td>
+					<td>Defines a 2D skew transformation along the
+						Y-axis</td>
+				</tr>
+			</tbody>
 		</table>
-		<p>이렇게 정의한 규칙은 필요한 곳에서 [animation 사용할 규칙 지속 시간]과 같이
-			사용할 규칙 이름을 기술해서 사용할 수 있다.</p>
+		<h2>CSS 3D Transforms - CSS Transform Properties</h2>
+		<p>The following table lists all the 3D transform
+			properties:</p>
 		<table>
-			<tr>
-				<td>div{//moveRec: 사용할 규칙 이름, 1s:에니메이션 지속시간<br>animation:mveRec
-					1s;<br>}
-				</td>
-			</tr>
+			<tbody>
+				<tr>
+					<th style="width: 22%">Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transform.asp">transform</a></td>
+					<td>Applies a 2D or 3D transformation to an
+						element</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp">transform-origin</a></td>
+					<td>Allows you to change the position on
+						transformed elements</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transform-style.asp">transform-style</a></td>
+					<td>Specifies how nested elements are rendered in
+						3D space</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_perspective.asp">perspective</a></td>
+					<td>Specifies the perspective on how 3D elements
+						are viewed</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_perspective-origin.asp">perspective-origin</a></td>
+					<td>Specifies the bottom position of 3D elements</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">backface-visibility</a></td>
+					<td>Defines whether or not an element should be
+						visible when not facing the screen</td>
+				</tr>
+			</tbody>
 		</table>
-
-		<p>아래의 예는 웹 페이지가 표시되면 자동으로 &gt;div&lt;태그 영역이 이동하면서
-			배경색을 바꾼다. IE, 크롬은 표준이 적용된다.</p>
-
+		<h2>3D Transform Methods</h2>
+		<table class="w3-table-all notranslate">
+			<tbody>
+				<tr>
+					<th style="width: 22%">Function</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td>matrix3d<br> (<i>n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n</i>)
+					</td>
+					<td>Defines a 3D transformation, using a 4x4
+						matrix of 16 values</td>
+				</tr>
+				<tr>
+					<td>translate3d(<i>x,y,z</i>)
+					</td>
+					<td>Defines a 3D translation</td>
+				</tr>
+				<tr>
+					<td>translateX(<i>x</i>)
+					</td>
+					<td>Defines a 3D translation, using only the value
+						for the X-axis</td>
+				</tr>
+				<tr>
+					<td>translateY(<i>y</i>)
+					</td>
+					<td>Defines a 3D translation, using only the value
+						for the Y-axis</td>
+				</tr>
+				<tr>
+					<td>translateZ(<i>z</i>)
+					</td>
+					<td>Defines a 3D translation, using only the value
+						for the Z-axis</td>
+				</tr>
+				<tr>
+					<td>scale3d(<i>x,y,z</i>)
+					</td>
+					<td>Defines a 3D scale transformation</td>
+				</tr>
+				<tr>
+					<td>scaleX(<i>x</i>)
+					</td>
+					<td>Defines a 3D scale transformation by giving a
+						value for the X-axis</td>
+				</tr>
+				<tr>
+					<td>scaleY(<i>y</i>)
+					</td>
+					<td>Defines a 3D scale transformation by giving a
+						value for the Y-axis</td>
+				</tr>
+				<tr>
+					<td>scaleZ(<i>z</i>)
+					</td>
+					<td>Defines a 3D scale transformation by giving a
+						value for the Z-axis</td>
+				</tr>
+				<tr>
+					<td>rotate3d(<i>x,y,z,angle</i>)
+					</td>
+					<td>Defines a 3D rotation</td>
+				</tr>
+				<tr>
+					<td>rotateX(<i>angle</i>)
+					</td>
+					<td>Defines a 3D rotation along the X-axis</td>
+				</tr>
+				<tr>
+					<td>rotateY(<i>angle</i>)
+					</td>
+					<td>Defines a 3D rotation along the Y-axis</td>
+				</tr>
+				<tr>
+					<td>rotateZ(<i>angle</i>)
+					</td>
+					<td>Defines a 3D rotation along the Z-axis</td>
+				</tr>
+				<tr>
+					<td>perspective(<i>n</i>)
+					</td>
+					<td>Defines a perspective view for a 3D
+						transformed element</td>
+				</tr>
+			</tbody>
+		</table>
+		<h1 class="subject">CSS3의 추가기능 :트랜지션 - Transition</h1>
+		<p>이 내용의 대강의 실습은 16에서 진행한다. 생각해보니 너무 이상하게 작성해서 다시
+			w3s으로 작성한다.</p>
+		<h2>CSS Transitions</h2>
+		<p>CSS transitions allows you to change property
+			values smoothly (from one value to another), over a given
+			duration.</p>
+		<h2>Browser Support for Transitions</h2>
+		<p>
+			The numbers in the table specify the first browser
+			version that fully supports the property. <br>
+			Numbers followed by -webkit-, -moz-, or -o- specify the
+			first version that worked with a prefix.
+		</p>
 		<table>
-			<tr>
-				<td>div{<br> width: 100px;<br> height:
-					100px;<br> background: red;<br> postition:
-					relative;<br> <br> //에니메이션 규칙 사용<br>
-					//movoeRec: 사용할 규칙 이름, 1s : 에니메이션 지속 시간 <br>
-					animation: moveRec 1s;<br>} <br> <br>
-					//에니메이션 규칙 정의 <br> @-webkit-keyframes moveRec { //
-					safari, opera<br> 0% { background:red; left:0px;
-					top0px;}//시작 지점에서의 형태<br> 100%{background:blue;
-					left:200px; top:0px;}//마지막 지점에서의 형태<br> }<br>
-					@keyframes moveRec{//표준<br> 0% {background:red;
-					left:0px; top:0px;}//시작 지점에서의 형태<br>
-					100%{background:blue; left:200px; top:0px;}//마지막 지점에서의
-					형태<br>}
-				</td>
-
-			</tr>
+			<tbody>
+				<tr style="height: 80px;">
+					<th
+						style="width: 25%; font-size: 16px; text-align: left;">Property</th>
+					<th style="width: 15%;" class="bsChrome"></th>
+					<th style="width: 15%;" class="bsEdge"></th>
+					<th style="width: 15%;" class="bsFirefox"></th>
+					<th style="width: 15%;" class="bsSafari"></th>
+					<th style="width: 15%;" class="bsOpera"></th>
+				</tr>
+				<tr>
+					<td style="text-align: left;">transition</td>
+					<td>26.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>4.0&nbsp;-moz-
+					</td>
+					<td>6.1<br>3.1&nbsp;-webkit-
+					</td>
+					<td>12.1<br>10.5&nbsp;-o-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">transition-delay</td>
+					<td>26.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>4.0&nbsp;-moz-
+					</td>
+					<td>6.1<br>3.1&nbsp;-webkit-
+					</td>
+					<td>12.1<br>10.5&nbsp;-o-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">transition-duration</td>
+					<td>26.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>4.0&nbsp;-moz-
+					</td>
+					<td>6.1<br>3.1&nbsp;-webkit-
+					</td>
+					<td>12.1<br>10.5&nbsp;-o-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">transition-property</td>
+					<td>26.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>4.0&nbsp;-moz-
+					</td>
+					<td>6.1<br>3.1&nbsp;-webkit-
+					</td>
+					<td>12.1<br>10.5&nbsp;-o-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">transition-timing-function</td>
+					<td>26.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>4.0&nbsp;-moz-
+					</td>
+					<td>6.1<br>3.1&nbsp;-webkit-
+					</td>
+					<td>12.1<br>10.5&nbsp;-o-
+					</td>
+				</tr>
+			</tbody>
 		</table>
-		<h2>css animation-from to</h2>
+		<h2>How to Use CSS Transitions?</h2>
+		<p>To create a transition effect, you must specify two
+			things:</p>
+		<ul>
+			<li>the CSS property you want to add an effect to</li>
+			<li>the duration of the effect</li>
+		</ul>
+		<p class="imp">Note: If the duration part is not
+			specified, the transition will have no effect, because
+			the default value is 0.</p>
+		<p>The following example shows a 100px * 100px red
+			&lt;div&gt; element. The &lt;div&gt; element has also
+			specified a transition effect for the width property,
+			with a duration of 2 seconds:</p>
 		<pre class="code">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;style&gt; 
 div {
     width: 100px;
     height: 100px;
-    background-color: red;
-    -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-    animation-name: example;
-    animation-duration: 4s;
-}
+    background: red;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}			</pre>
+		<p>
+			The transition effect will start when the specified CSS
+			property (width) changes value.<br> Now, let us
+			specify a new value for the width property when a user
+			mouses over the &lt;div&gt; element:
+		</p>
+		<pre class="code">
+div:hover {
+    width: 300px;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p44.html"
+			class="center">프렉티스 44</a>
+		<p class="bookmark">중요-트랜지션 시 div 높이나 넓이 변환</p>
+		<p class="imp">트랜지션을 이용하여 후버를 통해서 div같은 어떤 영역의 넓이나 높이를
+			변화시키려 한다면 우선 변화하기 전의 픽셀과 변한 후의 픽셀을 정확히 정의해야 한다.</p>
+		<p>Notice that when the cursor mouses out of the
+			element, it will gradually change back to its original
+			style.</p>
+		<h2>Change Several Property Values</h2>
+		<p>The following example adds a transition effect for
+			both the width and height property, with a duration of 2
+			seconds for the width and 4 seconds for the height:</p>
+		<pre class="code">
+div {
+    -webkit-transition: width 2s, height 4s; /* Safari */
+    transition: width 2s, height 4s;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p45.html"
+			class="center">프렉티스 45</a>
 
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
-}
 
-/* Standard syntax */
+
+
+
+
+
+		<h1 class="bookmark">Specify the Speed Curve of the
+			Transition</h1>
+		<p>
+			The <span class="imp">transition-timing-function</span>
+			property specifies the speed curve of the transition
+			effect. <br> <br> The
+			transition-timing-function property can have the
+			following values:
+		</p>
+		<ul>
+			<li><span class="imp">ease</span> - specifies a
+				transition effect with a slow start, then fast, then end
+				slowly (this is default)</li>
+			<li><span class="imp">linear</span> - specifies a
+				transition effect with the same speed from start to end</li>
+			<li><span class="imp">ease-in</span> - specifies a
+				transition effect with a slow start</li>
+			<li><span class="imp">ease-out</span> - specifies a
+				transition effect with a slow end</li>
+			<li><span class="imp">ease-in-out</span> - specifies
+				a transition effect with a slow start and end</li>
+			<li><span class="imp">cubic-bezier(n,n,n,n)</span> -
+				lets you define your own values in a cubic-bezier
+				function</li>
+		</ul>
+		<pre class="code">
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p46.html"
+			class="center">프렉티스 46</a>
+		<h2>Delay the Transition Effect</h2>
+		<p>
+			The <span class="imp">transition-delay</span> property
+			specifies a delay (in seconds) for the transition effect.
+			<br> <br> The following example has a 1 second
+			delay before starting:
+		</p>
+		<pre class="code">
+div {
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p47.html"
+			class='center'>프렉티스 47</a>
+		<h2>Transition + Transformation</h2>
+		<p>The following example also adds a transformation to
+			the transition effect:</p>
+		<pre class="code">
+div {
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p48.html"
+			class="center">프렉티스 48</a>
+		<h2>More Transition Examples</h2>
+		<p>The CSS transition properties can be specified one
+			by one, like this:</p>
+		<pre class="code">
+div {
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}</pre>
+		<p>
+			or by using the shorthand property <span class="imp">transition</span>:
+		</p>
+		<pre class='code'>
+div {
+    transition: width 2s linear 1s;
+}</pre>
+		<h2>CSS Transition Properties</h2>
+		<p>The following table lists all the CSS transition
+			properties:</p>
+		<table>
+			<tbody>
+				<tr>
+					<th>Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transition.asp">transition</a></td>
+					<td>A shorthand property for setting the four
+						transition properties into a single property</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transition-delay.asp">transition-delay</a></td>
+					<td>Specifies a delay (in seconds) for the
+						transition effect</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transition-duration.asp">transition-duration</a></td>
+					<td>Specifies how many seconds or milliseconds a
+						transition effect takes to complete</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transition-property.asp">transition-property</a></td>
+					<td>Specifies the name of the CSS property the
+						transition effect is for</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">transition-timing-function</a></td>
+					<td>Specifies the speed curve of the transition
+						effect</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+		<p class="imp">여기서 중요한점. 트랜지션(transition)도 따지고 보면
+			에니메이션이다. 다만, A,B 이 두 코스밖에 적용이 되지 않는다. 바로 그게 단점이라고 할 수 있다.
+			보다 복잡한 에니메이션을 사용할려면 다음진행할 animation 명령어를 사용하도록 하자.</p>
+
+
+
+
+
+		<h1 class="subject">에니메이션: @keyframes, animation</h1>
+		<h2>CSS Animations</h2>
+		<p>CSS animations allows animation of most HTML
+			elements without using JavaScript or Flash!</p>
+		<h2>Browser Support for Animations</h2>
+		<p>
+			The numbers in the table specify the first browser
+			version that fully supports the property. <br>
+			Numbers followed by -webkit-, -moz-, or -o- specify the
+			first version that worked with a prefix.
+		</p>
+		<table>
+			<tbody>
+				<tr style="height: 80px">
+					<th
+						style="width: 25%; font-size: 16px; text-align: left;">Property</th>
+					<th style="width: 15%" class="bsChrome" title="Chrome"></th>
+					<th style="width: 15%;" class="bsEdge"
+						title="Internet Explorer / Edge"></th>
+					<th style="width: 15%;" class="bsFirefox"
+						title="Firefox"></th>
+					<th style="width: 15%;" class="bsSafari" title="Safari"></th>
+					<th style="width: 15%;" class="bsOpera" title="Opera"></th>
+				</tr>
+				<tr>
+					<td style="text-align: left;">@keyframes</td>
+					<td>43.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>5.0&nbsp;-moz-
+					</td>
+					<td>9.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>30.0<br>15.0&nbsp;-webkit-<br>12.0
+						-o-
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">animation</td>
+					<td>43.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>10.0</td>
+					<td>16.0<br>5.0&nbsp;-moz-
+					</td>
+					<td>9.0<br>4.0&nbsp;-webkit-
+					</td>
+					<td>30.0<br>15.0&nbsp;-webkit-<br>12.0&nbsp;-o-
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>What are CSS Animations?</h2>
+		<p>
+			An animation lets an element gradually change from one
+			style to another. <br> You can change as many CSS
+			properties you want, as many times you want. <br> To
+			use CSS animation, you must first specify some keyframes
+			for the animation. <br> Keyframes hold what styles
+			the element will have at certain times.
+		</p>
+		<h2>The @keyframes Rule</h2>
+		<p>
+			When you specify CSS styles inside the @keyframes rule,
+			the animation will gradually change from the current
+			style to the new style at certain times. <br> To get
+			an animation to work, you must bind the animation to an
+			element. <br> The following example binds the
+			"example" animation to the &lt;div&gt; element. The
+			animation will last for 4 seconds, and it will gradually
+			change the background-color of the &lt;div&gt; element
+			from "red" to "yellow":
+		</p>
+		<pre class="code">
+ /* The animation code */
 @keyframes example {
     from {background-color: red;}
     to {background-color: yellow;}
 }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
 
-&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; This example does not work in Internet Explorer 9 and earlier versions.&lt;/p&gt;
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+} </pre>
+		<a href="/studyhtml5/ch04/practice/css_p50.html"
+			class="center">프렉티스 50</a>
+		<p>
+			Note: The <span class="code">animation-duration</span>
+			property defines how long time an animation should take
+			to complete. If the <span class="code">animation-duration</span>
+			property is not specified, no animation will occur,
+			because the default value is 0s (0 seconds). <br> <br>
+			In the example above we have specified when the style
+			will change by using the keywords <span class="code">from</span>
+			and <span class="code">to</span> (which represents <span
+				class="code">0%</span> (start) and <span class="code">100%</span>
+			(complete)). <br> <br> It is also possible to
+			use percent. By using percent, you can add as many style
+			changes as you like. <br> <br> The following
+			example will change the <span class="code">background-color</span>
+			of the &lt;div&gt; element when the animation is 25%
+			complete, 50% complete, and again when the animation is
+			100% complete:
+		</p>
+		<pre class="code">
+ /* The animation code */
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
 
-&lt;div&gt;&lt;/div&gt;
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+} </pre>
+		<a href="/studyhtml5/ch04/practice/css_p51.html"
+			class='center'>프렉티스 51</a>
+		<p>
+			The following example will change both the
+			background-color and the position of the &lt;div&gt;
+			element when the animation is <span class="code">25%</span>
+			complete, <span class="code">50%</span> complete, and
+			again when the animation is <span class="code">100%</span>
+			complete:
+		</p>
+		<pre class="code">
+/* The animation code */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
 
-&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; When an animation is finished, it changes back to its original style.&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-		<a href="/studyhtml5/ch04/practice/css_p30.html"
-			class="center">프렉티스30</a>
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+} </pre>
+		<a href="/studyhtml5/ch04/practice/css_p52.html"
+			class="center">프렉티스 52</a>
+		<h2>Delay an Animation</h2>
+		<p>
+			The <span class="code">animation-delay</span> property
+			specifies a delay for the start of an animation. <br>
+			The following example has a 2 seconds delay before
+			starting the animation:
+		</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p53.html"
+			class="center">프렉티스 53</a>
+		<p>
+			Negative values are also allowed. If using negative
+			values, the animation will start as if it had already
+			been playing for N seconds. <br> In the following
+			example, the animation will start as if it had already
+			been playing for 2 seconds:
+		</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: -2s;
+}</pre>
+		<a href='/studyhtml5/ch04/practice/css_p54.html'
+			class="center">프렉티스 54</a>
+		<h2>Set How Many Times an Animation Should Run</h2>
+		<p>
+			The <span class="code">animation-iteration-count</span>
+			property specifies the number of times an animation
+			should run. <br> The following example will run the
+			animation 3 times before it stops:
+		</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p55.html"
+			class="center">프렉티스 55</a>
+		<p>The following example uses the value "infinite" to
+			make the animation continue for ever:</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p56.html"
+			class="center">프렉티스 56</a>
 		<h2>Run Animation in Reverse Direction or Alternate
 			Cycles</h2>
+		<p>
+			The <span class="code">animation-direction</span>
+			property specifies whether an animation should be played
+			forwards, backwards or in alternate cycles. <br> The
+			animation-direction property can have the following
+			values:
+		</p>
+		<ul>
+			<li><span class="code">normal</span> - The animation
+				is played as normal (forwards). This is default</li>
+			<li><span class="code">reverse</span> - The
+				animation is played in reverse direction (backwards)</li>
+			<li><span class="code">alternate</span> - The
+				animation is played forwards first, then backwards</li>
+			<li><span class="code">alternate-reverse</span> -
+				The animation is played backwards first, then forwards</li>
+		</ul>
+		<p>The following example will run the animation in
+			reverse direction (backwards):</p>
 		<pre class="code">
-animation-direction: reverse;
--or-
-animation-direction: alternate;
-</pre>
-		<a href="/studyhtml5/ch04/practice/css_p33.html"
-			class="center">프렉티스_일반</a> <a
-			href="/studyhtml5/ch04/practice/css_p31.html"
-			class="center">프렉티스_Reverse</a> <a
-			href="/studyhtml5/ch04/practice/css_p32.html"
-			class="center">프렉티스_Alternate</a>
-		<h2>Animation 요약활용</h2>
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-direction: reverse;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p57.html"
+			class="center">프렉티스 57</a>
+		<p>The following example uses the value "alternate" to
+			make the animation run forwards first, then backwards:</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p58.html"
+			class="center">프렉티스 58</a>
+		<p class="imp">
+			이걸할라면 <span class="code">animation-iteration-count:
+				2</span>가 있어야 한다. 한 번 가고 다시 반대로 돌아가는 것이기 때문에
+		</p>
+		<p>The following example uses the value
+			"alternate-reverse" to make the animation run backwards
+			first, then forwards:</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 2;
+    animation-direction: alternate-reverse;
+}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p59.html"
+			class="center">프렉티스 59</a>
+		<h2>Specify the Speed Curve of the Animation</h2>
+		<p>
+			The <span class="code">animation-timing-function</span>
+			property specifies the speed curve of the animation. <br>
+			The animation-timing-function property can have the
+			following values:
+		</p>
+		<ul>
+			<li>ease - Specifies an animation with a slow start,
+				then fast, then end slowly (this is default)</li>
+			<li>linear - Specifies an animation with the same
+				speed from start to end</li>
+			<li>ease-in - Specifies an animation with a slow
+				start</li>
+			<li>ease-out - Specifies an animation with a slow
+				end</li>
+			<li>ease-in-out - Specifies an animation with a slow
+				start and end</li>
+			<li>cubic-bezier(n,n,n,n) - Lets you define your own
+				values in a cubic-bezier function</li>
+		</ul>
+		<p>The following example shows the some of the
+			different speed curves that can be used:</p>
+		<pre class="code">
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: ease;}
+#div3 {animation-timing-function: ease-in;}
+#div4 {animation-timing-function: ease-out;}
+#div5 {animation-timing-function: ease-in-out;}</pre>
+		<a href="/studyhtml5/ch04/practice/css_p60.html"
+			class="center">프렉티스 60</a>
+		<h2>Specify the fill-mode For an Animation</h2>
+		<p>
+			CSS animations do not affect an element before the first
+			keyframe is played or after the last keyframe is played.
+			The animation-fill-mode property can override this
+			behavior. <br> The <span class="code">animation-fill-mode</span>
+			property specifies a style for the target element when
+			the animation is not playing (before it starts, after it
+			ends, or both). <br> The animation-fill-mode
+			property can have the following values:
+		</p>
+		<ul>
+			<li><span class="code">none</span> - Default value.
+				Animation will not apply any styles to the element
+				before or after it is executing</li>
+			<li><span class="code">forwards</span> - The element
+				will retain the style values that is set by the last
+				keyframe (depends on animation-direction and
+				animation-iteration-count)</li>
+			<li><span class="code">backwards</span> - The
+				element will get the style values that is set by the
+				first keyframe (depends on animation-direction), and
+				retain this during the animation-delay period</li>
+			<li><span class="code">both</span> - The animation
+				will follow the rules for both forwards and backwards,
+				extending the animation properties in both directions
+		</ul>
+		<p>The following example lets the &lt;div&gt; element
+			retain the style values from the last keyframe when the
+			animation ends:</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}</pre>
+		<p>The following example lets the &lt;div&gt; element
+			get the style values set by the first keyframe before the
+			animation starts (during the animation-delay period):</p>
+		<pre class="code">
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}</pre>
+		<p>The following example lets the &lt;div&gt; element
+			get the style values set by the first keyframe before the
+			animation starts, and retain the style values from the
+			last keyframe when the animation ends:</p>
+		<pre class='code'>
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+}</pre>
+		<a href='/studyhtml5/ch04/practice/css_p61.html'
+			class="center">프렉티스 61</a>
+		<h2 class="bookmark">Animation Shorthand Property</h2>
+		<p class="imp">animation 기능을 순서를 외우던가 아니면 이곳을 따로 북마크
+			해놓을 테니 쓸때마다 한번씩 보던가는 자유다.</p>
+		<p>The example below uses six of the animation
+			properties:</p>
 		<pre class="code">
 div {
     animation-name: example;
@@ -1541,11 +2882,99 @@ div {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }</pre>
+
+		<p>
+			The same animation effect as above can be achieved by
+			using the shorthand <span class="code">animation</span>
+			property:
+		</p>
+
 		<pre class="code">
 div {
     animation: example 5s linear 2s infinite alternate;
 }</pre>
-		<p>위와 아래는 결국 같은 것이다.</p>
+		<a href="/studyhtml5/ch04/practice/css_p62.html"
+			class="center">프렉티스 62</a>
+		<h2>CSS Animation Properties</h2>
+		<p>The following table lists the @keyframes rule and
+			all the CSS animation properties:</p>
+		<table>
+			<tbody>
+				<tr>
+					<th style="width: 28%">Property</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp">@keyframes</a></td>
+					<td>Specifies the animation code</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation.asp">animation</a></td>
+					<td>A shorthand property for setting all the
+						animation properties</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-delay.asp">animation-delay</a></td>
+					<td>Specifies a delay for the start of an
+						animation</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-direction.asp">animation-direction</a></td>
+					<td>Specifies whether an animation should be
+						played forwards, backwards or in alternate cycles</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-duration.asp">animation-duration</a></td>
+					<td>Specifies how long time an animation should
+						take to complete one cycle</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-fill-mode.asp">animation-fill-mode</a></td>
+					<td>Specifies a style for the element when the
+						animation is not playing (before it starts, after it
+						ends, or both)</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-iteration-count.asp">animation-iteration-count</a></td>
+					<td>Specifies the number of times an animation
+						should be played</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-name.asp">animation-name</a></td>
+					<td>Specifies the name of the @keyframes animation</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-play-state.asp">animation-play-state</a></td>
+					<td>Specifies whether the animation is running or
+						paused</td>
+				</tr>
+				<tr>
+					<td><a
+						href="https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp">animation-timing-function</a></td>
+					<td>Specifies the speed curve of the animation</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
 		<h2 class="bookmark">div margin관련</h2>
 		<img alt="picture"
 			src="/studyhtml5/images/align div middle in div.png">
@@ -1557,7 +2986,7 @@ div {
 			입력한다. <a href="practice/css25.html">예보기</a>
 		</p>
 
-		<h1>필터: filter</h1>
+		<h1 class='subject'>CSS3의 추가기능: 필터 - filter</h1>
 		<p>filter 속성은 이미지 등에 사진에서 사용하는 블러, 밝기 조절, 세피아와 같은 필터
 			기능을 줄때 사용한다. IE에서는 아직 이 기능을 제공하지 않는다.</p>
 		<p>
@@ -1667,7 +3096,8 @@ div {
 		<p>실습 18</p>
 
 
-		<h1>이미지 스타일: 각종 기능을 사용한 이미지 표현</h1>
+		<h1 class="subject">CSS3의 추가기능:이미지 스타일 - 각종 기능을 사용한
+			이미지 표현</h1>
 
 		<p>css의 각종 기능들을 사용하면 이미지 편집 프로그램을 사용하지 않고도 이미지를 꾸밀 수
 			있다.</p>
@@ -1753,11 +3183,11 @@ div {
 			<tbody>
 				<tr>
 					<th>Font format</th>
-					<th>Chrome</th>
-					<th>Internet Explorer / Edge</th>
-					<th>Firefox</th>
-					<th>Safari</th>
-					<th>Opera</th>
+					<th class="bsChrome" title="Chrome"></th>
+					<th class="bsEdge" title="Internet Explorer / Edge"></th>
+					<th class="bsFirefox" title="Firefox"></th>
+					<th class="bsSafari" title="Safari"></th>
+					<th class="bsOpera" title="Opera"></th>
 				</tr>
 				<tr>
 					<td>TTF/OTF</td>
@@ -1871,35 +3301,34 @@ div {
 		<br> <img style="background: white;" alt="111"
 			src="../images/column_gap.png">
 		<p>실습을 진행한다. css_p24</p>
-		<h1>참고!! 5segment.gif</h1>
+		<h1 class="subject">참고!! 5segment.gif</h1>
 		<img alt="5segment" src="../images/5segment.gif">
 		<p>다양한 html, css를 학습하려면?</p>
 		<p>http://developer.mozilla.org/ko/docs/Web/Tutorials
 			사이트에는 HTML, CSS, JavaScript를 다양한 예제와 함께 배울 수 있는 학습서를
 			제공한다. 실무에서 사용되는 심도있는 주제들도 다루고 있으니 한번 봐두는 것도 좋다.</p>
-		<h1>부록</h1>
 		<h2 class="bookmark">cursor</h2>
 		<p>다음 낱말에 커서를 옮겨 보자. 마우스 커서가 변한다.</p>
-		<span style="cursor: auto">auto</span><br> <span
-			style="cursor: crosshair">crosshair</span><br> <span
-			style="cursor: default">default</span><br> <span
-			style="cursor: e-resize">e-resize</span><br> <span
-			style="cursor: grab">grab</span><br> <span
-			style="cursor: help">help</span><br> <span
-			style="cursor: move">move</span><br> <span
-			style="cursor: n-resize">n-resize</span><br> <span
-			style="cursor: ne-resize">ne-resize</span><br> <span
-			style="cursor: nw-resize">nw-resize</span><br> <span
-			style="cursor: pointer">pointer</span><br> <span
-			style="cursor: progress">progress</span><br> <span
-			style="cursor: s-resize">s-resize</span><br> <span
-			style="cursor: se-resize">se-resize</span><br> <span
-			style="cursor: sw-resize">sw-resize</span><br> <span
-			style="cursor: text">text</span><br> <span
-			style="cursor: w-resize">w-resize</span><br> <span
-			style="cursor: wait">wait</span><br> <span
-			style="cursor: not-allowed">not-allowed</span><br> <span
-			style="cursor: no-drop">no-drop</span><br>
+		<span style="cursor: auto">auto</span> <br> <span
+			style="cursor: crosshair">crosshair</span> <br> <span
+			style="cursor: default">default</span> <br> <span
+			style="cursor: e-resize">e-resize</span> <br> <span
+			style="cursor: grab">grab</span> <br> <span
+			style="cursor: help">help</span> <br> <span
+			style="cursor: move">move</span> <br> <span
+			style="cursor: n-resize">n-resize</span> <br> <span
+			style="cursor: ne-resize">ne-resize</span> <br> <span
+			style="cursor: nw-resize">nw-resize</span> <br> <span
+			style="cursor: pointer">pointer</span> <br> <span
+			style="cursor: progress">progress</span> <br> <span
+			style="cursor: s-resize">s-resize</span> <br> <span
+			style="cursor: se-resize">se-resize</span> <br> <span
+			style="cursor: sw-resize">sw-resize</span> <br> <span
+			style="cursor: text">text</span> <br> <span
+			style="cursor: w-resize">w-resize</span> <br> <span
+			style="cursor: wait">wait</span> <br> <span
+			style="cursor: not-allowed">not-allowed</span> <br>
+		<span style="cursor: no-drop">no-drop</span> <br>
 		<table>
 			<tr>
 				<td>&lt;span style="cursor:
@@ -2047,7 +3476,7 @@ div {
 		<div class="code">&lt;div id="foo" class="bar baz
 			bax"&gt;</div>
 		<p>id는 한 엘리먼트당 두개를 가질 수 없고, class는 여러개 가져도 된다.</p>
-		<h1>after Selector</h1>
+		<h1 class="subject">after Selector</h1>
 		<pre class="code">
 p::after {
     content: " - Remember this";
@@ -2098,7 +3527,7 @@ p::after {
 &lt;/html&gt;</pre>
 		<a class="center"
 			href="/studyhtml5/ch04/practice/css_p27.html">프렉티스 27</a>
-		<h1>before Selector</h1>
+		<h1 class="subject">before Selector</h1>
 		<pre class="code">
 p::before {
     content: "Read this: ";
@@ -2152,7 +3581,7 @@ p::before {
 </pre>
 		<a class="center"
 			href="/studyhtml5/ch04/practice/css_p28.html">프렉티스 28</a>
-		<h1>Icons Tutorial</h1>
+		<h1 class="subject">Icons Tutorial</h1>
 		<h2>How To Add Icons</h2>
 		<p>
 			To insert an icon, add the name of the icon class to any
@@ -2239,37 +3668,8 @@ p::before {
 				href="https://www.w3schools.com/icons/icons_reference.asp">여기</a>를
 			참조하시라.
 		</p>
-		<h1 class="bookmark">Specify the Speed Curve of the
-			Transition</h1>
-		<p>
-			The <span class="imp">transition-timing-function</span>
-			property specifies the speed curve of the transition
-			effect. <br> <br> The
-			transition-timing-function property can have the
-			following values:
-		</p>
-		<ul>
-			<li><span class="imp">ease</span> - specifies a
-				transition effect with a slow start, then fast, then end
-				slowly (this is default)</li>
-			<li><span class="imp">linear</span> - specifies a
-				transition effect with the same speed from start to end</li>
-			<li><span class="imp">ease-in</span> - specifies a
-				transition effect with a slow start</li>
-			<li><span class="imp">ease-out</span> - specifies a
-				transition effect with a slow end</li>
-			<li><span class="imp">ease-in-out</span> - specifies
-				a transition effect with a slow start and end</li>
-			<li><span class="imp">cubic-bezier(n,n,n,n)</span> -
-				lets you define your own values in a cubic-bezier
-				function</li>
-		</ul>
-		<h2>Example</h2>
-		<pre class="code">
-div {
-    transition: width 2s <span class="imp">linear</span> 1s;
-}</pre>
-		<h1>Overflow Property</h1>
+
+		<h1 class="subject">Overflow Property</h1>
 		<h2>Example</h2>
 		<pre class="code">
 div {
@@ -2311,8 +3711,7 @@ div {
 				<th>JavaScript syntax:</th>
 				<td><i>object</i>.style.overflow="scroll" <a
 					target="_blank" class="w3-btn btnsmall"
-					href="tryit.asp?filename=trycss_js_overflow">Try it</a>
-				</td>
+					href="tryit.asp?filename=trycss_js_overflow">Try it</a></td>
 			</tr>
 		</table>
 		<h2>Browser Support</h2>
@@ -2391,7 +3790,7 @@ a:active {
     color: yellow;
 } 
 &lt;/style&gt;</pre>
-		<h1>CSS Outline</h1>
+		<h1 class="subject">CSS Outline</h1>
 		<p>
 			The CSS outline properties specify the style, color, and
 			width of an outline. <br> <br> An outline is a
@@ -2405,7 +3804,7 @@ a:active {
 		<img width="600" src="/studyhtml5/images/outline.png">
 		<a href="/studyhtml5/ch04/practice/css_p29.html"
 			class="center">프렉티스29</a>
-		<h1>:not 실렉터</h1>
+		<h1 class="subject">:not 실렉터</h1>
 		<h2>Definition and Usage</h2>
 		<p>
 			The :not(selector) selector matches every element that is
@@ -2452,7 +3851,7 @@ p {
 &lt;/html&gt;</pre>
 		<a href="/studyhtml5/ch04/practice/css_p34.html"
 			class="center">프렉티스34</a>
-		<h1>CSS :first-child Selector</h1>
+		<h1 class="subject">CSS :first-child Selector</h1>
 		<h2>Definition and Usage</h2>
 		<p>The :first-child selector is used to select the
 			specified selector, only if it is the first child of its
@@ -2915,7 +4314,43 @@ ul > :first-child {
 				</tr>
 			</tbody>
 		</table>
-		<h1>CSS Counters</h1>
+		<p>
+			여기서 중요하게 봐야 할 게 <span class="imp">element element</span>
+			즉 예를 들어보자면<span class="code">div p</span>이라고 할 수 있는데, 의미는
+			<span class="imp">div안에 있는 p를 선택하겠다는 의미</span>이다. 이 셀렉터를
+			잘 이해하지 못하고 종종 클래스 셀렉터 사용시, 완전 다르게 생각하여 논리적 오류가 발생한다.<br>그리고
+			또한 이 셀렉터 파트에서 클래스를 사용한 예를 보여주지 않았기에 정확히 이해하고 넘어가기에 무리가
+			있다고 본다. 따라서 지금부터 이 파트를 간단하게 정리하겠다.
+		</p>
+		<pre class="code">
+		.class1.class2    -   ①
+		
+		.class1 .class2   -   ②
+		</pre>
+		<p>
+			1번과 2번의 차이점이 무엇일까? <br> 1번은 <span class="imp">단일
+				항목을 셀렉터</span> 하는 것을 말한다. 즉, <span class="code">&lt;p
+				class ="class1 class2"&gt;</span>가 셀렉트 된다는 의미이다. <img
+				alt="class 단일항목에 대한 설명"
+				src="/studyhtml5/images/class_1.png">
+		</p>
+		<p>
+			2번은 <span class="imp">내부 항목을 셀렉터</span> 하는 것을 말한다. 다시
+			말해서, <span class="imp">class1안에 있는 class2를 셀렉터</span>하겠다는
+			의미이다.<br>즉, <span class="code">&lt;div class
+				="class1"&gt;<b>&lt;p class = "class2"&gt;</b>
+			</span> 여기서 후자가 선택된다는 의미이다.
+		</p>
+		<img alt="class 내부항목에 대한 설명"
+			src="/studyhtml5/images/class_2.png"> <br> <br>
+		<p>
+			문제는 1번과 2번을 헷갈린다는 것이다. 그러니까 다시 말해서 <span class="code">.class1.class2</span>와
+			<span class="code">.class1 .class2</span>이 두가지 코드의 차이점이라곤
+			띄어쓰기 밖에 없는데 비해 매우 다른 항목을 셀렉트 한다는 것이다. <br> <br>따라서
+			이러한 형식의 셀렉트는 잘 사용하지 않는듯 하다. 하지만 확실히 알고가야지만 문제를 피할 수 있다.
+		</p>
+
+		<h1 class="subject">CSS Counters</h1>
 		<p>CSS counters are "variables" maintained by CSS
 			whose values can be incremented by CSS rules (to track
 			how many times they are used). Counters let you adjust
@@ -3031,12 +4466,13 @@ li::before {
 				</tr>
 			</tbody>
 		</table>
-		<h1>CSS content Property</h1>
+		<h1 class="subject">CSS content Property</h1>
 		<pre class='code'>
 a:after {
     content: " (" attr(href) ")";
 }</pre>
-<a href = "/studyhtml5/ch04/practice/css_p41.html" class = 'center'>프렉티스41</a>
+		<a href="/studyhtml5/ch04/practice/css_p41.html"
+			class='center'>프렉티스41</a>
 		<h2>Definition and Usage</h2>
 		<p>The content property is used with the :before and
 			:after pseudo-elements, to insert generated content.</p>
@@ -3200,7 +4636,7 @@ a:after {
 		<p>How to add bullet colors for &lt;ul&gt; or
 			&lt;ol&gt; by removing their default bullets and adding a
 			HTML entity that looks like bullets (&bull;):</p>
-			<pre class = "code">
+		<pre class="code">
 ul {
     list-style: none; /* Remove list bullets */
     padding: 0;
@@ -3216,7 +4652,8 @@ li:before {
     padding-right: 8px;
     color: blue; /* Or a color you prefer */
 }</pre>
-<a href = "/studyhtml5/ch04/practice/css_p42.html" class = "center">프렉티스42</a>
+		<a href="/studyhtml5/ch04/practice/css_p42.html"
+			class="center">프렉티스42</a>
 	</div>
 
 
