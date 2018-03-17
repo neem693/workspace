@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+
+
+</head>
+<body>
+
+	<p>Click the button to get the style property of the H1
+		element.</p>
+
+	<button onclick="myFunction()">Try it</button>
+
+	<p>The created style element contains css declarations
+		that will chhange the font properties of this document.</p>
+
+	<script>
+        function myFunction() {
+            var x = document.createElement("STYLE");
+            var t = document.createTextNode("body {font:20px verdana;}");
+            x.appendChild(t);
+            document.head.appendChild(x);
+        }
+    </script>
+
+
+</body>
+</html>

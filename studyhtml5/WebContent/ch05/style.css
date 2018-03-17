@@ -15,8 +15,7 @@
 	src: url(../font/NotoSansCJKkr-Bold.otf);
 }
 
-@
-keyframes body_opa {
+@keyframes body_opa {
 	from {opacity: 0;
 }
 
@@ -54,20 +53,28 @@ a.jsTuto {
 	display: inline-block;
 	width: 200px;
 	text-decoration: none;
-	opacity: 0.55;
-	transition: opacity 0.5s, box-shadow 0.5s;
+	/*opacity: 0.55;
+	transition: opacity 0.5s, box-shadow 0.5s;*/
 	margin: 1% 2%;
 }
-
-div.jsImg {
-	height: 200px;
-	width: 100%;
-}
-
+/*
 a.jsTuto:hover {
 	opacity: 1;
 	box-shadow: 0 0 5px black;
 }
+*/
+
+div.jsImg {
+	height: 200px;
+	width: 100%;
+	opacity: 0.55;
+	transition: opacity 0.5s, box-shadow 0.5s;
+}
+div.jsImg.opacity_on{
+	opacity: 1;
+	box-shadow: 0 0 5px black;
+}
+
 
 div.jsImg img {
 	height: 100%;
@@ -192,7 +199,7 @@ li {
 }
 
 table {
-	width: 80%; //
+	width: 80%; 
 	max-width: 100%;
 	border-collapse: collapse;
 	margin: 5px auto;
@@ -267,7 +274,7 @@ img {
 }
 
 img.half {
-	magin: 0;
+	margin: 0;
 }
 
 span.file {

@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+
+$(document).ready(function () {
+    opacity_on();
+});
+
+function opacity_on() {
+    var jsTuto = document.getElementsByClassName("jsTuto");
+    for (var i = 0; i < jsTuto.length; i++) {
+        jsTuto[i].onmouseenter = function () {
+            document.getElementById("test").innerHTML += "a";
+            this.childNodes[0].className += " opacity_on";
+        };
+
+    }
+    for (var i = 0; i < jsTuto.length; i++) {
+        jsTuto[i].onmouseenter = function () {
+            document.getElementById("test").innerHTML += "a";
+            this.childNodes[0].className += " opacity_on";
+        };
+
+    }
+
+    document.getElementsByClassName("jsTuto").onmouseleave = function () {
+        this.childNodes[0].className = "jsImg";
+    };
+
+}

@@ -34,20 +34,27 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="bookmark" key="selection"/>
+		<item value="Returns a collection" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="bookmark"/>
-			<item value="document.getElementById(id).style.property = new style"/>
-			<item value="enhanced for"/>
-			<item value="enhenced for"/>
-			<item value="str_18"/>
-			<item value="str_17"/>
-			<item value="str_3"/>
-			<item value="str_4"/>
+			<item value="Returns a collection"/>
+			<item value="element.childNodes"/>
+			<item value="Finding HTML Elements by Tag Name"/>
+			<item value="//"/>
+			<item value="magin"/>
+			<item value="opacity"/>
+			<item value="css 실렉터"/>
+			<item value="css실렉터"/>
+			<item value="링크실렉터"/>
+			<item value="css 링크"/>
+			<item value="css링크"/>
+			<item value="실렉터"/>
+			<item value="jsTuto"/>
+			<item value="subject sub"/>
+			<item value="HTML DOM Style Object"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&amp;gt;"/>
@@ -64,7 +71,7 @@
 		<item value="340" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="460" key="DIALOG_X_ORIGIN"/>
-		<item value="266" key="DIALOG_Y_ORIGIN"/>
+		<item value="962" key="DIALOG_X_ORIGIN"/>
+		<item value="247" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
