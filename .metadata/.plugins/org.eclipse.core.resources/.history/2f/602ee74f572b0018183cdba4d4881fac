@@ -1,0 +1,5236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="/studyhtml5/ch05/style.css">
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script src="/studyhtml5/ch05/jquery_index.js"></script>
+<title>자바스크립트_DOM</title>
+</head>
+<body>
+	<header>JAVASCRIPT HTML DOM</header>
+	<section>
+		<article>
+			<!-- <p id = "test"></p> -->
+			<h1 id="index_subject">목차</h1>
+			<div id="list"></div>
+			<h1 id="bookmark_subject">부록</h1>
+			<div id="bookmark_list"></div>
+			<p class="subject_fix" id="subject_line"></p>
+			<h1 class="subject">이 페이지는 뭐냐?</h1>
+			<p>자바스크립트의 DOM에 대한 내용만 정리할 것이다. 이제 자바스크립트의 꽃이라고 할 수
+				있다.</p>
+			<h1 class="subject">JavaScript HTML DOM</h1>
+			<p>With the HTML DOM, JavaScript can access and
+				change all the elements of an HTML document.</p>
+			<h1>The HTML DOM (Document Object Model)</h1>
+			<p>
+				When a web page is loaded, the browser creates a
+				Document Object Model of the page. <br> <br>
+				The HTML DOM model is constructed as a tree of Objects:
+			</p>
+			<h2>The HTML DOM Tree of Objects</h2>
+			<img alt="Dom_tree" src="/studyhtml5/images/dom_tree.gif">
+			<p>With the object model, JavaScript gets all the
+				power it needs to create dynamic HTML:</p>
+			<ul>
+				<li>JavaScript can change all the HTML elements in
+					the page</li>
+				<li>JavaScript can change all the HTML attributes
+					in the page</li>
+				<li>JavaScript can change all the CSS styles in the
+					page</li>
+				<li>JavaScript can remove existing HTML elements
+					and attributes</li>
+				<li>JavaScript can add new HTML elements and
+					attributes</li>
+				<li>JavaScript can react to all existing HTML
+					events in the page</li>
+				<li>JavaScript can create new HTML events in the
+					page</li>
+			</ul>
+			<h1>What You Will Learn</h1>
+			<p>In the next chapters of this tutorial you will
+				learn:</p>
+			<ul>
+				<li>How to change the content of HTML elements</li>
+				<li>How to change the style (CSS) of HTML elements
+				</li>
+				<li>How to react to HTML DOM events</li>
+				<li>How to add and delete HTML elements</li>
+			</ul>
+
+			<h1>What is the DOM?</h1>
+			<p>
+				The DOM is a W3C (World Wide Web Consortium) standard. <br>
+				<br> The DOM defines a standard for accessing
+				documents: <br> <br> "The W3C Document Object
+				Model (DOM) is a platform and language-neutral interface
+				that allows programs and scripts to dynamically access
+				and update the content, structure, and style of a
+				document." <br> <br> The W3C DOM standard is
+				separated into 3 different parts:
+			</p>
+			<ul>
+				<li>Core DOM - standard model for all document
+					types</li>
+				<li>XML DOM - standard model for XML documents</li>
+				<li>HTML DOM - standard model for HTML documents</li>
+			</ul>
+			<h1>What is the HTML DOM?</h1>
+			<p>The HTML DOM is a standard object model and
+				programming interface for HTML. It defines:</p>
+			<ul>
+				<li>The HTML elements as objects</li>
+				<li>The properties of all HTML elements</li>
+				<li>The methods to access all HTML elements</li>
+				<li>The events for all HTML elements</li>
+			</ul>
+			<p>In other words: The HTML DOM is a standard for how
+				to get, change, add, or delete HTML elements.</p>
+			<h1 class="subject">JavaScript - HTML DOM Methods</h1>
+			<p>
+				HTML DOM methods are actions you can perform (on HTML
+				Elements). <br> <br> HTML DOM properties are
+				values (of HTML Elements) that you can set or change.
+			</p>
+			<h1>The DOM Programming Interface</h1>
+			<p>
+				The HTML DOM can be accessed with JavaScript (and with
+				other programming languages). <br> <br> In the
+				DOM, all HTML elements are defined as <span class="code">objects.</span>
+				<br> <br> The programming interface is the
+				properties and methods of each object. <br> <br>
+				A <span class="code">property</span> is a value that you
+				can get or set (like changing the content of an HTML
+				element). <br> <br> A <span class="code">method</span>
+				is an action you can do (like add or deleting an HTML
+				element).
+			</p>
+			<h2>Example</h2>
+			<p>The following example changes the content (the
+				innerHTML) of the &lt;p&gt; element with id="demo":</p>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML = "Hello World!";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<p class="center">이건 씨발 너무 많이 해서 프렉티스로 안친다.</p>
+
+			<p>
+				In the example above, getElementById is a <span
+					class="code">method</span>, while innerHTML is a <span
+					class="code">property</span>.
+			</p>
+			<h1>The getElementById Method</h1>
+
+			<p>
+				The most common way to access an HTML element is to use
+				the id of the element. <br> <br> In the
+				example above the getElementById method used id="demo"
+				to find the element.
+			</p>
+			<h1>The innerHTML Property</h1>
+			<p>
+				The easiest way to get the content of an element is by
+				using the innerHTML property. <br> <br> The
+				innerHTML property is useful for getting or replacing
+				the content of HTML elements.
+			</p>
+			<p class="imp">The innerHTML property can be used to
+				get or change any HTML element, including &lt;html&gt;
+				and &lt;body&gt;.</p>
+			<h1 class="subject">JavaScript HTML DOM Document</h1>
+			<p>The HTML DOM document object is the owner of all
+				other objects in your web page.</p>
+			<h1>The HTML DOM Document Object</h1>
+			<p>
+				The document object represents your web page. <br>
+				<br> If you want to access any element in an HTML
+				page, you always start with accessing the document
+				object. <br> <br> Below are some examples of
+				how you can use the document object to access and
+				manipulate HTML.
+			</p>
+			<h1>Finding HTML Elements</h1>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 50%">Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>document.getElementById(<em>id</em>)
+						</td>
+						<td>Find an element by element id</td>
+					</tr>
+					<tr>
+						<td>document.getElementsByTagName(<em>name</em>)
+						</td>
+						<td>Find elements by tag name</td>
+					</tr>
+					<tr>
+						<td>document.getElementsByClassName(<em>name</em>)
+						</td>
+						<td>Find elements by class name</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Changing HTML Elements</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 50%">Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><em>element</em>.innerHTML =&nbsp; <em>new
+								html content</em></td>
+						<td>Change the inner HTML of an element</td>
+					</tr>
+					<tr>
+						<td><em>element</em>.<em>attribute = new
+								value</em></td>
+						<td>Change the attribute value of an HTML element</td>
+					</tr>
+					<tr>
+						<td><em>element</em>.setAttribute<em>(attribute,
+								value)</em></td>
+						<td>Change the attribute value of an HTML element</td>
+					</tr>
+					<tr>
+						<td><em>element</em>.style.<em>property =
+								new style</em></td>
+						<td>Change the style of an HTML element</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Adding and Deleting Elements</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 50%">Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>document.createElement(<em>element</em>)
+						</td>
+						<td>Create an HTML element</td>
+					</tr>
+					<tr>
+						<td>document.removeChild(<em>element</em>)
+						</td>
+						<td>Remove an HTML element</td>
+					</tr>
+					<tr>
+						<td>document.appendChild(<em>element</em>)
+						</td>
+						<td>Add an HTML element</td>
+					</tr>
+					<tr>
+						<td>document.replaceChild(<em>element</em>)
+						</td>
+						<td>Replace an HTML element</td>
+					</tr>
+					<tr>
+						<td>document.write(<em>text</em>)
+						</td>
+						<td>Write into the HTML output stream</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Adding Events Handlers</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 50%">Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>document.getElementById(<em>id</em>).onclick
+							= function(){<em>code</em>}
+						</td>
+						<td>Adding event handler code to an onclick event</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Finding HTML Objects</h1>
+			<p>
+				The first HTML DOM Level 1 (1998), defined 11 HTML
+				objects, object collections, and properties. These are
+				still valid in HTML5. <br> <br> Later, in HTML
+				DOM Level 3, more objects, collections, and properties
+				were added.
+			</p>
+			<table>
+				<tbody>
+					<tr>
+						<th>Property</th>
+						<th>Description</th>
+						<th>DOM</th>
+					</tr>
+					<tr>
+						<td>document.anchors</td>
+						<td>Returns all &lt;a&gt; elements that have a
+							name attribute</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.applets</td>
+						<td>Returns all &lt;applet&gt; elements <span
+							class="imp">(Deprecated in HTML5)</span></td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.baseURI</td>
+						<td>Returns the absolute base URI of the document</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.body</td>
+						<td>Returns the &lt;body&gt; element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.cookie</td>
+						<td>Returns the document's cookie</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.doctype</td>
+						<td>Returns the document's doctype</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.documentElement</td>
+						<td>Returns the &lt;html&gt; element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.documentMode</td>
+						<td>Returns the mode used by the browser</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.documentURI</td>
+						<td>Returns the URI of the document</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.domain</td>
+						<td>Returns the domain name of the document
+							server</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.domConfig</td>
+						<td><span class="imp">Obsolete.</span> Returns
+							the DOM configuration</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.embeds</td>
+						<td>Returns all &lt;embed&gt; elements</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.forms</td>
+						<td>Returns all &lt;form&gt; elements</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.head</td>
+						<td>Returns the &lt;head&gt; element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.images</td>
+						<td>Returns all &lt;img&gt; elements</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.implementation</td>
+						<td>Returns the DOM implementation</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.inputEncoding</td>
+						<td>Returns the document's encoding (character
+							set)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.lastModified</td>
+						<td>Returns the date and time the document was
+							updated</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.links</td>
+						<td>Returns all &lt;area&gt; and &lt;a&gt;
+							elements that have a href attribute</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.readyState</td>
+						<td>Returns the (loading) status of the document</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.referrer</td>
+						<td>Returns the URI of the referrer (the linking
+							document)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.scripts</td>
+						<td>Returns all &lt;script&gt; elements</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.strictErrorChecking</td>
+						<td>Returns if error checking is enforced</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>document.title</td>
+						<td>Returns the &lt;title&gt; element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>document.URL</td>
+						<td>Returns the complete URL of the document</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1 class="subject">JavaScript HTML DOM Elements</h1>
+			<p>This page teaches you how to find and access HTML
+				elements in an HTML page.</p>
+			<h1>Finding HTML Elements</h1>
+			<p>
+				Often, with JavaScript, you want to manipulate HTML
+				elements. <br> <br> To do so, you have to find
+				the elements first. There are a couple of ways to do
+				this:
+			</p>
+			<ul>
+				<li>Finding HTML elements by id</li>
+				<li>Finding HTML elements by tag name</li>
+				<li>Finding HTML elements by class name</li>
+				<li>Finding HTML elements by CSS selectors</li>
+				<li>Finding HTML elements by HTML object
+					collections</li>
+			</ul>
+			<h1>Finding HTML Element by Id</h1>
+			<p>
+				The easiest way to find an HTML element in the DOM, is
+				by using the element id. <br> <br> This
+				example finds the element with id="intro":
+			</p>
+			<pre class='code'>
+&lt;p id="intro"&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;This example demonstrates the &lt;b&gt;getElementById&lt;/b&gt; method!&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myElement = document.getElementById("intro");
+document.getElementById("demo").innerHTML = 
+"The text from the intro paragraph is " + myElement.innerHTML;
+&lt;/script&gt;
+</pre>
+
+
+			<a href="/studyhtml5/ch05/practice_dom/practice_01.html"
+				class="center">프렉티스 01</a>
+			<p>
+				If the element is found, the method will return the
+				element as an object (in myElement). <br> <br>
+				If the element is not found, myElement will contain
+				null.
+			</p>
+			<h2 class="bookmark">Element vs Elements</h2>
+			<p>
+				엘리먼트 하나만 선택하는것과 엘리먼트<span class="imp">들</span>이 선택되는것은
+				분명 다르다. 보통 어떤 이벤트 또는 dom 적용은 엘리먼트 하나에만 종속된다. 즉, 엘리먼트<span
+					class="imp">들</span>에서는 엘리먼트의 <span class="code">집합</span>이기
+				때문에 dom적용이 안된다. 하나하나 모두 정확한 선택 즉, 배열을 선택하듯 [0]이라는 걸
+				이용하여야 한다. 이 점을 잘 알아두고, 이제부터 엘리먼트<span class="imp">들</span>에
+				대한 이야기를 진행해보자.
+			</p>
+			<h1>Finding HTML Elements by Tag Name</h1>
+			<p>This example finds all &lt;p&gt; elements:</p>
+			<pre class="code">
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;The DOM is very useful.&lt;/p&gt;
+&lt;p&gt;This example demonstrates the &lt;b&gt;getElementsByTagName&lt;/b&gt; method&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementsByTagName("p");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) is: ' + x[0].innerHTML;
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_02.html"
+				class='center'>프렉티스 02</a>
+			<p>This example finds the element with id="main", and
+				then finds all &lt;p&gt; elements inside "main":</p>
+			<pre class="code">
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;div id="main"&gt;
+&lt;p&gt;The DOM is very useful.&lt;/p&gt;
+&lt;p&gt;This example demonstrates the &lt;b&gt;getElementsByTagName&lt;/b&gt; method&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementById("main");
+var y = x.getElementsByTagName("p");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_03.html"
+				class="center">프렉티스 03</a>
+			<h1>Finding HTML Elements by Class Name</h1>
+			<p>
+				If you want to find all HTML elements with the same
+				class name, use getElementsByClassName(). <br> <br>
+				This example returns a list of all elements with
+				class="intro".
+			</p>
+			<pre class="code">
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p class="intro"&gt;The DOM is very useful.&lt;/p&gt;
+&lt;p class="intro"&gt;This example demonstrates the &lt;b&gt;getElementsByClassName&lt;/b&gt; method.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementsByClassName("intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_04.html"
+				class="center">프렉티스04</a>
+			<p class="imp">Finding elements by class name does
+				not work in Internet Explorer 8 and earlier versions.</p>
+			<h1>Finding HTML Elements by CSS Selectors</h1>
+			<p>
+				If you want to find all HTML elements that matches a
+				specified CSS selector (id, class names, types,
+				attributes, values of attributes, etc), use the
+				querySelectorAll() method. <br> <br> This
+				example returns a list of all &lt;p&gt; elements with
+				class="intro".
+			</p>
+			<pre class="code">&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p class="intro"&gt;The DOM is very useful.&lt;/p&gt;
+&lt;p class="intro"&gt;This example demonstrates the &lt;b&gt;querySelectorAll&lt;/b&gt; method.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.querySelectorAll("p.intro");
+document.getElementById("demo").innerHTML = 
+'The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_05.html"
+				class="center">프렉티스 05</a>
+			<p class="imp">The querySelectorAll() method does not
+				work in Internet Explorer 8 and earlier versions.</p>
+			<h1>Finding HTML Elements by HTML Object Collections</h1>
+			<p>This example finds the form element with
+				id="frm1", in the forms collection, and displays all
+				element values:</p>
+
+			<pre class="code">
+&lt;form id="frm1" action="/action_page.php"&gt;
+  First name: &lt;input type="text" name="fname" value="Donald"&gt;&lt;br&gt;
+  Last name: &lt;input type="text" name="lname" value="Duck"&gt;&lt;br&gt;&lt;br&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; 
+
+&lt;p&gt;Click "Try it" to display the value of each element in the form.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var x = document.forms["frm1"];
+    var text = "";
+    var i;
+    for (i = 0; i &lt; x.length ;i++) {
+        text += x.elements[i].value + "&lt;br&gt;";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+&lt;/script&gt;</pre>
+			<a href='/studyhtml5/ch05/practice_dom/practice_06.html'
+				class="center">프렉티스 06</a>
+			<p>The following HTML objects (and object
+				collections) are also accessible:</p>
+
+			<h1 class="subject sub">document.anchors</h1>
+			<pre class="code">
+&lt;a name="html"&gt;HTML Tutorial&lt;/a&gt;&lt;br&gt;
+&lt;a name="css"&gt;CSS Tutorial&lt;/a&gt;&lt;br&gt;
+&lt;a name="xml"&gt;XML Tutorial&lt;/a&gt;&lt;br&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of anchors are: " + document.anchors.length;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_07.html"
+				class="center">프렉티스 07</a>
+
+			<h1 class="subject sub">document.body</h1>
+			<pre class='code'>
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+alert(document.body.innerHTML);
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_08.html"
+				class="center">프렉티스 08</a>
+			<h1 class="subject sub">document.documentElement</h1>
+			<pre class="code">
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+alert(document.documentElement.innerHTML);
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_09.html"
+				class="center">프렉티스 09</a>
+
+			<h1 class="subject sub">document.embeds</h1>
+			<pre class="code">
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of embeds: " + document.embeds.length;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_10.html"
+				class="center">프렉티스 10</a>
+			<h1 class="subject sub">document.forms</h1>
+			<pre class="code">
+&lt;form action=""&gt;
+First name: &lt;input type="text" name="fname" value="Donald"&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; 
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of forms: " + document.forms.length;
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_11.html"
+				class="center">프렉티스 11</a>
+			<h1 class="subject sub">document.head</h1>
+			<pre class="code">
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+document.head;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_12.html"
+				class="center">프렉티스 12</a>
+			<h1 class="subject sub">document.images</h1>
+
+			<pre class="code">
+&lt;img src="pic_htmltree.gif"&gt;
+&lt;img src="pic_navigate.gif"&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of images: " + document.images.length;
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_13.html"
+				class="center">프렉티스 13</a>
+			<h1 class="subject sub">document.links</h1>
+			<pre class="code">
+&lt;p&gt;
+&lt;a href="/html/default.asp"&gt;HTML&lt;/a&gt;
+&lt;br&gt;
+&lt;a href="/css/default.asp"&gt;CSS&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of links: " + document.links.length;
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_14.html"
+				class="center">프렉티스 14</a>
+
+
+			<h1 class="subject sub">document.scripts</h1>
+			<pre class="code">
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"Number of scripts: " + document.scripts.length;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_15.html"
+				class="center">프렉티스 15</a>
+
+			<h1 class="subject sub">document.title</h1>
+			<pre class="code">
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"The title of this document is: " + document.title;
+&lt;/script&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_16.html"
+				class='center'>프렉티스 16</a>
+
+			<h1 class="subject">JavaScript HTML DOM - Changing
+				HTML</h1>
+			<p>The HTML DOM allows JavaScript to change the
+				content of HTML elements.</p>
+			<h1>Changing the HTML Output Stream</h1>
+			<p>JavaScript can create dynamic HTML content:</p>
+			<p>In JavaScript, document.write() can be used to
+				write directly to the HTML output stream:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+document.write(Date());
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_17.html"
+				class="center">프렉티스 17</a>
+			<p class="imp">Never use document.write() after the
+				document is loaded. It will overwrite the document.</p>
+
+
+
+
+			<h1>Changing HTML Content</h1>
+			<p>
+				The easiest way to modify the content of an HTML element
+				is by using the <b>innerHTML</b> property. <br> <br>
+				To change the content of an HTML element, use this
+				syntax:
+			</p>
+			<pre class="code">
+document.getElementById(id).innerHTML = new HTML</pre>
+			<p>This example changes the content of a &lt;p&gt;
+				element:</p>
+
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="p1"&gt;Hello World!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("p1").innerHTML = "New text!";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_18.html"
+				class="center">프렉티스 18</a>
+			<p>Example explained:</p>
+			<ul>
+				<li>The HTML document above contains a
+					&lt;p&gt;element with id="p1"</li>
+				<li>We use the HTML DOM to get the element with
+					id="p1"</li>
+				<li>A JavaScript changes the content (innerHTML) of
+					that element to "New text!"</li>
+			</ul>
+			<p>This example changes the content of an &lt;h1&gt;
+				element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="id01"&gt;Old Heading&lt;/h1&gt;
+
+&lt;script&gt;
+var element = document.getElementById("id01");
+element.innerHTML = "New Heading";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_19.html"
+				class="center">프렉티스 19</a>
+			<p>Example explained:</p>
+			<ul>
+				<li>The HTML document above contains an &lt;h1&gt;
+					element with id="id01"</li>
+				<li>We use the HTML DOM to get the element with
+					id="id01"</li>
+				<li>A JavaScript changes the content (innerHTML) of
+					that element to "New Heading"</li>
+			</ul>
+
+			<h1>Changing the Value of an Attribute</h1>
+			<p>To change the value of an HTML attribute, use this
+				syntax:</p>
+			<pre class="code">
+document.getElementById(id).attribute = new value</pre>
+			<p>This example changes the value of the src
+				attribute of an &lt;img&gt; element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;img id="myImage" src="smiley.gif"&gt;
+
+&lt;script&gt;
+document.getElementById("myImage").src = "landscape.jpg";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_20.html"
+				class="center">프렉티스 20</a>
+
+			<p>Example explained:</p>
+
+			<ul>
+				<li>The HTML document above contains an &lt;img&gt;
+					element with id="myImage"</li>
+				<li>We use the HTML DOM to get the element with
+					id="myImage"</li>
+				<li>A JavaScript changes the src attribute of that
+					element from "smiley.gif" to "landscape.jpg"</li>
+			</ul>
+
+			<h1 class="subject">JavaScript HTML DOM - Changing
+				CSS</h1>
+			<p>The HTML DOM allows JavaScript to change the style
+				of HTML elements.</p>
+			<h1>Changing HTML Style</h1>
+			<p>To change the style of an HTML element, use this
+				syntax:</p>
+			<pre class="code">
+document.getElementById(id).style.property = new style</pre>
+			<p>The following example changes the style of a
+				&lt;p&gt; element:</p>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="p2"&gt;Hello World!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("p2").style.color = "blue";
+&lt;/script&gt;
+
+&lt;p&gt;The paragraph above was changed by a script.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_21.html"
+				class="center">프렉티스 21</a>
+			<h1>Using Events</h1>
+			<p>
+				The HTML DOM allows you to execute code when an event
+				occurs. <br> <br> Events are generated by the
+				browser when "things happen" to HTML elements:
+			</p>
+			<ul>
+				<li>An element is clicked on</li>
+				<li>The page has loaded</li>
+				<li>Input fields are changed</li>
+			</ul>
+			<p>
+				You will learn more about events in the next chapter of
+				this tutorial. <br> <br> This example changes
+				the style of the HTML element with id="id1", when the
+				user clicks a button:
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="id1"&gt;My Heading 1&lt;/h1&gt;
+
+&lt;button type="button"
+onclick="document.getElementById('id1').style.color = 'red'"&gt;
+Click Me!&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_22.html"
+				class="center">프렉티스 22</a>
+			<h1>More Examples</h1>
+			<p>Visibility How to make an element invisible. Do
+				you want to show the element or not?</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="p1"&gt;
+This is a text.
+This is a text.
+This is a text.
+This is a text.
+&lt;/p&gt;
+
+&lt;input type="button" value="Hide text" onclick="document.getElementById('p1').style.visibility='hidden'"&gt;
+&lt;input type="button" value="Show text" onclick="document.getElementById('p1').style.visibility='visible'"&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_23.html"
+				class="center">프렉티스 23</a>
+
+
+			<h1>HTML DOM Style Object Reference</h1>
+			<p>
+				For all HTML DOM style properties, look at our complete
+				<span class="code">HTML DOM Style Object
+					Reference.</span><span class="imp">나중에 한다.</span>
+			</p>
+			<h1 class="subject">JavaScript HTML DOM Animation</h1>
+			<p>Learn to create HTML animations using JavaScript.</p>
+			<h1>A Basic Web Page</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First JavaScript Animation&lt;/h1&gt;
+
+&lt;div id="animation"&gt;My animation will go here&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+			<h1>Create an Animation Container</h1>
+			<p>All animations should be relative to a container
+				element.</p>
+			<pre class="code">
+&lt;div id ="container"&gt;
+    &lt;div id ="animate"&gt;My animation will go here&lt;/div&gt;
+&lt;/div&gt; </pre>
+			<h1>Style the Elements</h1>
+			<p>
+				The container element should be created with style =
+				"position: relative". <br> <br> The animation
+				element should be created with style = "position:
+				absolute".
+			</p>
+			<pre class="code">
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+}
+#animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: red;
+}</pre>
+			<h1>Animation Code</h1>
+			<p>
+				JavaScript animations are done by programming gradual
+				changes in an element's style. <br> <br> The
+				changes are called by a timer. When the timer interval
+				is small, the animation looks continuous. <br> <br>
+				The basic code is:
+			</p>
+			<pre class="code">
+var id = setInterval(frame, 5);
+
+function frame() {
+    if (/* test for finished */) {
+        clearInterval(id);
+    } else {
+        /* code to change the element style */ 
+    }
+}</pre>
+			<h1>Create the Animation Using JavaScript</h1>
+			<pre class="code">
+function myMove() {
+    var elem = document.getElementById("animate");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
+            clearInterval(id);
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+} </pre>
+
+
+
+			<h1>ALL code</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;style&gt;
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+&lt;/style&gt;
+&lt;body&gt;
+
+&lt;p&gt;
+&lt;button onclick="myMove()"&gt;Click Me&lt;/button&gt;
+&lt;/p&gt; 
+
+&lt;div id ="container"&gt;
+&lt;div id ="animate"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_24.html"
+				class="center">프렉티스 24</a>
+			<p class="imp">해당 프렉티스는 한번 더 돌아오게 만들었음을 참조하라.</p>
+			<h1 class="subject">JavaScript HTML DOM Events</h1>
+			<p>HTML DOM allows JavaScript to react to HTML
+				events:</p>
+			<h1>Reacting to Events</h1>
+			<p>
+				A JavaScript can be executed when an event occurs, like
+				when a user clicks on an HTML element. <br> <br>
+				To execute code when a user clicks on an element, add
+				JavaScript code to an HTML event attribute:
+			</p>
+			<pre class="code">
+onclick=JavaScript</pre>
+			<p>Examples of HTML events:</p>
+			<ul>
+				<li>When a user clicks the mouse</li>
+				<li>When a web page has loaded</li>
+				<li>When an image has been loaded</li>
+				<li>When the mouse moves over an element</li>
+				<li>When an input field is changed</li>
+				<li>When an HTML form is submitted</li>
+				<li>When a user strokes a key</li>
+			</ul>
+			<p>In this example, the content of the &lt;h1&gt;
+				element is changed when a user clicks on it:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 onclick="this.innerHTML = 'Ooops!'"&gt;Click on this text!&lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_25.html"
+				class="center">프렉티스 25</a>
+			<p>In this example, a function is called from the
+				event handler:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 onclick="changeText(this)"&gt;Click on this text!&lt;/h1&gt;
+
+&lt;script&gt;
+function changeText(id) {
+    id.innerHTML = "Ooops!";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_26.html"
+				class="center">프렉티스 26</a>
+			<h1>HTML Event Attributes</h1>
+			<p>To assign events to HTML elements you can use
+				event attributes.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Click the button to display the date.&lt;/p&gt;
+
+&lt;button onclick="displayDate()"&gt;The time is?&lt;/button&gt;
+
+&lt;script&gt;
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+&lt;/script&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_27.html"
+				class="center">프렉티스27</a>
+			<p>In the example above, a function named displayDate
+				will be executed when the button is clicked.</p>
+			<h1>Assign Events Using the HTML DOM</h1>
+			<p>The HTML DOM allows you to assign events to HTML
+				elements using JavaScript:</p>
+			<pre class="code">
+&lt;p&gt;Click "Try it" to execute the displayDate() function.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").onclick = displayDate;
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+&lt;/script&gt;</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_28.html"
+				class="center">프렉티스 28</a>
+			<p>
+				In the example above, a function named displayDate is
+				assigned to an HTML element with the id="myBtn". <br>
+				<br> The function will be executed when the button
+				is clicked.
+			</p>
+
+			<h1>The onload and onunload Events</h1>
+			<p>
+				The onload and onunload events are triggered when the
+				user enters or leaves the page. <br> <br> The
+				onload event can be used to check the visitor's browser
+				type and browser version, and load the proper version of
+				the web page based on the information. <br> <br>
+				The onload and onunload events can be used to deal with
+				cookies.
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body onload="checkCookies()"&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function checkCookies() {
+    var text = "";
+    if (navigator.cookieEnabled == true) {
+        text = "Cookies are enabled.";
+    } else {
+        text = "Cookies are not enabled.";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_29.html"
+				class="center">프렉티스 29</a>
+			<h1>The onchange Event</h1>
+			<p>
+				The onchange event is often used in combination with
+				validation of input fields. <br> <br> Below is
+				an example of how to use the onchange. The upperCase()
+				function will be called when a user changes the content
+				of an input field.
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+Enter your name: &lt;input type="text" id="fname" onchange="myFunction()"&gt;
+&lt;p&gt;When you leave the input field, a function is triggered which transforms the input text to upper case.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_30.html"
+				class='center'>프렉티스 30</a>
+
+			<h1>The onmouseover and onmouseout Events</h1>
+			<p>The onmouseover and onmouseout events can be used
+				to trigger a function when the user mouses over, or out
+				of, an HTML element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;"&gt;
+Mouse Over Me&lt;/div&gt;
+
+&lt;script&gt;
+function mOver(obj) {
+    obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+				</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_31.html"
+				class="center">프렉티스 31</a>
+			<h1>The onmousedown, onmouseup and onclick Events</h1>
+			<p>The onmousedown, onmouseup, and onclick events are
+				all parts of a mouse-click. First when a mouse-button is
+				clicked, the onmousedown event is triggered, then, when
+				the mouse-button is released, the onmouseup event is
+				triggered, finally, when the mouse-click is completed,
+				the onclick event is triggered.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:#D94A38;width:90px;height:20px;padding:40px;"&gt;
+Click Me&lt;/div&gt;
+
+&lt;script&gt;
+function mDown(obj) {
+    obj.style.backgroundColor = "#1ec5e5";
+    obj.innerHTML = "Release Me";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor="#D94A38";
+    obj.innerHTML="Thank You";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_32.html"
+				class="center">프렉티스 32</a>
+			<h1>HTML DOM Event Object Reference</h1>
+			<p>
+				For a list of all HTML DOM events, look at our complete
+				<a
+					href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML
+					DOM Event Object Reference</a>.
+			</p>
+			<h1>More Examples</h1>
+			<pre>
+onmousedown and onmouseup
+Change an image when a user holds down the mouse button.
+
+onload
+Display an alert box when the page has finished loading.
+
+onfocus
+Change the background-color of an input field when it gets focus.
+
+Mouse Events
+Change the color of an element when the cursor moves over it.</pre>
+			<h1 class="subject sub">onmousedown and onmouseup</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function lighton() {
+    document.getElementById('myimage').src = "bulbon.gif";
+}
+function lightoff() {
+    document.getElementById('myimage').src = "bulboff.gif";
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;img id="myimage" onmousedown="lighton()" onmouseup="lightoff()" src="bulboff.gif" width="100" height="180" /&gt;
+
+&lt;p&gt;Click mouse and hold down!&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_33.html"
+				class="center">프렉티스 33</a>
+
+			<h1 class="subject sub">onload</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;script&gt;
+function mymessage() {
+    alert("This message was triggered from the onload event");
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="mymessage()"&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_34.html"
+				class="center">프렉티스 34</a>
+			<h1 class="subject sub">onfocus</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function myFunction(x) {
+    x.style.background = "yellow";
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+Enter your name: &lt;input type="text" onfocus="myFunction(this)"&gt;
+
+&lt;p&gt;When the input field gets focus, a function is triggered which changes the background-color.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_35.html"
+				class="center">프렉티스 35</a>
+			<h1 class="subject sub">Mouse Events</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 onmouseover="style.color='red'"
+onmouseout="style.color='black'"&gt;
+Mouse over this text&lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_36.html"
+				class="center">프렉티스 36</a>
+			<h1 class="subject">JavaScript HTML DOM
+				EventListener</h1>
+			<h1>The addEventListener() method</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+				</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_41.html"
+				class="center">프렉티스 41</a>
+			<p>
+				The addEventListener() method attaches an event handler
+				to the specified element. <br> <br> The
+				addEventListener() method attaches an event handler to
+				an element without overwriting existing event handlers.
+				<br> <br> You can add many event handlers to
+				one element. <br> <br> You can add many event
+				handlers of the same type to one element, i.e two
+				"click" events. <br> <br> You can add event
+				listeners to any DOM object not only HTML elements. i.e
+				the window object. <br> <br> The
+				addEventListener() method makes it easier to control how
+				the event reacts to bubbling. <br> <br> When
+				using the addEventListener() method, the JavaScript is
+				separated from the HTML markup, for better readability
+				and allows you to add event listeners even when you do
+				not control the HTML markup. <br> <br> You can
+				easily remove an event listener by using the
+				removeEventListener() method.
+			</p>
+			<h2>Syntax</h2>
+			<pre class="code">
+element.addEventListener(event, function, useCapture);</pre>
+			<p>
+				The first parameter is the type of the event (like
+				"click" or "mousedown"). <br> <br> The second
+				parameter is the function we want to call when the event
+				occurs. <br> <br> The third parameter is a
+				boolean value specifying whether to use event bubbling
+				or event capturing. This parameter is optional.
+			</p>
+			<p class="imp">Note that you don't use the "on"
+				prefix for the event; use "click" instead of "onclick".</p>
+			<h1>Add an Event Handler to an Element</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("Hello World!");
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_42.html"
+				class="center">프렉티스 42</a>
+			<p>You can also refer to an external "named"
+				function:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to execute a function when a user clicks on a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_43.html"
+				class="center">프렉티스 43</a>
+			<h1>Add Many Event Handlers to the Same Element</h1>
+			<p>The addEventListener() method allows you to add
+				many events to the same element, without overwriting
+				existing events:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to add two click events to the same button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+
+function someOtherFunction() {
+    alert ("This function was also executed!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_44.html"
+				class="center">프렉티스 44</a>
+			<p>You can add events of different types to the same
+				element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to add many events on the same button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML += "Moused over!&lt;br&gt;";
+}
+
+function mySecondFunction() {
+    document.getElementById("demo").innerHTML += "Clicked!&lt;br&gt;";
+}
+
+function myThirdFunction() {
+    document.getElementById("demo").innerHTML += "Moused out!&lt;br&gt;";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_45.html"
+				class="center">프렉티스 45</a>
+			<h1>Add an Event Handler to the Window Object</h1>
+			<p>The addEventListener() method allows you to add
+				event listeners on any HTML DOM object such as HTML
+				elements, the HTML document, the window object, or other
+				objects that support events, like the xmlHttpRequest
+				object.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method on the window object.&lt;/p&gt;
+
+&lt;p&gt;Try resizing this browser window to trigger the "resize" event handler.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = Math.random();
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_46.html"
+				class="center">프렉티스 46</a>
+			<h1>Passing Parameters</h1>
+			<p>When passing parameter values, use an "anonymous
+				function" that calls the specified function with the
+				parameters:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example demonstrates how to pass parameter values when using the 
+addEventListener() method.&lt;/p&gt;
+
+&lt;p&gt;Click the button to perform a calculation.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var p1 = 5;
+var p2 = 7;
+
+document.getElementById("myBtn").addEventListener("click", function() {
+    myFunction(p1, p2);
+});
+
+function myFunction(a, b) {
+    var result = a * b;
+    document.getElementById("demo").innerHTML = result;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_47.html"
+				class="center">프렉티스 47</a>
+			<h1>Event Bubbling or Event Capturing?</h1>
+			<p>
+				There are two ways of event propagation in the HTML DOM,
+				bubbling and capturing. <br> <br> Event
+				propagation is a way of defining the element order when
+				an event occurs. If you have a &lt;p&gt; element inside
+				a &lt;div&gt; element, and the user clicks on the
+				&lt;p&gt; element, which element's "click" event should
+				be handled first? <br> <br> In bubbling the
+				inner most element's event is handled first and then the
+				outer: the &lt;p&gt; element's click event is handled
+				first, then the &lt;div&gt; element's click event. <br>
+				<br> In capturing the outer most element's event is
+				handled first and then the inner: the &lt;div&gt;
+				element's click event will be handled first, then the
+				&lt;p&gt; element's click event. <br> <br>
+				With the addEventListener() method you can specify the
+				propagation type by using the "useCapture" parameter:
+			</p>
+			<pre class="code">
+addEventListener(event, function, useCapture);</pre>
+			<p>The default value is false, which will use the
+				bubbling propagation, when the value is set to true, the
+				event uses the capturing propagation.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+div {
+    background-color: coral;
+    border: 1px solid;
+    padding: 50px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example demonstrates the difference between bubbling and capturing when adding event listeners.&lt;/p&gt;
+
+&lt;div id="myDiv"&gt;
+  &lt;p id="myP"&gt;Click this paragraph, I am Bubbling.&lt;/p&gt;
+&lt;/div&gt;&lt;br&gt;
+
+&lt;div id="myDiv2"&gt;
+  &lt;p id="myP2"&gt;Click this paragraph, I am Capturing.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+document.getElementById("myP").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, false);
+
+document.getElementById("myDiv").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, true);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_48.html"
+				class="center">프렉티스 48</a>
+			<h1>The removeEventListener() method</h1>
+			<p>The removeEventListener() method removes event
+				handlers that have been attached with the
+				addEventListener() method:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+#myDIV {
+    background-color: coral;
+    border: 1px solid;
+    padding: 50px;
+    color: white;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="myDIV"&gt;This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
+  &lt;p&gt;Click the button to remove the DIV's event handler.&lt;/p&gt;
+  &lt;button onclick="removeHandler()" id="myBtn"&gt;Try it&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = Math.random();
+}
+
+function removeHandler() {
+    document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_49.html"
+				class="center">프렉티스 49</a>
+
+
+			<h1>Browser Support</h1>
+			<p>The numbers in the table specifies the first
+				browser version that fully supports these methods.</p>
+			<table>
+				<tbody>
+					<tr>
+						<th
+							style="width: 20%; font-size: 16px; text-align: left;">Method</th>
+						<th style="width: 16%;" class="bsChrome"
+							title="Chrome"></th>
+						<th style="width: 16%;" class="bsEdge"
+							title="Internet Explorer / Edge"></th>
+						<th style="width: 16%;" class="bsFirefox"
+							title="Firefox"></th>
+						<th style="width: 16%;" class="bsSafari"
+							title="Safari"></th>
+						<th style="width: 16%;" class="bsOpera" title="Opera"></th>
+					</tr>
+					<tr>
+						<td style="text-align: left;">addEventListener()</td>
+						<td>1.0</td>
+						<td>9.0</td>
+						<td>1.0</td>
+						<td>1.0</td>
+						<td>7.0</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">removeEventListener()</td>
+						<td>1.0</td>
+						<td>9.0</td>
+						<td>1.0</td>
+						<td>1.0</td>
+						<td>7.0</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Note: The addEventListener() and
+				removeEventListener() methods are not supported in IE 8
+				and earlier versions and Opera 6.0 and earlier versions.
+				However, for these specific browser versions, you can
+				use the attachEvent() method to attach an event handlers
+				to the element, and the detachEvent() method to remove
+				it:</p>
+<pre class = "code">
+element.attachEvent(event, function);
+element.detachEvent(event, function);</pre>
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;The addEventListener() method is not supported Internet Explorer 8 and earlier versions.&lt;/p&gt;
+
+&lt;p&gt;This example demonstrates a solution that will work for all browsers.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+if (x.addEventListener) {
+    x.addEventListener("click", myFunction);
+} else if (x.attachEvent) {
+    x.attachEvent("onclick", myFunction);
+}
+
+function myFunction() {
+    alert("Hello World!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<a href = "/studyhtml5/ch05/practice_dom/practice_50.html" class = "center">프렉티스 50</a>
+<h1>HTML DOM Event Object Reference</h1>
+<p>For a list of all HTML DOM events, look at our complete <a href = "https://www.w3schools.com/jsref/dom_obj_event.asp">HTML DOM Event Object Reference</a>.</p>
+
+
+
+			<h1 class="subject">Javascritp Reference</h1>
+			<h1 class="subject sub">The HTML DOM Element Object</h1>
+			<h1>The Element Object</h1>
+			<p>
+				In the HTML DOM, the Element object represents an HTML
+				element. <br> <br> Element objects can have
+				child nodes of type element nodes, text nodes, or
+				comment nodes. <br> <br> A NodeList object
+				represents a list of nodes, like an HTML element's
+				collection of child nodes. <br> <br> Elements
+				can also have attributes. Attributes are attribute nodes
+				(See next chapter).
+			</p>
+			<h1>Properties and Methods</h1>
+			<p>The following properties and methods can be used
+				on all HTML elements:</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 35%">Property / Method</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_accesskey.asp"><i>element</i>.accessKey</a></td>
+						<td>Sets or returns the accesskey attribute of an
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_addeventlistener.asp"><i>element</i>.addEventListener()</a></td>
+						<td>Attaches an event handler to the specified
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_appendchild.asp"><i>element</i>.appendChild()</a></td>
+						<td>Adds a new child node, to an element, as the
+							last child node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_attributes.asp"><i>element</i>.attributes</a></td>
+						<td>Returns a NamedNodeMap of an element's
+							attributes</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_html_blur.asp"><i>element</i>.blur()</a></td>
+						<td>Removes focus from an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_childelementcount.asp"><i>element</i>.childElementCount</a></td>
+						<td>Returns the number of child elements an
+							element has</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_childnodes.asp"><i>element</i>.childNodes</a></td>
+						<td>Returns a collection of an element's child
+							nodes (including text and comment nodes)<span
+							class="bookmark code">모든 ChildNode들에서 첫번째 노드에
+								대한 알아둬야 할 것</span>: [0]에 해당하는 첫번째 노드는 firstChild로도 검색이
+							가능하다. 그런데, 여기서 <span class="code">firstChild</span>란,
+							Text가 될 확률이 높다. <span class='code'>&lt;p&gt;</span>text<span
+							class="code">&lt;/p&gt;</span>에서 이 사이의 text가 바로 <span
+							class="code">firstChild</span>가 되기 때문이다. 이를 잘 알아두거나,
+							<span class='code'>firstElementChild</span>를 이용하거나,
+							디버거를 통해서 childNode에 무엇이 걸려있는지 정확히 알아두는게 좋다.
+						</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_children.asp"><i>element</i>.children</a></td>
+						<td>Returns a collection of an element's child
+							element (excluding text and comment nodes)</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_classlist.asp"><i>element</i>.classList</a></td>
+						<td>Returns the class name(s) of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_classname.asp"><i>element</i>.className</a></td>
+						<td>Sets or returns the value of the class
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_html_click.asp"><i>element</i>.click()</a></td>
+						<td>Simulates a mouse-click on an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_clientheight.asp"><i>element</i>.clientHeight</a></td>
+						<td>Returns the height of an element, including
+							padding</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_clientleft.asp"><i>element</i>.clientLeft</a></td>
+						<td>Returns the width of the left border of an
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_clienttop.asp"><i>element</i>.clientTop</a></td>
+						<td>Returns the width of the top border of an
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_clientwidth.asp"><i>element</i>.clientWidth</a></td>
+						<td>Returns the width of an element, including
+							padding</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_clonenode.asp"><i>element</i>.cloneNode()</a></td>
+						<td>Clones an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_comparedocumentposition.asp"><i>element</i>.compareDocumentPosition()</a></td>
+						<td>Compares the document position of two
+							elements</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_contains.asp"><i>element</i>.contains()</a></td>
+						<td>Returns true if a node is a descendant of a
+							node, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_contenteditable.asp"><i>element</i>.contentEditable</a></td>
+						<td>Sets or returns whether the content of an
+							element is editable or not</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_dir.asp"><i>element</i>.dir</a></td>
+						<td>Sets or returns the value of the dir
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_firstchild.asp"><i>element</i>.firstChild</a></td>
+						<td>Returns the first child node of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_firstelementchild.asp"><i>element</i>.firstElementChild</a></td>
+						<td>Returns the first child element of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_html_focus.asp"><i>element</i>.focus()</a></td>
+						<td>Gives focus to an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_getattribute.asp"><i>element</i>.getAttribute()</a></td>
+						<td>Returns the specified attribute value of an
+							element node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_getattributenode.asp"><i>element</i>.getAttributeNode()</a></td>
+						<td>Returns the specified attribute node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_getelementsbyclassname.asp"><i>element</i>.getElementsByClassName()</a></td>
+						<td>Returns a collection of all child elements
+							with the specified class name</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_getelementsbytagname.asp"><i>element</i>.getElementsByTagName()</a></td>
+						<td>Returns a collection of all child elements
+							with the specified tag name</td>
+					</tr>
+					<tr>
+						<td><i>element</i>.getFeature()</td>
+						<td>Returns an object which implements the APIs
+							of a specified feature</td>
+					</tr>
+					<!--
+<tr>
+  <td><i>element</i>.getUserData()</td>
+  <td>Returns the object associated to a key on an element</td>
+</tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_hasattribute.asp"><i>element</i>.hasAttribute()</a></td>
+						<td>Returns true if an element has the specified
+							attribute, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_hasattributes.asp"><i>element</i>.hasAttributes()</a></td>
+						<td>Returns true if an element has any
+							attributes, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_haschildnodes.asp"><i>element</i>.hasChildNodes()</a></td>
+						<td>Returns true if an element has any child
+							nodes, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_id.asp"><i>element</i>.id</a></td>
+						<td>Sets or returns the value of the id attribute
+							of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp"><i>element</i>.innerHTML</a></td>
+						<td>Sets or returns the content of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_insertbefore.asp"><i>element</i>.insertBefore()</a></td>
+						<td>Inserts a new child node before a specified,
+							existing, child node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_iscontenteditable.asp"><i>element</i>.isContentEditable</a></td>
+						<td>Returns true if the content of an element is
+							editable, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_isdefaultnamespace.asp"><i>element</i>.isDefaultNamespace()</a></td>
+						<td>Returns true if a specified namespaceURI is
+							the default, otherwise false</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_isequalnode.asp"><i>element</i>.isEqualNode()</a></td>
+						<td>Checks if two elements are equal</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_issamenode.asp"><i>element</i>.isSameNode()</a></td>
+						<td>Checks if two elements are the same node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_issupported.asp"><i>element</i>.isSupported()</a></td>
+						<td>Returns true if a specified feature is
+							supported on the element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_lang.asp"><i>element</i>.lang</a></td>
+						<td>Sets or returns the value of the lang
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_lastchild.asp"><i>element</i>.lastChild</a></td>
+						<td>Returns the last child node of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_lastelementchild.asp"><i>element</i>.lastElementChild</a></td>
+						<td>Returns the last child element of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_namespaceuri.asp"><i>element</i>.namespaceURI</a></td>
+						<td>Returns the namespace URI of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_nextsibling.asp"><i>element</i>.nextSibling</a></td>
+						<td>Returns the next node at the same node tree
+							level</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_nextelementsibling.asp"><i>element</i>.nextElementSibling</a></td>
+						<td>Returns the next element at the same node
+							tree level</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_nodename.asp"><i>element</i>.nodeName</a></td>
+						<td>Returns the name of a node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_nodetype.asp"><i>element</i>.nodeType</a></td>
+						<td>Returns the node type of a node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_nodevalue.asp"><i>element</i>.nodeValue</a></td>
+						<td>Sets or returns the value of a node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_normalize.asp"><i>element</i>.normalize()</a></td>
+						<td>Joins adjacent text nodes and removes empty
+							text nodes in an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_offsetheight.asp"><i>element</i>.offsetHeight</a></td>
+						<td>Returns the height of an element, including
+							padding, border and scrollbar</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_offsetwidth.asp"><i>element</i>.offsetWidth</a></td>
+						<td>Returns the width of an element, including
+							padding, border and scrollbar</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_offsetleft.asp"><i>element</i>.offsetLeft</a></td>
+						<td>Returns the horizontal offset position of an
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_offsetparent.asp"><i>element</i>.offsetParent</a></td>
+						<td>Returns the offset container of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_offsettop.asp"><i>element</i>.offsetTop</a></td>
+						<td>Returns the vertical offset position of an
+							element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_ownerdocument.asp"><i>element</i>.ownerDocument</a></td>
+						<td>Returns the root element (document object)
+							for an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_parentnode.asp"><i>element</i>.parentNode</a></td>
+						<td>Returns the parent node of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_parentelement.asp"><i>element</i>.parentElement</a></td>
+						<td>Returns the parent element node of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_previoussibling.asp"><i>element</i>.previousSibling</a></td>
+						<td>Returns the previous node at the same node
+							tree level</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_previouselementsibling.asp"><i>element</i>.previousElementSibling</a></td>
+						<td>Returns the previous element at the same node
+							tree level</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_queryselector.asp"><i>element</i>.querySelector()</a></td>
+						<td>Returns the first child element that matches
+							a specified CSS selector(s) of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_queryselectorall.asp"><em>element</em>.querySelectorAll()</a></td>
+						<td>Returns all child elements that matches a
+							specified CSS selector(s) of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_removeattribute.asp"><i>element</i>.removeAttribute()</a></td>
+						<td>Removes a specified attribute from an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_removeattributenode.asp"><i>element</i>.removeAttributeNode()</a></td>
+						<td>Removes a specified attribute node, and
+							returns the removed node</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_removechild.asp"><i>element</i>.removeChild()</a></td>
+						<td>Removes a child node from an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_removeeventlistener.asp"><i>element</i>.removeEventListener()</a></td>
+						<td>Removes an event handler that has been
+							attached with the addEventListener() method</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_node_replacechild.asp"><i>element</i>.replaceChild()</a></td>
+						<td>Replaces a child node in an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_scrollheight.asp"><i>element</i>.scrollHeight</a></td>
+						<td>Returns the entire height of an element,
+							including padding</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_scrollintoview.asp"><i>element</i>.scrollIntoView()</a></td>
+						<td>Scrolls the specified element into the
+							visible area of the browser window</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_scrollleft.asp"><i>element</i>.scrollLeft</a></td>
+						<td>Sets or returns the number of pixels an
+							element's content is scrolled horizontally</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_scrolltop.asp"><i>element</i>.scrollTop</a></td>
+						<td>Sets or returns the number of pixels an
+							element's content is scrolled vertically</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_scrollwidth.asp"><i>element</i>.scrollWidth</a></td>
+						<td>Returns the entire width of an element,
+							including padding</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_setattribute.asp"><i>element</i>.setAttribute()</a></td>
+						<td>Sets or changes the specified attribute, to
+							the specified value</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_element_setattributenode.asp"><i>element</i>.setAttributeNode()</a></td>
+						<td>Sets or changes the specified attribute node</td>
+					</tr>
+					<!--
+<tr>
+  <td><i>element</i>.setUserData()</td>
+  <td>Associates an object to a key on an element</td>
+</tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_style.asp"><i>element</i>.style</a></td>
+						<td>Sets or returns the value of the style
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_tabindex.asp"><i>element</i>.tabIndex</a></td>
+						<td>Sets or returns the value of the tabindex
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_element_tagname.asp"><i>element</i>.tagName</a></td>
+						<td>Returns the tag name of an element</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_node_textcontent.asp"><i>element</i>.textContent</a></td>
+						<td>Sets or returns the textual content of a node
+							and its descendants</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_html_title.asp"><i>element</i>.title</a></td>
+						<td>Sets or returns the value of the title
+							attribute of an element</td>
+					</tr>
+					<tr>
+						<td><i>element</i>.toString()</td>
+						<td>Converts an element to a string</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/met_nodelist_item.asp"><em>nodelist</em>.item()</a></td>
+						<td>Returns the node at the specified index in a
+							NodeList</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_nodelist_length.asp"><em>nodelist</em>.length</a></td>
+						<td>Returns the number of nodes in a NodeList</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1 class="subject sub">HTML DOM Events Reference</h1>
+			<h2>HTML DOM Events</h2>
+			<p>
+				HTML DOM events allow JavaScript to register different
+				event handlers on elements in an HTML document. <br>
+				<br> Events are normally used in combination with
+				functions, and the function will not be executed before
+				the event occurs (such as when a user clicks a button).
+				<br> <br> Tip: The event model was
+				standardized by the W3C in DOM Level 2.
+			</p>
+			<h2>HTML DOM Events</h2>
+			<p class="imp">DOM: Indicates in which DOM Level the
+				property was introduced.</p>
+			<h2>Mouse Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onclick.asp">onclick</a></td>
+						<td>The event occurs when the user clicks on an
+							element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu</a></td>
+						<td>The event occurs when the user right-clicks
+							on an element to open a context menu</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick</a></td>
+						<td>The event occurs when the user double-clicks
+							on an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown</a></td>
+						<td>The event occurs when the user presses a
+							mouse button over an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter</a></td>
+						<td>The event occurs when the pointer is moved
+							onto an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave</a></td>
+						<td>The event occurs when the pointer is moved
+							out of an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove</a></td>
+						<td>The event occurs when the pointer is moving
+							while it is over an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover</a></td>
+						<td>The event occurs when the pointer is moved
+							onto an element, or onto one of its children</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout</a></td>
+						<td>The event occurs when a user moves the mouse
+							pointer out of an element, or out of one of its
+							children</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup</a></td>
+						<td>The event occurs when a user releases a mouse
+							button over an element</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Keyboard Events</h2>
+			<table id="table2">
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onkeydown.asp">onkeydown</a></td>
+						<td>The event occurs when the user is pressing a
+							key</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress</a></td>
+						<td>The event occurs when the user presses a key</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup</a></td>
+						<td>The event occurs when the user releases a key</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Frame/Object Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onabort.asp">onabort</a></td>
+						<td>The event occurs when the loading of a
+							resource has been aborted</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onbeforeunload.asp">onbeforeunload</a></td>
+						<td>The event occurs before the document is about
+							to be unloaded</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onerror.asp">onerror</a></td>
+						<td>The event occurs when an error occurs while
+							loading an external file</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onhashchange.asp">onhashchange</a></td>
+						<td>The event occurs when there has been changes
+							to the anchor part of a URL</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onload.asp">onload</a></td>
+						<td>The event occurs when an object has loaded</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onpageshow.asp">onpageshow</a></td>
+						<td>The event occurs when the user navigates to a
+							webpage</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onpagehide.asp">onpagehide</a></td>
+						<td>The event occurs when the user navigates away
+							from a webpage</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onresize.asp">onresize</a></td>
+						<td>The event occurs when the document view is
+							resized</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll</a></td>
+						<td>The event occurs when an element's scrollbar
+							is being scrolled</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onunload.asp">onunload</a></td>
+						<td>The event occurs once a page has unloaded
+							(for &lt;body&gt;)</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Form Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onblur.asp">onblur</a></td>
+						<td>The event occurs when an element loses focus</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onchange.asp">onchange</a></td>
+						<td>The event occurs when the content of a form
+							element, the selection, or the checked state have
+							changed (for &lt;input&gt;, &lt;select&gt;, and
+							&lt;textarea&gt;)</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus</a></td>
+						<td>The event occurs when an element gets focus</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onfocusin.asp">onfocusin</a></td>
+						<td>The event occurs when an element is about to
+							get focus</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onfocusout.asp">onfocusout</a></td>
+						<td>The event occurs when an element is about to
+							lose focus</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oninput.asp">oninput</a></td>
+						<td>The event occurs when an element gets user
+							input</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid</a></td>
+						<td>The event occurs when an element is invalid</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onreset.asp">onreset</a></td>
+						<td>The event occurs when a form is reset</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onsearch.asp">onsearch</a></td>
+						<td>The event occurs when the user writes
+							something in a search field (for
+							&lt;input="search"&gt;)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onselect.asp">onselect</a></td>
+						<td>The event occurs after the user selects
+							some&nbsp;text (for &lt;input&gt; and
+							&lt;textarea&gt;)</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit</a></td>
+						<td>The event occurs when a form is submitted</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Drag Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag</a></td>
+						<td>The event occurs when an element is being
+							dragged</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend</a></td>
+						<td>The event occurs when the user has finished
+							dragging an element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondragenter.asp">ondragenter</a></td>
+						<td>The event occurs when the dragged element
+							enters the drop target</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave</a></td>
+						<td>The event occurs when the dragged element
+							leaves the drop target</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover</a></td>
+						<td>The event occurs when the dragged element is
+							over the drop target</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart</a></td>
+						<td>The event occurs when the user starts to drag
+							an element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondrop.asp">ondrop</a></td>
+						<td>The event occurs when the dragged element is
+							dropped on the drop target</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Clipboard Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy</a></td>
+						<td>The event occurs when the user copies the
+							content of an element</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oncut.asp">oncut</a></td>
+						<td>The event occurs when the user cuts the
+							content of an element</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onpaste.asp">onpaste</a></td>
+						<td>The event occurs when the user pastes some
+							content in an element</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Print Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onafterprint.asp">onafterprint</a></td>
+						<td>The event occurs when a page has started
+							printing, or if the print dialogue box has been
+							closed</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onbeforeprint.asp">onbeforeprint</a></td>
+						<td>The event occurs when a page is about to be
+							printed</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Media Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort</a></td>
+						<td>The event occurs when the loading of a media
+							is aborted</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay</a></td>
+						<td>The event occurs when the browser can start
+							playing the media (when it has buffered enough to
+							begin)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough</a></td>
+						<td>The event occurs when the browser can play
+							through the media without stopping for buffering</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange</a></td>
+						<td>The event occurs when the duration of the
+							media is changed</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>onemptied</td>
+						<td>The event occurs when something bad happens
+							and the media file is suddenly unavailable (like
+							unexpectedly disconnects)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onended.asp">onended</a></td>
+						<td>The event occurs when the media has reach the
+							end (useful for messages like "thanks for listening")</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onerror_media.asp">onerror</a></td>
+						<td>The event occurs when an error occurred
+							during the loading of a media file</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata</a></td>
+						<td>The event occurs when media data is loaded</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata</a></td>
+						<td>The event occurs when meta data (like
+							dimensions and duration) are loaded</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onloadstart.asp">onloadstart</a></td>
+						<td>The event occurs when the browser starts
+							looking for the specified media</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onpause.asp">onpause</a></td>
+						<td>The event occurs when the media is paused
+							either by the user or programmatically</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onplay.asp">onplay</a></td>
+						<td>The event occurs when the media has been
+							started or is no longer paused</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying</a></td>
+						<td>The event occurs when the media is playing
+							after having been paused or stopped for buffering</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress</a></td>
+						<td>The event occurs when the browser is in the
+							process of getting the media data (downloading the
+							media)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange</a></td>
+						<td>The event occurs when the playing speed of
+							the media is changed</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked</a></td>
+						<td>The event occurs when the user is finished
+							moving/skipping to a new position in the media</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onseeking.asp">onseeking</a></td>
+						<td>The event occurs when the user starts
+							moving/skipping to a new position in the media</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled</a></td>
+						<td>The event occurs when the browser is trying
+							to get media data, but data is not available</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend</a></td>
+						<td>The event occurs when the browser is
+							intentionally not getting media data</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate</a></td>
+						<td>The event occurs when the playing position
+							has changed (like when the user fast forwards to a
+							different point in the media)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange</a></td>
+						<td>The event occurs when the volume of the media
+							has changed (includes setting the volume to "mute")</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting</a></td>
+						<td>The event occurs when the media has paused
+							but is expected to resume (like when the media pauses
+							to buffer more data)</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Animation Events</h2>
+			<table class="w3-table-all notranslate">
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_animationend.asp">animationend</a></td>
+						<td>The event occurs when a CSS animation has
+							completed</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_animationiteration.asp">animationiteration</a></td>
+						<td>The event occurs when a CSS animation is
+							repeated</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_animationstart.asp">animationstart</a></td>
+						<td>The event occurs when a CSS animation has
+							started</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Transition Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_transitionend.asp">transitionend</a></td>
+						<td>The event occurs when a CSS transition has
+							completed</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Server-Sent Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onerror_sse.asp">onerror</a></td>
+						<td>The event occurs when an error occurs with
+							the event source</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onmessage_sse.asp">onmessage</a></td>
+						<td>The event occurs when a message is received
+							through the event source</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onopen_sse.asp">onopen</a></td>
+						<td>The event occurs when a connection with the
+							event source is opened</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Misc Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td>onmessage</td>
+						<td>The event occurs when a message is received
+							through or from an object (WebSocket, Web Worker,
+							Event Source or a child frame or a parent window)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>onmousewheel</td>
+						<td><span class="deprecated">Deprecated.</span>
+							Use the <a
+							href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a>
+							event instead</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ononline.asp">ononline</a></td>
+						<td>The event occurs when the browser starts to
+							work online</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onoffline.asp">onoffline</a></td>
+						<td>The event occurs when the browser starts to
+							work offline</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>onpopstate</td>
+						<td>The event occurs when the window's history
+							changes</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onshow.asp">onshow</a></td>
+						<td>The event occurs when a &lt;menu&gt; element
+							is shown as a context menu</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>onstorage</td>
+						<td>The event occurs when a Web Storage area is
+							updated</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle</a></td>
+						<td>The event occurs when the user opens or
+							closes the &lt;details&gt; element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a></td>
+						<td>The event occurs when the mouse wheel rolls
+							up or down over an element</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Touch Events</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Event</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td>ontouchcancel</td>
+						<td>The event occurs when the touch is
+							interrupted</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>ontouchend</td>
+						<td>The event occurs when a finger is removed
+							from a touch screen</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>ontouchmove</td>
+						<td>The event occurs when a finger is dragged
+							across the screen</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>ontouchstart</td>
+						<td>The event occurs when a finger is placed on a
+							touch screen</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<h1>Event Object</h1>
+			<h2>Constants</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Constant</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td>CAPTURING_PHASE</td>
+						<td>The current event phase is the capture phase
+							(1)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>AT_TARGET</td>
+						<td>The current event is in the target phase,
+							i.e. it is being evaluated at the event target (2)</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>BUBBLING_PHASE</td>
+						<td>The current event phase is the bubbling phase
+							(3)</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Properties</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_bubbles.asp">bubbles</a></td>
+						<td>Returns whether or not a specific event is a
+							bubbling event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_cancelable.asp">cancelable</a></td>
+						<td>Returns whether or not an event can have its
+							default action prevented</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_currenttarget.asp">currentTarget</a></td>
+						<td>Returns the element whose event listeners
+							triggered the event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_defaultprevented.asp">defaultPrevented</a></td>
+						<td>Returns whether or not the preventDefault()
+							method was called for the event</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_eventphase.asp">eventPhase</a></td>
+						<td>Returns which phase of the event flow is
+							currently being evaluated</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_istrusted.asp">isTrusted</a></td>
+						<td>Returns whether or not an event is trusted</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_target.asp">target</a></td>
+						<td>Returns the element that triggered the event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_timestamp.asp">timeStamp</a></td>
+						<td>Returns the time (in milliseconds relative to
+							the epoch) at which the event was created</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_type.asp">type</a></td>
+						<td>Returns the name of the event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_view.asp">view</a></td>
+						<td>Returns a reference to the Window object
+							where the event occured</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Methods</h2>
+
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 28%">Method</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<!--
+  <tr>
+    <td>initEvent()</td>
+    <td>Specifies the event type, whether or not the event can bubble,  whether or not the event's default action can be prevented</td>
+    <td>2</td>
+  </tr>-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_preventdefault.asp">preventDefault()</a></td>
+						<td>Cancels the event if it is cancelable,
+							meaning that the default action that belongs to the
+							event will not occur</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_stopimmediatepropagation.asp">stopImmediatePropagation()</a></td>
+						<td>Prevents other listeners of the same event
+							from being called</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>stopPropagation()</td>
+						<td>Prevents further propagation of an event
+							during event flow</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>MouseEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_altkey.asp">altKey</a></td>
+						<td>Returns whether the "ALT" key was pressed
+							when the mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_button.asp">button</a></td>
+						<td>Returns which mouse button was pressed when
+							the mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_buttons.asp">buttons</a></td>
+						<td>Returns which mouse buttons were pressed when
+							the mouse event was triggered</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_clientx.asp">clientX</a></td>
+						<td>Returns the horizontal coordinate of the
+							mouse pointer, relative to the current window, when
+							the mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_clienty.asp">clientY</a></td>
+						<td>Returns the vertical coordinate of the mouse
+							pointer, relative to the current window, when the
+							mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_ctrlkey.asp">ctrlKey</a></td>
+						<td>Returns whether the "CTRL" key was pressed
+							when the mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_detail.asp">detail</a></td>
+						<td>Returns a number that indicates how many
+							times the mouse was clicked</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_metakey.asp">metaKey</a></td>
+						<td>Returns whether the "META" key was pressed
+							when an event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_pagex.asp">pageX</a></td>
+						<td>Returns the horizontal coordinate of the
+							mouse pointer, relative to the document, when the
+							mouse event was triggered</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_pagey.asp">pageY</a></td>
+						<td>Returns the vertical coordinate of the mouse
+							pointer, relative to the document, when the mouse
+							event was triggered</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_relatedtarget.asp">relatedTarget</a></td>
+						<td>Returns the element related to the element
+							that triggered the mouse event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_screenx.asp">screenX</a></td>
+						<td>Returns the horizontal coordinate of the
+							mouse pointer, relative to the screen, when an event
+							was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_screeny.asp">screenY</a></td>
+						<td>Returns the vertical coordinate of the mouse
+							pointer, relative to the screen, when an event was
+							triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_shiftkey.asp">shiftKey</a></td>
+						<td>Returns whether the "SHIFT" key was pressed
+							when an event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_which.asp">which</a></td>
+						<td>Returns which mouse button was pressed when
+							the mouse event was triggered</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>KeyboardEvent Object</h2>
+			<table class="w3-table-all notranslate">
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_altkey.asp">altKey</a></td>
+						<td>Returns whether the "ALT" key was pressed
+							when the key event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_ctrlkey.asp">ctrlKey</a></td>
+						<td>Returns whether the "CTRL" key was pressed
+							when the key event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_charcode.asp">charCode</a></td>
+						<td>Returns the Unicode character code of the key
+							that triggered the onkeypress event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_key.asp">key</a></td>
+						<td>Returns the key value of the key represented
+							by the event</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_keycode.asp">keyCode</a></td>
+						<td>Returns the Unicode character code of the key
+							that triggered the onkeypress event, or the Unicode
+							key code of the key that triggered the onkeydown or
+							onkeyup event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_location.asp">location</a></td>
+						<td>Returns the location of a key on the keyboard
+							or device</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_metakey.asp">metaKey</a></td>
+						<td>Returns whether the "meta" key was pressed
+							when the key event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_shiftkey.asp">shiftKey</a></td>
+						<td>Returns whether the "SHIFT" key was pressed
+							when the key event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_key_which.asp">which</a></td>
+						<td>Returns the Unicode character code of the key
+							that triggered the onkeypress event, or the Unicode
+							key code of the key that triggered the onkeydown or
+							onkeyup event</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>HashChangeEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_hashchange_newurl.asp">newURL</a></td>
+						<td>Returns the URL of the document, after the
+							hash has been changed</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_hashchange_oldurl.asp">oldURL</a></td>
+						<td>Returns the URL of the document, before the
+							hash was changed</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>PageTransitionEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_pagetransition_persisted.asp">persisted</a></td>
+						<td>Returns whether the webpage was cached by the
+							browser</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>FocusEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_focus_relatedtarget.asp">relatedTarget</a></td>
+						<td>Returns the element related to the element
+							that triggered the event</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>AnimationEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_animation_animationName.asp">animationName</a></td>
+						<td>Returns the name of the animation</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_animation_elapsedtime.asp">elapsedTime</a></td>
+						<td>Returns the number of seconds an animation
+							has been running</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>TransitionEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_transition_propertyName.asp">propertyName</a></td>
+						<td>Returns the name of the CSS property
+							associated with the transition</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_transition_elapsedtime.asp">elapsedTime</a></td>
+						<td>Returns the number of seconds a transition
+							has been running</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>WheelEvent Object</h2>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Description</th>
+						<th style="width: 6%">DOM</th>
+					</tr>
+					<tr>
+						<td>deltaX</td>
+						<td>Returns the horizontal scroll amount of a
+							mouse wheel (x-axis)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>deltaY</td>
+						<td>Returns the vertical scroll amount of a mouse
+							wheel (y-axis)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>deltaZ</td>
+						<td>Returns the scroll amount of a mouse wheel
+							for the z-axis</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>deltaMode</td>
+						<td>Returns a number that represents the unit of
+							measurements for delta values (pixels, lines or
+							pages)</td>
+						<td>3</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<h1 class="subject sub">HTML DOM Style Object</h1>
+			<h2>Style object</h2>
+			<p>The Style object represents an individual style
+				statement.</p>
+			<h2>Access a Style Object</h2>
+			<p>
+				The Style object can be accessed from the head section
+				of the document, or from specific HTML element(s). <br>
+				<br> Accessing style object(s) from the head
+				section of the document:
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body {
+    background-color: yellow; 
+    color: red;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;Click the button to display the style properties of this document.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var x = document.getElementsByTagName("STYLE")[0];
+    document.getElementById("demo").innerHTML = x.innerHTML;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_37.html"
+				class='center'>프렉티스 37</a>
+			<p>Accessing a specified element's style object:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="myH1" style="color:red"&gt;My Header&lt;/h1&gt;
+
+&lt;p&gt;Click the button to get the style property of the H1 element.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var x = document.getElementById("myH1").style.color;
+    document.getElementById("demo").innerHTML = x;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_38.html"
+				class="center">프렉티스 38</a>
+			<h2>Create a Style Object</h2>
+			<p>You can create a &lt;style&gt; element by using
+				the document.createElement() method:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;Click the button to create a STYLE element, and place it in the head section.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p&gt;The created style element contains css declarations that will change the font properties of this document.&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var x = document.createElement("STYLE");
+    var t = document.createTextNode("body {font: 20px verdana;}");
+    x.appendChild(t);
+    document.head.appendChild(x);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+		</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_39.html"
+				class="center">프렉티스 39</a>
+			<p>You can also set the style properties of an
+				existing element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="myH1"&gt;How to change the style of a header&lt;/h1&gt;
+
+&lt;p&gt;Click the button to change the style of the H1 element.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+    document.getElementById("myH1").style.color = "red";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_40.html"
+				class='center'>프렉티스 40</a>
+
+
+			<h1>Style Object Properties</h1>
+			<p>The "CSS" column indicates in which CSS version
+				the property is defined (CSS1, CSS2, or CSS3).</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 28%;">Property</th>
+						<th style="width: 67%;">Description</th>
+						<th style="width: 5%;">CSS</th>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_aligncontent.asp">alignContent</a></td>
+						<td>Sets or returns the alignment between the
+							lines inside a flexible container when the items do
+							not use all available space</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_alignitems.asp">alignItems</a></td>
+						<td>Sets or returns the alignment for items
+							inside a flexible container</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_alignself.asp">alignSelf</a></td>
+						<td>Sets or returns the alignment for selected
+							items inside a flexible container</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animation.asp">animation</a></td>
+						<td>A shorthand property for all the animation
+							properties below, except the animationPlayState
+							property</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationdelay.asp">animationDelay</a></td>
+						<td>Sets or returns when the animation will start</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationdirection.asp">animationDirection</a></td>
+						<td>Sets or returns whether or not the animation
+							should play in reverse on alternate cycles</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationduration.asp">animationDuration</a></td>
+						<td>Sets or returns how many seconds or
+							milliseconds an animation takes to complete one cycle</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationfillmode.asp">animationFillMode</a></td>
+						<td>Sets or returns what values are applied by
+							the animation outside the time it is executing</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationiterationcount.asp">animationIterationCount</a></td>
+						<td>Sets or returns the number of times an
+							animation should be played</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationname.asp">animationName</a></td>
+						<td>Sets or returns a name for the @keyframes
+							animation</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationtimingfunction.asp">animationTimingFunction</a></td>
+						<td>Sets or returns the speed curve of the
+							animation</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_animationplaystate.asp">animationPlayState</a></td>
+						<td>Sets or returns whether the animation is
+							running or paused</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_background.asp">background</a></td>
+						<td>Sets or returns all the background properties
+							in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundattachment.asp">backgroundAttachment</a></td>
+						<td>Sets or returns whether a background-image is
+							fixed or scrolls with the page</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp">backgroundColor</a></td>
+						<td>Sets or returns the background-color of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundimage.asp">backgroundImage</a></td>
+						<td>Sets or returns the background-image for an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundposition.asp">backgroundPosition</a></td>
+						<td>Sets or returns the starting position of a
+							background-image</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundrepeat.asp">backgroundRepeat</a></td>
+						<td>Sets or returns how to repeat (tile) a
+							background-image</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundclip.asp">backgroundClip</a></td>
+						<td>Sets or returns the painting area of the
+							background</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundorigin.asp">backgroundOrigin</a></td>
+						<td>Sets or returns the positioning area of the
+							background images</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backgroundsize.asp">backgroundSize</a></td>
+						<td>Sets or returns the size of the background
+							image</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_backfacevisibility.asp">backfaceVisibility</a></td>
+						<td>Sets or returns whether or not an element
+							should be visible when not facing the screen</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_border.asp">border</a></td>
+						<td>Sets or returns borderWidth, borderStyle, and
+							borderColor in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottom.asp">borderBottom</a></td>
+						<td>Sets or returns all the borderBottom*
+							properties in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottomcolor.asp">borderBottomColor</a></td>
+						<td>Sets or returns the color of the bottom
+							border</td>
+						<td>1&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottomleftradius.asp">borderBottomLeftRadius</a></td>
+						<td>Sets or returns the shape of the border of
+							the bottom-left corner</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottomrightradius.asp">borderBottomRightRadius</a></td>
+						<td>Sets or returns the shape of the border of
+							the bottom-right corner</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottomstyle.asp">borderBottomStyle</a></td>
+						<td>Sets or returns the style of the bottom
+							border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderbottomwidth.asp">borderBottomWidth</a></td>
+						<td>Sets or returns the width of the bottom
+							border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordercollapse.asp">borderCollapse</a></td>
+						<td>Sets or returns whether the table border
+							should be collapsed into a single border, or not</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordercolor.asp">borderColor</a></td>
+						<td>Sets or returns the color of an element's
+							border (can have up to four values)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimage.asp">borderImage</a></td>
+						<td>A shorthand property for setting or returning
+							all the borderImage* properties</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimageoutset.asp">borderImageOutset</a></td>
+						<td>Sets or returns the amount by which the
+							border image area extends beyond the border box</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimagerepeat.asp">borderImageRepeat</a></td>
+						<td>Sets or returns whether the image-border
+							should be repeated, rounded or stretched</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimageslice.asp">borderImageSlice</a></td>
+						<td>Sets or returns the inward offsets of the
+							image-border</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimagesource.asp">borderImageSource</a></td>
+						<td>Sets or returns the image to be used as a
+							border</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderimagewidth.asp">borderImageWidth</a></td>
+						<td>Sets or returns the widths of the
+							image-border</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderleft.asp">borderLeft</a></td>
+						<td>Sets or returns all the borderLeft*
+							properties in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderleftcolor.asp">borderLeftColor</a></td>
+						<td>Sets or returns the color of the left border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderleftstyle.asp">borderLeftStyle</a></td>
+						<td>Sets or returns the style of the left border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderleftwidth.asp">borderLeftWidth</a></td>
+						<td>Sets or returns the width of the left border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderradius.asp">borderRadius</a></td>
+						<td>A shorthand property for setting or returning
+							all the four border*Radius properties</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderright.asp">borderRight</a></td>
+						<td>Sets or returns all the borderRight*
+							properties in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderrightcolor.asp">borderRightColor</a></td>
+						<td>Sets or returns the color of the right border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderrightstyle.asp">borderRightStyle</a></td>
+						<td>Sets or returns the style of the right border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderrightwidth.asp">borderRightWidth</a></td>
+						<td>Sets or returns the width of the right border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderspacing.asp">borderSpacing</a></td>
+						<td>Sets or returns the space between cells in a
+							table</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderstyle.asp">borderStyle</a></td>
+						<td>Sets or returns the style of an element's
+							border (can have up to four values)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertop.asp">borderTop</a></td>
+						<td>Sets or returns all the borderTop* properties
+							in one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertopcolor.asp">borderTopColor</a></td>
+						<td>Sets or returns the color of the top border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertopleftradius.asp">borderTopLeftRadius</a></td>
+						<td>Sets or returns the shape of the border of
+							the top-left corner</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertoprightradius.asp">borderTopRightRadius</a></td>
+						<td>Sets or returns the shape of the border of
+							the top-right corner</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertopstyle.asp">borderTopStyle</a></td>
+						<td>Sets or returns the style of the top border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bordertopwidth.asp">borderTopWidth</a></td>
+						<td>Sets or returns the width of the top border</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_borderwidth.asp">borderWidth</a></td>
+						<td>Sets or returns the width of an element's
+							border (can have up to four values)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_bottom.asp">bottom</a></td>
+						<td>Sets or returns the bottom position of a
+							positioned element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>boxDecorationBreak</td>
+						<td>Sets or returns the behaviour of the
+							background and border of an element at page-break,
+							or, for in-line elements, at line-break.</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_boxshadow.asp">boxShadow</a></td>
+						<td>Attaches one or more drop-shadows to the box</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_boxsizing.asp">boxSizing</a></td>
+						<td>Allows you to define certain elements to fit
+							an area in a certain way</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>breakAfter</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>breakBefore</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>breakInside</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_captionside.asp">captionSide</a></td>
+						<td>Sets or returns the position of the table
+							caption</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_clear.asp">clear</a></td>
+						<td>Sets or returns the position of the element
+							relative to floating objects</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_clip.asp">clip</a></td>
+						<td>Sets or returns which part of a positioned
+							element is visible</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_color.asp">color</a></td>
+						<td>Sets or returns the color of the text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columncount.asp">columnCount</a></td>
+						<td>Sets or returns the number of columns an
+							element should be divided into</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnfill.asp">columnFill</a></td>
+						<td>Sets or returns how to fill columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columngap.asp">columnGap</a></td>
+						<td>Sets or returns the gap between the columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnrule.asp">columnRule</a></td>
+						<td>A shorthand property for setting or returning
+							all the columnRule* properties</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnrulecolor.asp">columnRuleColor</a></td>
+						<td>Sets or returns the color of the rule between
+							columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnrulestyle.asp">columnRuleStyle</a></td>
+						<td>Sets or returns the style of the rule between
+							columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnrulewidth.asp">columnRuleWidth</a></td>
+						<td>Sets or returns the width of the rule between
+							columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columns.asp">columns</a></td>
+						<td>A shorthand property for setting or returning
+							columnWidth and columnCount</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnspan.asp">columnSpan</a></td>
+						<td>Sets or returns how many columns an element
+							should span across</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_columnwidth.asp">columnWidth</a></td>
+						<td>Sets or returns the width of the columns</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>content</td>
+						<td>Used with the :before and :after
+							pseudo-elements, to insert generated content</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_counterincrement.asp">counterIncrement</a></td>
+						<td>Increments one or more counters</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_counterreset.asp">counterReset</a></td>
+						<td>Creates or resets one or more counters</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_cursor.asp">cursor</a></td>
+						<td>Sets or returns the type of cursor to display
+							for the mouse pointer</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_direction.asp">direction</a></td>
+						<td>Sets or returns the text direction</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_display.asp">display</a></td>
+						<td>Sets or returns an element's display type</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_emptycells.asp">emptyCells</a></td>
+						<td>Sets or returns whether to show the border
+							and background of empty cells, or not</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_filter.asp">filter</a></td>
+						<td>Sets or returns image filters (visual
+							effects, like blur and saturation)</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flex.asp">flex</a></td>
+						<td>Sets or returns the length of the item,
+							relative to the rest</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexbasis.asp">flexBasis</a></td>
+						<td>Sets or returns the initial length of a
+							flexible item</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexdirection.asp">flexDirection</a></td>
+						<td>Sets or returns the direction of the flexible
+							items</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexflow.asp">flexFlow</a></td>
+						<td>A shorthand property for the flexDirection
+							and the flexWrap properties</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexgrow.asp">flexGrow</a></td>
+						<td>Sets or returns how much the item will grow
+							relative to the rest</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexshrink.asp">flexShrink</a></td>
+						<td>Sets or returns how the item will shrink
+							relative to the rest</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_flexwrap.asp">flexWrap</a></td>
+						<td>Sets or returns whether the flexible items
+							should wrap or not</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_cssfloat.asp">cssFloat</a></td>
+						<td>Sets or returns the horizontal alignment of
+							an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_font.asp">font</a></td>
+						<td>Sets or returns fontStyle, fontVariant,
+							fontWeight, fontSize, lineHeight, and fontFamily in
+							one declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontfamily.asp">fontFamily</a></td>
+						<td>Sets or returns the font family for text</td>
+						<td>1</td>
+					</tr>
+					<!--
+  <tr>
+    <td>fontFeatureSetting</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>fontKerning</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontLanguageOverride</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontSynthesis</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantAlternates</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantCaps</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantEastAsian</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantLigatures</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantNumeric</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+  <tr>
+    <td>fontVariantPosition</td>
+    <td></td>
+    <td>3</td>
+  </tr> 
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontsize.asp">fontSize</a></td>
+						<td>Sets or returns the font size of the text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontstyle.asp">fontStyle</a></td>
+						<td>Sets or returns whether the style of the font
+							is normal, italic or oblique</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontvariant.asp">fontVariant</a></td>
+						<td>Sets or returns whether the font should be
+							displayed in small capital letters</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontweight.asp">fontWeight</a></td>
+						<td>Sets or returns the boldness of the font</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_fontsizeadjust.asp">fontSizeAdjust</a></td>
+						<td>Preserves the readability of text when font
+							fallback occurs</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>fontStretch</td>
+						<td>Selects a normal, condensed, or expanded face
+							from a font family</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>hangingPunctuation</td>
+						<td>Specifies whether a punctuation character may
+							be placed outside the line box</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_height.asp">height</a></td>
+						<td>Sets or returns the height of an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>hyphens</td>
+						<td>Sets how to split words to improve the layout
+							of paragraphs</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>icon</td>
+						<td>Provides the author the ability to style an
+							element with an iconic equivalent</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>imageOrientation</td>
+						<td>Specifies a rotation in the right or
+							clockwise direction that a user agent applies to an
+							image</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>imageRendering</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>imageResolution</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>imeMode</td>
+    <td></td>
+    <td>3</td>
+  </tr>  
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_justifycontent.asp">justifyContent</a></td>
+						<td>Sets or returns the alignment between the
+							items inside a flexible container when the items do
+							not use all available space.</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_left.asp">left</a></td>
+						<td>Sets or returns the left position of a
+							positioned element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_letterspacing.asp">letterSpacing</a></td>
+						<td>Sets or returns the space between characters
+							in a text</td>
+						<td>1</td>
+					</tr>
+					<!--
+  <tr>
+    <td>lineBreak</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_lineheight.asp">lineHeight</a></td>
+						<td>Sets or returns the distance between lines in
+							a text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_liststyle.asp">listStyle</a></td>
+						<td>Sets or returns listStyleImage,
+							listStylePosition, and listStyleType in one
+							declaration</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_liststyleimage.asp">listStyleImage</a></td>
+						<td>Sets or returns an image as the list-item
+							marker</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_liststyleposition.asp">listStylePosition</a></td>
+						<td>Sets or returns the position of the list-item
+							marker</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_liststyletype.asp">listStyleType</a></td>
+						<td>Sets or returns the list-item marker type</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_margin.asp">margin</a></td>
+						<td>Sets or returns the margins of an element
+							(can have up to four values)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_marginbottom.asp">marginBottom</a></td>
+						<td>Sets or returns the bottom margin of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_marginleft.asp">marginLeft</a></td>
+						<td>Sets or returns the left margin of an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_marginright.asp">marginRight</a></td>
+						<td>Sets or returns the right margin of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_margintop.asp">marginTop</a></td>
+						<td>Sets or returns the top margin of an element</td>
+						<td>1</td>
+					</tr>
+					<!--
+  <tr>
+    <td>mark</td>
+    <td>A shorthand property for setting the mark-before and mark-after properties</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>markAfter</td>
+    <td>Allows named markers to be attached to the audio stream</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>markBefore</td>
+    <td>Allows named markers to be attached to the audio stream</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>marks</td>
+    <td>Adds crop and/or cross marks to the document</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>marqueeDirection</td>
+    <td>Sets the direction of the moving content</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>marqueePlayCount</td>
+    <td>Sets how many times the content move</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>marqueeSpeed</td>
+    <td>Sets how fast the content scrolls</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>marqueeStyle</td>
+    <td>Sets the style of the moving content</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>mask</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>maskType</td>
+    <td></td>
+    <td>3</td>
+  </tr>  
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_maxheight.asp">maxHeight</a></td>
+						<td>Sets or returns the maximum height of an
+							element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_maxwidth.asp">maxWidth</a></td>
+						<td>Sets or returns the maximum width of an
+							element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_minheight.asp">minHeight</a></td>
+						<td>Sets or returns the minimum height of an
+							element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_minwidth.asp">minWidth</a></td>
+						<td>Sets or returns the minimum width of an
+							element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>navDown</td>
+						<td>Sets or returns where to navigate when using
+							the arrow-down navigation key</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>navIndex</td>
+						<td>Sets or returns the tabbing order for an
+							element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>navLeft</td>
+						<td>Sets or returns where to navigate when using
+							the arrow-left navigation key</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>navRight</td>
+						<td>Sets or returns where to navigate when using
+							the arrow-right navigation key</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>navUp</td>
+						<td>Sets or returns where to navigate when using
+							the arrow-up navigation key</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>objectFit</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>objectPosition</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_opacity.asp">opacity</a></td>
+						<td>Sets or returns the opacity level for an
+							element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_order.asp">order</a></td>
+						<td>Sets or returns the order of the flexible
+							item, relative to the rest</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_orphans.asp">orphans</a></td>
+						<td>Sets or returns the minimum number of lines
+							for an element that must be left at the bottom of a
+							page when a page break occurs inside an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_outline.asp">outline</a></td>
+						<td>Sets or returns all the outline properties in
+							one declaration</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_outlinecolor.asp">outlineColor</a></td>
+						<td>Sets or returns the color of the outline
+							around a element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_outlineoffset.asp">outlineOffset</a></td>
+						<td>Offsets an outline, and draws it beyond the
+							border edge</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_outlinestyle.asp">outlineStyle</a></td>
+						<td>Sets or returns the style of the outline
+							around an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_outlinewidth.asp">outlineWidth</a></td>
+						<td>Sets or returns the width of the outline
+							around an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_overflow.asp">overflow</a></td>
+						<td>Sets or returns what to do with content that
+							renders outside the element box</td>
+						<td>2</td>
+					</tr>
+					<!--
+  <tr>
+    <td>overflowWrap</td>
+    <td></td>
+    <td>3</td>
+  </tr>  
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_overflowx.asp">overflowX</a></td>
+						<td>Specifies what to do with the left/right
+							edges of the content, if it overflows the element's
+							content area</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_overflowy.asp">overflowY</a></td>
+						<td>Specifies what to do with the top/bottom
+							edges of the content, if it overflows the element's
+							content area</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_padding.asp">padding</a></td>
+						<td>Sets or returns the padding of an element
+							(can have up to four values)</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_paddingbottom.asp">paddingBottom</a></td>
+						<td>Sets or returns the bottom padding of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_paddingleft.asp">paddingLeft</a></td>
+						<td>Sets or returns the left padding of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_paddingright.asp">paddingRight</a></td>
+						<td>Sets or returns the right padding of an
+							element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_paddingtop.asp">paddingTop</a></td>
+						<td>Sets or returns the top padding of an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_pagebreakafter.asp">pageBreakAfter</a></td>
+						<td>Sets or returns the page-break behavior after
+							an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_pagebreakbefore.asp">pageBreakBefore</a></td>
+						<td>Sets or returns the page-break behavior
+							before an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_pagebreakinside.asp">pageBreakInside</a></td>
+						<td>Sets or returns the page-break behavior
+							inside an element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_perspective.asp">perspective</a></td>
+						<td>Sets or returns the perspective on how 3D
+							elements are viewed</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_perspectiveorigin.asp">perspectiveOrigin</a></td>
+						<td>Sets or returns the bottom position of 3D
+							elements</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>phonemes</td>
+    <td>Specifies a phonetic pronunciation for the text contained by the corresponding element</td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_position.asp">position</a></td>
+						<td>Sets or returns the type of positioning
+							method used for an element (static, relative,
+							absolute or fixed)</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_quotes.asp">quotes</a></td>
+						<td>Sets or returns the type of quotation marks
+							for embedded quotations</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_resize.asp">resize</a></td>
+						<td>Sets or returns whether or not an element is
+							resizable by the user</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>rest</td>
+    <td>A shorthand property for setting the rest-before and rest-after properties </td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>restAfter</td>
+    <td>Specifies a rest or prosodic boundary to be observed after speaking an element's content</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>restBefore</td>
+    <td>Specifies a rest or prosodic boundary to be observed before speaking an element's content</td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_right.asp">right</a></td>
+						<td>Sets or returns the right position of a
+							positioned element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_tablelayout.asp">tableLayout</a></td>
+						<td>Sets or returns the way to lay out table
+							cells, rows, and columns</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_tabsize.asp">tabSize</a></td>
+						<td>Sets or returns the length of the
+							tab-character</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textalign.asp">textAlign</a></td>
+						<td>Sets or returns the horizontal alignment of
+							text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textalignlast.asp">textAlignLast</a></td>
+						<td>Sets or returns how the last line of a block
+							or a line right before a forced line break is aligned
+							when text-align is "justify"</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>textCombineHorizontal</td>
+    <td></td>
+    <td>3</td>
+  </tr>     
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textdecoration.asp">textDecoration</a></td>
+						<td>Sets or returns the decoration of a text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textdecorationcolor.asp">textDecorationColor</a></td>
+						<td>Sets or returns the color of the
+							text-decoration</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textdecorationline.asp">textDecorationLine</a></td>
+						<td>Sets or returns the type of line in a
+							text-decoration</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textdecorationstyle.asp">textDecorationStyle</a></td>
+						<td>Sets or returns the style of the line in a
+							text decoration</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textindent.asp">textIndent</a></td>
+						<td>Sets or returns the indentation of the first
+							line of text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>textJustify</td>
+						<td>Sets or returns the justification method used
+							when text-align is "justify"</td>
+						<td>3</td>
+					</tr>
+					<!--
+  <tr>
+    <td>textOrientation</td>
+    <td></td>
+    <td>3</td>
+  </tr>     
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textoverflow.asp">textOverflow</a></td>
+						<td>Sets or returns what should happen when text
+							overflows the containing element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_textshadow.asp">textShadow</a></td>
+						<td>Sets or returns the shadow effect of a text</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_texttransform.asp">textTransform</a></td>
+						<td>Sets or returns the capitalization of a text</td>
+						<td>1</td>
+					</tr>
+					<!--
+  <tr>
+    <td>textUnderlinePosition</td>
+    <td></td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_top.asp">top</a></td>
+						<td>Sets or returns the top position of a
+							positioned element</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transform.asp">transform</a></td>
+						<td>Applies a 2D or 3D transformation to an
+							element</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transformorigin.asp">transformOrigin</a></td>
+						<td>Sets or returns the position of transformed
+							elements</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transformstyle.asp">transformStyle</a></td>
+						<td>Sets or returns how nested elements are
+							rendered in 3D space</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transition.asp">transition</a></td>
+						<td>A shorthand property for setting or returning
+							the four transition properties</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transitionproperty.asp">transitionProperty</a></td>
+						<td>Sets or returns the CSS property that the
+							transition effect is for</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transitionduration.asp">transitionDuration</a></td>
+						<td>Sets or returns how many seconds or
+							milliseconds a transition effect takes to complete</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transitiontimingfunction.asp">transitionTimingFunction</a></td>
+						<td>Sets or returns the speed curve of the
+							transition effect</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_transitiondelay.asp">transitionDelay</a></td>
+						<td>Sets or returns when the transition effect
+							will start</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_unicodebidi.asp">unicodeBidi</a></td>
+						<td>Sets or returns whether the text should be
+							overridden to support multiple languages in the same
+							document</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_userselect.asp">userSelect</a></td>
+						<td>Sets or returns whether the text of an
+							element can be selected or not</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_verticalalign.asp">verticalAlign</a></td>
+						<td>Sets or returns the vertical alignment of the
+							content in an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_visibility.asp">visibility</a></td>
+						<td>Sets or returns whether an element should be
+							visible</td>
+						<td>2</td>
+					</tr>
+					<!--
+  <tr>
+    <td>voiceBalance</td>
+    <td>Specifies the balance between left and right channels</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voiceDuration</td>
+    <td>Specifies how long it should take to render the selected element's content</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voicePitch</td>
+    <td>Specifies the average pitch (a frequency) of the speaking voice</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voicePitchRange</td>
+    <td>Specifies variation in average pitch</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voiceRate</td>
+    <td>Controls the speaking rate</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voiceStress</td>
+    <td>Indicates the strength of emphasis to be applied</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>voiceVolume</td>
+    <td>Refers to the amplitude of the waveform output by the speech synthesises</td>
+    <td>3</td>
+  </tr>
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_whitespace.asp">whiteSpace</a></td>
+						<td>Sets or returns how to handle tabs, line
+							breaks and whitespace in a text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_width.asp">width</a></td>
+						<td>Sets or returns the width of an element</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_wordbreak.asp">wordBreak</a></td>
+						<td>Sets or returns line breaking rules for
+							non-CJK scripts</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_wordspacing.asp">wordSpacing</a></td>
+						<td>Sets or returns the spacing between words in
+							a text</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_wordwrap.asp">wordWrap</a></td>
+						<td>Allows long, unbreakable words to be broken
+							and wrap to the next line</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_widows.asp">widows</a></td>
+						<td>Sets or returns the minimum number of lines
+							for an element that must be visible at the top of a
+							page</td>
+						<td>2</td>
+					</tr>
+					<!--
+  <tr>
+    <td>writingMode</td>
+    <td></td>
+    <td>3</td>
+  </tr>     
+-->
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/prop_style_zindex.asp">zIndex</a></td>
+						<td>Sets or returns the stack order of a
+							positioned element</td>
+						<td>2</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+
+
+
+		</article>
+	</section>
+
+	<!-- 이거 연습 까지 하자. -->
+
+
+
+	<!-- 여기가 끝이다. -->
+	<div class="fixed">
+		<a href="#index_subject">▲</a>
+	</div>
+	<footer>자바스크립트 DOM 끝</footer>
+</body>
+</html>

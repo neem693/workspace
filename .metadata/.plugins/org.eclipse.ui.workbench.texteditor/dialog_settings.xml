@@ -34,12 +34,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Returns a collection" key="selection"/>
+		<item value="Browser Support" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Browser Support"/>
+			<item value="Javascritp Reference"/>
 			<item value="Returns a collection"/>
 			<item value="element.childNodes"/>
 			<item value="Finding HTML Elements by Tag Name"/>
@@ -53,8 +55,6 @@
 			<item value="css링크"/>
 			<item value="실렉터"/>
 			<item value="jsTuto"/>
-			<item value="subject sub"/>
-			<item value="HTML DOM Style Object"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&amp;gt;"/>

@@ -1,0 +1,345 @@
+@CHARSET "UTF-8";
+
+@FONT-FACE {
+	font-family: cour;
+	src: url(/studyphp/font/cour.ttf);
+}
+
+@FONT-FACE {
+	font-family: notosans;
+	src: url(../font/NotoSansCJKkr-Thin.otf);
+}
+
+@FONT-FACE {
+	font-family: notosans_b;
+	src: url(../font/NotoSansCJKkr-Bold.otf);
+}
+
+@keyframes body_opa {
+	from {opacity: 0;
+}
+
+to {
+	opacity: 1;
+}
+
+}
+body {
+	font-family: notosans;
+	text-align: left;
+	width: 80%;
+	margin: 0 auto;
+	animation: body_opa 0.5s;
+}
+
+section {
+	clear: both;
+}
+
+article {
+	text-align: left;
+}
+/*
+a,div{
+	border:1px solid black;
+}
+*/
+a:hover {
+	font-style: italic;
+}
+
+a.jsTuto {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 200px;
+	text-decoration: none;
+	/*opacity: 0.55;
+	transition: opacity 0.5s, box-shadow 0.5s;*/
+	margin: 1% 2%;
+}
+/*
+a.jsTuto:hover {
+	opacity: 1;
+	box-shadow: 0 0 5px black;
+}
+*/
+
+div.jsImg {
+	height: 200px;
+	width: 100%;
+	opacity: 0.55;
+	transition: opacity 0.5s, box-shadow 0.5s;
+}
+div.jsImg.opacity_on{
+	opacity: 1;
+	box-shadow: 0 0 5px black;
+}
+
+
+div.jsImg img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+div.jsText {
+	max-height: 100px;
+	text-align: center;
+	font-weight: bold;
+	color: black;
+}
+
+.fixed {
+	background-color: orange;
+	position: fixed;
+	width: 5%;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+	padding: 10px 0px;
+	font-family: notosans_b;
+}
+
+.fixed a {
+	text-decoration: none;
+}
+
+.fixed a:hover{
+	font-style: normal;
+}
+
+.subject_fix {
+	background-color: #A9DF04;
+	margin: 0px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+.subject_fix a {
+	font-weight: bold;
+	color: black;
+	text-decoration: none;
+}
+
+header, section, aside, footer {
+	display: block;
+}
+
+header, h1, footer, aside, h2 {
+	font-family: notosans_b;
+}
+
+header {
+	clear: both;
+	background: #c1c1c1;
+	width: 100%;
+	font-size: xx-large;
+	padding: 20px 0px;
+	text-align: center;
+}
+
+h1 {
+	background: #c1c1c1;
+	width: 100%;
+	font-size: x-large;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 10px 0px;
+}
+
+h2 {
+	background: #cebbf4;
+	width: 50%;
+	font-size: large;
+	padding: 5px 0px;
+	text-align: center;
+	margin: 10px auto;
+}
+
+.cen {
+	font-size: x-large;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.subject {
+	background: #a9df04;
+	padding: 20px 0px;
+}
+
+aside {
+	width: 5%;
+	float: right;
+}
+
+.side {
+	background: #838383;
+	width: 100%;
+	font-size: large;
+	padding: 25px 0px;
+	text-align: center;
+	margin: 10px 0px;
+	color: #ffff1e;
+}
+
+footer {
+	color: white;
+	text-align: center;
+	clear: both;
+	width: 100%;
+	padding: 50px 0px;
+	background: #808080;
+	font-size: xx-large;
+}
+
+li {
+	margin: 5px 0;
+	font-family: notosans_b;
+}
+
+table {
+	width: 80%; 
+	max-width: 100%;
+	border-collapse: collapse;
+	margin: 5px auto;
+	border-bottom: 5px solid #53d7fd;
+	border-left: hidden;
+	border-right: hidden;
+}
+
+tr {
+	/*border-left: thin solid #53d7fd;
+	border-right: thin solid #53d7fd;*/
+	
+}
+
+th {
+	padding: 15px;
+	text-align: center;
+	background: #7575ff;
+	color: white;
+	border: thin solid #a0fefc;
+}
+
+td {
+	padding: 15px;
+	border: thin solid #53d7fd;
+}
+
+
+<table >
+  <tbody><tr style= "height:40px;">
+    <th style="width:20%;font-size:16px;text-align:left;">Method</th>
+    <th style="width:16%;" class="bsChrome" title="Chrome"></th>
+    <th style="width:16%;" class="bsEdge" title="Internet Explorer / Edge"></th>
+    <th style="width:16%;" class="bsFirefox" title="Firefox"></th>
+    <th style="width:16%;" class="bsSafari" title="Safari"></th>
+    <th style="width:16%;" class="bsOpera" title="Opera"></th>                
+  </tr>
+  <tr>
+    <td style="text-align:left;">addEventListener()</td>
+    <td>1.0</td>
+    <td>9.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>7.0</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;">removeEventListener()</td>
+    <td>1.0</td>
+    <td>9.0</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>7.0</td>
+  </tr>
+</tbody></table>
+
+
+.code {
+	font-family: cour, notosans;
+	border: 1px solid #ababab;
+	border-radius: 10px;
+	padding: 10px;
+	width: 80%;
+	margin: 5px auto;
+	overflow: auto;
+	font-weight: bold;
+}
+
+p.code, span.code {
+	/*font-family: inherit;*/
+	padding: 0px 5px;
+	background-color: #e1dfd9;
+	border: none;
+	border-radius: 0px;
+	margin: inherit;
+}
+
+.bookmark a {
+	color: black;
+	text-decoration: none;
+}
+
+.bookmark a:HOVER {
+	text-decoration: underline;
+}
+
+.bookmark_color {
+	font-size: small;
+	color: yellow;
+	background-color: black;
+}
+
+pre {
+	font-family: notosans;
+	white-space: pre;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+img.half {
+	margin: 0;
+}
+
+span.file {
+	color: #8080ff;
+	font-family: notosans_b;
+	text-align: center;
+	display: block;
+}
+
+.imp {
+	font-family: notosans_b;
+	color: red;
+	background-color: #80ffff;
+}
+
+.center {
+	text-align: center;
+	background-color: #ffff00;
+	display: block;
+	font-weight: bold;
+}
+
+.half_div {
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+@MEDIA screen and (max-width: 720px) {
+	body {
+		width: 95%;
+	}
+	.code {
+		width: 95%;
+	}
+	p, th, td {
+		word-break: break-all;
+	}
+}
