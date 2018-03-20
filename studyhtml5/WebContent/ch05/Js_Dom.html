@@ -1401,6 +1401,80 @@ Mouse over this text&lt;/h1&gt;
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_36.html"
 				class="center">프렉티스 36</a>
+
+
+			<h1 class="subject">JavaScript HTML DOM
+				EventListener</h1>
+			<h1>The addEventListener() method</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_41.html"
+				class="center">프렉티스 41</a>
+			<p>
+				The addEventListener() method attaches an event handler
+				to the specified element. <br> <br> The
+				addEventListener() method attaches an event handler to
+				an element without overwriting existing event handlers.
+				<br> <br> You can add many event handlers to
+				one element. <br> <br> You can add many event
+				handlers of the same type to one element, i.e two
+				"click" events. <br> <br> You can add event
+				listeners to any DOM object not only HTML elements. i.e
+				the window object. <br> <br> The
+				addEventListener() method makes it easier to control how
+				the event reacts to bubbling. <br> <br> When
+				using the addEventListener() method, the JavaScript is
+				separated from the HTML markup, for better readability
+				and allows you to add event listeners even when you do
+				not control the HTML markup. <br> <br> You can
+				easily remove an event listener by using the
+				removeEventListener() method.
+			</p>
+			<h2>Syntax</h2>
+			<pre class="code">
+element.addEventListener(event, function, useCapture);</pre>
+			<p>
+				The first parameter is the type of the event (like
+				"click" or "mousedown"). <br> <br> The second
+				parameter is the function we want to call when the event
+				occurs. <br> <br> The third parameter is a
+				boolean value specifying whether to use event bubbling
+				or event capturing. This parameter is optional.
+			</p>
+			<p class="imp">Note that you don't use the "on"
+				prefix for the event; use "click" instead of "onclick".</p>
+
+
+
+
+
+
+
+
+
+
+
+
 			<h1 class="subject">Javascritp Reference</h1>
 			<h1 class="subject sub">The HTML DOM Element Object</h1>
 			<h1>The Element Object</h1>
@@ -1465,11 +1539,12 @@ Mouse over this text&lt;/h1&gt;
 							nodes (including text and comment nodes)<span
 							class="bookmark code">모든 ChildNode들에서 첫번째 노드에
 								대한 알아둬야 할 것</span>: [0]에 해당하는 첫번째 노드는 firstChild로도 검색이
-							가능하다. 그런데, 여기서 <span class = "code">firstChild</span>란, Text가 될 확률이 높다. <span
-							class='code'>&lt;p&gt;</span>text<span class="code">&lt;/p&gt;</span>에서
-							이 사이의 text가 바로 <span class = "code">firstChild</span>가 되기 때문이다. 이를 잘 알아두거나,
-							<span class = 'code'>firstElementChild</span>를 이용하거나, 디버거를 통해서 childNode에 무엇이
-							걸려있는지 정확히 알아두는게 좋다.
+							가능하다. 그런데, 여기서 <span class="code">firstChild</span>란,
+							Text가 될 확률이 높다. <span class='code'>&lt;p&gt;</span>text<span
+							class="code">&lt;/p&gt;</span>에서 이 사이의 text가 바로 <span
+							class="code">firstChild</span>가 되기 때문이다. 이를 잘 알아두거나,
+							<span class='code'>firstElementChild</span>를 이용하거나,
+							디버거를 통해서 childNode에 무엇이 걸려있는지 정확히 알아두는게 좋다.
 						</td>
 					</tr>
 					<tr>
