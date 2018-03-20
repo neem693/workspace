@@ -15,7 +15,8 @@
 	src: url(../font/NotoSansCJKkr-Bold.otf);
 }
 
-@keyframes body_opa {
+@
+keyframes body_opa {
 	from {opacity: 0;
 }
 
@@ -63,18 +64,17 @@ a.jsTuto:hover {
 	box-shadow: 0 0 5px black;
 }
 */
-
 div.jsImg {
 	height: 200px;
 	width: 100%;
 	opacity: 0.55;
 	transition: opacity 0.5s, box-shadow 0.5s;
 }
-div.jsImg.opacity_on{
+
+div.jsImg.opacity_on {
 	opacity: 1;
 	box-shadow: 0 0 5px black;
 }
-
 
 div.jsImg img {
 	height: 100%;
@@ -104,7 +104,7 @@ div.jsText {
 	text-decoration: none;
 }
 
-.fixed a:hover{
+.fixed a:hover {
 	font-style: normal;
 }
 
@@ -199,7 +199,7 @@ li {
 }
 
 table {
-	width: 80%; 
+	width: 80%;
 	max-width: 100%;
 	border-collapse: collapse;
 	margin: 5px auto;
@@ -225,6 +225,34 @@ th {
 td {
 	padding: 15px;
 	border: thin solid #53d7fd;
+}
+
+.bsChrome, .bsEdge, .bsFirefox, .bsSafari, .bsOpera {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50% auto;
+	background-color: white;
+	height: 80px;
+}
+
+.bsChrome {
+	background-image: url("/studyhtml5/images/browser/crome.jpg");
+}
+
+.bsEdge {
+	background-image: url("/studyhtml5/images/browser/iner_ex.jpg");
+}
+
+.bsFirefox {
+	background-image: url("/studyhtml5/images/browser/firefox.jpg");
+}
+
+.bsSafari {
+	background-image: url("/studyhtml5/images/browser/safari.png");
+}
+
+.bsOpera {
+	background-image: url("/studyhtml5/images/browser/opera.jpg");
 }
 
 .code {

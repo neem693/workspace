@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+<style>
+#myDIV {
+	background-color: coral;
+	border: 1px solid;
+	padding: 50px;
+	color: white;
+}
+</style>
+
+</head>
+<body>
+
+	<div id = "myDIV"></div>
+
+	<div id="myDiv">
+		<p id="myP">Click this paragraph, I am Bubbling.</p>
+	</div>
+
+	<div id="myDiv2">
+		<p id="myP2">Click this paragraph, I am capturing.</p>
+	</div>
+
+	<script>
+        document.getElementById("myP").addEventListener("click", function () {
+            alert("You clicked the P element!");
+        }, false);
+        document.getElementById("myDiv").addEventListener("click", function () {
+            alert("You clicked the DIV element");
+        }, false);
+        document.getElementById("myP2").addEventListener("click", function () {
+            alert("You clicked the P element");
+        }, true);
+        document.getElementById("myDiv2").addEventListener("click",
+                function () {
+                    alert("You clicked the DIV element");
+                }, true);
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1401,8 +1401,11 @@ Mouse over this text&lt;/h1&gt;
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_36.html"
 				class="center">프렉티스 36</a>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
 			<h1 class="subject">JavaScript HTML DOM
 				EventListener</h1>
 			<h1>The addEventListener() method</h1>
@@ -1427,7 +1430,11 @@ function displayDate() {
 
 &lt;/body&gt;
 &lt;/html&gt; 
+<<<<<<< HEAD
 </pre>
+=======
+				</pre>
+>>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
 			<a href="/studyhtml5/ch05/practice_dom/practice_41.html"
 				class="center">프렉티스 41</a>
 			<p>
@@ -1463,6 +1470,7 @@ element.addEventListener(event, function, useCapture);</pre>
 			</p>
 			<p class="imp">Note that you don't use the "on"
 				prefix for the event; use "click" instead of "onclick".</p>
+<<<<<<< HEAD
 
 
 
@@ -1472,6 +1480,385 @@ element.addEventListener(event, function, useCapture);</pre>
 
 
 
+=======
+			<h1>Add an Event Handler to an Element</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to attach a click event to a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", function(){
+    alert("Hello World!");
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_42.html"
+				class="center">프렉티스 42</a>
+			<p>You can also refer to an external "named"
+				function:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to execute a function when a user clicks on a button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+document.getElementById("myBtn").addEventListener("click", myFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_43.html"
+				class="center">프렉티스 43</a>
+			<h1>Add Many Event Handlers to the Same Element</h1>
+			<p>The addEventListener() method allows you to add
+				many events to the same element, without overwriting
+				existing events:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to add two click events to the same button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+
+function myFunction() {
+    alert ("Hello World!");
+}
+
+function someOtherFunction() {
+    alert ("This function was also executed!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_44.html"
+				class="center">프렉티스 44</a>
+			<p>You can add events of different types to the same
+				element:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method to add many events on the same button.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML += "Moused over!&lt;br&gt;";
+}
+
+function mySecondFunction() {
+    document.getElementById("demo").innerHTML += "Clicked!&lt;br&gt;";
+}
+
+function myThirdFunction() {
+    document.getElementById("demo").innerHTML += "Moused out!&lt;br&gt;";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_45.html"
+				class="center">프렉티스 45</a>
+			<h1>Add an Event Handler to the Window Object</h1>
+			<p>The addEventListener() method allows you to add
+				event listeners on any HTML DOM object such as HTML
+				elements, the HTML document, the window object, or other
+				objects that support events, like the xmlHttpRequest
+				object.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example uses the addEventListener() method on the window object.&lt;/p&gt;
+
+&lt;p&gt;Try resizing this browser window to trigger the "resize" event handler.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = Math.random();
+});
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_46.html"
+				class="center">프렉티스 46</a>
+			<h1>Passing Parameters</h1>
+			<p>When passing parameter values, use an "anonymous
+				function" that calls the specified function with the
+				parameters:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example demonstrates how to pass parameter values when using the 
+addEventListener() method.&lt;/p&gt;
+
+&lt;p&gt;Click the button to perform a calculation.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var p1 = 5;
+var p2 = 7;
+
+document.getElementById("myBtn").addEventListener("click", function() {
+    myFunction(p1, p2);
+});
+
+function myFunction(a, b) {
+    var result = a * b;
+    document.getElementById("demo").innerHTML = result;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_47.html"
+				class="center">프렉티스 47</a>
+			<h1>Event Bubbling or Event Capturing?</h1>
+			<p>
+				There are two ways of event propagation in the HTML DOM,
+				bubbling and capturing. <br> <br> Event
+				propagation is a way of defining the element order when
+				an event occurs. If you have a &lt;p&gt; element inside
+				a &lt;div&gt; element, and the user clicks on the
+				&lt;p&gt; element, which element's "click" event should
+				be handled first? <br> <br> In bubbling the
+				inner most element's event is handled first and then the
+				outer: the &lt;p&gt; element's click event is handled
+				first, then the &lt;div&gt; element's click event. <br>
+				<br> In capturing the outer most element's event is
+				handled first and then the inner: the &lt;div&gt;
+				element's click event will be handled first, then the
+				&lt;p&gt; element's click event. <br> <br>
+				With the addEventListener() method you can specify the
+				propagation type by using the "useCapture" parameter:
+			</p>
+			<pre class="code">
+addEventListener(event, function, useCapture);</pre>
+			<p>The default value is false, which will use the
+				bubbling propagation, when the value is set to true, the
+				event uses the capturing propagation.</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+div {
+    background-color: coral;
+    border: 1px solid;
+    padding: 50px;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;This example demonstrates the difference between bubbling and capturing when adding event listeners.&lt;/p&gt;
+
+&lt;div id="myDiv"&gt;
+  &lt;p id="myP"&gt;Click this paragraph, I am Bubbling.&lt;/p&gt;
+&lt;/div&gt;&lt;br&gt;
+
+&lt;div id="myDiv2"&gt;
+  &lt;p id="myP2"&gt;Click this paragraph, I am Capturing.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+document.getElementById("myP").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, false);
+
+document.getElementById("myDiv").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, false);
+
+document.getElementById("myP2").addEventListener("click", function() {
+    alert("You clicked the P element!");
+}, true);
+
+document.getElementById("myDiv2").addEventListener("click", function() {
+    alert("You clicked the DIV element!");
+}, true);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_48.html"
+				class="center">프렉티스 48</a>
+			<h1>The removeEventListener() method</h1>
+			<p>The removeEventListener() method removes event
+				handlers that have been attached with the
+				addEventListener() method:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+#myDIV {
+    background-color: coral;
+    border: 1px solid;
+    padding: 50px;
+    color: white;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div id="myDIV"&gt;This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
+  &lt;p&gt;Click the button to remove the DIV's event handler.&lt;/p&gt;
+  &lt;button onclick="removeHandler()" id="myBtn"&gt;Try it&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = Math.random();
+}
+
+function removeHandler() {
+    document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_49.html"
+				class="center">프렉티스 49</a>
+
+
+			<h1>Browser Support</h1>
+			<p>The numbers in the table specifies the first
+				browser version that fully supports these methods.</p>
+			<table>
+				<tbody>
+					<tr>
+						<th
+							style="width: 20%; font-size: 16px; text-align: left;">Method</th>
+						<th style="width: 16%;" class="bsChrome"
+							title="Chrome"></th>
+						<th style="width: 16%;" class="bsEdge"
+							title="Internet Explorer / Edge"></th>
+						<th style="width: 16%;" class="bsFirefox"
+							title="Firefox"></th>
+						<th style="width: 16%;" class="bsSafari"
+							title="Safari"></th>
+						<th style="width: 16%;" class="bsOpera" title="Opera"></th>
+					</tr>
+					<tr>
+						<td style="text-align: left;">addEventListener()</td>
+						<td>1.0</td>
+						<td>9.0</td>
+						<td>1.0</td>
+						<td>1.0</td>
+						<td>7.0</td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">removeEventListener()</td>
+						<td>1.0</td>
+						<td>9.0</td>
+						<td>1.0</td>
+						<td>1.0</td>
+						<td>7.0</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Note: The addEventListener() and
+				removeEventListener() methods are not supported in IE 8
+				and earlier versions and Opera 6.0 and earlier versions.
+				However, for these specific browser versions, you can
+				use the attachEvent() method to attach an event handlers
+				to the element, and the detachEvent() method to remove
+				it:</p>
+			<pre class="code">
+element.attachEvent(event, function);
+element.detachEvent(event, function);</pre>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;The addEventListener() method is not supported Internet Explorer 8 and earlier versions.&lt;/p&gt;
+
+&lt;p&gt;This example demonstrates a solution that will work for all browsers.&lt;/p&gt;
+
+&lt;button id="myBtn"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+var x = document.getElementById("myBtn");
+if (x.addEventListener) {
+    x.addEventListener("click", myFunction);
+} else if (x.attachEvent) {
+    x.attachEvent("onclick", myFunction);
+}
+
+function myFunction() {
+    alert("Hello World!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_50.html"
+				class="center">프렉티스 50</a>
+			<h1>HTML DOM Event Object Reference</h1>
+			<p>
+				For a list of all HTML DOM events, look at our complete
+				<a
+					href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML
+					DOM Event Object Reference</a>.
+			</p>
+>>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
 
 
 
