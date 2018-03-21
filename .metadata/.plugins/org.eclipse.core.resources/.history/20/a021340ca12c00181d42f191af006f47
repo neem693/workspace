@@ -1,0 +1,13 @@
+package practice017;
+
+import java.util.Arrays;
+
+public class TestArray04 {
+
+	
+	public static void main(String[] args) {
+		int [] array = {23,45,67,43,47,31,30,27};
+		Arrays.binarySearch(a, key)
+	}
+
+}
