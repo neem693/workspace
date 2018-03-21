@@ -34,12 +34,15 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Browser Support" key="selection"/>
+		<item value="Passing Arrays to Methods" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Passing Arrays to Methods"/>
+			<item value="Java - Numbers Class"/>
+			<item value="img"/>
 			<item value="Browser Support"/>
 			<item value="Javascritp Reference"/>
 			<item value="Returns a collection"/>
@@ -52,9 +55,6 @@
 			<item value="css실렉터"/>
 			<item value="링크실렉터"/>
 			<item value="css 링크"/>
-			<item value="css링크"/>
-			<item value="실렉터"/>
-			<item value="jsTuto"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&amp;gt;"/>
@@ -71,7 +71,7 @@
 		<item value="340" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="962" key="DIALOG_X_ORIGIN"/>
+		<item value="460" key="DIALOG_X_ORIGIN"/>
 		<item value="247" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
