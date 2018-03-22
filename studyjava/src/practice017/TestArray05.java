@@ -9,10 +9,10 @@ public class TestArray05 {
 		int [] array = {23,45,67,43,47,31,30,27};
 		Arrays.sort(array);
 		for(int i :array) {
-			System.out.println(i);
+			System.out.print(i+",");
 		}
 		
-		int result = Arrays.binarySearch(array, 45);
+		int result = Arrays.binarySearch(array, 47);
 		System.out.println(result);
 	}
 

@@ -34,12 +34,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="printArray(new int[]{3, 1, 2, 6, 4, 2});" key="selection"/>
+		<item value="Creating Arrays" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Creating Arrays"/>
 			<item value="printArray(new int[]{3, 1, 2, 6, 4, 2});"/>
 			<item value="Passing Arrays to Methods"/>
 			<item value="Java - Numbers Class"/>
@@ -54,7 +55,6 @@
 			<item value="opacity"/>
 			<item value="css 실렉터"/>
 			<item value="css실렉터"/>
-			<item value="링크실렉터"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&amp;gt;"/>
