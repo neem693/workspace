@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+
+
+</head>
+<body>
+
+
+	<h1 id="id01">My Fisrt Page</h1>
+	<p id="id02"></p>
+	<p id="id03"></p>
+	<p id="id04"></p>
+		<p id="id04"></p>
+		<p id="id05"></p>
+	
+
+
+	<script>
+	var id01 = document.getElementById("id01");
+        document.getElementById("id02").innerHTML = id01.nodeName;
+        document.getElementById("id03").innerHTML = id01.attributes[0].nodeName;
+        document.getElementById("id04").innerHTML = id01.firstChild.nodeName;
+        document.getElementById("id05").innerHTML = document.nodeName;
+        
+        
+    </script>
+
+</body>
+</html>

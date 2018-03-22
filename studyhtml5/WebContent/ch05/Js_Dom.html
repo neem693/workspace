@@ -1401,11 +1401,6 @@ Mouse over this text&lt;/h1&gt;
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_36.html"
 				class="center">프렉티스 36</a>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
 			<h1 class="subject">JavaScript HTML DOM
 				EventListener</h1>
 			<h1>The addEventListener() method</h1>
@@ -1430,11 +1425,9 @@ function displayDate() {
 
 &lt;/body&gt;
 &lt;/html&gt; 
-<<<<<<< HEAD
 </pre>
-=======
-				</pre>
->>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
+
+
 			<a href="/studyhtml5/ch05/practice_dom/practice_41.html"
 				class="center">프렉티스 41</a>
 			<p>
@@ -1470,17 +1463,8 @@ element.addEventListener(event, function, useCapture);</pre>
 			</p>
 			<p class="imp">Note that you don't use the "on"
 				prefix for the event; use "click" instead of "onclick".</p>
-<<<<<<< HEAD
 
 
-
-
-
-
-
-
-
-=======
 			<h1>Add an Event Handler to an Element</h1>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -1858,8 +1842,335 @@ function myFunction() {
 					href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML
 					DOM Event Object Reference</a>.
 			</p>
->>>>>>> 16d854939b6fe6d4b6fe6b1c7d4ef7d7d928835c
 
+
+
+
+
+
+
+
+
+
+
+
+			<h1 class="subject">JavaScript HTML DOM Navigation</h1>
+			<p>With the HTML DOM, you can navigate the node tree
+				using node relationships.</p>
+
+			<h1>DOM Nodes</h1>
+			<p>According to the W3C HTML DOM standard, everything
+				in an HTML document is a node:</p>
+			<ul>
+				<li>The entire document is a document node</li>
+				<li>Every HTML element is an element node</li>
+				<li>The text inside HTML elements are text nodes</li>
+				<li>Every HTML attribute is an attribute node
+					(deprecated)</li>
+				<li>All comments are comment nodes</li>
+			</ul>
+			<img alt="IMG" class="img"
+				src="/studyhtml5/images/dom_tree.gif">
+			<p>
+				With the HTML DOM, all nodes in the node tree can be
+				accessed by JavaScript. <br> <br> New nodes
+				can be created, and all nodes can be modified or
+				deleted.
+			</p>
+			<h1>Node Relationships</h1>
+			<p>
+				The nodes in the node tree have a hierarchical
+				relationship to each other. <br> <br> The
+				terms parent, child, and sibling are used to describe
+				the relationships.
+			</p>
+			<ul>
+				<li>In a node tree, the top node is called the root
+					(or root node)</li>
+				<li>Every node has exactly one parent, except the
+					root (which has no parent)</li>
+				<li>A node can have a number of children</li>
+				<li>Siblings (brothers or sisters) are nodes with
+					the same parent</li>
+			</ul>
+			<pre class="code half_div">
+&lt;html&gt;
+
+  &lt;head&gt;
+      &lt;title&gt;DOM Tutorial&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+      &lt;h1&gt;DOM Lesson one&lt;/h1&gt;
+      &lt;p&gt;Hello world!&lt;/p&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+			<img class="half_div"
+				src="/studyhtml5/images/pic_navigate.gif">
+
+
+			<p style="clear: both;">From the HTML above you can
+				read:</p>
+			<ul>
+				<li>&lt;html&gt; is the root node</li>
+				<li>&lt;html&gt; has no parents</li>
+				<li>&lt;html&gt; is the parent of &lt;head&gt; and
+					&lt;body&gt;</li>
+				<li>&lt;head&gt; is the first child of &lt;html&gt;
+				</li>
+				<li>&lt;body&gt; is the last child of &lt;html&gt;
+				</li>
+			</ul>
+			<p>and:</p>
+			<ul>
+				<li>&lt;head&gt; has one child: &lt;title&gt;</li>
+				<li>&lt;title&gt; has one child (a text node): "DOM
+					Tutorial"</li>
+				<li>&lt;body&gt; has two children: &lt;h1&gt; and
+					&lt;p&gt;</li>
+				<li>&lt;h1&gt; has one child: "DOM Lesson one"</li>
+				<li>&lt;p&gt; has one child: "Hello world!"</li>
+				<li>&lt;h1&gt; and &lt;p&gt; are siblings</li>
+			</ul>
+			<h1>Navigating Between Nodes</h1>
+			<p>You can use the following node properties to
+				navigate between nodes with JavaScript:</p>
+			<ul>
+				<li>parentNode</li>
+				<li>childNodes[nodenumber]</li>
+				<li>firstChild</li>
+				<li>lastChild</li>
+				<li>nextSibling</li>
+				<li>previousSibling</li>
+			</ul>
+			<h1>Child Nodes and Node Values</h1>
+			<p class="imp">A common error in DOM processing is to
+				expect an element node to contain text.</p>
+			<pre class="code">
+ &lt;title id="demo"&gt;DOM Tutorial&lt;/title&gt; </pre>
+			<p>
+				The element node &lt;title&gt; (in the example above)
+				does not contain text. <br> <br> It contains a
+				text node with the value "DOM Tutorial". <br> <br>
+				The value of the text node can be accessed by the node's
+				innerHTML property:
+			</p>
+			<pre class="code">
+var myTitle = document.getElementById("demo").innerHTML;</pre>
+			<p>Accessing the innerHTML property is the same as
+				accessing the nodeValue of the first child:</p>
+			<pre class="code">
+var myTitle = document.getElementById("demo").firstChild.nodeValue; </pre>
+			<p>Accessing the first child can also be done like
+				this:</p>
+			<pre class="code">
+var myTitle = document.getElementById("demo").childNodes[0].nodeValue;</pre>
+			<p>All the (3) following examples retrieves the text
+				of an &lt;h1&gt; element and copies it into a &lt;p&gt;
+				element:</p>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="id01"&gt;My First Page&lt;/h1&gt;
+&lt;p id="id02"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_51.html"
+				class="center">프렉티스 51</a>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="id01"&gt;My First Page&lt;/h1&gt;
+&lt;p id="id02"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_52.html"
+				class="center">프렉티스 52</a>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1 id="id01"&gt;My First Page&lt;/h1&gt;
+&lt;p id="id02"&gt;Hello!&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_53.html"
+				class="center">프렉티스 53</a>
+			<h1>InnerHTML</h1>
+			<p>
+				In this tutorial we use the innerHTML property to
+				retrieve the content of an HTML element. <br> <br>
+				However, learning the other methods above is useful for
+				understanding the tree structure and the navigation of
+				the DOM.
+			</p>
+			<h1>DOM Root Nodes</h1>
+			<p>There are two special properties that allow access
+				to the full document:</p>
+			<ul>
+				<li>document.body - The body of the document</li>
+				<li>document.documentElement - The full document</li>
+			</ul>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;The DOM is very useful!&lt;/p&gt;
+&lt;p&gt;This example demonstrates the &lt;b&gt;document.body&lt;/b&gt; property.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+alert(document.body.innerHTML);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_54.html"
+				class="center">프렉티스 54</a>
+			<pre class="code">
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+&lt;div&gt;
+&lt;p&gt;The DOM is very useful!&lt;/p&gt;
+&lt;p&gt;This example demonstrates the &lt;b&gt;document.documentElement&lt;/b&gt; property.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+alert(document.documentElement.innerHTML);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_55.html"
+				class="center">프렉티스 55</a>
+			<h1>The nodeName Property</h1>
+			<p>The nodeName property specifies the name of a
+				node.</p>
+			<ul>
+				<li>nodeName is read-only</li>
+				<li>nodeName of an element node is the same as the
+					tag name</li>
+				<li>nodeName of an attribute node is the attribute
+					name</li>
+				<li>nodeName of a text node is always #text</li>
+				<li>nodeName of the document node is always
+					#document</li>
+			</ul>
+			<pre class="code">
+&lt;h1 id="id01"&gt;My Fisrt Page&lt;/h1&gt;
+&lt;p id="id02"&gt;&lt;/p&gt;
+&lt;p id="id03"&gt;&lt;/p&gt;
+&lt;p id="id04"&gt;&lt;/p&gt;
+&lt;p id="id04"&gt;&lt;/p&gt;
+&lt;p id="id05"&gt;&lt;/p&gt;
+
+
+
+&lt;script&gt;
+	var id01 = document.getElementById("id01");
+	document.getElementById("id02").innerHTML = id01.nodeName;
+	document.getElementById("id03").innerHTML = id01.attributes[0].nodeName;
+	document.getElementById("id04").innerHTML = id01.firstChild.nodeName;
+	document.getElementById("id05").innerHTML = document.nodeName;
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_56.html"
+				class="center">프렉티스 56</a>
+			<p class="imp">Note: nodeName always contains the
+				uppercase tag name of an HTML element.</p>
+			<h1>The nodeValue Property</h1>
+			<p>The nodeValue property specifies the value of a
+				node.</p>
+			<ul>
+				<li>nodeValue for element nodes is undefined</li>
+				<li>nodeValue for text nodes is the text itself</li>
+				<li>nodeValue for attribute nodes is the attribute
+					value</li>
+			</ul>
+			<h1>The nodeType Property</h1>
+			<p>The nodeType property is read only. It returns the
+				type of a node.</p>
+			<pre class="code">
+&lt;h1 id="id01"&gt;My First Page&lt;/h1&gt;
+&lt;p id="id02"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("id02").innerHTML = document.getElementById("id01").nodeType;
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_57.html"
+				class="center">프렉티스 57</a>
+			<p>The most important nodeType properties are:</p>
+			<table>
+				<tbody>
+					<tr>
+						<th>Node</th>
+						<th>Type</th>
+						<th>Example</th>
+					</tr>
+					<tr>
+						<td>ELEMENT_NODE</td>
+						<td>1</td>
+						<td>&lt;h1
+							class="heading"&gt;W3Schools&lt;/h1&gt;</td>
+					</tr>
+					<tr>
+						<td>ATTRIBUTE_NODE</td>
+						<td>2</td>
+						<td>&nbsp;class = "heading" (deprecated)</td>
+					</tr>
+					<tr>
+						<td>TEXT_NODE</td>
+						<td>3</td>
+						<td>W3Schools</td>
+					</tr>
+					<tr>
+						<td>COMMENT_NODE</td>
+						<td>8</td>
+						<td>&lt;!-- This is a comment --&gt;</td>
+					</tr>
+					<tr>
+						<td>DOCUMENT_NODE</td>
+						<td>9</td>
+						<td>The HTML document itself (the parent of
+							&lt;html&gt;)</td>
+					</tr>
+					<tr>
+						<td>DOCUMENT_TYPE_NODE</td>
+						<td>10</td>
+						<td>&lt;!Doctype html&gt;</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="imp">Type 2 is deprecated in the HTML DOM
+				(but works). It is not deprecated in the XML DOM.</p>
+
+
+
+
+
+			<!-- 여기서부터 레퍼런스  -->
 
 
 			<h1 class="subject">Javascritp Reference</h1>
