@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;studyphp/template/html5_php_template.html&apos; to &apos;html5_php_template.php&apos;" description="Rename resource &apos;html5_php_template.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="template/html5_php_template.html" name="html5_php_template.php" stamp="1498021438415" updateReferences="true"/>
-</session>

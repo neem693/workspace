@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;studyhtml5/WebContent/ch04/practice/css_p18.html&apos; to &apos;css_p18_filter.html&apos;" description="Rename resource &apos;css_p18.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/ch04/practice/css_p18.html" name="css_p18_filter.html" stamp="1488936887235" updateReferences="true"/>
-</session>

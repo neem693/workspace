@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;studyphp/php_advanced.html&apos; to &apos;php_advance.html&apos;" description="Rename resource &apos;php_advanced.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="php_advanced.html" name="php_advance.html" stamp="1498908992214" updateReferences="true"/>
-</session>

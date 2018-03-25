@@ -1,7 +1,0 @@
-@CHARSET "UTF-8";
-
-p{
-	border: 50px solid transparent;
-	border-image: url("../../images/boder.jpg") 50 repeat;
-	height: 500px;
-}
