@@ -40,7 +40,8 @@
 	<p>여기서 설정해야 하는 것이 3가지가 있다.</p>
 	<ul>
 		<li>JAVA_HOME : 자바의 홈 Directory <span class="code">자바가 설치된
-				폴더</span></li>
+				폴더</span> <span class="code">예:)C:\Program Files\Java\jdk1.8.0_161</span> <span
+			class="imp">이 부분은 활용되는 변수이기에 마지막에 절대 세미콜론을 찍어선 안된다.</span></li>
 		<li>CLASSPATH : 실행 시 클래스 파일의 위치와 참조 파일들의 위치 지정 (기본 공용 폴더)<span
 			class="code">%JAVA_HOME%\lib;</span>
 		</li>
@@ -177,20 +178,32 @@ public class MyFirstJavaProgram {
 	<p class="imp">씨발 이건 한거다.</p>
 	<p>Let's look at how to save the file, compile, and run the
 		program. Please follow the subsequent steps −</p>
+	<p class="bookmark">명령프롬포트로 컴파일 및 java돌리기</p>
 	<ul>
 		<li>Open notepad and add the code as above.</li>
 
 		<li>Save the file as: MyFirstJavaProgram.java.</li>
 
 		<li>Open a command prompt window and go to the directory where
-			you saved the class. Assume it's C:\.</li>
+			you saved the class. Assume it's C:\. <span class="imp">여기서
+				나온것과 같이 C드라이브에서 컴파일과 RUN하는 과정이 있으려면 명령프롬포트를 관리자 권한으로 실행해야 함을 명심하라.
+				그렇지 않으면 컴파일 조차 안된다.</span>
+		</li>
 
 		<li>Type 'javac MyFirstJavaProgram.java' and press enter to
 			compile your code. If there are no errors in your code, the command
 			prompt will take you to the next line (Assumption : The path variable
 			is set).</li>
 
-		<li>Now, type ' java MyFirstJavaProgram ' to run your program.</li>
+		<li>Now, type ' java MyFirstJavaProgram ' to run your program. <span
+			class="imp">만약 코드에 package가 설정되어 있다면,</span> <span class="code">javac
+				-d / MyFirstJavaProgram.java</span><span class="imp">로 옵션을 줘 컴파일해서
+				그자리에서 패키지 폴더를 만들어 클래스파일을 넣어주거나, 이를 수동으로 해야한다.만약 상단의 코드가 package
+				FirstJava라는 걸로 설정되어 있다면, 폴더를 FirstJava를 만들고 그 안에
+				MyFirstJavaProgram.class 파일을 수동으로 나둬야 한다는 것. 앞서 말했듯이 javac에 옵션을 주면
+				수동으로 할 필요가 없다. 그 이후에</span><span class="code">java
+				FirstJava.MyFirstJavaProgram</span><span class="imp"> 라고 입력해서 실행해야
+				한다. </span></li>
 
 		<li>You will be able to see ' Hello World ' printed on the
 			window.</li>
@@ -8355,17 +8368,15 @@ public class GregorianCalendarDemo {
 Date: Apr 22 2009
 Time: 11:25:27
 The current year is not a leap year</pre>
-	도대체 씨부랄 args가 무엇이냐?
-	</h1>
+	<h1 class="subject">도대체 씨부랄 args가 무엇이냐?</h1>
 	<p>
 		In Java args contains the supplied command-line arguments as an array
-		of String objects. <br>
-		<br> In other words, if you run your program as java MyProgram
-		one two then args will contain ["one", "two"]. <br>
-		<br> If you wanted to output the contents of args, you can just
-		loop through them like this...
+		of String objects. <br> <br> In other words, if you run your
+		program as java MyProgram one two then args will contain ["one",
+		"two"]. <br> <br> If you wanted to output the contents of
+		args, you can just loop through them like this...
 	</p>
-<pre class = "code">
+	<pre class="code">
 public class ArgumentExample {
     public static void main(String[] args) {
         for(int i = 0; i &lt; args.length; i++) {
@@ -8373,8 +8384,345 @@ public class ArgumentExample {
         }
     }
 }</pre>
-<p class ="imp">WTF_ARGS/WTF_args.java에서 해당 프렉티스 진행한다.</p>
-<p class = "imp">아무래도 이건 도스창에서 진행해야 할 듯 하니, 그 부분을 생각해서 진행하도록 하자.</p>
+	<p class="imp">WTF_ARGS/WTF_args.java에서 해당 프렉티스가 있지만, 이건
+		(명령프롬포트)도스창에서 진행해야 할 듯 하니, 그 부분을 생각해서 진행하도록 하자.</p>
+	<p>해당 .java파일은 c드라이브에 놓고 진행한다는 설정을 준다.(따라서 관리자로 명령프롬포트를 실행해야 한다.)</p>
+
+	<p class="code">cd c:\</p>
+	<img alt="args1" class="img" src="/java/img/args_ex1.png">
+
+	<p class="code">javac -d / wtf_args.java</p>
+	<img alt="args2" class="img" src="/java/img/args_ex2.png">
+
+	<p class="code">java WTF_ARGS.WTF_args 이게봐로 args다. 스페이스바 띄어쓰기 하나하나
+		마다 String[] args에 배열로 하나씩 하나씩 모두 저장된다.</p>
+	<img alt="args3" class="img" src="/java/img/args_ex3.png">
+	<h2>output</h2>
+	<pre class="code">
+이게봐로
+args다.
+스페이스바
+띄어쓰기
+하나하나
+마다
+String[]
+args에
+배열로
+하나씩
+하나씩
+모두
+저장된다.
+	</pre>
+
+
+	<h1 class="subject">Java - Regular Expressions</h1>
+	<p>
+		Java provides the java.util.regex package for pattern matching with
+		regular expressions. Java regular expressions are very similar to the
+		Perl programming language and very easy to learn. <br> <br>
+		A regular expression is a special sequence of characters that helps
+		you match or find other strings or sets of strings, using a
+		specialized syntax held in a pattern. They can be used to search,
+		edit, or manipulate text and data. <br> <br> The
+		java.util.regex package primarily consists of the following three
+		classes −
+	</p>
+	<ul>
+		<li>Pattern Class − A Pattern object is a compiled representation
+			of a regular expression. The Pattern class provides no public
+			constructors. To create a pattern, you must first invoke one of its
+			public static compile() methods, which will then return a Pattern
+			object. These methods accept a regular expression as the first
+			argument.</li>
+		<li>Matcher Class − A Matcher object is the engine that
+			interprets the pattern and performs match operations against an input
+			string. Like the Pattern class, Matcher defines no public
+			constructors. You obtain a Matcher object by invoking the matcher()
+			method on a Pattern object.</li>
+		<li>PatternSyntaxException − A PatternSyntaxException object is
+			an unchecked exception that indicates a syntax error in a regular
+			expression pattern.</li>
+	</ul>
+	<h1>Capturing Groups</h1>
+	<p>
+		Capturing groups are a way to treat multiple characters as a single
+		unit. They are created by placing the characters to be grouped inside
+		a set of parentheses. For example, the regular expression (dog)
+		creates a single group containing the letters "d", "o", and "g". <br>
+		<br> Capturing groups are numbered by counting their opening
+		parentheses from the <span class="imp">left to the right</span>. In
+		the expression ((A)(B(C))), for example, there are four such groups −
+	</p>
+	<ul>
+		<li>((A)(B(C)))</li>
+		<li>(A)</li>
+		<li>(B(C))</li>
+		<li>(C)</li>
+	</ul>
+	<p>To find out how many groups are present in the expression, call
+		the groupCount method on a matcher object. The groupCount method
+		returns an int showing the number of capturing groups present in the
+		matcher's pattern.</p>
+	<p class="">There is also a special group, group 0, which always
+		represents the entire expression. This group is not included in the
+		total reported by groupCount.</p>
+	<h2>Example</h2>
+	<p>Following example illustrates how to find a digit string from
+		the given alphanumeric string −</p>
+	<pre class="code">
+package practice019;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+public class RegexMatches01 {
+	public static void main(String[] args) {
+		String line = "This order wa placed for QT3000! OK?";
+		String pattern = "(.*)(\\d+)(.*)";
+		Pattern r = Pattern.compile(pattern);
+		Matcher m = r.matcher(line);
+		if(m.find()) {
+			System.out.println("Found value: " + m.group(0));
+			System.out.println("Found value: " + m.group(1));
+			System.out.println("Found value: " + m.group(2));
+			System.out.println("Found value: " + m.group(3));
+		}else {
+			System.out.println("NO MATCH");
+		}
+
+	}
+}
+</pre>
+	<p class="imp">practice019/RegexMatches01.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Found value: This order wa placed for QT3000! OK?
+Found value: This order wa placed for QT300
+Found value: 0
+Found value: ! OK?</pre>
+	<p class="imp">
+		해당하는 정규표현식은 <span class="code">(.*)(\\d+)(.*)</span> 으로 즉, <span
+			class="code">(.*)(\d+)(.*)</span>이라고 할 수 있다. 사실 <span class='code'>(.*)</span>하나
+		만으로도 모든 문자열이 매치가 되지만, <span class="code">(\d+)</span>는 디지털 값이 단 하나라도
+		매치가 되어야 한다는 까닭에 그룹이 쪼개지기 시작한다. 그래서 맨 마지막 숫자 0하나만 매치가 되는 듯 하다. 왼쪽에서
+		오른쪽으로 읽어드려 매치가 된다는 까닭에서 말이다.
+	</p>
+	<h2 class="bookmark">여기서 잠깐 -왜 자바 정규표현식은 슬러쉬를 2개 사용하나?</h2>
+	<p>그러니까 이 말은 이런말이다.</p>
+	<pre class="code">
+\d이게 아니고 \\d이것이냐?</pre>
+	<p>There are two "escapings" going on here. The first backslash is
+		to escape the second backslash for the Java language, to create an
+		actual backslash character. The backslash character is what escapes
+		the + or the s for interpretation by the regular expression engine.
+		That's why you need two backslashes -- one for Java, one for the
+		regular expression engine. With only one backslash, Java reports \s
+		and \+ as illegal escape characters -- not for regular expressions,
+		but for an actual character in the Java language.</p>
+	<p>즉, 그러니까 백 슬러쉬 하나는 탈출용, 나머지 하나는 실질적인 정규표현식용이라는 것이다.</p>
+
+
+	<h1>Regular Expression Syntax</h1>
+	<p>Here is the table listing down all the regular expression
+		metacharacter syntax available in Java −</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Subexpression</th>
+				<th style="text-align: center;">Matches</th>
+			</tr>
+			<tr>
+				<td style="text-align: center;">^</td>
+				<td>Matches the beginning of the line.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">$</td>
+				<td>Matches the end of the line.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">.</td>
+				<td>Matches any single character except newline. Using <b>m</b>
+					option allows it to match the newline as well.
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">[...]</td>
+				<td>Matches any single character in brackets.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">[^...]</td>
+				<td>Matches any single character not in brackets.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\A</td>
+				<td>Beginning of the entire string.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\z</td>
+				<td>End of the entire string.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\Z</td>
+				<td>End of the entire string except allowable final line
+					terminator.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re*</td>
+				<td>Matches 0 or more occurrences of the preceding expression.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re+</td>
+				<td>Matches 1 or more of the previous thing.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re?</td>
+				<td>Matches 0 or 1 occurrence of the preceding expression.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re{ n}</td>
+				<td>Matches exactly n number of occurrences of the preceding
+					expression.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re{ n,}</td>
+				<td>Matches n or more occurrences of the preceding expression.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">re{ n, m}</td>
+				<td>Matches at least n and at most m occurrences of the
+					preceding expression.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">a| b</td>
+				<td>Matches either a or b.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">(re)</td>
+				<td>Groups regular expressions and remembers the matched text.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">(?: re)</td>
+				<td>Groups regular expressions without remembering the matched
+					text.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">(?&gt; re)</td>
+				<td>Matches the independent pattern without backtracking.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\w</td>
+				<td>Matches the word characters.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\W</td>
+				<td>Matches the nonword characters.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\s</td>
+				<td>Matches the whitespace. Equivalent to [\t\n\r\f].</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\S</td>
+				<td>Matches the nonwhitespace.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\d</td>
+				<td>Matches the digits. Equivalent to [0-9].</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\D</td>
+				<td>Matches the nondigits.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\A</td>
+				<td>Matches the beginning of the string.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\Z</td>
+				<td>Matches the end of the string. If a newline exists, it
+					matches just before newline.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\z</td>
+				<td>Matches the end of the string.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\G</td>
+				<td>Matches the point where the last match finished.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\n</td>
+				<td>Back-reference to capture group number "n".</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\b</td>
+				<td>Matches the word boundaries when outside the brackets.
+					Matches the backspace (0x08) when inside the brackets.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\B</td>
+				<td>Matches the nonword boundaries.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\n, \t, etc.</td>
+				<td>Matches newlines, carriage returns, tabs, etc.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\Q</td>
+				<td>Escape (quote) all characters up to \E.</td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">\E</td>
+				<td>Ends quoting begun with \Q.</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h1>Methods of the Matcher Class</h1>
+	<p>Here is a list of useful instance methods −</p>
+	<h2>Index Methods</h2>
+	<p>Index methods provide useful index values that show precisely
+		where the match was found in the input string −</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public int start()</b>
+					</p>
+					<p>Returns the start index of the previous match.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public int start(int group)</b>
+					</p>
+					<p>Returns the start index of the subsequence captured by the
+						given group during the previous match operation.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public int end()</b>
+					</p>
+					<p>Returns the offset after the last character matched.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public int end(int group)</b>
+					</p>
+					<p>Returns the offset after the last character of the
+						subsequence captured by the given group during the previous match
+						operation.</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+
 
 	<!-- 끝 -->
 	<div class="fixed">
