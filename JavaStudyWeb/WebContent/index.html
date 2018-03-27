@@ -8722,6 +8722,321 @@ Found value: ! OK?</pre>
 		</tbody>
 	</table>
 
+	<h2>Study Methods</h2>
+	<p>Study methods review the input string and return a Boolean
+		indicating whether or not the pattern is found −</p>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public boolean lookingAt()</b>
+					</p>
+					<p>Attempts to match the input sequence, starting at the
+						beginning of the region, against the pattern.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public boolean find()</b>
+					</p>
+					<p>Attempts to find the next subsequence of the input sequence
+						that matches the pattern.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public boolean find(int start)</b>
+					</p>
+					<p>Resets this matcher and then attempts to find the next
+						subsequence of the input sequence that matches the pattern,
+						starting at the specified index.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public boolean matches()</b>
+					</p>
+					<p>Attempts to match the entire region against the pattern.</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>Replacement Methods</h2>
+	<p>Replacement methods are useful methods for replacing text in an
+		input string −</p>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public Matcher appendReplacement(StringBuffer sb, String
+							replacement)</b>
+					</p>
+					<p>Implements a non-terminal append-and-replace step.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public StringBuffer appendTail(StringBuffer sb)</b>
+					</p>
+					<p>Implements a terminal append-and-replace step.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public String replaceAll(String replacement)</b>
+					</p>
+					<p>Replaces every subsequence of the input sequence that
+						matches the pattern with the given replacement string.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public String replaceFirst(String replacement)</b>
+					</p>
+					<p>Replaces the first subsequence of the input sequence that
+						matches the pattern with the given replacement string.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public static String quoteReplacement(String s)</b>
+					</p>
+					<p>
+						Returns a literal replacement String for the specified String.
+						This method produces a String that will work as a literal
+						replacement <b>s</b> in the appendReplacement method of the
+						Matcher class.
+					</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h2>The start and end Methods</h2>
+	<p>Following is the example that counts the number of times the
+		word "cat" appears in the input string −</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexMatches {
+
+   private static final String REGEX = "\\bcat\\b";
+   private static final String INPUT = "cat cat cat cattie cat";
+
+   public static void main( String args[] ) {
+      Pattern p = Pattern.compile(REGEX);
+      Matcher m = p.matcher(INPUT);   // get a matcher object
+      int count = 0;
+
+      while(m.find()) {
+         count++;
+         System.out.println("Match number "+count);
+         System.out.println("start(): "+m.start());
+         System.out.println("end(): "+m.end());
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스019/RegexMatches02.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Match number 1
+start(): 0
+end(): 3
+Match number 2
+start(): 4
+end(): 7
+Match number 3
+start(): 8
+end(): 11
+Match number 4
+start(): 19
+end(): 22</pre>
+	<p>
+		You can see that this example uses word boundaries to ensure that the
+		letters "c" "a" "t" are not merely a substring in a longer word. It
+		also gives some useful information about where in the input string the
+		match has occurred. <br> <br> The start method returns the
+		start index of the subsequence captured by the given group during the
+		previous match operation, and the end returns the index of the last
+		character matched, plus one.
+	</p>
+	<h1>The matches and lookingAt Methods</h1>
+	<p>
+		The matches and lookingAt methods both attempt to match an input
+		sequence against a pattern. The difference, however, is that matches
+		requires the entire input sequence to be matched, while lookingAt does
+		not. <br> <br> Both methods always start at the beginning of
+		the input string. Here is the example explaining the functionality −
+	</p>
+
+
+	<h2>Example</h2>
+	<pre class="code">
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexMatches {
+
+   private static final String REGEX = "foo";
+   private static final String INPUT = "fooooooooooooooooo";
+   private static Pattern pattern;
+   private static Matcher matcher;
+
+   public static void main( String args[] ) {
+      pattern = Pattern.compile(REGEX);
+      matcher = pattern.matcher(INPUT);
+
+      System.out.println("Current REGEX is: "+REGEX);
+      System.out.println("Current INPUT is: "+INPUT);
+
+      System.out.println("lookingAt(): "+matcher.lookingAt());
+      System.out.println("matches(): "+matcher.matches());
+   }
+}</pre>
+	<p class="imp">프렉티스019/RegexMatches03.java에서 해당 프렉티스 진행함</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Current REGEX is: foo
+Current INPUT is: fooooooooooooooooo
+lookingAt(): true
+matches(): false</pre>
+	<h1>The replaceFirst and replaceAll Methods</h1>
+	<p>
+		The replaceFirst and replaceAll methods replace the text that matches
+		a given regular expression. As their names indicate, replaceFirst
+		replaces the first occurrence, and replaceAll replaces all
+		occurrences. <br> <br> Here is the example explaining the
+		functionality −
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexMatches {
+
+   private static String REGEX = "dog";
+   private static String INPUT = "The dog says meow. " + "All dogs say meow.";
+   private static String REPLACE = "cat";
+
+   public static void main(String[] args) {
+      Pattern p = Pattern.compile(REGEX);
+      
+      // get a matcher object
+      Matcher m = p.matcher(INPUT); 
+      INPUT = m.replaceAll(REPLACE);
+      System.out.println(INPUT);
+   }
+}</pre>
+	<p class="imp">프렉티스019/RegexMatches04.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+The cat says meow. All cats say meow.</pre>
+	<h1>The appendReplacement and appendTail Methods</h1>
+	<p>
+		The Matcher class also provides appendReplacement and appendTail
+		methods for text replacement. <br> <br> Here is the example
+		explaining the functionality −
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexMatches {
+
+   private static String REGEX = "a*b";
+   private static String INPUT = "aabfooaabfooabfoob";
+   private static String REPLACE = "-";
+   public static void main(String[] args) {
+
+      Pattern p = Pattern.compile(REGEX);
+      
+      // get a matcher object
+      Matcher m = p.matcher(INPUT);
+      StringBuffer sb = new StringBuffer();
+      while(m.find()) {
+         m.appendReplacement(sb, REPLACE);
+      }
+      m.appendTail(sb);
+      System.out.println(sb.toString());
+   }
+}</pre>
+	<p>
+		<span class="code">"a*b"</span>란 a가 없어도 되고 졸라많이 있어도 되고,b는 무조건 있어야 한다.
+	</p>
+
+	<p class="imp">practice019/RegexMatches05.java에서 해당 프렉티스 진행한다.</p>
+
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+-foo-foo-foo-</pre>
+	<h1>PatternSyntaxException Class Methods</h1>
+	<p>A PatternSyntaxException is an unchecked exception that
+		indicates a syntax error in a regular expression pattern. The
+		PatternSyntaxException class provides the following methods to help
+		you determine what went wrong −</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public String getDescription()</b>
+					</p>
+					<p>Retrieves the description of the error.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public int getIndex()</b>
+					</p>
+					<p>Retrieves the error index.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public String getPattern()</b>
+					</p>
+					<p>Retrieves the erroneous regular expression pattern.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public String getMessage()</b>
+					</p>
+					<p>Returns a multi-line string containing the description of
+						the syntax error and its index, the erroneous regular expression
+						pattern, and a visual indication of the error index within the
+						pattern.</p></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+
 
 
 	<!-- 끝 -->
