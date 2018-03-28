@@ -2,8 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width,initial-scale = 1.0" />
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
 <link rel="stylesheet" href="/studyhtml5/ch05/style.css">
 <script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
 <script src="/studyhtml5/ch05/jquery_index.js"></script>
@@ -20,98 +19,85 @@
 			<div id="bookmark_list"></div>
 			<p class="subject_fix" id="subject_line"></p>
 			<h1 class="subject">이 페이지는 뭐냐?</h1>
-			<p>자바스크립트의 DOM에 대한 내용만 정리할 것이다. 이제 자바스크립트의 꽃이라고 할 수
-				있다.</p>
+			<p>자바스크립트의 DOM에 대한 내용만 정리할 것이다. 이제 자바스크립트의 꽃이라고 할 수 있다.</p>
 			<h1 class="subject">JavaScript HTML DOM</h1>
-			<p>With the HTML DOM, JavaScript can access and
-				change all the elements of an HTML document.</p>
+			<p>With the HTML DOM, JavaScript can access and change all the
+				elements of an HTML document.</p>
 			<h1>The HTML DOM (Document Object Model)</h1>
 			<p>
-				When a web page is loaded, the browser creates a
-				Document Object Model of the page. <br> <br>
-				The HTML DOM model is constructed as a tree of Objects:
+				When a web page is loaded, the browser creates a Document Object
+				Model of the page. <br> <br> The HTML DOM model is
+				constructed as a tree of Objects:
 			</p>
 			<h2>The HTML DOM Tree of Objects</h2>
 			<img alt="Dom_tree" src="/studyhtml5/images/dom_tree.gif">
-			<p>With the object model, JavaScript gets all the
-				power it needs to create dynamic HTML:</p>
+			<p>With the object model, JavaScript gets all the power it needs
+				to create dynamic HTML:</p>
 			<ul>
-				<li>JavaScript can change all the HTML elements in
-					the page</li>
-				<li>JavaScript can change all the HTML attributes
-					in the page</li>
-				<li>JavaScript can change all the CSS styles in the
+				<li>JavaScript can change all the HTML elements in the page</li>
+				<li>JavaScript can change all the HTML attributes in the page</li>
+				<li>JavaScript can change all the CSS styles in the page</li>
+				<li>JavaScript can remove existing HTML elements and attributes</li>
+				<li>JavaScript can add new HTML elements and attributes</li>
+				<li>JavaScript can react to all existing HTML events in the
 					page</li>
-				<li>JavaScript can remove existing HTML elements
-					and attributes</li>
-				<li>JavaScript can add new HTML elements and
-					attributes</li>
-				<li>JavaScript can react to all existing HTML
-					events in the page</li>
-				<li>JavaScript can create new HTML events in the
-					page</li>
+				<li>JavaScript can create new HTML events in the page</li>
 			</ul>
 			<h1>What You Will Learn</h1>
-			<p>In the next chapters of this tutorial you will
-				learn:</p>
+			<p>In the next chapters of this tutorial you will learn:</p>
 			<ul>
 				<li>How to change the content of HTML elements</li>
-				<li>How to change the style (CSS) of HTML elements
-				</li>
+				<li>How to change the style (CSS) of HTML elements</li>
 				<li>How to react to HTML DOM events</li>
 				<li>How to add and delete HTML elements</li>
 			</ul>
 
 			<h1>What is the DOM?</h1>
 			<p>
-				The DOM is a W3C (World Wide Web Consortium) standard. <br>
-				<br> The DOM defines a standard for accessing
-				documents: <br> <br> "The W3C Document Object
-				Model (DOM) is a platform and language-neutral interface
-				that allows programs and scripts to dynamically access
-				and update the content, structure, and style of a
-				document." <br> <br> The W3C DOM standard is
-				separated into 3 different parts:
+				The DOM is a W3C (World Wide Web Consortium) standard. <br> <br>
+				The DOM defines a standard for accessing documents: <br> <br>
+				"The W3C Document Object Model (DOM) is a platform and
+				language-neutral interface that allows programs and scripts to
+				dynamically access and update the content, structure, and style of a
+				document." <br> <br> The W3C DOM standard is separated
+				into 3 different parts:
 			</p>
 			<ul>
-				<li>Core DOM - standard model for all document
-					types</li>
+				<li>Core DOM - standard model for all document types</li>
 				<li>XML DOM - standard model for XML documents</li>
 				<li>HTML DOM - standard model for HTML documents</li>
 			</ul>
 			<h1>What is the HTML DOM?</h1>
-			<p>The HTML DOM is a standard object model and
-				programming interface for HTML. It defines:</p>
+			<p>The HTML DOM is a standard object model and programming
+				interface for HTML. It defines:</p>
 			<ul>
 				<li>The HTML elements as objects</li>
 				<li>The properties of all HTML elements</li>
 				<li>The methods to access all HTML elements</li>
 				<li>The events for all HTML elements</li>
 			</ul>
-			<p>In other words: The HTML DOM is a standard for how
-				to get, change, add, or delete HTML elements.</p>
+			<p>In other words: The HTML DOM is a standard for how to get,
+				change, add, or delete HTML elements.</p>
 			<h1 class="subject">JavaScript - HTML DOM Methods</h1>
 			<p>
-				HTML DOM methods are actions you can perform (on HTML
-				Elements). <br> <br> HTML DOM properties are
-				values (of HTML Elements) that you can set or change.
+				HTML DOM methods are actions you can perform (on HTML Elements). <br>
+				<br> HTML DOM properties are values (of HTML Elements) that you
+				can set or change.
 			</p>
 			<h1>The DOM Programming Interface</h1>
 			<p>
-				The HTML DOM can be accessed with JavaScript (and with
-				other programming languages). <br> <br> In the
-				DOM, all HTML elements are defined as <span class="code">objects.</span>
-				<br> <br> The programming interface is the
-				properties and methods of each object. <br> <br>
-				A <span class="code">property</span> is a value that you
-				can get or set (like changing the content of an HTML
-				element). <br> <br> A <span class="code">method</span>
-				is an action you can do (like add or deleting an HTML
-				element).
+				The HTML DOM can be accessed with JavaScript (and with other
+				programming languages). <br> <br> In the DOM, all HTML
+				elements are defined as <span class="code">objects.</span> <br>
+				<br> The programming interface is the properties and methods of
+				each object. <br> <br> A <span class="code">property</span>
+				is a value that you can get or set (like changing the content of an
+				HTML element). <br> <br> A <span class="code">method</span>
+				is an action you can do (like add or deleting an HTML element).
 			</p>
 			<h2>Example</h2>
-			<p>The following example changes the content (the
-				innerHTML) of the &lt;p&gt; element with id="demo":</p>
+			<p>The following example changes the content (the innerHTML) of
+				the &lt;p&gt; element with id="demo":</p>
 			<pre class="code">
 &lt;html&gt;
 &lt;body&gt;
@@ -127,38 +113,33 @@ document.getElementById("demo").innerHTML = "Hello World!";
 			<p class="center">이건 씨발 너무 많이 해서 프렉티스로 안친다.</p>
 
 			<p>
-				In the example above, getElementById is a <span
-					class="code">method</span>, while innerHTML is a <span
-					class="code">property</span>.
+				In the example above, getElementById is a <span class="code">method</span>,
+				while innerHTML is a <span class="code">property</span>.
 			</p>
 			<h1>The getElementById Method</h1>
 
 			<p>
-				The most common way to access an HTML element is to use
-				the id of the element. <br> <br> In the
-				example above the getElementById method used id="demo"
-				to find the element.
+				The most common way to access an HTML element is to use the id of
+				the element. <br> <br> In the example above the
+				getElementById method used id="demo" to find the element.
 			</p>
 			<h1>The innerHTML Property</h1>
 			<p>
-				The easiest way to get the content of an element is by
-				using the innerHTML property. <br> <br> The
-				innerHTML property is useful for getting or replacing
-				the content of HTML elements.
+				The easiest way to get the content of an element is by using the
+				innerHTML property. <br> <br> The innerHTML property is
+				useful for getting or replacing the content of HTML elements.
 			</p>
-			<p class="imp">The innerHTML property can be used to
-				get or change any HTML element, including &lt;html&gt;
-				and &lt;body&gt;.</p>
+			<p class="imp">The innerHTML property can be used to get or
+				change any HTML element, including &lt;html&gt; and &lt;body&gt;.</p>
 			<h1 class="subject">JavaScript HTML DOM Document</h1>
-			<p>The HTML DOM document object is the owner of all
-				other objects in your web page.</p>
+			<p>The HTML DOM document object is the owner of all other objects
+				in your web page.</p>
 			<h1>The HTML DOM Document Object</h1>
 			<p>
-				The document object represents your web page. <br>
-				<br> If you want to access any element in an HTML
-				page, you always start with accessing the document
-				object. <br> <br> Below are some examples of
-				how you can use the document object to access and
+				The document object represents your web page. <br> <br> If
+				you want to access any element in an HTML page, you always start
+				with accessing the document object. <br> <br> Below are
+				some examples of how you can use the document object to access and
 				manipulate HTML.
 			</p>
 			<h1>Finding HTML Elements</h1>
@@ -194,23 +175,20 @@ document.getElementById("demo").innerHTML = "Hello World!";
 						<th>Description</th>
 					</tr>
 					<tr>
-						<td><em>element</em>.innerHTML =&nbsp; <em>new
-								html content</em></td>
+						<td><em>element</em>.innerHTML =&nbsp; <em>new html
+								content</em></td>
 						<td>Change the inner HTML of an element</td>
 					</tr>
 					<tr>
-						<td><em>element</em>.<em>attribute = new
-								value</em></td>
+						<td><em>element</em>.<em>attribute = new value</em></td>
 						<td>Change the attribute value of an HTML element</td>
 					</tr>
 					<tr>
-						<td><em>element</em>.setAttribute<em>(attribute,
-								value)</em></td>
+						<td><em>element</em>.setAttribute<em>(attribute, value)</em></td>
 						<td>Change the attribute value of an HTML element</td>
 					</tr>
 					<tr>
-						<td><em>element</em>.style.<em>property =
-								new style</em></td>
+						<td><em>element</em>.style.<em>property = new style</em></td>
 						<td>Change the style of an HTML element</td>
 					</tr>
 				</tbody>
@@ -257,8 +235,8 @@ document.getElementById("demo").innerHTML = "Hello World!";
 						<th>Description</th>
 					</tr>
 					<tr>
-						<td>document.getElementById(<em>id</em>).onclick
-							= function(){<em>code</em>}
+						<td>document.getElementById(<em>id</em>).onclick =
+							function(){<em>code</em>}
 						</td>
 						<td>Adding event handler code to an onclick event</td>
 					</tr>
@@ -266,11 +244,10 @@ document.getElementById("demo").innerHTML = "Hello World!";
 			</table>
 			<h1>Finding HTML Objects</h1>
 			<p>
-				The first HTML DOM Level 1 (1998), defined 11 HTML
-				objects, object collections, and properties. These are
-				still valid in HTML5. <br> <br> Later, in HTML
-				DOM Level 3, more objects, collections, and properties
-				were added.
+				The first HTML DOM Level 1 (1998), defined 11 HTML objects, object
+				collections, and properties. These are still valid in HTML5. <br>
+				<br> Later, in HTML DOM Level 3, more objects, collections, and
+				properties were added.
 			</p>
 			<table>
 				<tbody>
@@ -281,14 +258,13 @@ document.getElementById("demo").innerHTML = "Hello World!";
 					</tr>
 					<tr>
 						<td>document.anchors</td>
-						<td>Returns all &lt;a&gt; elements that have a
-							name attribute</td>
+						<td>Returns all &lt;a&gt; elements that have a name attribute</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td>document.applets</td>
-						<td>Returns all &lt;applet&gt; elements <span
-							class="imp">(Deprecated in HTML5)</span></td>
+						<td>Returns all &lt;applet&gt; elements <span class="imp">(Deprecated
+								in HTML5)</span></td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -328,14 +304,13 @@ document.getElementById("demo").innerHTML = "Hello World!";
 					</tr>
 					<tr>
 						<td>document.domain</td>
-						<td>Returns the domain name of the document
-							server</td>
+						<td>Returns the domain name of the document server</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td>document.domConfig</td>
-						<td><span class="imp">Obsolete.</span> Returns
-							the DOM configuration</td>
+						<td><span class="imp">Obsolete.</span> Returns the DOM
+							configuration</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -365,20 +340,18 @@ document.getElementById("demo").innerHTML = "Hello World!";
 					</tr>
 					<tr>
 						<td>document.inputEncoding</td>
-						<td>Returns the document's encoding (character
-							set)</td>
+						<td>Returns the document's encoding (character set)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>document.lastModified</td>
-						<td>Returns the date and time the document was
-							updated</td>
+						<td>Returns the date and time the document was updated</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>document.links</td>
-						<td>Returns all &lt;area&gt; and &lt;a&gt;
-							elements that have a href attribute</td>
+						<td>Returns all &lt;area&gt; and &lt;a&gt; elements that have
+							a href attribute</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -388,8 +361,7 @@ document.getElementById("demo").innerHTML = "Hello World!";
 					</tr>
 					<tr>
 						<td>document.referrer</td>
-						<td>Returns the URI of the referrer (the linking
-							document)</td>
+						<td>Returns the URI of the referrer (the linking document)</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -415,28 +387,26 @@ document.getElementById("demo").innerHTML = "Hello World!";
 				</tbody>
 			</table>
 			<h1 class="subject">JavaScript HTML DOM Elements</h1>
-			<p>This page teaches you how to find and access HTML
-				elements in an HTML page.</p>
+			<p>This page teaches you how to find and access HTML elements in
+				an HTML page.</p>
 			<h1>Finding HTML Elements</h1>
 			<p>
-				Often, with JavaScript, you want to manipulate HTML
-				elements. <br> <br> To do so, you have to find
-				the elements first. There are a couple of ways to do
-				this:
+				Often, with JavaScript, you want to manipulate HTML elements. <br>
+				<br> To do so, you have to find the elements first. There are a
+				couple of ways to do this:
 			</p>
 			<ul>
 				<li>Finding HTML elements by id</li>
 				<li>Finding HTML elements by tag name</li>
 				<li>Finding HTML elements by class name</li>
 				<li>Finding HTML elements by CSS selectors</li>
-				<li>Finding HTML elements by HTML object
-					collections</li>
+				<li>Finding HTML elements by HTML object collections</li>
 			</ul>
 			<h1>Finding HTML Element by Id</h1>
 			<p>
-				The easiest way to find an HTML element in the DOM, is
-				by using the element id. <br> <br> This
-				example finds the element with id="intro":
+				The easiest way to find an HTML element in the DOM, is by using the
+				element id. <br> <br> This example finds the element with
+				id="intro":
 			</p>
 			<pre class='code'>
 &lt;p id="intro"&gt;Hello World!&lt;/p&gt;
@@ -456,19 +426,17 @@ document.getElementById("demo").innerHTML =
 			<a href="/studyhtml5/ch05/practice_dom/practice_01.html"
 				class="center">프렉티스 01</a>
 			<p>
-				If the element is found, the method will return the
-				element as an object (in myElement). <br> <br>
-				If the element is not found, myElement will contain
-				null.
+				If the element is found, the method will return the element as an
+				object (in myElement). <br> <br> If the element is not
+				found, myElement will contain null.
 			</p>
 			<h2 class="bookmark">Element vs Elements</h2>
 			<p>
-				엘리먼트 하나만 선택하는것과 엘리먼트<span class="imp">들</span>이 선택되는것은
-				분명 다르다. 보통 어떤 이벤트 또는 dom 적용은 엘리먼트 하나에만 종속된다. 즉, 엘리먼트<span
-					class="imp">들</span>에서는 엘리먼트의 <span class="code">집합</span>이기
-				때문에 dom적용이 안된다. 하나하나 모두 정확한 선택 즉, 배열을 선택하듯 [0]이라는 걸
-				이용하여야 한다. 이 점을 잘 알아두고, 이제부터 엘리먼트<span class="imp">들</span>에
-				대한 이야기를 진행해보자.
+				엘리먼트 하나만 선택하는것과 엘리먼트<span class="imp">들</span>이 선택되는것은 분명 다르다. 보통 어떤
+				이벤트 또는 dom 적용은 엘리먼트 하나에만 종속된다. 즉, 엘리먼트<span class="imp">들</span>에서는
+				엘리먼트의 <span class="code">집합</span>이기 때문에 dom적용이 안된다. 하나하나 모두 정확한 선택
+				즉, 배열을 선택하듯 [0]이라는 걸 이용하여야 한다. 이 점을 잘 알아두고, 이제부터 엘리먼트<span
+					class="imp">들</span>에 대한 이야기를 진행해보자.
 			</p>
 			<h1>Finding HTML Elements by Tag Name</h1>
 			<p>This example finds all &lt;p&gt; elements:</p>
@@ -487,8 +455,8 @@ document.getElementById("demo").innerHTML =
 &lt;/script&gt;</pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_02.html"
 				class='center'>프렉티스 02</a>
-			<p>This example finds the element with id="main", and
-				then finds all &lt;p&gt; elements inside "main":</p>
+			<p>This example finds the element with id="main", and then finds
+				all &lt;p&gt; elements inside "main":</p>
 			<pre class="code">
 &lt;p&gt;Hello World!&lt;/p&gt;
 
@@ -510,10 +478,9 @@ document.getElementById("demo").innerHTML =
 				class="center">프렉티스 03</a>
 			<h1>Finding HTML Elements by Class Name</h1>
 			<p>
-				If you want to find all HTML elements with the same
-				class name, use getElementsByClassName(). <br> <br>
-				This example returns a list of all elements with
-				class="intro".
+				If you want to find all HTML elements with the same class name, use
+				getElementsByClassName(). <br> <br> This example returns a
+				list of all elements with class="intro".
 			</p>
 			<pre class="code">
 &lt;p&gt;Hello World!&lt;/p&gt;
@@ -531,16 +498,14 @@ document.getElementById("demo").innerHTML =
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_04.html"
 				class="center">프렉티스04</a>
-			<p class="imp">Finding elements by class name does
-				not work in Internet Explorer 8 and earlier versions.</p>
+			<p class="imp">Finding elements by class name does not work in
+				Internet Explorer 8 and earlier versions.</p>
 			<h1>Finding HTML Elements by CSS Selectors</h1>
 			<p>
-				If you want to find all HTML elements that matches a
-				specified CSS selector (id, class names, types,
-				attributes, values of attributes, etc), use the
-				querySelectorAll() method. <br> <br> This
-				example returns a list of all &lt;p&gt; elements with
-				class="intro".
+				If you want to find all HTML elements that matches a specified CSS
+				selector (id, class names, types, attributes, values of attributes,
+				etc), use the querySelectorAll() method. <br> <br> This
+				example returns a list of all &lt;p&gt; elements with class="intro".
 			</p>
 			<pre class="code">&lt;p&gt;Hello World!&lt;/p&gt;
 
@@ -556,12 +521,11 @@ document.getElementById("demo").innerHTML =
 &lt;/script&gt;</pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_05.html"
 				class="center">프렉티스 05</a>
-			<p class="imp">The querySelectorAll() method does not
-				work in Internet Explorer 8 and earlier versions.</p>
+			<p class="imp">The querySelectorAll() method does not work in
+				Internet Explorer 8 and earlier versions.</p>
 			<h1>Finding HTML Elements by HTML Object Collections</h1>
-			<p>This example finds the form element with
-				id="frm1", in the forms collection, and displays all
-				element values:</p>
+			<p>This example finds the form element with id="frm1", in the
+				forms collection, and displays all element values:</p>
 
 			<pre class="code">
 &lt;form id="frm1" action="/action_page.php"&gt;
@@ -589,8 +553,8 @@ function myFunction() {
 &lt;/script&gt;</pre>
 			<a href='/studyhtml5/ch05/practice_dom/practice_06.html'
 				class="center">프렉티스 06</a>
-			<p>The following HTML objects (and object
-				collections) are also accessible:</p>
+			<p>The following HTML objects (and object collections) are also
+				accessible:</p>
 
 			<h1 class="subject sub">document.anchors</h1>
 			<pre class="code">
@@ -722,14 +686,13 @@ document.getElementById("demo").innerHTML =
 			<a href="/studyhtml5/ch05/practice_dom/practice_16.html"
 				class='center'>프렉티스 16</a>
 
-			<h1 class="subject">JavaScript HTML DOM - Changing
-				HTML</h1>
-			<p>The HTML DOM allows JavaScript to change the
-				content of HTML elements.</p>
+			<h1 class="subject">JavaScript HTML DOM - Changing HTML</h1>
+			<p>The HTML DOM allows JavaScript to change the content of HTML
+				elements.</p>
 			<h1>Changing the HTML Output Stream</h1>
 			<p>JavaScript can create dynamic HTML content:</p>
-			<p>In JavaScript, document.write() can be used to
-				write directly to the HTML output stream:</p>
+			<p>In JavaScript, document.write() can be used to write directly
+				to the HTML output stream:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -743,23 +706,21 @@ document.write(Date());
 &lt;/html&gt; </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_17.html"
 				class="center">프렉티스 17</a>
-			<p class="imp">Never use document.write() after the
-				document is loaded. It will overwrite the document.</p>
+			<p class="imp">Never use document.write() after the document is
+				loaded. It will overwrite the document.</p>
 
 
 
 
 			<h1>Changing HTML Content</h1>
 			<p>
-				The easiest way to modify the content of an HTML element
-				is by using the <b>innerHTML</b> property. <br> <br>
-				To change the content of an HTML element, use this
-				syntax:
+				The easiest way to modify the content of an HTML element is by using
+				the <b>innerHTML</b> property. <br> <br> To change the
+				content of an HTML element, use this syntax:
 			</p>
 			<pre class="code">
 document.getElementById(id).innerHTML = new HTML</pre>
-			<p>This example changes the content of a &lt;p&gt;
-				element:</p>
+			<p>This example changes the content of a &lt;p&gt; element:</p>
 
 			<pre class="code">
 &lt;html&gt;
@@ -777,15 +738,13 @@ document.getElementById("p1").innerHTML = "New text!";
 				class="center">프렉티스 18</a>
 			<p>Example explained:</p>
 			<ul>
-				<li>The HTML document above contains a
-					&lt;p&gt;element with id="p1"</li>
-				<li>We use the HTML DOM to get the element with
+				<li>The HTML document above contains a &lt;p&gt;element with
 					id="p1"</li>
-				<li>A JavaScript changes the content (innerHTML) of
-					that element to "New text!"</li>
+				<li>We use the HTML DOM to get the element with id="p1"</li>
+				<li>A JavaScript changes the content (innerHTML) of that
+					element to "New text!"</li>
 			</ul>
-			<p>This example changes the content of an &lt;h1&gt;
-				element:</p>
+			<p>This example changes the content of an &lt;h1&gt; element:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -804,21 +763,19 @@ element.innerHTML = "New Heading";
 				class="center">프렉티스 19</a>
 			<p>Example explained:</p>
 			<ul>
-				<li>The HTML document above contains an &lt;h1&gt;
-					element with id="id01"</li>
-				<li>We use the HTML DOM to get the element with
+				<li>The HTML document above contains an &lt;h1&gt; element with
 					id="id01"</li>
-				<li>A JavaScript changes the content (innerHTML) of
-					that element to "New Heading"</li>
+				<li>We use the HTML DOM to get the element with id="id01"</li>
+				<li>A JavaScript changes the content (innerHTML) of that
+					element to "New Heading"</li>
 			</ul>
 
 			<h1>Changing the Value of an Attribute</h1>
-			<p>To change the value of an HTML attribute, use this
-				syntax:</p>
+			<p>To change the value of an HTML attribute, use this syntax:</p>
 			<pre class="code">
 document.getElementById(id).attribute = new value</pre>
-			<p>This example changes the value of the src
-				attribute of an &lt;img&gt; element:</p>
+			<p>This example changes the value of the src attribute of an
+				&lt;img&gt; element:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -838,25 +795,22 @@ document.getElementById("myImage").src = "landscape.jpg";
 			<p>Example explained:</p>
 
 			<ul>
-				<li>The HTML document above contains an &lt;img&gt;
-					element with id="myImage"</li>
-				<li>We use the HTML DOM to get the element with
-					id="myImage"</li>
-				<li>A JavaScript changes the src attribute of that
-					element from "smiley.gif" to "landscape.jpg"</li>
+				<li>The HTML document above contains an &lt;img&gt; element
+					with id="myImage"</li>
+				<li>We use the HTML DOM to get the element with id="myImage"</li>
+				<li>A JavaScript changes the src attribute of that element from
+					"smiley.gif" to "landscape.jpg"</li>
 			</ul>
 
-			<h1 class="subject">JavaScript HTML DOM - Changing
-				CSS</h1>
-			<p>The HTML DOM allows JavaScript to change the style
-				of HTML elements.</p>
+			<h1 class="subject">JavaScript HTML DOM - Changing CSS</h1>
+			<p>The HTML DOM allows JavaScript to change the style of HTML
+				elements.</p>
 			<h1>Changing HTML Style</h1>
-			<p>To change the style of an HTML element, use this
-				syntax:</p>
+			<p>To change the style of an HTML element, use this syntax:</p>
 			<pre class="code">
 document.getElementById(id).style.property = new style</pre>
-			<p>The following example changes the style of a
-				&lt;p&gt; element:</p>
+			<p>The following example changes the style of a &lt;p&gt;
+				element:</p>
 			<pre class="code">
 &lt;html&gt;
 &lt;body&gt;
@@ -875,9 +829,9 @@ document.getElementById("p2").style.color = "blue";
 				class="center">프렉티스 21</a>
 			<h1>Using Events</h1>
 			<p>
-				The HTML DOM allows you to execute code when an event
-				occurs. <br> <br> Events are generated by the
-				browser when "things happen" to HTML elements:
+				The HTML DOM allows you to execute code when an event occurs. <br>
+				<br> Events are generated by the browser when "things happen"
+				to HTML elements:
 			</p>
 			<ul>
 				<li>An element is clicked on</li>
@@ -885,10 +839,9 @@ document.getElementById("p2").style.color = "blue";
 				<li>Input fields are changed</li>
 			</ul>
 			<p>
-				You will learn more about events in the next chapter of
-				this tutorial. <br> <br> This example changes
-				the style of the HTML element with id="id1", when the
-				user clicks a button:
+				You will learn more about events in the next chapter of this
+				tutorial. <br> <br> This example changes the style of the
+				HTML element with id="id1", when the user clicks a button:
 			</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -906,8 +859,8 @@ Click Me!&lt;/button&gt;
 			<a href="/studyhtml5/ch05/practice_dom/practice_22.html"
 				class="center">프렉티스 22</a>
 			<h1>More Examples</h1>
-			<p>Visibility How to make an element invisible. Do
-				you want to show the element or not?</p>
+			<p>Visibility How to make an element invisible. Do you want to
+				show the element or not?</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -931,9 +884,9 @@ This is a text.
 
 			<h1>HTML DOM Style Object Reference</h1>
 			<p>
-				For all HTML DOM style properties, look at our complete
-				<span class="code">HTML DOM Style Object
-					Reference.</span><span class="imp">나중에 한다.</span>
+				For all HTML DOM style properties, look at our complete <span
+					class="code">HTML DOM Style Object Reference.</span><span
+					class="imp">나중에 한다.</span>
 			</p>
 			<h1 class="subject">JavaScript HTML DOM Animation</h1>
 			<p>Learn to create HTML animations using JavaScript.</p>
@@ -950,18 +903,16 @@ This is a text.
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 			<h1>Create an Animation Container</h1>
-			<p>All animations should be relative to a container
-				element.</p>
+			<p>All animations should be relative to a container element.</p>
 			<pre class="code">
 &lt;div id ="container"&gt;
     &lt;div id ="animate"&gt;My animation will go here&lt;/div&gt;
 &lt;/div&gt; </pre>
 			<h1>Style the Elements</h1>
 			<p>
-				The container element should be created with style =
-				"position: relative". <br> <br> The animation
-				element should be created with style = "position:
-				absolute".
+				The container element should be created with style = "position:
+				relative". <br> <br> The animation element should be
+				created with style = "position: absolute".
 			</p>
 			<pre class="code">
 #container {
@@ -978,11 +929,10 @@ This is a text.
 }</pre>
 			<h1>Animation Code</h1>
 			<p>
-				JavaScript animations are done by programming gradual
-				changes in an element's style. <br> <br> The
-				changes are called by a timer. When the timer interval
-				is small, the animation looks continuous. <br> <br>
-				The basic code is:
+				JavaScript animations are done by programming gradual changes in an
+				element's style. <br> <br> The changes are called by a
+				timer. When the timer interval is small, the animation looks
+				continuous. <br> <br> The basic code is:
 			</p>
 			<pre class="code">
 var id = setInterval(frame, 5);
@@ -1065,14 +1015,13 @@ function myMove() {
 				class="center">프렉티스 24</a>
 			<p class="imp">해당 프렉티스는 한번 더 돌아오게 만들었음을 참조하라.</p>
 			<h1 class="subject">JavaScript HTML DOM Events</h1>
-			<p>HTML DOM allows JavaScript to react to HTML
-				events:</p>
+			<p>HTML DOM allows JavaScript to react to HTML events:</p>
 			<h1>Reacting to Events</h1>
 			<p>
-				A JavaScript can be executed when an event occurs, like
-				when a user clicks on an HTML element. <br> <br>
-				To execute code when a user clicks on an element, add
-				JavaScript code to an HTML event attribute:
+				A JavaScript can be executed when an event occurs, like when a user
+				clicks on an HTML element. <br> <br> To execute code when
+				a user clicks on an element, add JavaScript code to an HTML event
+				attribute:
 			</p>
 			<pre class="code">
 onclick=JavaScript</pre>
@@ -1086,8 +1035,8 @@ onclick=JavaScript</pre>
 				<li>When an HTML form is submitted</li>
 				<li>When a user strokes a key</li>
 			</ul>
-			<p>In this example, the content of the &lt;h1&gt;
-				element is changed when a user clicks on it:</p>
+			<p>In this example, the content of the &lt;h1&gt; element is
+				changed when a user clicks on it:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1100,8 +1049,7 @@ onclick=JavaScript</pre>
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_25.html"
 				class="center">프렉티스 25</a>
-			<p>In this example, a function is called from the
-				event handler:</p>
+			<p>In this example, a function is called from the event handler:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1120,8 +1068,8 @@ function changeText(id) {
 			<a href="/studyhtml5/ch05/practice_dom/practice_26.html"
 				class="center">프렉티스 26</a>
 			<h1>HTML Event Attributes</h1>
-			<p>To assign events to HTML elements you can use
-				event attributes.</p>
+			<p>To assign events to HTML elements you can use event
+				attributes.</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1144,11 +1092,11 @@ function displayDate() {
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_27.html"
 				class="center">프렉티스27</a>
-			<p>In the example above, a function named displayDate
-				will be executed when the button is clicked.</p>
+			<p>In the example above, a function named displayDate will be
+				executed when the button is clicked.</p>
 			<h1>Assign Events Using the HTML DOM</h1>
-			<p>The HTML DOM allows you to assign events to HTML
-				elements using JavaScript:</p>
+			<p>The HTML DOM allows you to assign events to HTML elements
+				using JavaScript:</p>
 			<pre class="code">
 &lt;p&gt;Click "Try it" to execute the displayDate() function.&lt;/p&gt;
 
@@ -1166,21 +1114,18 @@ function displayDate() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_28.html"
 				class="center">프렉티스 28</a>
 			<p>
-				In the example above, a function named displayDate is
-				assigned to an HTML element with the id="myBtn". <br>
-				<br> The function will be executed when the button
-				is clicked.
+				In the example above, a function named displayDate is assigned to an
+				HTML element with the id="myBtn". <br> <br> The function
+				will be executed when the button is clicked.
 			</p>
 
 			<h1>The onload and onunload Events</h1>
 			<p>
-				The onload and onunload events are triggered when the
-				user enters or leaves the page. <br> <br> The
-				onload event can be used to check the visitor's browser
-				type and browser version, and load the proper version of
-				the web page based on the information. <br> <br>
-				The onload and onunload events can be used to deal with
-				cookies.
+				The onload and onunload events are triggered when the user enters or
+				leaves the page. <br> <br> The onload event can be used to
+				check the visitor's browser type and browser version, and load the
+				proper version of the web page based on the information. <br> <br>
+				The onload and onunload events can be used to deal with cookies.
 			</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -1208,11 +1153,10 @@ function checkCookies() {
 				class="center">프렉티스 29</a>
 			<h1>The onchange Event</h1>
 			<p>
-				The onchange event is often used in combination with
-				validation of input fields. <br> <br> Below is
-				an example of how to use the onchange. The upperCase()
-				function will be called when a user changes the content
-				of an input field.
+				The onchange event is often used in combination with validation of
+				input fields. <br> <br> Below is an example of how to use
+				the onchange. The upperCase() function will be called when a user
+				changes the content of an input field.
 			</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -1237,9 +1181,8 @@ Enter your name: &lt;input type="text" id="fname" onchange="myFunction()"&gt;
 				class='center'>프렉티스 30</a>
 
 			<h1>The onmouseover and onmouseout Events</h1>
-			<p>The onmouseover and onmouseout events can be used
-				to trigger a function when the user mouses over, or out
-				of, an HTML element:</p>
+			<p>The onmouseover and onmouseout events can be used to trigger a
+				function when the user mouses over, or out of, an HTML element:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1265,12 +1208,11 @@ function mOut(obj) {
 			<a href="/studyhtml5/ch05/practice_dom/practice_31.html"
 				class="center">프렉티스 31</a>
 			<h1>The onmousedown, onmouseup and onclick Events</h1>
-			<p>The onmousedown, onmouseup, and onclick events are
-				all parts of a mouse-click. First when a mouse-button is
-				clicked, the onmousedown event is triggered, then, when
-				the mouse-button is released, the onmouseup event is
-				triggered, finally, when the mouse-click is completed,
-				the onclick event is triggered.</p>
+			<p>The onmousedown, onmouseup, and onclick events are all parts
+				of a mouse-click. First when a mouse-button is clicked, the
+				onmousedown event is triggered, then, when the mouse-button is
+				released, the onmouseup event is triggered, finally, when the
+				mouse-click is completed, the onclick event is triggered.</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1299,8 +1241,7 @@ function mUp(obj) {
 				class="center">프렉티스 32</a>
 			<h1>HTML DOM Event Object Reference</h1>
 			<p>
-				For a list of all HTML DOM events, look at our complete
-				<a
+				For a list of all HTML DOM events, look at our complete <a
 					href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML
 					DOM Event Object Reference</a>.
 			</p>
@@ -1401,8 +1342,7 @@ Mouse over this text&lt;/h1&gt;
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_36.html"
 				class="center">프렉티스 36</a>
-			<h1 class="subject">JavaScript HTML DOM
-				EventListener</h1>
+			<h1 class="subject">JavaScript HTML DOM EventListener</h1>
 			<h1>The addEventListener() method</h1>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -1431,38 +1371,34 @@ function displayDate() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_41.html"
 				class="center">프렉티스 41</a>
 			<p>
-				The addEventListener() method attaches an event handler
-				to the specified element. <br> <br> The
-				addEventListener() method attaches an event handler to
-				an element without overwriting existing event handlers.
-				<br> <br> You can add many event handlers to
-				one element. <br> <br> You can add many event
-				handlers of the same type to one element, i.e two
-				"click" events. <br> <br> You can add event
-				listeners to any DOM object not only HTML elements. i.e
-				the window object. <br> <br> The
-				addEventListener() method makes it easier to control how
-				the event reacts to bubbling. <br> <br> When
-				using the addEventListener() method, the JavaScript is
-				separated from the HTML markup, for better readability
-				and allows you to add event listeners even when you do
-				not control the HTML markup. <br> <br> You can
-				easily remove an event listener by using the
+				The addEventListener() method attaches an event handler to the
+				specified element. <br> <br> The addEventListener() method
+				attaches an event handler to an element without overwriting existing
+				event handlers. <br> <br> You can add many event handlers
+				to one element. <br> <br> You can add many event handlers
+				of the same type to one element, i.e two "click" events. <br> <br>
+				You can add event listeners to any DOM object not only HTML
+				elements. i.e the window object. <br> <br> The
+				addEventListener() method makes it easier to control how the event
+				reacts to bubbling. <br> <br> When using the
+				addEventListener() method, the JavaScript is separated from the HTML
+				markup, for better readability and allows you to add event listeners
+				even when you do not control the HTML markup. <br> <br>
+				You can easily remove an event listener by using the
 				removeEventListener() method.
 			</p>
 			<h2>Syntax</h2>
 			<pre class="code">
 element.addEventListener(event, function, useCapture);</pre>
 			<p>
-				The first parameter is the type of the event (like
-				"click" or "mousedown"). <br> <br> The second
-				parameter is the function we want to call when the event
-				occurs. <br> <br> The third parameter is a
-				boolean value specifying whether to use event bubbling
-				or event capturing. This parameter is optional.
+				The first parameter is the type of the event (like "click" or
+				"mousedown"). <br> <br> The second parameter is the
+				function we want to call when the event occurs. <br> <br>
+				The third parameter is a boolean value specifying whether to use
+				event bubbling or event capturing. This parameter is optional.
 			</p>
-			<p class="imp">Note that you don't use the "on"
-				prefix for the event; use "click" instead of "onclick".</p>
+			<p class="imp">Note that you don't use the "on" prefix for the
+				event; use "click" instead of "onclick".</p>
 
 
 			<h1>Add an Event Handler to an Element</h1>
@@ -1486,8 +1422,7 @@ document.getElementById("myBtn").addEventListener("click", function(){
 			</pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_42.html"
 				class="center">프렉티스 42</a>
-			<p>You can also refer to an external "named"
-				function:</p>
+			<p>You can also refer to an external "named" function:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1511,9 +1446,8 @@ function myFunction() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_43.html"
 				class="center">프렉티스 43</a>
 			<h1>Add Many Event Handlers to the Same Element</h1>
-			<p>The addEventListener() method allows you to add
-				many events to the same element, without overwriting
-				existing events:</p>
+			<p>The addEventListener() method allows you to add many events to
+				the same element, without overwriting existing events:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1542,8 +1476,7 @@ function someOtherFunction() {
 </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_44.html"
 				class="center">프렉티스 44</a>
-			<p>You can add events of different types to the same
-				element:</p>
+			<p>You can add events of different types to the same element:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1580,11 +1513,10 @@ function myThirdFunction() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_45.html"
 				class="center">프렉티스 45</a>
 			<h1>Add an Event Handler to the Window Object</h1>
-			<p>The addEventListener() method allows you to add
-				event listeners on any HTML DOM object such as HTML
-				elements, the HTML document, the window object, or other
-				objects that support events, like the xmlHttpRequest
-				object.</p>
+			<p>The addEventListener() method allows you to add event
+				listeners on any HTML DOM object such as HTML elements, the HTML
+				document, the window object, or other objects that support events,
+				like the xmlHttpRequest object.</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1608,9 +1540,8 @@ window.addEventListener("resize", function(){
 			<a href="/studyhtml5/ch05/practice_dom/practice_46.html"
 				class="center">프렉티스 46</a>
 			<h1>Passing Parameters</h1>
-			<p>When passing parameter values, use an "anonymous
-				function" that calls the specified function with the
-				parameters:</p>
+			<p>When passing parameter values, use an "anonymous function"
+				that calls the specified function with the parameters:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1646,28 +1577,26 @@ function myFunction(a, b) {
 				class="center">프렉티스 47</a>
 			<h1>Event Bubbling or Event Capturing?</h1>
 			<p>
-				There are two ways of event propagation in the HTML DOM,
-				bubbling and capturing. <br> <br> Event
-				propagation is a way of defining the element order when
-				an event occurs. If you have a &lt;p&gt; element inside
-				a &lt;div&gt; element, and the user clicks on the
-				&lt;p&gt; element, which element's "click" event should
-				be handled first? <br> <br> In bubbling the
-				inner most element's event is handled first and then the
-				outer: the &lt;p&gt; element's click event is handled
-				first, then the &lt;div&gt; element's click event. <br>
-				<br> In capturing the outer most element's event is
-				handled first and then the inner: the &lt;div&gt;
-				element's click event will be handled first, then the
-				&lt;p&gt; element's click event. <br> <br>
-				With the addEventListener() method you can specify the
-				propagation type by using the "useCapture" parameter:
+				There are two ways of event propagation in the HTML DOM, bubbling
+				and capturing. <br> <br> Event propagation is a way of
+				defining the element order when an event occurs. If you have a
+				&lt;p&gt; element inside a &lt;div&gt; element, and the user clicks
+				on the &lt;p&gt; element, which element's "click" event should be
+				handled first? <br> <br> In bubbling the inner most
+				element's event is handled first and then the outer: the &lt;p&gt;
+				element's click event is handled first, then the &lt;div&gt;
+				element's click event. <br> <br> In capturing the outer
+				most element's event is handled first and then the inner: the
+				&lt;div&gt; element's click event will be handled first, then the
+				&lt;p&gt; element's click event. <br> <br> With the
+				addEventListener() method you can specify the propagation type by
+				using the "useCapture" parameter:
 			</p>
 			<pre class="code">
 addEventListener(event, function, useCapture);</pre>
-			<p>The default value is false, which will use the
-				bubbling propagation, when the value is set to true, the
-				event uses the capturing propagation.</p>
+			<p>The default value is false, which will use the bubbling
+				propagation, when the value is set to true, the event uses the
+				capturing propagation.</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1716,9 +1645,8 @@ document.getElementById("myDiv2").addEventListener("click", function() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_48.html"
 				class="center">프렉티스 48</a>
 			<h1>The removeEventListener() method</h1>
-			<p>The removeEventListener() method removes event
-				handlers that have been attached with the
-				addEventListener() method:</p>
+			<p>The removeEventListener() method removes event handlers that
+				have been attached with the addEventListener() method:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1761,21 +1689,17 @@ function removeHandler() {
 
 
 			<h1>Browser Support</h1>
-			<p>The numbers in the table specifies the first
-				browser version that fully supports these methods.</p>
+			<p>The numbers in the table specifies the first browser version
+				that fully supports these methods.</p>
 			<table>
 				<tbody>
 					<tr>
-						<th
-							style="width: 20%; font-size: 16px; text-align: left;">Method</th>
-						<th style="width: 16%;" class="bsChrome"
-							title="Chrome"></th>
+						<th style="width: 20%; font-size: 16px; text-align: left;">Method</th>
+						<th style="width: 16%;" class="bsChrome" title="Chrome"></th>
 						<th style="width: 16%;" class="bsEdge"
 							title="Internet Explorer / Edge"></th>
-						<th style="width: 16%;" class="bsFirefox"
-							title="Firefox"></th>
-						<th style="width: 16%;" class="bsSafari"
-							title="Safari"></th>
+						<th style="width: 16%;" class="bsFirefox" title="Firefox"></th>
+						<th style="width: 16%;" class="bsSafari" title="Safari"></th>
 						<th style="width: 16%;" class="bsOpera" title="Opera"></th>
 					</tr>
 					<tr>
@@ -1796,13 +1720,11 @@ function removeHandler() {
 					</tr>
 				</tbody>
 			</table>
-			<p>Note: The addEventListener() and
-				removeEventListener() methods are not supported in IE 8
-				and earlier versions and Opera 6.0 and earlier versions.
-				However, for these specific browser versions, you can
-				use the attachEvent() method to attach an event handlers
-				to the element, and the detachEvent() method to remove
-				it:</p>
+			<p>Note: The addEventListener() and removeEventListener() methods
+				are not supported in IE 8 and earlier versions and Opera 6.0 and
+				earlier versions. However, for these specific browser versions, you
+				can use the attachEvent() method to attach an event handlers to the
+				element, and the detachEvent() method to remove it:</p>
 			<pre class="code">
 element.attachEvent(event, function);
 element.detachEvent(event, function);</pre>
@@ -1837,8 +1759,7 @@ function myFunction() {
 				class="center">프렉티스 50</a>
 			<h1>HTML DOM Event Object Reference</h1>
 			<p>
-				For a list of all HTML DOM events, look at our complete
-				<a
+				For a list of all HTML DOM events, look at our complete <a
 					href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML
 					DOM Event Object Reference</a>.
 			</p>
@@ -1855,43 +1776,39 @@ function myFunction() {
 
 
 			<h1 class="subject">JavaScript HTML DOM Navigation</h1>
-			<p>With the HTML DOM, you can navigate the node tree
-				using node relationships.</p>
+			<p>With the HTML DOM, you can navigate the node tree using node
+				relationships.</p>
 
 			<h1>DOM Nodes</h1>
-			<p>According to the W3C HTML DOM standard, everything
-				in an HTML document is a node:</p>
+			<p>According to the W3C HTML DOM standard, everything in an HTML
+				document is a node:</p>
 			<ul>
 				<li>The entire document is a document node</li>
 				<li>Every HTML element is an element node</li>
 				<li>The text inside HTML elements are text nodes</li>
-				<li>Every HTML attribute is an attribute node
-					(deprecated)</li>
+				<li>Every HTML attribute is an attribute node (deprecated)</li>
 				<li>All comments are comment nodes</li>
 			</ul>
-			<img alt="IMG" class="img"
-				src="/studyhtml5/images/dom_tree.gif">
+			<img alt="IMG" class="img" src="/studyhtml5/images/dom_tree.gif">
 			<p>
-				With the HTML DOM, all nodes in the node tree can be
-				accessed by JavaScript. <br> <br> New nodes
-				can be created, and all nodes can be modified or
-				deleted.
+				With the HTML DOM, all nodes in the node tree can be accessed by
+				JavaScript. <br> <br> New nodes can be created, and all
+				nodes can be modified or deleted.
 			</p>
 			<h1>Node Relationships</h1>
 			<p>
-				The nodes in the node tree have a hierarchical
-				relationship to each other. <br> <br> The
-				terms parent, child, and sibling are used to describe
-				the relationships.
+				The nodes in the node tree have a hierarchical relationship to each
+				other. <br> <br> The terms parent, child, and sibling are
+				used to describe the relationships.
 			</p>
 			<ul>
-				<li>In a node tree, the top node is called the root
-					(or root node)</li>
-				<li>Every node has exactly one parent, except the
-					root (which has no parent)</li>
+				<li>In a node tree, the top node is called the root (or root
+					node)</li>
+				<li>Every node has exactly one parent, except the root (which
+					has no parent)</li>
 				<li>A node can have a number of children</li>
-				<li>Siblings (brothers or sisters) are nodes with
-					the same parent</li>
+				<li>Siblings (brothers or sisters) are nodes with the same
+					parent</li>
 			</ul>
 			<pre class="code half_div">
 &lt;html&gt;
@@ -1907,36 +1824,29 @@ function myFunction() {
 
 &lt;/html&gt;
 </pre>
-			<img class="half_div"
-				src="/studyhtml5/images/pic_navigate.gif">
+			<img class="half_div" src="/studyhtml5/images/pic_navigate.gif">
 
 
-			<p style="clear: both;">From the HTML above you can
-				read:</p>
+			<p style="clear: both;">From the HTML above you can read:</p>
 			<ul>
 				<li>&lt;html&gt; is the root node</li>
 				<li>&lt;html&gt; has no parents</li>
-				<li>&lt;html&gt; is the parent of &lt;head&gt; and
-					&lt;body&gt;</li>
-				<li>&lt;head&gt; is the first child of &lt;html&gt;
-				</li>
-				<li>&lt;body&gt; is the last child of &lt;html&gt;
-				</li>
+				<li>&lt;html&gt; is the parent of &lt;head&gt; and &lt;body&gt;</li>
+				<li>&lt;head&gt; is the first child of &lt;html&gt;</li>
+				<li>&lt;body&gt; is the last child of &lt;html&gt;</li>
 			</ul>
 			<p>and:</p>
 			<ul>
 				<li>&lt;head&gt; has one child: &lt;title&gt;</li>
-				<li>&lt;title&gt; has one child (a text node): "DOM
-					Tutorial"</li>
-				<li>&lt;body&gt; has two children: &lt;h1&gt; and
-					&lt;p&gt;</li>
+				<li>&lt;title&gt; has one child (a text node): "DOM Tutorial"</li>
+				<li>&lt;body&gt; has two children: &lt;h1&gt; and &lt;p&gt;</li>
 				<li>&lt;h1&gt; has one child: "DOM Lesson one"</li>
 				<li>&lt;p&gt; has one child: "Hello world!"</li>
 				<li>&lt;h1&gt; and &lt;p&gt; are siblings</li>
 			</ul>
 			<h1>Navigating Between Nodes</h1>
-			<p>You can use the following node properties to
-				navigate between nodes with JavaScript:</p>
+			<p>You can use the following node properties to navigate between
+				nodes with JavaScript:</p>
 			<ul>
 				<li>parentNode</li>
 				<li>childNodes[nodenumber]</li>
@@ -1946,30 +1856,27 @@ function myFunction() {
 				<li>previousSibling</li>
 			</ul>
 			<h1>Child Nodes and Node Values</h1>
-			<p class="imp">A common error in DOM processing is to
-				expect an element node to contain text.</p>
+			<p class="imp">A common error in DOM processing is to expect an
+				element node to contain text.</p>
 			<pre class="code">
  &lt;title id="demo"&gt;DOM Tutorial&lt;/title&gt; </pre>
 			<p>
-				The element node &lt;title&gt; (in the example above)
-				does not contain text. <br> <br> It contains a
-				text node with the value "DOM Tutorial". <br> <br>
-				The value of the text node can be accessed by the node's
-				innerHTML property:
+				The element node &lt;title&gt; (in the example above) does not
+				contain text. <br> <br> It contains a text node with the
+				value "DOM Tutorial". <br> <br> The value of the text node
+				can be accessed by the node's innerHTML property:
 			</p>
 			<pre class="code">
 var myTitle = document.getElementById("demo").innerHTML;</pre>
-			<p>Accessing the innerHTML property is the same as
-				accessing the nodeValue of the first child:</p>
+			<p>Accessing the innerHTML property is the same as accessing the
+				nodeValue of the first child:</p>
 			<pre class="code">
 var myTitle = document.getElementById("demo").firstChild.nodeValue; </pre>
-			<p>Accessing the first child can also be done like
-				this:</p>
+			<p>Accessing the first child can also be done like this:</p>
 			<pre class="code">
 var myTitle = document.getElementById("demo").childNodes[0].nodeValue;</pre>
-			<p>All the (3) following examples retrieves the text
-				of an &lt;h1&gt; element and copies it into a &lt;p&gt;
-				element:</p>
+			<p>All the (3) following examples retrieves the text of an
+				&lt;h1&gt; element and copies it into a &lt;p&gt; element:</p>
 			<pre class="code">
 &lt;html&gt;
 &lt;body&gt;
@@ -2017,15 +1924,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").chil
 				class="center">프렉티스 53</a>
 			<h1>InnerHTML</h1>
 			<p>
-				In this tutorial we use the innerHTML property to
-				retrieve the content of an HTML element. <br> <br>
-				However, learning the other methods above is useful for
-				understanding the tree structure and the navigation of
-				the DOM.
+				In this tutorial we use the innerHTML property to retrieve the
+				content of an HTML element. <br> <br> However, learning
+				the other methods above is useful for understanding the tree
+				structure and the navigation of the DOM.
 			</p>
 			<h1>DOM Root Nodes</h1>
-			<p>There are two special properties that allow access
-				to the full document:</p>
+			<p>There are two special properties that allow access to the full
+				document:</p>
 			<ul>
 				<li>document.body - The body of the document</li>
 				<li>document.documentElement - The full document</li>
@@ -2067,17 +1973,13 @@ alert(document.documentElement.innerHTML);
 			<a href="/studyhtml5/ch05/practice_dom/practice_55.html"
 				class="center">프렉티스 55</a>
 			<h1>The nodeName Property</h1>
-			<p>The nodeName property specifies the name of a
-				node.</p>
+			<p>The nodeName property specifies the name of a node.</p>
 			<ul>
 				<li>nodeName is read-only</li>
-				<li>nodeName of an element node is the same as the
-					tag name</li>
-				<li>nodeName of an attribute node is the attribute
-					name</li>
+				<li>nodeName of an element node is the same as the tag name</li>
+				<li>nodeName of an attribute node is the attribute name</li>
 				<li>nodeName of a text node is always #text</li>
-				<li>nodeName of the document node is always
-					#document</li>
+				<li>nodeName of the document node is always #document</li>
 			</ul>
 			<pre class="code">
 &lt;h1 id="id01"&gt;My Fisrt Page&lt;/h1&gt;
@@ -2098,20 +2000,18 @@ alert(document.documentElement.innerHTML);
 &lt;/script&gt; </pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_56.html"
 				class="center">프렉티스 56</a>
-			<p class="imp">Note: nodeName always contains the
-				uppercase tag name of an HTML element.</p>
+			<p class="imp">Note: nodeName always contains the uppercase tag
+				name of an HTML element.</p>
 			<h1>The nodeValue Property</h1>
-			<p>The nodeValue property specifies the value of a
-				node.</p>
+			<p>The nodeValue property specifies the value of a node.</p>
 			<ul>
 				<li>nodeValue for element nodes is undefined</li>
 				<li>nodeValue for text nodes is the text itself</li>
-				<li>nodeValue for attribute nodes is the attribute
-					value</li>
+				<li>nodeValue for attribute nodes is the attribute value</li>
 			</ul>
 			<h1>The nodeType Property</h1>
-			<p>The nodeType property is read only. It returns the
-				type of a node.</p>
+			<p>The nodeType property is read only. It returns the type of a
+				node.</p>
 			<pre class="code">
 &lt;h1 id="id01"&gt;My First Page&lt;/h1&gt;
 &lt;p id="id02"&gt;&lt;/p&gt;
@@ -2132,8 +2032,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td>ELEMENT_NODE</td>
 						<td>1</td>
-						<td>&lt;h1
-							class="heading"&gt;W3Schools&lt;/h1&gt;</td>
+						<td>&lt;h1 class="heading"&gt;W3Schools&lt;/h1&gt;</td>
 					</tr>
 					<tr>
 						<td>ATTRIBUTE_NODE</td>
@@ -2153,8 +2052,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td>DOCUMENT_NODE</td>
 						<td>9</td>
-						<td>The HTML document itself (the parent of
-							&lt;html&gt;)</td>
+						<td>The HTML document itself (the parent of &lt;html&gt;)</td>
 					</tr>
 					<tr>
 						<td>DOCUMENT_TYPE_NODE</td>
@@ -2163,8 +2061,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					</tr>
 				</tbody>
 			</table>
-			<p class="imp">Type 2 is deprecated in the HTML DOM
-				(but works). It is not deprecated in the XML DOM.</p>
+			<p class="imp">Type 2 is deprecated in the HTML DOM (but works).
+				It is not deprecated in the XML DOM.</p>
 
 
 
@@ -2176,18 +2074,16 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 			<h1 class="subject sub">The HTML DOM Element Object</h1>
 			<h1>The Element Object</h1>
 			<p>
-				In the HTML DOM, the Element object represents an HTML
-				element. <br> <br> Element objects can have
-				child nodes of type element nodes, text nodes, or
-				comment nodes. <br> <br> A NodeList object
-				represents a list of nodes, like an HTML element's
-				collection of child nodes. <br> <br> Elements
-				can also have attributes. Attributes are attribute nodes
-				(See next chapter).
+				In the HTML DOM, the Element object represents an HTML element. <br>
+				<br> Element objects can have child nodes of type element
+				nodes, text nodes, or comment nodes. <br> <br> A NodeList
+				object represents a list of nodes, like an HTML element's collection
+				of child nodes. <br> <br> Elements can also have
+				attributes. Attributes are attribute nodes (See next chapter).
 			</p>
 			<h1>Properties and Methods</h1>
-			<p>The following properties and methods can be used
-				on all HTML elements:</p>
+			<p>The following properties and methods can be used on all HTML
+				elements:</p>
 			<table>
 				<tbody>
 					<tr>
@@ -2197,26 +2093,23 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_accesskey.asp"><i>element</i>.accessKey</a></td>
-						<td>Sets or returns the accesskey attribute of an
-							element</td>
+						<td>Sets or returns the accesskey attribute of an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_addeventlistener.asp"><i>element</i>.addEventListener()</a></td>
-						<td>Attaches an event handler to the specified
-							element</td>
+						<td>Attaches an event handler to the specified element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_appendchild.asp"><i>element</i>.appendChild()</a></td>
-						<td>Adds a new child node, to an element, as the
-							last child node</td>
+						<td>Adds a new child node, to an element, as the last child
+							node</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_attributes.asp"><i>element</i>.attributes</a></td>
-						<td>Returns a NamedNodeMap of an element's
-							attributes</td>
+						<td>Returns a NamedNodeMap of an element's attributes</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2226,29 +2119,26 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_childelementcount.asp"><i>element</i>.childElementCount</a></td>
-						<td>Returns the number of child elements an
-							element has</td>
+						<td>Returns the number of child elements an element has</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_childnodes.asp"><i>element</i>.childNodes</a></td>
-						<td>Returns a collection of an element's child
-							nodes (including text and comment nodes)<span
-							class="bookmark code">모든 ChildNode들에서 첫번째 노드에
-								대한 알아둬야 할 것</span>: [0]에 해당하는 첫번째 노드는 firstChild로도 검색이
-							가능하다. 그런데, 여기서 <span class="code">firstChild</span>란,
-							Text가 될 확률이 높다. <span class='code'>&lt;p&gt;</span>text<span
-							class="code">&lt;/p&gt;</span>에서 이 사이의 text가 바로 <span
-							class="code">firstChild</span>가 되기 때문이다. 이를 잘 알아두거나,
-							<span class='code'>firstElementChild</span>를 이용하거나,
-							디버거를 통해서 childNode에 무엇이 걸려있는지 정확히 알아두는게 좋다.
+						<td>Returns a collection of an element's child nodes
+							(including text and comment nodes)<span class="bookmark code">모든
+								ChildNode들에서 첫번째 노드에 대한 알아둬야 할 것</span>: [0]에 해당하는 첫번째 노드는 firstChild로도
+							검색이 가능하다. 그런데, 여기서 <span class="code">firstChild</span>란, Text가 될
+							확률이 높다. <span class='code'>&lt;p&gt;</span>text<span class="code">&lt;/p&gt;</span>에서
+							이 사이의 text가 바로 <span class="code">firstChild</span>가 되기 때문이다. 이를
+							잘 알아두거나, <span class='code'>firstElementChild</span>를 이용하거나, 디버거를
+							통해서 childNode에 무엇이 걸려있는지 정확히 알아두는게 좋다.
 						</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_children.asp"><i>element</i>.children</a></td>
-						<td>Returns a collection of an element's child
-							element (excluding text and comment nodes)</td>
+						<td>Returns a collection of an element's child element
+							(excluding text and comment nodes)</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2258,8 +2148,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_classname.asp"><i>element</i>.className</a></td>
-						<td>Sets or returns the value of the class
-							attribute of an element</td>
+						<td>Sets or returns the value of the class attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2269,26 +2159,22 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_clientheight.asp"><i>element</i>.clientHeight</a></td>
-						<td>Returns the height of an element, including
-							padding</td>
+						<td>Returns the height of an element, including padding</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_clientleft.asp"><i>element</i>.clientLeft</a></td>
-						<td>Returns the width of the left border of an
-							element</td>
+						<td>Returns the width of the left border of an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_clienttop.asp"><i>element</i>.clientTop</a></td>
-						<td>Returns the width of the top border of an
-							element</td>
+						<td>Returns the width of the top border of an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_clientwidth.asp"><i>element</i>.clientWidth</a></td>
-						<td>Returns the width of an element, including
-							padding</td>
+						<td>Returns the width of an element, including padding</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2298,26 +2184,25 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_comparedocumentposition.asp"><i>element</i>.compareDocumentPosition()</a></td>
-						<td>Compares the document position of two
-							elements</td>
+						<td>Compares the document position of two elements</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_contains.asp"><i>element</i>.contains()</a></td>
-						<td>Returns true if a node is a descendant of a
-							node, otherwise false</td>
+						<td>Returns true if a node is a descendant of a node,
+							otherwise false</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_contenteditable.asp"><i>element</i>.contentEditable</a></td>
-						<td>Sets or returns whether the content of an
-							element is editable or not</td>
+						<td>Sets or returns whether the content of an element is
+							editable or not</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_dir.asp"><i>element</i>.dir</a></td>
-						<td>Sets or returns the value of the dir
-							attribute of an element</td>
+						<td>Sets or returns the value of the dir attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2337,8 +2222,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_getattribute.asp"><i>element</i>.getAttribute()</a></td>
-						<td>Returns the specified attribute value of an
-							element node</td>
+						<td>Returns the specified attribute value of an element node</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2348,19 +2232,19 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_getelementsbyclassname.asp"><i>element</i>.getElementsByClassName()</a></td>
-						<td>Returns a collection of all child elements
-							with the specified class name</td>
+						<td>Returns a collection of all child elements with the
+							specified class name</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_getelementsbytagname.asp"><i>element</i>.getElementsByTagName()</a></td>
-						<td>Returns a collection of all child elements
-							with the specified tag name</td>
+						<td>Returns a collection of all child elements with the
+							specified tag name</td>
 					</tr>
 					<tr>
 						<td><i>element</i>.getFeature()</td>
-						<td>Returns an object which implements the APIs
-							of a specified feature</td>
+						<td>Returns an object which implements the APIs of a
+							specified feature</td>
 					</tr>
 					<!--
 <tr>
@@ -2371,26 +2255,26 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_hasattribute.asp"><i>element</i>.hasAttribute()</a></td>
-						<td>Returns true if an element has the specified
-							attribute, otherwise false</td>
+						<td>Returns true if an element has the specified attribute,
+							otherwise false</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_hasattributes.asp"><i>element</i>.hasAttributes()</a></td>
-						<td>Returns true if an element has any
-							attributes, otherwise false</td>
+						<td>Returns true if an element has any attributes, otherwise
+							false</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_haschildnodes.asp"><i>element</i>.hasChildNodes()</a></td>
-						<td>Returns true if an element has any child
-							nodes, otherwise false</td>
+						<td>Returns true if an element has any child nodes, otherwise
+							false</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_id.asp"><i>element</i>.id</a></td>
-						<td>Sets or returns the value of the id attribute
-							of an element</td>
+						<td>Sets or returns the value of the id attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2400,20 +2284,20 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_insertbefore.asp"><i>element</i>.insertBefore()</a></td>
-						<td>Inserts a new child node before a specified,
-							existing, child node</td>
+						<td>Inserts a new child node before a specified, existing,
+							child node</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_iscontenteditable.asp"><i>element</i>.isContentEditable</a></td>
-						<td>Returns true if the content of an element is
-							editable, otherwise false</td>
+						<td>Returns true if the content of an element is editable,
+							otherwise false</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_isdefaultnamespace.asp"><i>element</i>.isDefaultNamespace()</a></td>
-						<td>Returns true if a specified namespaceURI is
-							the default, otherwise false</td>
+						<td>Returns true if a specified namespaceURI is the default,
+							otherwise false</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2428,14 +2312,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_issupported.asp"><i>element</i>.isSupported()</a></td>
-						<td>Returns true if a specified feature is
-							supported on the element</td>
+						<td>Returns true if a specified feature is supported on the
+							element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_lang.asp"><i>element</i>.lang</a></td>
-						<td>Sets or returns the value of the lang
-							attribute of an element</td>
+						<td>Sets or returns the value of the lang attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2455,14 +2339,12 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_nextsibling.asp"><i>element</i>.nextSibling</a></td>
-						<td>Returns the next node at the same node tree
-							level</td>
+						<td>Returns the next node at the same node tree level</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_nextelementsibling.asp"><i>element</i>.nextElementSibling</a></td>
-						<td>Returns the next element at the same node
-							tree level</td>
+						<td>Returns the next element at the same node tree level</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2482,26 +2364,25 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_node_normalize.asp"><i>element</i>.normalize()</a></td>
-						<td>Joins adjacent text nodes and removes empty
-							text nodes in an element</td>
+						<td>Joins adjacent text nodes and removes empty text nodes in
+							an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_offsetheight.asp"><i>element</i>.offsetHeight</a></td>
-						<td>Returns the height of an element, including
-							padding, border and scrollbar</td>
+						<td>Returns the height of an element, including padding,
+							border and scrollbar</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_offsetwidth.asp"><i>element</i>.offsetWidth</a></td>
-						<td>Returns the width of an element, including
-							padding, border and scrollbar</td>
+						<td>Returns the width of an element, including padding,
+							border and scrollbar</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_offsetleft.asp"><i>element</i>.offsetLeft</a></td>
-						<td>Returns the horizontal offset position of an
-							element</td>
+						<td>Returns the horizontal offset position of an element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2511,14 +2392,12 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_offsettop.asp"><i>element</i>.offsetTop</a></td>
-						<td>Returns the vertical offset position of an
-							element</td>
+						<td>Returns the vertical offset position of an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_ownerdocument.asp"><i>element</i>.ownerDocument</a></td>
-						<td>Returns the root element (document object)
-							for an element</td>
+						<td>Returns the root element (document object) for an element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2533,26 +2412,24 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_previoussibling.asp"><i>element</i>.previousSibling</a></td>
-						<td>Returns the previous node at the same node
-							tree level</td>
+						<td>Returns the previous node at the same node tree level</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_previouselementsibling.asp"><i>element</i>.previousElementSibling</a></td>
-						<td>Returns the previous element at the same node
-							tree level</td>
+						<td>Returns the previous element at the same node tree level</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_queryselector.asp"><i>element</i>.querySelector()</a></td>
-						<td>Returns the first child element that matches
-							a specified CSS selector(s) of an element</td>
+						<td>Returns the first child element that matches a specified
+							CSS selector(s) of an element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_queryselectorall.asp"><em>element</em>.querySelectorAll()</a></td>
-						<td>Returns all child elements that matches a
-							specified CSS selector(s) of an element</td>
+						<td>Returns all child elements that matches a specified CSS
+							selector(s) of an element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2562,8 +2439,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_removeattributenode.asp"><i>element</i>.removeAttributeNode()</a></td>
-						<td>Removes a specified attribute node, and
-							returns the removed node</td>
+						<td>Removes a specified attribute node, and returns the
+							removed node</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2573,8 +2450,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_removeeventlistener.asp"><i>element</i>.removeEventListener()</a></td>
-						<td>Removes an event handler that has been
-							attached with the addEventListener() method</td>
+						<td>Removes an event handler that has been attached with the
+							addEventListener() method</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2584,38 +2461,37 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_scrollheight.asp"><i>element</i>.scrollHeight</a></td>
-						<td>Returns the entire height of an element,
-							including padding</td>
+						<td>Returns the entire height of an element, including
+							padding</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_scrollintoview.asp"><i>element</i>.scrollIntoView()</a></td>
-						<td>Scrolls the specified element into the
-							visible area of the browser window</td>
+						<td>Scrolls the specified element into the visible area of
+							the browser window</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_scrollleft.asp"><i>element</i>.scrollLeft</a></td>
-						<td>Sets or returns the number of pixels an
-							element's content is scrolled horizontally</td>
+						<td>Sets or returns the number of pixels an element's content
+							is scrolled horizontally</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_scrolltop.asp"><i>element</i>.scrollTop</a></td>
-						<td>Sets or returns the number of pixels an
-							element's content is scrolled vertically</td>
+						<td>Sets or returns the number of pixels an element's content
+							is scrolled vertically</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_element_scrollwidth.asp"><i>element</i>.scrollWidth</a></td>
-						<td>Returns the entire width of an element,
-							including padding</td>
+						<td>Returns the entire width of an element, including padding</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_element_setattribute.asp"><i>element</i>.setAttribute()</a></td>
-						<td>Sets or changes the specified attribute, to
-							the specified value</td>
+						<td>Sets or changes the specified attribute, to the specified
+							value</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2631,14 +2507,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_style.asp"><i>element</i>.style</a></td>
-						<td>Sets or returns the value of the style
-							attribute of an element</td>
+						<td>Sets or returns the value of the style attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_tabindex.asp"><i>element</i>.tabIndex</a></td>
-						<td>Sets or returns the value of the tabindex
-							attribute of an element</td>
+						<td>Sets or returns the value of the tabindex attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2648,14 +2524,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_node_textcontent.asp"><i>element</i>.textContent</a></td>
-						<td>Sets or returns the textual content of a node
-							and its descendants</td>
+						<td>Sets or returns the textual content of a node and its
+							descendants</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_html_title.asp"><i>element</i>.title</a></td>
-						<td>Sets or returns the value of the title
-							attribute of an element</td>
+						<td>Sets or returns the value of the title attribute of an
+							element</td>
 					</tr>
 					<tr>
 						<td><i>element</i>.toString()</td>
@@ -2668,8 +2544,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/met_nodelist_item.asp"><em>nodelist</em>.item()</a></td>
-						<td>Returns the node at the specified index in a
-							NodeList</td>
+						<td>Returns the node at the specified index in a NodeList</td>
 					</tr>
 					<tr>
 						<td><a
@@ -2681,17 +2556,16 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 			<h1 class="subject sub">HTML DOM Events Reference</h1>
 			<h2>HTML DOM Events</h2>
 			<p>
-				HTML DOM events allow JavaScript to register different
-				event handlers on elements in an HTML document. <br>
-				<br> Events are normally used in combination with
-				functions, and the function will not be executed before
-				the event occurs (such as when a user clicks a button).
-				<br> <br> Tip: The event model was
+				HTML DOM events allow JavaScript to register different event
+				handlers on elements in an HTML document. <br> <br> Events
+				are normally used in combination with functions, and the function
+				will not be executed before the event occurs (such as when a user
+				clicks a button). <br> <br> Tip: The event model was
 				standardized by the W3C in DOM Level 2.
 			</p>
 			<h2>HTML DOM Events</h2>
-			<p class="imp">DOM: Indicates in which DOM Level the
-				property was introduced.</p>
+			<p class="imp">DOM: Indicates in which DOM Level the property was
+				introduced.</p>
 			<h2>Mouse Events</h2>
 			<table>
 				<tbody>
@@ -2703,72 +2577,70 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onclick.asp">onclick</a></td>
-						<td>The event occurs when the user clicks on an
-							element</td>
+						<td>The event occurs when the user clicks on an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu</a></td>
-						<td>The event occurs when the user right-clicks
-							on an element to open a context menu</td>
+						<td>The event occurs when the user right-clicks on an element
+							to open a context menu</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick</a></td>
-						<td>The event occurs when the user double-clicks
-							on an element</td>
+						<td>The event occurs when the user double-clicks on an
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown</a></td>
-						<td>The event occurs when the user presses a
-							mouse button over an element</td>
+						<td>The event occurs when the user presses a mouse button
+							over an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter</a></td>
-						<td>The event occurs when the pointer is moved
-							onto an element</td>
+						<td>The event occurs when the pointer is moved onto an
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave</a></td>
-						<td>The event occurs when the pointer is moved
-							out of an element</td>
+						<td>The event occurs when the pointer is moved out of an
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove</a></td>
-						<td>The event occurs when the pointer is moving
-							while it is over an element</td>
+						<td>The event occurs when the pointer is moving while it is
+							over an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover</a></td>
-						<td>The event occurs when the pointer is moved
-							onto an element, or onto one of its children</td>
+						<td>The event occurs when the pointer is moved onto an
+							element, or onto one of its children</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout</a></td>
-						<td>The event occurs when a user moves the mouse
-							pointer out of an element, or out of one of its
-							children</td>
+						<td>The event occurs when a user moves the mouse pointer out
+							of an element, or out of one of its children</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup</a></td>
-						<td>The event occurs when a user releases a mouse
-							button over an element</td>
+						<td>The event occurs when a user releases a mouse button over
+							an element</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -2784,8 +2656,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onkeydown.asp">onkeydown</a></td>
-						<td>The event occurs when the user is pressing a
-							key</td>
+						<td>The event occurs when the user is pressing a key</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -2813,29 +2684,29 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onabort.asp">onabort</a></td>
-						<td>The event occurs when the loading of a
-							resource has been aborted</td>
+						<td>The event occurs when the loading of a resource has been
+							aborted</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onbeforeunload.asp">onbeforeunload</a></td>
-						<td>The event occurs before the document is about
-							to be unloaded</td>
+						<td>The event occurs before the document is about to be
+							unloaded</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onerror.asp">onerror</a></td>
-						<td>The event occurs when an error occurs while
-							loading an external file</td>
+						<td>The event occurs when an error occurs while loading an
+							external file</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onhashchange.asp">onhashchange</a></td>
-						<td>The event occurs when there has been changes
-							to the anchor part of a URL</td>
+						<td>The event occurs when there has been changes to the
+							anchor part of a URL</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -2847,36 +2718,34 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onpageshow.asp">onpageshow</a></td>
-						<td>The event occurs when the user navigates to a
-							webpage</td>
+						<td>The event occurs when the user navigates to a webpage</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onpagehide.asp">onpagehide</a></td>
-						<td>The event occurs when the user navigates away
-							from a webpage</td>
+						<td>The event occurs when the user navigates away from a
+							webpage</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onresize.asp">onresize</a></td>
-						<td>The event occurs when the document view is
-							resized</td>
+						<td>The event occurs when the document view is resized</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll</a></td>
-						<td>The event occurs when an element's scrollbar
-							is being scrolled</td>
+						<td>The event occurs when an element's scrollbar is being
+							scrolled</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onunload.asp">onunload</a></td>
-						<td>The event occurs once a page has unloaded
-							(for &lt;body&gt;)</td>
+						<td>The event occurs once a page has unloaded (for
+							&lt;body&gt;)</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -2898,10 +2767,9 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onchange.asp">onchange</a></td>
-						<td>The event occurs when the content of a form
-							element, the selection, or the checked state have
-							changed (for &lt;input&gt;, &lt;select&gt;, and
-							&lt;textarea&gt;)</td>
+						<td>The event occurs when the content of a form element, the
+							selection, or the checked state have changed (for &lt;input&gt;,
+							&lt;select&gt;, and &lt;textarea&gt;)</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -2913,22 +2781,19 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onfocusin.asp">onfocusin</a></td>
-						<td>The event occurs when an element is about to
-							get focus</td>
+						<td>The event occurs when an element is about to get focus</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onfocusout.asp">onfocusout</a></td>
-						<td>The event occurs when an element is about to
-							lose focus</td>
+						<td>The event occurs when an element is about to lose focus</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_oninput.asp">oninput</a></td>
-						<td>The event occurs when an element gets user
-							input</td>
+						<td>The event occurs when an element gets user input</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -2946,17 +2811,15 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onsearch.asp">onsearch</a></td>
-						<td>The event occurs when the user writes
-							something in a search field (for
-							&lt;input="search"&gt;)</td>
+						<td>The event occurs when the user writes something in a
+							search field (for &lt;input="search"&gt;)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onselect.asp">onselect</a></td>
-						<td>The event occurs after the user selects
-							some&nbsp;text (for &lt;input&gt; and
-							&lt;textarea&gt;)</td>
+						<td>The event occurs after the user selects some&nbsp;text
+							(for &lt;input&gt; and &lt;textarea&gt;)</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -2978,50 +2841,48 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag</a></td>
-						<td>The event occurs when an element is being
-							dragged</td>
+						<td>The event occurs when an element is being dragged</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend</a></td>
-						<td>The event occurs when the user has finished
-							dragging an element</td>
+						<td>The event occurs when the user has finished dragging an
+							element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondragenter.asp">ondragenter</a></td>
-						<td>The event occurs when the dragged element
-							enters the drop target</td>
+						<td>The event occurs when the dragged element enters the drop
+							target</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave</a></td>
-						<td>The event occurs when the dragged element
-							leaves the drop target</td>
+						<td>The event occurs when the dragged element leaves the drop
+							target</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover</a></td>
-						<td>The event occurs when the dragged element is
-							over the drop target</td>
+						<td>The event occurs when the dragged element is over the
+							drop target</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart</a></td>
-						<td>The event occurs when the user starts to drag
-							an element</td>
+						<td>The event occurs when the user starts to drag an element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondrop.asp">ondrop</a></td>
-						<td>The event occurs when the dragged element is
-							dropped on the drop target</td>
+						<td>The event occurs when the dragged element is dropped on
+							the drop target</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3037,22 +2898,21 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy</a></td>
-						<td>The event occurs when the user copies the
-							content of an element</td>
+						<td>The event occurs when the user copies the content of an
+							element</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_oncut.asp">oncut</a></td>
-						<td>The event occurs when the user cuts the
-							content of an element</td>
+						<td><a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut</a></td>
+						<td>The event occurs when the user cuts the content of an
+							element</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onpaste.asp">onpaste</a></td>
-						<td>The event occurs when the user pastes some
-							content in an element</td>
+						<td>The event occurs when the user pastes some content in an
+							element</td>
 						<td>&nbsp;</td>
 					</tr>
 				</tbody>
@@ -3068,16 +2928,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onafterprint.asp">onafterprint</a></td>
-						<td>The event occurs when a page has started
-							printing, or if the print dialogue box has been
-							closed</td>
+						<td>The event occurs when a page has started printing, or if
+							the print dialogue box has been closed</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onbeforeprint.asp">onbeforeprint</a></td>
-						<td>The event occurs when a page is about to be
-							printed</td>
+						<td>The event occurs when a page is about to be printed</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3093,51 +2951,48 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort</a></td>
-						<td>The event occurs when the loading of a media
-							is aborted</td>
+						<td>The event occurs when the loading of a media is aborted</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay</a></td>
-						<td>The event occurs when the browser can start
-							playing the media (when it has buffered enough to
-							begin)</td>
+						<td>The event occurs when the browser can start playing the
+							media (when it has buffered enough to begin)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough</a></td>
-						<td>The event occurs when the browser can play
-							through the media without stopping for buffering</td>
+						<td>The event occurs when the browser can play through the
+							media without stopping for buffering</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange</a></td>
-						<td>The event occurs when the duration of the
-							media is changed</td>
+						<td>The event occurs when the duration of the media is
+							changed</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>onemptied</td>
-						<td>The event occurs when something bad happens
-							and the media file is suddenly unavailable (like
-							unexpectedly disconnects)</td>
+						<td>The event occurs when something bad happens and the media
+							file is suddenly unavailable (like unexpectedly disconnects)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onended.asp">onended</a></td>
-						<td>The event occurs when the media has reach the
-							end (useful for messages like "thanks for listening")</td>
+						<td>The event occurs when the media has reach the end (useful
+							for messages like "thanks for listening")</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onerror_media.asp">onerror</a></td>
-						<td>The event occurs when an error occurred
-							during the loading of a media file</td>
+						<td>The event occurs when an error occurred during the
+							loading of a media file</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -3149,51 +3004,50 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata</a></td>
-						<td>The event occurs when meta data (like
-							dimensions and duration) are loaded</td>
+						<td>The event occurs when meta data (like dimensions and
+							duration) are loaded</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onloadstart.asp">onloadstart</a></td>
-						<td>The event occurs when the browser starts
-							looking for the specified media</td>
+						<td>The event occurs when the browser starts looking for the
+							specified media</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onpause.asp">onpause</a></td>
-						<td>The event occurs when the media is paused
-							either by the user or programmatically</td>
+						<td>The event occurs when the media is paused either by the
+							user or programmatically</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onplay.asp">onplay</a></td>
-						<td>The event occurs when the media has been
-							started or is no longer paused</td>
+						<td>The event occurs when the media has been started or is no
+							longer paused</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying</a></td>
-						<td>The event occurs when the media is playing
-							after having been paused or stopped for buffering</td>
+						<td>The event occurs when the media is playing after having
+							been paused or stopped for buffering</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress</a></td>
-						<td>The event occurs when the browser is in the
-							process of getting the media data (downloading the
-							media)</td>
+						<td>The event occurs when the browser is in the process of
+							getting the media data (downloading the media)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange</a></td>
-						<td>The event occurs when the playing speed of
-							the media is changed</td>
+						<td>The event occurs when the playing speed of the media is
+							changed</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -3206,45 +3060,45 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onseeking.asp">onseeking</a></td>
-						<td>The event occurs when the user starts
-							moving/skipping to a new position in the media</td>
+						<td>The event occurs when the user starts moving/skipping to
+							a new position in the media</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled</a></td>
-						<td>The event occurs when the browser is trying
-							to get media data, but data is not available</td>
+						<td>The event occurs when the browser is trying to get media
+							data, but data is not available</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend</a></td>
-						<td>The event occurs when the browser is
-							intentionally not getting media data</td>
+						<td>The event occurs when the browser is intentionally not
+							getting media data</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate</a></td>
-						<td>The event occurs when the playing position
-							has changed (like when the user fast forwards to a
-							different point in the media)</td>
+						<td>The event occurs when the playing position has changed
+							(like when the user fast forwards to a different point in the
+							media)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange</a></td>
-						<td>The event occurs when the volume of the media
-							has changed (includes setting the volume to "mute")</td>
+						<td>The event occurs when the volume of the media has changed
+							(includes setting the volume to "mute")</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting</a></td>
-						<td>The event occurs when the media has paused
-							but is expected to resume (like when the media pauses
-							to buffer more data)</td>
+						<td>The event occurs when the media has paused but is
+							expected to resume (like when the media pauses to buffer more
+							data)</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3260,22 +3114,19 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_animationend.asp">animationend</a></td>
-						<td>The event occurs when a CSS animation has
-							completed</td>
+						<td>The event occurs when a CSS animation has completed</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_animationiteration.asp">animationiteration</a></td>
-						<td>The event occurs when a CSS animation is
-							repeated</td>
+						<td>The event occurs when a CSS animation is repeated</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_animationstart.asp">animationstart</a></td>
-						<td>The event occurs when a CSS animation has
-							started</td>
+						<td>The event occurs when a CSS animation has started</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3291,8 +3142,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_transitionend.asp">transitionend</a></td>
-						<td>The event occurs when a CSS transition has
-							completed</td>
+						<td>The event occurs when a CSS transition has completed</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3308,22 +3158,22 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onerror_sse.asp">onerror</a></td>
-						<td>The event occurs when an error occurs with
-							the event source</td>
+						<td>The event occurs when an error occurs with the event
+							source</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onmessage_sse.asp">onmessage</a></td>
-						<td>The event occurs when a message is received
-							through the event source</td>
+						<td>The event occurs when a message is received through the
+							event source</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onopen_sse.asp">onopen</a></td>
-						<td>The event occurs when a connection with the
-							event source is opened</td>
+						<td>The event occurs when a connection with the event source
+							is opened</td>
 						<td>&nbsp;</td>
 					</tr>
 				</tbody>
@@ -3338,15 +3188,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					</tr>
 					<tr>
 						<td>onmessage</td>
-						<td>The event occurs when a message is received
-							through or from an object (WebSocket, Web Worker,
-							Event Source or a child frame or a parent window)</td>
+						<td>The event occurs when a message is received through or
+							from an object (WebSocket, Web Worker, Event Source or a child
+							frame or a parent window)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>onmousewheel</td>
-						<td><span class="deprecated">Deprecated.</span>
-							Use the <a
+						<td><span class="deprecated">Deprecated.</span> Use the <a
 							href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a>
 							event instead</td>
 						<td>&nbsp;</td>
@@ -3354,48 +3203,44 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ononline.asp">ononline</a></td>
-						<td>The event occurs when the browser starts to
-							work online</td>
+						<td>The event occurs when the browser starts to work online</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onoffline.asp">onoffline</a></td>
-						<td>The event occurs when the browser starts to
-							work offline</td>
+						<td>The event occurs when the browser starts to work offline</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>onpopstate</td>
-						<td>The event occurs when the window's history
-							changes</td>
+						<td>The event occurs when the window's history changes</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onshow.asp">onshow</a></td>
-						<td>The event occurs when a &lt;menu&gt; element
-							is shown as a context menu</td>
+						<td>The event occurs when a &lt;menu&gt; element is shown as
+							a context menu</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>onstorage</td>
-						<td>The event occurs when a Web Storage area is
-							updated</td>
+						<td>The event occurs when a Web Storage area is updated</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle</a></td>
-						<td>The event occurs when the user opens or
-							closes the &lt;details&gt; element</td>
+						<td>The event occurs when the user opens or closes the
+							&lt;details&gt; element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel</a></td>
-						<td>The event occurs when the mouse wheel rolls
-							up or down over an element</td>
+						<td>The event occurs when the mouse wheel rolls up or down
+							over an element</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3410,26 +3255,25 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					</tr>
 					<tr>
 						<td>ontouchcancel</td>
-						<td>The event occurs when the touch is
-							interrupted</td>
+						<td>The event occurs when the touch is interrupted</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td>ontouchend</td>
-						<td>The event occurs when a finger is removed
-							from a touch screen</td>
+						<td>The event occurs when a finger is removed from a touch
+							screen</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td>ontouchmove</td>
-						<td>The event occurs when a finger is dragged
-							across the screen</td>
+						<td>The event occurs when a finger is dragged across the
+							screen</td>
 						<td>&nbsp;</td>
 					</tr>
 					<tr>
 						<td>ontouchstart</td>
-						<td>The event occurs when a finger is placed on a
-							touch screen</td>
+						<td>The event occurs when a finger is placed on a touch
+							screen</td>
 						<td>&nbsp;</td>
 					</tr>
 				</tbody>
@@ -3445,20 +3289,18 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					</tr>
 					<tr>
 						<td>CAPTURING_PHASE</td>
-						<td>The current event phase is the capture phase
-							(1)</td>
+						<td>The current event phase is the capture phase (1)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td>AT_TARGET</td>
-						<td>The current event is in the target phase,
-							i.e. it is being evaluated at the event target (2)</td>
+						<td>The current event is in the target phase, i.e. it is
+							being evaluated at the event target (2)</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>BUBBLING_PHASE</td>
-						<td>The current event phase is the bubbling phase
-							(3)</td>
+						<td>The current event phase is the bubbling phase (3)</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3474,36 +3316,36 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_bubbles.asp">bubbles</a></td>
-						<td>Returns whether or not a specific event is a
-							bubbling event</td>
+						<td>Returns whether or not a specific event is a bubbling
+							event</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_cancelable.asp">cancelable</a></td>
-						<td>Returns whether or not an event can have its
-							default action prevented</td>
+						<td>Returns whether or not an event can have its default
+							action prevented</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_currenttarget.asp">currentTarget</a></td>
-						<td>Returns the element whose event listeners
-							triggered the event</td>
+						<td>Returns the element whose event listeners triggered the
+							event</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_defaultprevented.asp">defaultPrevented</a></td>
-						<td>Returns whether or not the preventDefault()
-							method was called for the event</td>
+						<td>Returns whether or not the preventDefault() method was
+							called for the event</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_eventphase.asp">eventPhase</a></td>
-						<td>Returns which phase of the event flow is
-							currently being evaluated</td>
+						<td>Returns which phase of the event flow is currently being
+							evaluated</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -3521,21 +3363,19 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_timestamp.asp">timeStamp</a></td>
-						<td>Returns the time (in milliseconds relative to
-							the epoch) at which the event was created</td>
+						<td>Returns the time (in milliseconds relative to the epoch)
+							at which the event was created</td>
 						<td>2</td>
 					</tr>
 					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_type.asp">type</a></td>
+						<td><a href="https://www.w3schools.com/jsref/event_type.asp">type</a></td>
 						<td>Returns the name of the event</td>
 						<td>2</td>
 					</tr>
 					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_view.asp">view</a></td>
-						<td>Returns a reference to the Window object
-							where the event occured</td>
+						<td><a href="https://www.w3schools.com/jsref/event_view.asp">view</a></td>
+						<td>Returns a reference to the Window object where the event
+							occured</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -3558,22 +3398,21 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_preventdefault.asp">preventDefault()</a></td>
-						<td>Cancels the event if it is cancelable,
-							meaning that the default action that belongs to the
-							event will not occur</td>
+						<td>Cancels the event if it is cancelable, meaning that the
+							default action that belongs to the event will not occur</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_stopimmediatepropagation.asp">stopImmediatePropagation()</a></td>
-						<td>Prevents other listeners of the same event
-							from being called</td>
+						<td>Prevents other listeners of the same event from being
+							called</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>stopPropagation()</td>
-						<td>Prevents further propagation of an event
-							during event flow</td>
+						<td>Prevents further propagation of an event during event
+							flow</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -3589,112 +3428,105 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_altkey.asp">altKey</a></td>
-						<td>Returns whether the "ALT" key was pressed
-							when the mouse event was triggered</td>
+						<td>Returns whether the "ALT" key was pressed when the mouse
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_button.asp">button</a></td>
-						<td>Returns which mouse button was pressed when
-							the mouse event was triggered</td>
+						<td>Returns which mouse button was pressed when the mouse
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_buttons.asp">buttons</a></td>
-						<td>Returns which mouse buttons were pressed when
-							the mouse event was triggered</td>
+						<td>Returns which mouse buttons were pressed when the mouse
+							event was triggered</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_clientx.asp">clientX</a></td>
-						<td>Returns the horizontal coordinate of the
-							mouse pointer, relative to the current window, when
-							the mouse event was triggered</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_clienty.asp">clientY</a></td>
-						<td>Returns the vertical coordinate of the mouse
-							pointer, relative to the current window, when the
-							mouse event was triggered</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_ctrlkey.asp">ctrlKey</a></td>
-						<td>Returns whether the "CTRL" key was pressed
-							when the mouse event was triggered</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_detail.asp">detail</a></td>
-						<td>Returns a number that indicates how many
-							times the mouse was clicked</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_metakey.asp">metaKey</a></td>
-						<td>Returns whether the "META" key was pressed
-							when an event was triggered</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_pagex.asp">pageX</a></td>
-						<td>Returns the horizontal coordinate of the
-							mouse pointer, relative to the document, when the
-							mouse event was triggered</td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_pagey.asp">pageY</a></td>
-						<td>Returns the vertical coordinate of the mouse
-							pointer, relative to the document, when the mouse
-							event was triggered</td>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_relatedtarget.asp">relatedTarget</a></td>
-						<td>Returns the element related to the element
-							that triggered the mouse event</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_screenx.asp">screenX</a></td>
-						<td>Returns the horizontal coordinate of the
-							mouse pointer, relative to the screen, when an event
-							was triggered</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td><a
-							href="https://www.w3schools.com/jsref/event_screeny.asp">screenY</a></td>
-						<td>Returns the vertical coordinate of the mouse
-							pointer, relative to the screen, when an event was
+						<td>Returns the horizontal coordinate of the mouse pointer,
+							relative to the current window, when the mouse event was
 							triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
-							href="https://www.w3schools.com/jsref/event_shiftkey.asp">shiftKey</a></td>
-						<td>Returns whether the "SHIFT" key was pressed
-							when an event was triggered</td>
+							href="https://www.w3schools.com/jsref/event_clienty.asp">clientY</a></td>
+						<td>Returns the vertical coordinate of the mouse pointer,
+							relative to the current window, when the mouse event was
+							triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
-							href="https://www.w3schools.com/jsref/event_which.asp">which</a></td>
-						<td>Returns which mouse button was pressed when
-							the mouse event was triggered</td>
+							href="https://www.w3schools.com/jsref/event_ctrlkey.asp">ctrlKey</a></td>
+						<td>Returns whether the "CTRL" key was pressed when the mouse
+							event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_detail.asp">detail</a></td>
+						<td>Returns a number that indicates how many times the mouse
+							was clicked</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_metakey.asp">metaKey</a></td>
+						<td>Returns whether the "META" key was pressed when an event
+							was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a href="https://www.w3schools.com/jsref/event_pagex.asp">pageX</a></td>
+						<td>Returns the horizontal coordinate of the mouse pointer,
+							relative to the document, when the mouse event was triggered</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="https://www.w3schools.com/jsref/event_pagey.asp">pageY</a></td>
+						<td>Returns the vertical coordinate of the mouse pointer,
+							relative to the document, when the mouse event was triggered</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_relatedtarget.asp">relatedTarget</a></td>
+						<td>Returns the element related to the element that triggered
+							the mouse event</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_screenx.asp">screenX</a></td>
+						<td>Returns the horizontal coordinate of the mouse pointer,
+							relative to the screen, when an event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_screeny.asp">screenY</a></td>
+						<td>Returns the vertical coordinate of the mouse pointer,
+							relative to the screen, when an event was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a
+							href="https://www.w3schools.com/jsref/event_shiftkey.asp">shiftKey</a></td>
+						<td>Returns whether the "SHIFT" key was pressed when an event
+							was triggered</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td><a href="https://www.w3schools.com/jsref/event_which.asp">which</a></td>
+						<td>Returns which mouse button was pressed when the mouse
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -3710,68 +3542,64 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_altkey.asp">altKey</a></td>
-						<td>Returns whether the "ALT" key was pressed
-							when the key event was triggered</td>
+						<td>Returns whether the "ALT" key was pressed when the key
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_ctrlkey.asp">ctrlKey</a></td>
-						<td>Returns whether the "CTRL" key was pressed
-							when the key event was triggered</td>
+						<td>Returns whether the "CTRL" key was pressed when the key
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_charcode.asp">charCode</a></td>
-						<td>Returns the Unicode character code of the key
-							that triggered the onkeypress event</td>
+						<td>Returns the Unicode character code of the key that
+							triggered the onkeypress event</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_key.asp">key</a></td>
-						<td>Returns the key value of the key represented
-							by the event</td>
+						<td>Returns the key value of the key represented by the event</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_keycode.asp">keyCode</a></td>
-						<td>Returns the Unicode character code of the key
-							that triggered the onkeypress event, or the Unicode
-							key code of the key that triggered the onkeydown or
-							onkeyup event</td>
+						<td>Returns the Unicode character code of the key that
+							triggered the onkeypress event, or the Unicode key code of the
+							key that triggered the onkeydown or onkeyup event</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_location.asp">location</a></td>
-						<td>Returns the location of a key on the keyboard
-							or device</td>
+						<td>Returns the location of a key on the keyboard or device</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_metakey.asp">metaKey</a></td>
-						<td>Returns whether the "meta" key was pressed
-							when the key event was triggered</td>
+						<td>Returns whether the "meta" key was pressed when the key
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_shiftkey.asp">shiftKey</a></td>
-						<td>Returns whether the "SHIFT" key was pressed
-							when the key event was triggered</td>
+						<td>Returns whether the "SHIFT" key was pressed when the key
+							event was triggered</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_key_which.asp">which</a></td>
-						<td>Returns the Unicode character code of the key
-							that triggered the onkeypress event, or the Unicode
-							key code of the key that triggered the onkeydown or
-							onkeyup event</td>
+						<td>Returns the Unicode character code of the key that
+							triggered the onkeypress event, or the Unicode key code of the
+							key that triggered the onkeydown or onkeyup event</td>
 						<td>2</td>
 					</tr>
 				</tbody>
@@ -3787,15 +3615,15 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_hashchange_newurl.asp">newURL</a></td>
-						<td>Returns the URL of the document, after the
-							hash has been changed</td>
+						<td>Returns the URL of the document, after the hash has been
+							changed</td>
 						<td></td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_hashchange_oldurl.asp">oldURL</a></td>
-						<td>Returns the URL of the document, before the
-							hash was changed</td>
+						<td>Returns the URL of the document, before the hash was
+							changed</td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -3811,8 +3639,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_pagetransition_persisted.asp">persisted</a></td>
-						<td>Returns whether the webpage was cached by the
-							browser</td>
+						<td>Returns whether the webpage was cached by the browser</td>
 						<td>&nbsp;</td>
 					</tr>
 				</tbody>
@@ -3828,8 +3655,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_focus_relatedtarget.asp">relatedTarget</a></td>
-						<td>Returns the element related to the element
-							that triggered the event</td>
+						<td>Returns the element related to the element that triggered
+							the event</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3851,8 +3678,8 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_animation_elapsedtime.asp">elapsedTime</a></td>
-						<td>Returns the number of seconds an animation
-							has been running</td>
+						<td>Returns the number of seconds an animation has been
+							running</td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -3868,15 +3695,15 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_transition_propertyName.asp">propertyName</a></td>
-						<td>Returns the name of the CSS property
-							associated with the transition</td>
+						<td>Returns the name of the CSS property associated with the
+							transition</td>
 						<td></td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/event_transition_elapsedtime.asp">elapsedTime</a></td>
-						<td>Returns the number of seconds a transition
-							has been running</td>
+						<td>Returns the number of seconds a transition has been
+							running</td>
 						<td></td>
 					</tr>
 				</tbody>
@@ -3891,27 +3718,25 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 					</tr>
 					<tr>
 						<td>deltaX</td>
-						<td>Returns the horizontal scroll amount of a
-							mouse wheel (x-axis)</td>
+						<td>Returns the horizontal scroll amount of a mouse wheel
+							(x-axis)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>deltaY</td>
-						<td>Returns the vertical scroll amount of a mouse
-							wheel (y-axis)</td>
+						<td>Returns the vertical scroll amount of a mouse wheel
+							(y-axis)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>deltaZ</td>
-						<td>Returns the scroll amount of a mouse wheel
-							for the z-axis</td>
+						<td>Returns the scroll amount of a mouse wheel for the z-axis</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>deltaMode</td>
-						<td>Returns a number that represents the unit of
-							measurements for delta values (pixels, lines or
-							pages)</td>
+						<td>Returns a number that represents the unit of measurements
+							for delta values (pixels, lines or pages)</td>
 						<td>3</td>
 					</tr>
 				</tbody>
@@ -3920,14 +3745,12 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 
 			<h1 class="subject sub">HTML DOM Style Object</h1>
 			<h2>Style object</h2>
-			<p>The Style object represents an individual style
-				statement.</p>
+			<p>The Style object represents an individual style statement.</p>
 			<h2>Access a Style Object</h2>
 			<p>
-				The Style object can be accessed from the head section
-				of the document, or from specific HTML element(s). <br>
-				<br> Accessing style object(s) from the head
-				section of the document:
+				The Style object can be accessed from the head section of the
+				document, or from specific HTML element(s). <br> <br>
+				Accessing style object(s) from the head section of the document:
 			</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
@@ -3987,8 +3810,8 @@ function myFunction() {
 			<a href="/studyhtml5/ch05/practice_dom/practice_38.html"
 				class="center">프렉티스 38</a>
 			<h2>Create a Style Object</h2>
-			<p>You can create a &lt;style&gt; element by using
-				the document.createElement() method:</p>
+			<p>You can create a &lt;style&gt; element by using the
+				document.createElement() method:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -4016,8 +3839,7 @@ function myFunction() {
 		</pre>
 			<a href="/studyhtml5/ch05/practice_dom/practice_39.html"
 				class="center">프렉티스 39</a>
-			<p>You can also set the style properties of an
-				existing element:</p>
+			<p>You can also set the style properties of an existing element:</p>
 			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -4043,8 +3865,8 @@ function myFunction() {
 
 
 			<h1>Style Object Properties</h1>
-			<p>The "CSS" column indicates in which CSS version
-				the property is defined (CSS1, CSS2, or CSS3).</p>
+			<p>The "CSS" column indicates in which CSS version the property
+				is defined (CSS1, CSS2, or CSS3).</p>
 			<table>
 				<tbody>
 					<tr>
@@ -4055,31 +3877,29 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_aligncontent.asp">alignContent</a></td>
-						<td>Sets or returns the alignment between the
-							lines inside a flexible container when the items do
-							not use all available space</td>
+						<td>Sets or returns the alignment between the lines inside a
+							flexible container when the items do not use all available space</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_alignitems.asp">alignItems</a></td>
-						<td>Sets or returns the alignment for items
-							inside a flexible container</td>
+						<td>Sets or returns the alignment for items inside a flexible
+							container</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_alignself.asp">alignSelf</a></td>
-						<td>Sets or returns the alignment for selected
-							items inside a flexible container</td>
+						<td>Sets or returns the alignment for selected items inside a
+							flexible container</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animation.asp">animation</a></td>
-						<td>A shorthand property for all the animation
-							properties below, except the animationPlayState
-							property</td>
+						<td>A shorthand property for all the animation properties
+							below, except the animationPlayState property</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4091,78 +3911,74 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationdirection.asp">animationDirection</a></td>
-						<td>Sets or returns whether or not the animation
-							should play in reverse on alternate cycles</td>
+						<td>Sets or returns whether or not the animation should play
+							in reverse on alternate cycles</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationduration.asp">animationDuration</a></td>
-						<td>Sets or returns how many seconds or
-							milliseconds an animation takes to complete one cycle</td>
+						<td>Sets or returns how many seconds or milliseconds an
+							animation takes to complete one cycle</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationfillmode.asp">animationFillMode</a></td>
-						<td>Sets or returns what values are applied by
-							the animation outside the time it is executing</td>
+						<td>Sets or returns what values are applied by the animation
+							outside the time it is executing</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationiterationcount.asp">animationIterationCount</a></td>
-						<td>Sets or returns the number of times an
-							animation should be played</td>
+						<td>Sets or returns the number of times an animation should
+							be played</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationname.asp">animationName</a></td>
-						<td>Sets or returns a name for the @keyframes
-							animation</td>
+						<td>Sets or returns a name for the @keyframes animation</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationtimingfunction.asp">animationTimingFunction</a></td>
-						<td>Sets or returns the speed curve of the
-							animation</td>
+						<td>Sets or returns the speed curve of the animation</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_animationplaystate.asp">animationPlayState</a></td>
-						<td>Sets or returns whether the animation is
-							running or paused</td>
+						<td>Sets or returns whether the animation is running or
+							paused</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_background.asp">background</a></td>
-						<td>Sets or returns all the background properties
-							in one declaration</td>
+						<td>Sets or returns all the background properties in one
+							declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundattachment.asp">backgroundAttachment</a></td>
-						<td>Sets or returns whether a background-image is
-							fixed or scrolls with the page</td>
+						<td>Sets or returns whether a background-image is fixed or
+							scrolls with the page</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp">backgroundColor</a></td>
-						<td>Sets or returns the background-color of an
-							element</td>
+						<td>Sets or returns the background-color of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundimage.asp">backgroundImage</a></td>
-						<td>Sets or returns the background-image for an
-							element</td>
+						<td>Sets or returns the background-image for an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4175,148 +3991,139 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundrepeat.asp">backgroundRepeat</a></td>
-						<td>Sets or returns how to repeat (tile) a
-							background-image</td>
+						<td>Sets or returns how to repeat (tile) a background-image</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundclip.asp">backgroundClip</a></td>
-						<td>Sets or returns the painting area of the
-							background</td>
+						<td>Sets or returns the painting area of the background</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundorigin.asp">backgroundOrigin</a></td>
-						<td>Sets or returns the positioning area of the
-							background images</td>
+						<td>Sets or returns the positioning area of the background
+							images</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backgroundsize.asp">backgroundSize</a></td>
-						<td>Sets or returns the size of the background
-							image</td>
+						<td>Sets or returns the size of the background image</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_backfacevisibility.asp">backfaceVisibility</a></td>
-						<td>Sets or returns whether or not an element
-							should be visible when not facing the screen</td>
+						<td>Sets or returns whether or not an element should be
+							visible when not facing the screen</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_border.asp">border</a></td>
-						<td>Sets or returns borderWidth, borderStyle, and
-							borderColor in one declaration</td>
+						<td>Sets or returns borderWidth, borderStyle, and borderColor
+							in one declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottom.asp">borderBottom</a></td>
-						<td>Sets or returns all the borderBottom*
-							properties in one declaration</td>
+						<td>Sets or returns all the borderBottom* properties in one
+							declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottomcolor.asp">borderBottomColor</a></td>
-						<td>Sets or returns the color of the bottom
-							border</td>
+						<td>Sets or returns the color of the bottom border</td>
 						<td>1&nbsp;</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottomleftradius.asp">borderBottomLeftRadius</a></td>
-						<td>Sets or returns the shape of the border of
-							the bottom-left corner</td>
+						<td>Sets or returns the shape of the border of the
+							bottom-left corner</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottomrightradius.asp">borderBottomRightRadius</a></td>
-						<td>Sets or returns the shape of the border of
-							the bottom-right corner</td>
+						<td>Sets or returns the shape of the border of the
+							bottom-right corner</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottomstyle.asp">borderBottomStyle</a></td>
-						<td>Sets or returns the style of the bottom
-							border</td>
+						<td>Sets or returns the style of the bottom border</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderbottomwidth.asp">borderBottomWidth</a></td>
-						<td>Sets or returns the width of the bottom
-							border</td>
+						<td>Sets or returns the width of the bottom border</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bordercollapse.asp">borderCollapse</a></td>
-						<td>Sets or returns whether the table border
-							should be collapsed into a single border, or not</td>
+						<td>Sets or returns whether the table border should be
+							collapsed into a single border, or not</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bordercolor.asp">borderColor</a></td>
-						<td>Sets or returns the color of an element's
-							border (can have up to four values)</td>
+						<td>Sets or returns the color of an element's border (can
+							have up to four values)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimage.asp">borderImage</a></td>
-						<td>A shorthand property for setting or returning
-							all the borderImage* properties</td>
+						<td>A shorthand property for setting or returning all the
+							borderImage* properties</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimageoutset.asp">borderImageOutset</a></td>
-						<td>Sets or returns the amount by which the
-							border image area extends beyond the border box</td>
+						<td>Sets or returns the amount by which the border image area
+							extends beyond the border box</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimagerepeat.asp">borderImageRepeat</a></td>
-						<td>Sets or returns whether the image-border
-							should be repeated, rounded or stretched</td>
+						<td>Sets or returns whether the image-border should be
+							repeated, rounded or stretched</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimageslice.asp">borderImageSlice</a></td>
-						<td>Sets or returns the inward offsets of the
-							image-border</td>
+						<td>Sets or returns the inward offsets of the image-border</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimagesource.asp">borderImageSource</a></td>
-						<td>Sets or returns the image to be used as a
-							border</td>
+						<td>Sets or returns the image to be used as a border</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderimagewidth.asp">borderImageWidth</a></td>
-						<td>Sets or returns the widths of the
-							image-border</td>
+						<td>Sets or returns the widths of the image-border</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderleft.asp">borderLeft</a></td>
-						<td>Sets or returns all the borderLeft*
-							properties in one declaration</td>
+						<td>Sets or returns all the borderLeft* properties in one
+							declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4340,15 +4147,15 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderradius.asp">borderRadius</a></td>
-						<td>A shorthand property for setting or returning
-							all the four border*Radius properties</td>
+						<td>A shorthand property for setting or returning all the
+							four border*Radius properties</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderright.asp">borderRight</a></td>
-						<td>Sets or returns all the borderRight*
-							properties in one declaration</td>
+						<td>Sets or returns all the borderRight* properties in one
+							declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4372,22 +4179,21 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderspacing.asp">borderSpacing</a></td>
-						<td>Sets or returns the space between cells in a
-							table</td>
+						<td>Sets or returns the space between cells in a table</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderstyle.asp">borderStyle</a></td>
-						<td>Sets or returns the style of an element's
-							border (can have up to four values)</td>
+						<td>Sets or returns the style of an element's border (can
+							have up to four values)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bordertop.asp">borderTop</a></td>
-						<td>Sets or returns all the borderTop* properties
-							in one declaration</td>
+						<td>Sets or returns all the borderTop* properties in one
+							declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4399,15 +4205,15 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bordertopleftradius.asp">borderTopLeftRadius</a></td>
-						<td>Sets or returns the shape of the border of
-							the top-left corner</td>
+						<td>Sets or returns the shape of the border of the top-left
+							corner</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bordertoprightradius.asp">borderTopRightRadius</a></td>
-						<td>Sets or returns the shape of the border of
-							the top-right corner</td>
+						<td>Sets or returns the shape of the border of the top-right
+							corner</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4425,22 +4231,22 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_borderwidth.asp">borderWidth</a></td>
-						<td>Sets or returns the width of an element's
-							border (can have up to four values)</td>
+						<td>Sets or returns the width of an element's border (can
+							have up to four values)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_bottom.asp">bottom</a></td>
-						<td>Sets or returns the bottom position of a
-							positioned element</td>
+						<td>Sets or returns the bottom position of a positioned
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>boxDecorationBreak</td>
-						<td>Sets or returns the behaviour of the
-							background and border of an element at page-break,
-							or, for in-line elements, at line-break.</td>
+						<td>Sets or returns the behaviour of the background and
+							border of an element at page-break, or, for in-line elements, at
+							line-break.</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4452,8 +4258,8 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_boxsizing.asp">boxSizing</a></td>
-						<td>Allows you to define certain elements to fit
-							an area in a certain way</td>
+						<td>Allows you to define certain elements to fit an area in a
+							certain way</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -4476,22 +4282,21 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_captionside.asp">captionSide</a></td>
-						<td>Sets or returns the position of the table
-							caption</td>
+						<td>Sets or returns the position of the table caption</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_clear.asp">clear</a></td>
-						<td>Sets or returns the position of the element
-							relative to floating objects</td>
+						<td>Sets or returns the position of the element relative to
+							floating objects</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_clip.asp">clip</a></td>
-						<td>Sets or returns which part of a positioned
-							element is visible</td>
+						<td>Sets or returns which part of a positioned element is
+							visible</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -4503,8 +4308,8 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columncount.asp">columnCount</a></td>
-						<td>Sets or returns the number of columns an
-							element should be divided into</td>
+						<td>Sets or returns the number of columns an element should
+							be divided into</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4522,43 +4327,40 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columnrule.asp">columnRule</a></td>
-						<td>A shorthand property for setting or returning
-							all the columnRule* properties</td>
+						<td>A shorthand property for setting or returning all the
+							columnRule* properties</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columnrulecolor.asp">columnRuleColor</a></td>
-						<td>Sets or returns the color of the rule between
-							columns</td>
+						<td>Sets or returns the color of the rule between columns</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columnrulestyle.asp">columnRuleStyle</a></td>
-						<td>Sets or returns the style of the rule between
-							columns</td>
+						<td>Sets or returns the style of the rule between columns</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columnrulewidth.asp">columnRuleWidth</a></td>
-						<td>Sets or returns the width of the rule between
-							columns</td>
+						<td>Sets or returns the width of the rule between columns</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columns.asp">columns</a></td>
-						<td>A shorthand property for setting or returning
-							columnWidth and columnCount</td>
+						<td>A shorthand property for setting or returning columnWidth
+							and columnCount</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_columnspan.asp">columnSpan</a></td>
-						<td>Sets or returns how many columns an element
-							should span across</td>
+						<td>Sets or returns how many columns an element should span
+							across</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4569,8 +4371,8 @@ function myFunction() {
 					</tr>
 					<tr>
 						<td>content</td>
-						<td>Used with the :before and :after
-							pseudo-elements, to insert generated content</td>
+						<td>Used with the :before and :after pseudo-elements, to
+							insert generated content</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -4588,8 +4390,8 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_cursor.asp">cursor</a></td>
-						<td>Sets or returns the type of cursor to display
-							for the mouse pointer</td>
+						<td>Sets or returns the type of cursor to display for the
+							mouse pointer</td>
 						<td>2</td>
 					</tr>
 					<tr>
@@ -4607,79 +4409,75 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_emptycells.asp">emptyCells</a></td>
-						<td>Sets or returns whether to show the border
-							and background of empty cells, or not</td>
+						<td>Sets or returns whether to show the border and background
+							of empty cells, or not</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_filter.asp">filter</a></td>
-						<td>Sets or returns image filters (visual
-							effects, like blur and saturation)</td>
+						<td>Sets or returns image filters (visual effects, like blur
+							and saturation)</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flex.asp">flex</a></td>
-						<td>Sets or returns the length of the item,
-							relative to the rest</td>
+						<td>Sets or returns the length of the item, relative to the
+							rest</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexbasis.asp">flexBasis</a></td>
-						<td>Sets or returns the initial length of a
-							flexible item</td>
+						<td>Sets or returns the initial length of a flexible item</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexdirection.asp">flexDirection</a></td>
-						<td>Sets or returns the direction of the flexible
-							items</td>
+						<td>Sets or returns the direction of the flexible items</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexflow.asp">flexFlow</a></td>
-						<td>A shorthand property for the flexDirection
-							and the flexWrap properties</td>
+						<td>A shorthand property for the flexDirection and the
+							flexWrap properties</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexgrow.asp">flexGrow</a></td>
-						<td>Sets or returns how much the item will grow
-							relative to the rest</td>
+						<td>Sets or returns how much the item will grow relative to
+							the rest</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexshrink.asp">flexShrink</a></td>
-						<td>Sets or returns how the item will shrink
-							relative to the rest</td>
+						<td>Sets or returns how the item will shrink relative to the
+							rest</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_flexwrap.asp">flexWrap</a></td>
-						<td>Sets or returns whether the flexible items
-							should wrap or not</td>
+						<td>Sets or returns whether the flexible items should wrap or
+							not</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_cssfloat.asp">cssFloat</a></td>
-						<td>Sets or returns the horizontal alignment of
-							an element</td>
+						<td>Sets or returns the horizontal alignment of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_font.asp">font</a></td>
-						<td>Sets or returns fontStyle, fontVariant,
-							fontWeight, fontSize, lineHeight, and fontFamily in
-							one declaration</td>
+						<td>Sets or returns fontStyle, fontVariant, fontWeight,
+							fontSize, lineHeight, and fontFamily in one declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4749,15 +4547,15 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_fontstyle.asp">fontStyle</a></td>
-						<td>Sets or returns whether the style of the font
-							is normal, italic or oblique</td>
+						<td>Sets or returns whether the style of the font is normal,
+							italic or oblique</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_fontvariant.asp">fontVariant</a></td>
-						<td>Sets or returns whether the font should be
-							displayed in small capital letters</td>
+						<td>Sets or returns whether the font should be displayed in
+							small capital letters</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4769,20 +4567,20 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_fontsizeadjust.asp">fontSizeAdjust</a></td>
-						<td>Preserves the readability of text when font
-							fallback occurs</td>
+						<td>Preserves the readability of text when font fallback
+							occurs</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>fontStretch</td>
-						<td>Selects a normal, condensed, or expanded face
-							from a font family</td>
+						<td>Selects a normal, condensed, or expanded face from a font
+							family</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>hangingPunctuation</td>
-						<td>Specifies whether a punctuation character may
-							be placed outside the line box</td>
+						<td>Specifies whether a punctuation character may be placed
+							outside the line box</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -4793,21 +4591,20 @@ function myFunction() {
 					</tr>
 					<tr>
 						<td>hyphens</td>
-						<td>Sets how to split words to improve the layout
-							of paragraphs</td>
+						<td>Sets how to split words to improve the layout of
+							paragraphs</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>icon</td>
-						<td>Provides the author the ability to style an
-							element with an iconic equivalent</td>
+						<td>Provides the author the ability to style an element with
+							an iconic equivalent</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>imageOrientation</td>
-						<td>Specifies a rotation in the right or
-							clockwise direction that a user agent applies to an
-							image</td>
+						<td>Specifies a rotation in the right or clockwise direction
+							that a user agent applies to an image</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -4830,23 +4627,20 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_justifycontent.asp">justifyContent</a></td>
-						<td>Sets or returns the alignment between the
-							items inside a flexible container when the items do
-							not use all available space.</td>
+						<td>Sets or returns the alignment between the items inside a
+							flexible container when the items do not use all available space.</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_left.asp">left</a></td>
-						<td>Sets or returns the left position of a
-							positioned element</td>
+						<td>Sets or returns the left position of a positioned element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_letterspacing.asp">letterSpacing</a></td>
-						<td>Sets or returns the space between characters
-							in a text</td>
+						<td>Sets or returns the space between characters in a text</td>
 						<td>1</td>
 					</tr>
 					<!--
@@ -4859,30 +4653,26 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_lineheight.asp">lineHeight</a></td>
-						<td>Sets or returns the distance between lines in
-							a text</td>
+						<td>Sets or returns the distance between lines in a text</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_liststyle.asp">listStyle</a></td>
-						<td>Sets or returns listStyleImage,
-							listStylePosition, and listStyleType in one
-							declaration</td>
+						<td>Sets or returns listStyleImage, listStylePosition, and
+							listStyleType in one declaration</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_liststyleimage.asp">listStyleImage</a></td>
-						<td>Sets or returns an image as the list-item
-							marker</td>
+						<td>Sets or returns an image as the list-item marker</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_liststyleposition.asp">listStylePosition</a></td>
-						<td>Sets or returns the position of the list-item
-							marker</td>
+						<td>Sets or returns the position of the list-item marker</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4894,15 +4684,14 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_margin.asp">margin</a></td>
-						<td>Sets or returns the margins of an element
-							(can have up to four values)</td>
+						<td>Sets or returns the margins of an element (can have up to
+							four values)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_marginbottom.asp">marginBottom</a></td>
-						<td>Sets or returns the bottom margin of an
-							element</td>
+						<td>Sets or returns the bottom margin of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4914,8 +4703,7 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_marginright.asp">marginRight</a></td>
-						<td>Sets or returns the right margin of an
-							element</td>
+						<td>Sets or returns the right margin of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -4979,59 +4767,54 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_maxheight.asp">maxHeight</a></td>
-						<td>Sets or returns the maximum height of an
-							element</td>
+						<td>Sets or returns the maximum height of an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_maxwidth.asp">maxWidth</a></td>
-						<td>Sets or returns the maximum width of an
-							element</td>
+						<td>Sets or returns the maximum width of an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_minheight.asp">minHeight</a></td>
-						<td>Sets or returns the minimum height of an
-							element</td>
+						<td>Sets or returns the minimum height of an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_minwidth.asp">minWidth</a></td>
-						<td>Sets or returns the minimum width of an
-							element</td>
+						<td>Sets or returns the minimum width of an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td>navDown</td>
-						<td>Sets or returns where to navigate when using
-							the arrow-down navigation key</td>
+						<td>Sets or returns where to navigate when using the
+							arrow-down navigation key</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>navIndex</td>
-						<td>Sets or returns the tabbing order for an
-							element</td>
+						<td>Sets or returns the tabbing order for an element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>navLeft</td>
-						<td>Sets or returns where to navigate when using
-							the arrow-left navigation key</td>
+						<td>Sets or returns where to navigate when using the
+							arrow-left navigation key</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>navRight</td>
-						<td>Sets or returns where to navigate when using
-							the arrow-right navigation key</td>
+						<td>Sets or returns where to navigate when using the
+							arrow-right navigation key</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td>navUp</td>
-						<td>Sets or returns where to navigate when using
-							the arrow-up navigation key</td>
+						<td>Sets or returns where to navigate when using the arrow-up
+							navigation key</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -5049,65 +4832,62 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_opacity.asp">opacity</a></td>
-						<td>Sets or returns the opacity level for an
-							element</td>
+						<td>Sets or returns the opacity level for an element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_order.asp">order</a></td>
-						<td>Sets or returns the order of the flexible
-							item, relative to the rest</td>
+						<td>Sets or returns the order of the flexible item, relative
+							to the rest</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_orphans.asp">orphans</a></td>
-						<td>Sets or returns the minimum number of lines
-							for an element that must be left at the bottom of a
-							page when a page break occurs inside an element</td>
+						<td>Sets or returns the minimum number of lines for an
+							element that must be left at the bottom of a page when a page
+							break occurs inside an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_outline.asp">outline</a></td>
-						<td>Sets or returns all the outline properties in
-							one declaration</td>
+						<td>Sets or returns all the outline properties in one
+							declaration</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_outlinecolor.asp">outlineColor</a></td>
-						<td>Sets or returns the color of the outline
-							around a element</td>
+						<td>Sets or returns the color of the outline around a element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_outlineoffset.asp">outlineOffset</a></td>
-						<td>Offsets an outline, and draws it beyond the
-							border edge</td>
+						<td>Offsets an outline, and draws it beyond the border edge</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_outlinestyle.asp">outlineStyle</a></td>
-						<td>Sets or returns the style of the outline
-							around an element</td>
+						<td>Sets or returns the style of the outline around an
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_outlinewidth.asp">outlineWidth</a></td>
-						<td>Sets or returns the width of the outline
-							around an element</td>
+						<td>Sets or returns the width of the outline around an
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_overflow.asp">overflow</a></td>
-						<td>Sets or returns what to do with content that
-							renders outside the element box</td>
+						<td>Sets or returns what to do with content that renders
+							outside the element box</td>
 						<td>2</td>
 					</tr>
 					<!--
@@ -5120,45 +4900,40 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_overflowx.asp">overflowX</a></td>
-						<td>Specifies what to do with the left/right
-							edges of the content, if it overflows the element's
-							content area</td>
+						<td>Specifies what to do with the left/right edges of the
+							content, if it overflows the element's content area</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_overflowy.asp">overflowY</a></td>
-						<td>Specifies what to do with the top/bottom
-							edges of the content, if it overflows the element's
-							content area</td>
+						<td>Specifies what to do with the top/bottom edges of the
+							content, if it overflows the element's content area</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_padding.asp">padding</a></td>
-						<td>Sets or returns the padding of an element
-							(can have up to four values)</td>
+						<td>Sets or returns the padding of an element (can have up to
+							four values)</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_paddingbottom.asp">paddingBottom</a></td>
-						<td>Sets or returns the bottom padding of an
-							element</td>
+						<td>Sets or returns the bottom padding of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_paddingleft.asp">paddingLeft</a></td>
-						<td>Sets or returns the left padding of an
-							element</td>
+						<td>Sets or returns the left padding of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_paddingright.asp">paddingRight</a></td>
-						<td>Sets or returns the right padding of an
-							element</td>
+						<td>Sets or returns the right padding of an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -5170,36 +4945,32 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_pagebreakafter.asp">pageBreakAfter</a></td>
-						<td>Sets or returns the page-break behavior after
-							an element</td>
+						<td>Sets or returns the page-break behavior after an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_pagebreakbefore.asp">pageBreakBefore</a></td>
-						<td>Sets or returns the page-break behavior
-							before an element</td>
+						<td>Sets or returns the page-break behavior before an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_pagebreakinside.asp">pageBreakInside</a></td>
-						<td>Sets or returns the page-break behavior
-							inside an element</td>
+						<td>Sets or returns the page-break behavior inside an element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_perspective.asp">perspective</a></td>
-						<td>Sets or returns the perspective on how 3D
-							elements are viewed</td>
+						<td>Sets or returns the perspective on how 3D elements are
+							viewed</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_perspectiveorigin.asp">perspectiveOrigin</a></td>
-						<td>Sets or returns the bottom position of 3D
-							elements</td>
+						<td>Sets or returns the bottom position of 3D elements</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -5212,23 +4983,22 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_position.asp">position</a></td>
-						<td>Sets or returns the type of positioning
-							method used for an element (static, relative,
-							absolute or fixed)</td>
+						<td>Sets or returns the type of positioning method used for
+							an element (static, relative, absolute or fixed)</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_quotes.asp">quotes</a></td>
-						<td>Sets or returns the type of quotation marks
-							for embedded quotations</td>
+						<td>Sets or returns the type of quotation marks for embedded
+							quotations</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_resize.asp">resize</a></td>
-						<td>Sets or returns whether or not an element is
-							resizable by the user</td>
+						<td>Sets or returns whether or not an element is resizable by
+							the user</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -5251,37 +5021,35 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_right.asp">right</a></td>
-						<td>Sets or returns the right position of a
-							positioned element</td>
+						<td>Sets or returns the right position of a positioned
+							element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_tablelayout.asp">tableLayout</a></td>
-						<td>Sets or returns the way to lay out table
-							cells, rows, and columns</td>
+						<td>Sets or returns the way to lay out table cells, rows, and
+							columns</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_tabsize.asp">tabSize</a></td>
-						<td>Sets or returns the length of the
-							tab-character</td>
+						<td>Sets or returns the length of the tab-character</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textalign.asp">textAlign</a></td>
-						<td>Sets or returns the horizontal alignment of
-							text</td>
+						<td>Sets or returns the horizontal alignment of text</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textalignlast.asp">textAlignLast</a></td>
-						<td>Sets or returns how the last line of a block
-							or a line right before a forced line break is aligned
-							when text-align is "justify"</td>
+						<td>Sets or returns how the last line of a block or a line
+							right before a forced line break is aligned when text-align is
+							"justify"</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -5300,35 +5068,32 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textdecorationcolor.asp">textDecorationColor</a></td>
-						<td>Sets or returns the color of the
-							text-decoration</td>
+						<td>Sets or returns the color of the text-decoration</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textdecorationline.asp">textDecorationLine</a></td>
-						<td>Sets or returns the type of line in a
-							text-decoration</td>
+						<td>Sets or returns the type of line in a text-decoration</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textdecorationstyle.asp">textDecorationStyle</a></td>
-						<td>Sets or returns the style of the line in a
-							text decoration</td>
+						<td>Sets or returns the style of the line in a text
+							decoration</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textindent.asp">textIndent</a></td>
-						<td>Sets or returns the indentation of the first
-							line of text</td>
+						<td>Sets or returns the indentation of the first line of text</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td>textJustify</td>
-						<td>Sets or returns the justification method used
-							when text-align is "justify"</td>
+						<td>Sets or returns the justification method used when
+							text-align is "justify"</td>
 						<td>3</td>
 					</tr>
 					<!--
@@ -5341,8 +5106,8 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_textoverflow.asp">textOverflow</a></td>
-						<td>Sets or returns what should happen when text
-							overflows the containing element</td>
+						<td>Sets or returns what should happen when text overflows
+							the containing element</td>
 						<td>3</td>
 					</tr>
 					<tr>
@@ -5367,93 +5132,86 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_top.asp">top</a></td>
-						<td>Sets or returns the top position of a
-							positioned element</td>
+						<td>Sets or returns the top position of a positioned element</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transform.asp">transform</a></td>
-						<td>Applies a 2D or 3D transformation to an
-							element</td>
+						<td>Applies a 2D or 3D transformation to an element</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transformorigin.asp">transformOrigin</a></td>
-						<td>Sets or returns the position of transformed
-							elements</td>
+						<td>Sets or returns the position of transformed elements</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transformstyle.asp">transformStyle</a></td>
-						<td>Sets or returns how nested elements are
-							rendered in 3D space</td>
+						<td>Sets or returns how nested elements are rendered in 3D
+							space</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transition.asp">transition</a></td>
-						<td>A shorthand property for setting or returning
-							the four transition properties</td>
+						<td>A shorthand property for setting or returning the four
+							transition properties</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transitionproperty.asp">transitionProperty</a></td>
-						<td>Sets or returns the CSS property that the
-							transition effect is for</td>
+						<td>Sets or returns the CSS property that the transition
+							effect is for</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transitionduration.asp">transitionDuration</a></td>
-						<td>Sets or returns how many seconds or
-							milliseconds a transition effect takes to complete</td>
+						<td>Sets or returns how many seconds or milliseconds a
+							transition effect takes to complete</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transitiontimingfunction.asp">transitionTimingFunction</a></td>
-						<td>Sets or returns the speed curve of the
-							transition effect</td>
+						<td>Sets or returns the speed curve of the transition effect</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_transitiondelay.asp">transitionDelay</a></td>
-						<td>Sets or returns when the transition effect
-							will start</td>
+						<td>Sets or returns when the transition effect will start</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_unicodebidi.asp">unicodeBidi</a></td>
-						<td>Sets or returns whether the text should be
-							overridden to support multiple languages in the same
-							document</td>
+						<td>Sets or returns whether the text should be overridden to
+							support multiple languages in the same document</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_userselect.asp">userSelect</a></td>
-						<td>Sets or returns whether the text of an
-							element can be selected or not</td>
+						<td>Sets or returns whether the text of an element can be
+							selected or not</td>
 						<td>2</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_verticalalign.asp">verticalAlign</a></td>
-						<td>Sets or returns the vertical alignment of the
-							content in an element</td>
+						<td>Sets or returns the vertical alignment of the content in
+							an element</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_visibility.asp">visibility</a></td>
-						<td>Sets or returns whether an element should be
-							visible</td>
+						<td>Sets or returns whether an element should be visible</td>
 						<td>2</td>
 					</tr>
 					<!--
@@ -5496,8 +5254,8 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_whitespace.asp">whiteSpace</a></td>
-						<td>Sets or returns how to handle tabs, line
-							breaks and whitespace in a text</td>
+						<td>Sets or returns how to handle tabs, line breaks and
+							whitespace in a text</td>
 						<td>1</td>
 					</tr>
 					<tr>
@@ -5509,30 +5267,27 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_wordbreak.asp">wordBreak</a></td>
-						<td>Sets or returns line breaking rules for
-							non-CJK scripts</td>
+						<td>Sets or returns line breaking rules for non-CJK scripts</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_wordspacing.asp">wordSpacing</a></td>
-						<td>Sets or returns the spacing between words in
-							a text</td>
+						<td>Sets or returns the spacing between words in a text</td>
 						<td>1</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_wordwrap.asp">wordWrap</a></td>
-						<td>Allows long, unbreakable words to be broken
-							and wrap to the next line</td>
+						<td>Allows long, unbreakable words to be broken and wrap to
+							the next line</td>
 						<td>3</td>
 					</tr>
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_widows.asp">widows</a></td>
-						<td>Sets or returns the minimum number of lines
-							for an element that must be visible at the top of a
-							page</td>
+						<td>Sets or returns the minimum number of lines for an
+							element that must be visible at the top of a page</td>
 						<td>2</td>
 					</tr>
 					<!--
@@ -5545,14 +5300,155 @@ function myFunction() {
 					<tr>
 						<td><a
 							href="https://www.w3schools.com/jsref/prop_style_zindex.asp">zIndex</a></td>
-						<td>Sets or returns the stack order of a
-							positioned element</td>
+						<td>Sets or returns the stack order of a positioned element</td>
 						<td>2</td>
 					</tr>
 				</tbody>
 			</table>
+			<h1 class="subject">JavaScript HTML DOM Elements (Nodes)</h1>
+			<p>Adding and Removing Nodes (HTML Elements)</p>
+			<h1>Creating New HTML Elements (Nodes)</h1>
+			<p>To add a new element to the HTML DOM, you must create the
+				element (element node) first, and then append it to an existing
+				element.</p>
+			<pre class="code">
+&lt;div id="div1"&gt;
+&lt;p id="p1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p id="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;
 
+&lt;script&gt;
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
 
+var element = document.getElementById("div1");
+element.appendChild(para);
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_58.html"
+				class='center'>프렉티스 58</a>
+			<h1>Example Explained</h1>
+			<p>This code creates a new &lt;p&gt; element:</p>
+			<pre class="code">
+var para = document.createElement("p");</pre>
+			<p>To add text to the element, you must create a text node first.
+				This code creates a text node:</p>
+			<pre class="code">
+var node = document.createTextNode("This is a new paragraph.");
+</pre>
+			<p>Then you must append the text node to the &lt;p&gt; element:</p>
+			<pre class='code'>
+para.appendChild(node);</pre>
+			<p>
+				Finally you must append the new element to an existing element. <br>
+				<br> This code finds an existing element:
+			</p>
+			<pre class='code'>
+var element = document.getElementById("div1");</pre>
+			<p>This code appends the new element to the existing element:</p>
+			<pre class="code">
+element.appendChild(para);</pre>
+			<h1>Creating new HTML Elements - insertBefore()</h1>
+			<p>
+				The appendChild() method in the previous example, appended the new
+				element as the last child of the parent. <br> <br> If you
+				don't want that you can use the insertBefore() method:
+			</p>
+			<pre class="code">
+&lt;div id="div1"&gt;
+&lt;p id="p1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p id="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element = document.getElementById("div1");
+var child = document.getElementById("p1");
+element.insertBefore(para, child);
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_59.html"
+				class="center">프렉티스 59</a><br> <img
+				style="border: 1px solid black" alt="append_1"
+				src="/studyhtml5/images/appendChild_1.png" class="img">
+			<p>Element의 ChildNodes[0] 그러니까 맨 처음 데이터는 무조건 #text이다. 무조건 무조건
+				무조건이다.</p>
+			<img style="border: 1px solid black" alt="append_2"
+				src="/studyhtml5/images/appendChild_2.png" class="img">
+			<p>
+				그러나 그냥 Text 노드를 만들 수 있는데, 자바스크립트 코드를 이용할 경우, 해당 노드는 엘리먼트가 아니라 바로
+				#text의 성격을 가지고 있음을 볼 수 있다.<br> <br> <span class="imp">헷갈리지마라.
+					절대로!!</span>
+			</p>
+
+			<h1>Removing Existing HTML Elements</h1>
+			<p>To remove an HTML element, you must know the parent of the
+				element:</p>
+			<pre class="code">
+&lt;div id="div1"&gt;
+&lt;p id="p1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p id="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var parent = document.getElementById("div1");
+var child = document.getElementById("p1");
+parent.removeChild(child);
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_60.html"
+				class='center'>프렉티스 60</a>
+			<p class="imp">
+				The method node.remove() is implemented in the DOM 4 specification.<br>
+				But because of poor browser support, you should not use it.
+			</p>
+			<h1>Example Explained</h1>
+			<p>This HTML document contains a &lt;div&gt; element with two
+				child nodes (two &lt;p&gt; elements):</p>
+			<pre class="code">
+&lt;div id="div1"&gt;
+&lt;p id="p1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p id="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;</pre>
+			<p>Find the element with id="div1":</p>
+			<pre class="code">
+var parent = document.getElementById("div1");</pre>
+			<p>Find the &lt;p&gt; element with id="p1":</p>
+			<pre class="code">
+var child = document.getElementById("p1");</pre>
+			<p>Remove the child from the parent:</p>
+			<pre class="code">
+parent.removeChild(child);</pre>
+			<p class="imp">It would be nice to be able to remove an element
+				without referring to the parent. But sorry. The DOM needs to know
+				both the element you want to remove, and its parent.</p>
+			<p>Here is a common workaround: Find the child you want to
+				remove, and use its parentNode property to find the parent:</p>
+			<pre class="code">
+var child = document.getElementById("p1");
+child.parentNode.removeChild(child);</pre>
+			<h1>Replacing HTML Elements</h1>
+			<p>To replace an element to the HTML DOM, use the replaceChild()
+				method:</p>
+			<pre class="code">
+&lt;div id="div1"&gt;
+&lt;p id="p1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p id="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+var parent = document.getElementById("div1");
+var child = document.getElementById("p1");
+parent.replaceChild(para, child);
+&lt;/script&gt; </pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_61.html"
+				class='center'>프렉티스 61</a>
+			<p class="imp">para 엘리먼트를 child 엘리먼트로 바꿔치기 한다.</p>
 
 
 
