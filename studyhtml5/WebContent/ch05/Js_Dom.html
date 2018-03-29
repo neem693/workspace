@@ -5449,7 +5449,274 @@ parent.replaceChild(para, child);
 			<a href="/studyhtml5/ch05/practice_dom/practice_61.html"
 				class='center'>프렉티스 61</a>
 			<p class="imp">para 엘리먼트를 child 엘리먼트로 바꿔치기 한다.</p>
+			<h1 class="subject">JavaScript HTML DOM Collections</h1>
+			<h1>The HTMLCollection Object</h1>
+			<p>
+				The getElementsByTagName() method returns an HTMLCollection object.
+				<br> <br> An HTMLCollection object is an array-like list
+				(collection) of HTML elements. <br> <br> The following
+				code selects all
+			<p>elements in a document:</p>
+			<h2>Example</h2>
+			<pre class="code">
+var x = document.getElementsByTagName("p");</pre>
+			<p>
+				The elements in the collection can be accessed by an index number. <br>
+				<br> To access the second &lt;p&gt; element you can write:
+			</p>
+			<pre class="code">
+y = x[1];</pre>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
+&lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;Hello Norway!&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myCollection = document.getElementsByTagName("p");
+document.getElementById("demo").innerHTML =
+"The innerHTML of the second paragraph is: " +
+myCollection[1].innerHTML;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+			<a href="/studyhtml5/ch05/practice_dom/practice_62.html"
+				class="center">프렉티스 62</a>
+			<p class="imp">Note: The index starts at 0.</p>
+			<h1>HTML HTMLCollection Length</h1>
+			<p>The length property defines the number of elements in an
+				HTMLCollection:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;Hello Norway!&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myCollection = document.getElementsByTagName("p");
+document.getElementById("demo").innerHTML = 
+"This document contains " + myCollection.length + " paragraphs.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice_dom/practice_63.html" class="cener">프렉티스
+				63</a>
+			<p>Example explained:</p>
+			<ol>
+				<li>Create a collection of all &lt;p&gt; elements</li>
+				<li>Display the length of the collection</li>
+			</ol>
+			<p>The length property is useful when you want to loop through
+				the elements in a collection:</p>
+			<h2>Example</h2>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM&lt;/h2&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;Hello Norway!&lt;/p&gt;
+
+&lt;p&gt;Click the button to change the color of all p elements.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var myCollection = document.getElementsByTagName("p");
+    var i;
+    for (i = 0; i &lt; myCollection.length; i++) {
+        myCollection[i].style.color = "red";
+    }
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+			<a href="/studyhtml5/ch05/practice_dom/practice_64.html"
+				class="center">프렉티스 64</a>
+
+			<p class="imp">
+				An HTMLCollection is NOT an array! <br> <br> An
+				HTMLCollection may look like an array, but it is not. <br> <br>
+				You can loop through the list and refer to the elements with a
+				number (just like an array). <br> <br> However, you cannot
+				use array methods like valueOf(), pop(), push(), or join() on an
+				HTMLCollection.
+			</p>
+			<h1 class="subject">JavaScript HTML DOM Node Lists</h1>
+
+			<h1>The HTML DOM NodeList Object</h1>
+			<p>
+				A NodeList object is a list (collection) of nodes extracted from a
+				document. <br> <br> A NodeList object is almost the same
+				as an HTMLCollection object. <br> <br> Some (older)
+				browsers return a NodeList object instead of an HTMLCollection for
+				methods like getElementsByClassName(). <br> <br> All
+				browsers return a NodeList object for the property childNodes. <br>
+				<br> Most browsers return a NodeList object for the method
+				querySelectorAll(). <br> <br> The following code selects
+				all &lt;p&gt;nodes in a document:
+			</p>
+
+
+			<h2>Example</h2>
+			<pre class="code">
+var myNodeList = document.querySelectorAll("p");</pre>
+			<p>
+				The elements in the NodeList can be accessed by an index number. <br>
+				<br> To access the second &lt;p&gt; node you can write:
+			</p>
+			<pre class="code">
+y = myNodeList[1];</pre>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM!&lt;/h2&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;Hello Norway!&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myNodelist = document.querySelectorAll("p");
+document.getElementById("demo").innerHTML =
+"The innerHTML of the second paragraph is: " +
+myNodelist[1].innerHTML;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_65.html"
+				class='center'> 프렉티스 65</a>
+
+
+			<h1>HTML DOM Node List Length</h1>
+			<p>The length property defines the number of nodes in a node
+				list:</p>
+			<h2>Example</h2>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM!&lt;/h2&gt;
+
+&lt;p&gt;Hellow World!&lt;/p&gt;
+
+&lt;p&gt;Hellow Norway!&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var myNodelist = document.querySelectorAll("p");
+document.getElementById("demo").innerHTML =
+"This document contains " + myNodelist.length + " paragraphs.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_dom/practice_66.html"
+				class="center">프렉티스 66</a>
+
+			<p>Example explained:</p>
+			<ol>
+				<li>Create a list of all &lt;p&gt; elements</li>
+				<li>Display the length of the list</li>
+			</ol>
+
+			<p>The length property is useful when you want to loop through
+				the nodes in a node list:</p>
+
+			<h2>Example</h2>
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript HTML DOM!&lt;/h2&gt;
+
+&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;Hello Norway!&lt;/p&gt;
+
+&lt;p&gt;Click the button to change the color of all p elements.&lt;/p&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var myNodelist = document.querySelectorAll("p");
+    var i;
+    for (i = 0; i &lt; myNodelist.length; i++) {
+        myNodelist[i].style.color = "red";
+    }
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+			<a href="/studyhtml5/ch05/practice_dom/practice_67.html"
+				class="center">프렉티스 67</a>
+
+
+			<h1>The Difference Between an HTMLCollection and a NodeList</h1>
+			<p>
+				An HTMLCollection (previous chapter) is a collection of HTML
+				elements. <br> <br> A NodeList is a collection of document
+				nodes. <br> <br> A NodeList and an HTML collection is very
+				much the same thing. <br> <br> Both an HTMLCollection
+				object and a NodeList object is an array-like list (collection) of
+				objects. <br> <br> Both have a length property defining
+				the number of items in the list (collection). <br> <br>
+				Both provide an index (0, 1, 2, 3, 4, ...) to access each item like
+				an array. <br> <br> HTMLCollection items can be accessed
+				by their name, id, or index number. <br> <br> NodeList
+				items can only be accessed by their index number. <br> <br>
+				Only the NodeList object can contain attribute nodes and text nodes.
+			</p>
+			<p class="imp">
+				A node list is not an array! <br>
+				<br> A node list may look like an array, but it is not. <br>
+				<br> You can loop through the node list and refer to its nodes
+				like an array. <br>
+				<br> However, you cannot use Array Methods, like valueOf(),
+				push(), pop(), or join() on a node list.
+			</p>
 
 
 
