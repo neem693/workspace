@@ -7294,7 +7294,7 @@ public class TestArray {
 2.9
 3.4
 3.5</pre>
-	<h1>Passing Arrays to Methods</h1>
+	<h1 class = "bookmark">Passing Arrays to Methods</h1>
 	<p>Just as you can pass primitive type values to methods, you can
 		also pass arrays to methods. For example, the following method
 		displays the elements in an int array −</p>
@@ -9178,7 +9178,7 @@ public class ExampleVoid {
 	<h2>Output</h2>
 	<pre class="code">
 Rank:A1</pre>
-	<h1>Passing Parameters by Value</h1>
+	<h1 class="bookmark">Passing Parameters by Value</h1>
 	<p>
 		While working under calling process, arguments is to be passed. These
 		should be in the same order as their respective parameters in the
@@ -9357,6 +9357,7 @@ public class ConsDemo {
       System.out.println(t1.x + " " + t2.x);
    }
 }</pre>
+	<p class="imp">프렉티스020/Example05.java에서 해당 프렉티스 진행한다.</p>
 	<h2>Output</h2>
 	<pre class="code">
 10 10</pre>
@@ -9389,6 +9390,8 @@ public class ConsDemo {
       System.out.println(t1.x + " " + t2.x);
    }
 }</pre>
+	<p class="imp">프렉티스020/Example06.java에서 해당 프렉티스 진행한다.</p>
+
 	<p>This will produce the following result −</p>
 	<h2>Output</h2>
 	<pre class="code">
@@ -9400,17 +9403,172 @@ public class ConsDemo {
 		constructors, variables and methods.</p>
 	<p class="imp">Note − The keyword this is used only within instance
 		methods or constructors</p>
+	<img class="img" alt="this" src="/java/img/this.jpg">
+	<p>In general, the keyword this is used to −</p>
+	<ul>
+		<li>Differentiate the instance variables from local variables if
+			they have same names, within a constructor or a method.</li>
+	</ul>
+	<pre class="code">
+class Student {
+   int age;   
+   Student(int age) {
+      this.age = age;	
+   }
+}</pre>
+	<ul>
+		<li>Call one type of constructor (parametrized constructor or
+			default) from other in a class. It is known as explicit constructor
+			invocation.</li>
+	</ul>
+	<pre class="code">
+class Student {
+   int age
+   Student() {
+      this(20);
+   }
+   
+   Student(int age) {
+      this.age = age;	
+   }
+}</pre>
+	<h2>Example</h2>
+	<p>Here is an example that uses this keyword to access the members
+		of a class. Copy and paste the following program in a file with the
+		name, This_Example.java.</p>
+	<pre class="code">
+public class This_Example {
+   // Instance variable num
+   int num = 10;
+	
+   This_Example() {
+      System.out.println("This is an example program on keyword this");	
+   }
 
+   This_Example(int num) {
+      // Invoking the default constructor
+      this();
+      
+      // Assigning the local variable num to the instance variable num
+      this.num = num;	   
+   }
+   
+   public void greet() {
+      System.out.println("Hi Welcome to Tutorialspoint");
+   }
+      
+   public void print() {
+      // Local variable num
+      int num = 20;
+      
+      // Printing the local variable
+      System.out.println("value of local variable num is : "+num);
+      
+      // Printing the instance variable
+      System.out.println("value of instance variable num is : "+this.num);
+      
+      // Invoking the greet method of a class
+      this.greet();     
+   }
+   
+   public static void main(String[] args) {
+      // Instantiating the class
+      This_Example obj1 = new This_Example();
+      
+      // Invoking the print method
+      obj1.print();
+	  
+      // Passing a new value to the num variable through parametrized constructor
+      This_Example obj2 = new This_Example(30);
+      
+      // Invoking the print method again
+      obj2.print(); 
+   }
+}</pre>
+	<p class="imp">프렉티스020/Example07.java에서 해당 프렉티스 진행한다.</p>
 
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+This is an example program on keyword this 
+value of local variable num is : 20
+value of instance variable num is : 10
+Hi Welcome to Tutorialspoint
+This is an example program on keyword this 
+value of local variable num is : 20
+value of instance variable num is : 30
+Hi Welcome to Tutorialspoint</pre>
+	<h1>Variable Arguments(var-args)</h1>
+	<p>JDK 1.5 enables you to pass a variable number of arguments of
+		the same type to a method. The parameter in the method is declared as
+		follows −</p>
+	<pre class="code">
+typeName... parameterName</pre>
+	<p>In the method declaration, you specify the type followed by an
+		ellipsis (...). Only one variable-length parameter may be specified in
+		a method, and this parameter must be the last parameter. Any regular
+		parameters must precede it.</p>
+	<h2>Example</h2>
+	<pre class="code">
+public class VarargsDemo {
 
+   public static void main(String args[]) {
+      // Call method with variable args  
+	   printMax(34, 3, 3, 2, 56.5);
+      printMax(new double[]{1, 2, 3});
+   }
 
+   public static void printMax( double... numbers) {
+      if (numbers.length == 0) {
+         System.out.println("No argument passed");
+         return;
+      }
 
+      double result = numbers[0];
 
+      for (int i = 1; i &lt;  numbers.length; i++)
+      if (numbers[i] &gt;  result)
+      result = numbers[i];
+      System.out.println("The max value is " + result);
+   }
+}</pre>
+	<p class="imp">프렉티스020/Example08.java에서 해당 프렉티스 진행한다.</p>
 
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+The max value is 56.5
+The max value is 3.0</pre>
+	<h1>The finalize( ) Method</h1>
+	<p>
+		It is possible to define a method that will be called just before an
+		object's final destruction by the garbage collector. This method is
+		called finalize( ), and it can be used to ensure that an object
+		terminates cleanly. <br> <br> For example, you might use
+		finalize( ) to make sure that an open file owned by that object is
+		closed. <br> <br> To add a finalizer to a class, you simply
+		define the finalize( ) method. The Java runtime calls that method
+		whenever it is about to recycle an object of that class. <br> <br>
+		Inside the finalize( ) method, you will specify those actions that
+		must be performed before an object is destroyed. <br> <br>
+		The finalize( ) method has this general form −
+	</p>
+	<pre class="code">
+protected void finalize( ) {
+   // finalization code here
+}</pre>
+	<p>
+		Here, the keyword protected is a specifier that prevents access to
+		finalize( ) by code defined outside its class. <br> <br>
+		This means that you cannot know when or even if finalize( ) will be
+		executed. For example, if your program ends before garbage collection
+		occurs, finalize( ) will not execute.
+	</p>
 
 	<!-- 끝 -->
 
-	<div class="fixed"><a href="#index_subject">▲</a>
+	<div class="fixed">
+		<a href="#index_subject">▲</a>
 	</div>
 	<footer>자바 끝</footer>
 
