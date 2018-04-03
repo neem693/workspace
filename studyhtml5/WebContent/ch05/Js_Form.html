@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<link rel="stylesheet" href="/studyhtml5/ch05/style.css">
+<script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
+<script src="/studyhtml5/ch05/jquery_index.js"></script>
+<script src="/studyhtml5/ch05/js_main.js"></script>
+<title>JAVASCRIPT_FORM</title>
+</head>
+<body>
+	<header>JAVASCRIPT_FORM</header>
+	<section>
+		<article>
+			<h1 id="index_subject">목차</h1>
+			<div id="list"></div>
+			<h1 id="bookmark_subject">부록</h1>
+			<div id="bookmark_list"></div>
+			<p class="subject_fix" id="subject_line"></p>
+			<h1 class="subject">JS_FORM</h1>
+			<p>자바스크립트 FORM에 대해서만 정리한다.</p>
+			<h1 class="subject">JavaScript Forms</h1>
+			<h1>JavaScript Form Validation</h1>
+			<p>
+				HTML form validation can be done by JavaScript. <br> <br>
+				If a form field (fname) is empty, this function alerts a message,
+				and returns false, to prevent the form from being submitted:
+			</p>
+			<pre class="code">
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+} </pre>
+
+			<p>The function can be called when the form is submitted:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form name="myForm" action="/action_page.php"
+onsubmit="return validateForm()" method="post"&gt;
+Name: &lt;input type="text" name="fname"&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+			<a href="/studyhtml5/ch05/practice_form/practice_01.html"
+				class="center">프렉티스 01</a>
+
+
+			<h1>JavaScript Can Validate Numeric Input</h1>
+			<p>JavaScript is often used to validate numeric input:</p>
+
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Can Validate Input&lt;/h2&gt;
+
+&lt;p&gt;Please input a number between 1 and 10:&lt;/p&gt;
+
+&lt;input id="numb"&gt;
+
+&lt;button type="button" onclick="myFunction()"&gt;Submit&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("numb").value;
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(x) || x &lt; 1 || x &gt; 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt; 
+</pre>
+			<a href="/studyhtml5/ch05/practice_form/practice_02.html"
+				class="center">프렉티스 02</a>
+
+
+			<h1>Automatic HTML Form Validation</h1>
+			<p>
+				HTML form validation can be performed automatically by the browser:
+				<br> <br> If a form field (fname) is empty, the required
+				attribute prevents this form from being submitted:
+			</p>
+
+
+
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;form action="/action_page.php" method="post"&gt;
+  &lt;input type="text" name="fname" required&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you click submit, without filling out the text field,
+your browser will display an error message.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+			<p class="imp">Automatic HTML form validation does not work in
+				Internet Explorer 9 or earlier.</p>
+
+			<h1>Data Validation</h1>
+			<p>
+				Data validation is the process of ensuring that user input is clean,
+				correct, and useful. <br> <br> Typical validation tasks
+				are:
+			</p>
+			<ul>
+				<li>has the user filled in all required fields?</li>
+				<li>has the user entered a valid date?</li>
+				<li>has the user entered text in a numeric field?</li>
+			</ul>
+			<p>
+				Most often, the purpose of data validation is to ensure correct user
+				input. <br> <br> Validation can be defined by many
+				different methods, and deployed in many different ways. <br> <br>
+				Server side validation is performed by a web server, after input has
+				been sent to the server. <br> <br> Client side validation
+				is performed by a web browser, before input is sent to a web server.
+			</p>
+			<h1>HTML Constraint Validation</h1>
+			<p>
+				HTML5 introduced a new HTML validation concept called constraint
+				validation. <br> <br> HTML constraint validation is based
+				on:
+			</p>
+			<ul>
+				<li>Constraint validation HTML Input Attributes</li>
+				<li>Constraint validation CSS Pseudo Selectors</li>
+				<li>Constraint validation DOM Properties and Methods</li>
+			</ul>
+			<h1>Constraint Validation HTML Input Attributes</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 25%">Attribute</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>disabled</td>
+						<td>Specifies that the input element should be disabled</td>
+					</tr>
+					<tr>
+						<td>max</td>
+						<td>Specifies the maximum value of an input element</td>
+					</tr>
+					<tr>
+						<td>min</td>
+						<td>Specifies the minimum value of an input element</td>
+					</tr>
+					<tr>
+						<td>pattern</td>
+						<td>Specifies the value pattern of an input element</td>
+					</tr>
+					<tr>
+						<td>required</td>
+						<td>Specifies that the input field requires an element</td>
+					</tr>
+					<tr>
+						<td>type&nbsp;</td>
+						<td>Specifies the type of an input element</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				For a full list, go to <a
+					href="https://www.w3schools.com/html/html_form_attributes.asp">HTML
+					Input Attributes</a>.
+			</p>
+			<h1>Constraint Validation CSS Pseudo Selectors</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 25%">Selector</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>:disabled</td>
+						<td>Selects input elements with the "disabled" attribute
+							specified</td>
+					</tr>
+					<tr>
+						<td>:invalid</td>
+						<td>Selects input elements with invalid values</td>
+					</tr>
+					<tr>
+						<td>:optional</td>
+						<td>Selects input elements with no "required" attribute
+							specified</td>
+					</tr>
+					<tr>
+						<td>:required</td>
+						<td>Selects input elements with the "required" attribute
+							specified</td>
+					</tr>
+					<tr>
+						<td>:valid</td>
+						<td>Selects input elements with valid values</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				For a full list, go to <a
+					href="https://www.w3schools.com/css/css_pseudo_classes.asp">CSS
+					Pseudo Classes</a>.
+			</p>
+
+
+
+
+
+
+
+
+		</article>
+	</section>
+
+
+</body>
+</html>
