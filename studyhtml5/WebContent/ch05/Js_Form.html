@@ -135,6 +135,7 @@ your browser will display an error message.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
+<a href = "/studyhtml5/ch05/practice_form/practice_03.html" class = "center">프렉티스 03</a>
 
 			<p class="imp">Automatic HTML form validation does not work in
 				Internet Explorer 9 or earlier.</p>
@@ -452,9 +453,37 @@ function myFunction() {
 
 &lt;/body&gt;
 &lt;/html&gt;
-
 </pre>
+<p>If the number in an input field is less than 100 (the input's min attribute), display a message:</p>
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
+&lt;p&gt;Enter a number and click OK:&lt;/p&gt;
+
+&lt;input id="id1" type="number" min="100"&gt;
+&lt;button onclick="myFunction()"&gt;OK&lt;/button&gt;
+
+&lt;p&gt;If the number is less than 100 (the input's min attribute), an error message will be displayed.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var txt = "";
+    if (document.getElementById("id1").validity.rangeUnderflow) {
+        txt = "Value too small";
+    } else {
+        txt = "Input OK";
+    } 
+    document.getElementById("demo").innerHTML = txt;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
 
 
 		</article>
