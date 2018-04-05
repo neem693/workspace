@@ -11,6 +11,7 @@
     <persistedState key="aggregateWorkingSetId" value="Aggregate for window 1521970356267"/>
     <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;show_in_time/>"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_bWTbIDO6Eeiwves2Spvojw" selectedElement="_bWTbITO6Eeiwves2Spvojw" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_bWTbITO6Eeiwves2Spvojw" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_bWTbIjO6Eeiwves2Spvojw">
         <children xsi:type="advanced:Perspective" xmi:id="_bWTbIjO6Eeiwves2Spvojw" elementId="org.eclipse.jst.j2ee.J2EEPerspective" selectedElement="_bWTbIzO6Eeiwves2Spvojw" label="Java EE" iconURI="platform:/plugin/org.eclipse.jst.j2ee.ui/icons/full/cview16/j2ee_perspective.gif">
@@ -317,7 +318,7 @@
             <tags>removeOnHide</tags>
           </children>
           <children xsi:type="basic:Part" xmi:id="_5iqDIDcqEeiF1Kc4mbxQRw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Js_Form.html" iconURI="platform:/plugin/org.eclipse.wst.html.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.html.core.htmlsource.source&quot; name=&quot;Js_Form.html&quot; partName=&quot;Js_Form.html&quot; title=&quot;Js_Form.html&quot; tooltip=&quot;studyhtml5/WebContent/ch05/Js_Form.html&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/studyhtml5/WebContent/ch05/Js_Form.html&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;6936&quot; selectionTopPixel=&quot;4774&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wst.html.core.htmlsource.source&quot; name=&quot;Js_Form.html&quot; partName=&quot;Js_Form.html&quot; title=&quot;Js_Form.html&quot; tooltip=&quot;studyhtml5/WebContent/ch05/Js_Form.html&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/studyhtml5/WebContent/ch05/Js_Form.html&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;12741&quot; selectionTopPixel=&quot;9314&quot;/>&#xD;&#xA;&lt;/editor>"/>
             <tags>Editor</tags>
             <tags>org.eclipse.wst.html.core.htmlsource.source</tags>
             <tags>removeOnHide</tags>
@@ -654,7 +655,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_bXfvGjO6Eeiwves2Spvojw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_mUBrsDbVEeiF1Kc4mbxQRw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_bjauQjO6Eeiwves2Spvojw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ldnnBzhoEeixBZwWHCjERQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_bjauQjO6Eeiwves2Spvojw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_bXfvKzO6Eeiwves2Spvojw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -684,7 +685,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_bXfvizO6Eeiwves2Spvojw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_mUBrujbVEeiF1Kc4mbxQRw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_bjat0zO6Eeiwves2Spvojw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ldxYBDhoEeixBZwWHCjERQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_bjat0zO6Eeiwves2Spvojw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_bXfvlTO6Eeiwves2Spvojw" elementId="org.eclipse.wst.css.core.csssource.source" visible="false">
         <tags>Draggable</tags>
