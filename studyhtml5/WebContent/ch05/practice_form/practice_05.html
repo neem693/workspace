@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+
+<p> Enter a number and click OK:</p>
+
+<input id = "id1" type  = "number" max = "100">
+<button onclick = "myFunction()">OK</button>
+
+<p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
+<p id = "demo"></p>
+
+<script>
+function myFunction(){
+    var txt = "";
+    
+    if(document.getElementById("id1").validity.rangeOverflow){
+        txt = "Value too large";
+    }else{
+        txt = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
+
+
+
+</body>
+</html>

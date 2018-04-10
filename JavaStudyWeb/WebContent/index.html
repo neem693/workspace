@@ -9564,6 +9564,92 @@ protected void finalize( ) {
 		executed. For example, if your program ends before garbage collection
 		occurs, finalize( ) will not execute.
 	</p>
+	<h1 class="subject">Java - Files and I/O</h1>
+	<p>The java.io package contains nearly every class you might ever
+		need to perform input and output (I/O) in Java. All these streams
+		represent an input source and an output destination. The stream in the
+		java.io package supports many data such as primitives, object,
+		localized characters, etc.</p>
+	<h1>Stream</h1>
+	<p>A stream can be defined as a sequence of data. There are two
+		kinds of Streams −</p>
+	<ul>
+		<li>InPutStream − The InputStream is used to read data from a
+			source.</li>
+		<li>OutPutStream − The OutputStream is used for writing data to a
+			destination.</li>
+	</ul>
+	<img class="img" alt="streams" src="/java/img/streams.png">
+	<p>Java provides strong but flexible support for I/O related to
+		files and networks but this tutorial covers very basic functionality
+		related to streams and I/O. We will see the most commonly used
+		examples one by one −</p>
+	<h2>Byte Streams</h2>
+	<p>
+		Java byte streams are used to perform input and output of 8-bit bytes.
+		Though there are many classes related to byte streams but the most
+		frequently used classes are, <span class="code">FileInputStream</span>
+		and <span class="code">FileOutputStream</span>. Following is an
+		example which makes use of these two classes to copy an input file
+		into an output file −
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.*;
+public class CopyFile {
+
+   public static void main(String args[]) throws IOException {  
+      FileInputStream in = null;
+      FileOutputStream out = null;
+
+      try {
+         in = new FileInputStream("input.txt");
+         out = new FileOutputStream("output.txt");
+         
+         int c;
+         while ((c = in.read()) != -1) {
+            out.write(c);
+         }
+      }finally {
+         if (in != null) {
+            in.close();
+         }
+         if (out != null) {
+            out.close();
+         }
+      }
+   }
+}</pre>
+	<p class="bookmark">input.txt파일을 어디에 둘것인가?</p>
+	<p>
+		자 여기서 중요한 점이 있다. input.txt파일을 어디에 둘 것인가에 대한점이다. 이클립스에서 테스트를 하게 된다면
+		프로젝트 폴더 바로 하위에 있어야 한다. 즉 여기서는 <span class="code">\workspace\studyjava</span>에
+		있어야 한다는 것이다. 해당 내용은 <a class="imp"
+			href="https://stackoverflow.com/questions/13592325/exception-in-thread-main-java-io-filenotfoundexception-error">여기에</a>
+		있으니 참조하시라. 다만 다음을 추가하자.
+	</p>
+	<pre class="code">
+if(new File("input.txt").exists())
+	System.out.println("있다.");
+else {
+	System.out.println("없다");
+	return;
+}</pre>
+	<p>만약 아래와 같이 커멘트 명령어라면 아직 안했으니 패스 하겠다.</p>
+	<p class="imp">프렉티스021/pio_01.java에서 해당 프렉티스 진행한다.</p>
+	<p>
+		Now let's have a file <span class="code">input.txt</span> with the
+		following content −
+	</p>
+	<pre class="code">
+This is test for copy file.</pre>
+	<p>As a next step, compile the above program and execute it, which
+		will result in creating output.txt file with the same content as we
+		have in input.txt. So let's put the above code in CopyFile.java file
+		and do the following −</p>
+	<pre class="code">
+$javac CopyFile.java
+$java CopyFile</pre>
 
 
 

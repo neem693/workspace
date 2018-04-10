@@ -7,4 +7,9 @@
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="practice020.Example07"/>
+<fullyQualifiedTypeName name="java.io.FilterOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
