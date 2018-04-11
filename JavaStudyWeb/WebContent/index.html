@@ -9650,6 +9650,107 @@ This is test for copy file.</pre>
 	<pre class="code">
 $javac CopyFile.java
 $java CopyFile</pre>
+	<h2>Character Streams</h2>
+	<p>
+		Java <span class="code">Byte</span> streams are used to perform input
+		and output of 8-bit bytes, whereas Java <span class="code">Character</span>
+		streams are used to perform input and output for 16-bit unicode.
+		Though there are many classes related to character streams but the
+		most frequently used classes are, <span class="code">FileReader</span>
+		and <span class="code">FileWriter</span>. Though internally FileReader
+		uses FileInputStream and FileWriter uses FileOutputStream but here the
+		major difference is that FileReader reads two bytes at a time and
+		FileWriter writes two bytes at a time.
+	</p>
+	<p>We can re-write the above example, which makes the use of these
+		two classes to copy an input file (having unicode characters) into an
+		output file −</p>
+	<h2>Example</h2>
+
+	<pre class="code">import java.io.*;
+public class CopyFile {
+
+   public static void main(String args[]) throws IOException {
+      FileReader in = null;
+      FileWriter out = null;
+
+      try {
+         in = new FileReader("input.txt");
+         out = new FileWriter("output.txt");
+         
+         int c;
+         while ((c = in.read()) != -1) {
+            out.write(c);
+         }
+      }finally {
+         if (in != null) {
+            in.close();
+         }
+         if (out != null) {
+            out.close();
+         }
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/pio_02.java에서 해당프렉티스 진행한다.</p>
+	<p>
+		Now let's have a file <span class="code">input.txt</span> with the
+		following content −
+	</p>
+	<pre class="code">This is test for copy file.</pre>
+	<p>As a next step, compile the above program and execute it, which
+		will result in creating output.txt file with the same content as we
+		have in input.txt. So let's put the above code in CopyFile.java file
+		and do the following −</p>
+	<pre class="code">
+$javac CopyFile.java
+$java CopyFile</pre>
+
+
+	<h1>Standard Streams</h1>
+	<p>All the programming languages provide support for standard I/O
+		where the user's program can take input from a keyboard and then
+		produce an output on the computer screen. If you are aware of C or C++
+		programming languages, then you must be aware of three standard
+		devices STDIN, STDOUT and STDERR. Similarly, Java provides the
+		following three standard streams −</p>
+	<ul>
+		<li>Standard Input − This is used to feed the data to user's
+			program and usually a keyboard is used as standard input stream and
+			represented as System.in.</li>
+		<li>Standard Output − This is used to output the data produced by
+			the user's program and usually a computer screen is used for standard
+			output stream and represented as System.out.</li>
+		<li>Standard Error − This is used to output the error data
+			produced by the user's program and usually a computer screen is used
+			for standard error stream and represented as System.err.</li>
+	</ul>
+	<p>Following is a simple program, which creates InputStreamReader
+		to read standard input stream until the user types a "q" −</p>
+<h2>Example</h2>
+<pre class = "code">
+import java.io.*;
+public class ReadConsole {
+
+   public static void main(String args[]) throws IOException {
+      InputStreamReader cin = null;
+
+      try {
+         cin = new InputStreamReader(System.in);
+         System.out.println("Enter characters, 'q' to quit.");
+         char c;
+         do {
+            c = (char) cin.read();
+            System.out.print(c);
+         } while(c != 'q');
+      }finally {
+         if (cin != null) {
+            cin.close();
+         }
+      }
+   }
+}</pre>
+
 
 
 
