@@ -9727,8 +9727,8 @@ $java CopyFile</pre>
 	</ul>
 	<p>Following is a simple program, which creates InputStreamReader
 		to read standard input stream until the user types a "q" −</p>
-<h2>Example</h2>
-<pre class = "code">
+	<h2>Example</h2>
+	<pre class="code">
 import java.io.*;
 public class ReadConsole {
 
@@ -9750,12 +9750,149 @@ public class ReadConsole {
       }
    }
 }</pre>
-
-
-
+	<p class="imp">/프렉티스022/pio_03.java에서 해당 프렉티스 진행한다.</p>
+	<p>Let's keep the above code in ReadConsole.java file and try to
+		compile and execute it as shown in the following program. This program
+		continues to read and output the same character until we press 'q' −</p>
+	<pre class="code">
+$javac ReadConsole.java
+$java ReadConsole
+Enter characters, 'q' to quit.
+1
+1
+e
+e
+q
+q</pre>
+	<h1>Reading and Writing Files</h1>
+	<p>
+		As described earlier, a stream can be defined as a sequence of data.
+		The <span class="code">InputStream</span> is used to read data from a
+		source and the <span class="code">OutputStream</span> is used for
+		writing data to a destination.
+	</p>
+	<p>Here is a hierarchy of classes to deal with Input and Output
+		streams.</p>
+	<img class="img" src="/java/img/file_io.png">
+	<p>
+		The two important streams are <span class="code">FileInputStream</span>
+		and <span class="code">FileOutputStream</span>, which would be
+		discussed in this tutorial.
+	</p>
+	<h2>FileInputStream</h2>
+	<p>
+		This stream is used for reading data from the files. Objects can be
+		created using the keyword <b>new</b> and there are several types of
+		constructors available. <br> <br> Following constructor
+		takes a file name as a string to create an input stream object to read
+		the file −
+	</p>
+	<pre class="code">
+	InputStream f = new FileInputStream("C:/java/hello");</pre>
+	<p>Following constructor takes a file object to create an input
+		stream object to read the file. First we create a file object using
+		File() method as follows −</p>
+	<pre class="code">
+File f = new File("C:/java/hello");
+InputStream f = new FileInputStream(f);</pre>
+	<p>Once you have InputStream object in hand, then there is a list
+		of helper methods which can be used to read to stream or to do other
+		operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public void close() throws IOException{}</b>
+					</p>
+					<p>This method closes the file output stream. Releases any
+						system resources associated with the file. Throws an IOException.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>protected void finalize()throws IOException {}</b>
+					</p>
+					<p>This method cleans up the connection to the file. Ensures
+						that the close method of this file output stream is called when
+						there are no more references to this stream. Throws an
+						IOException.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public int read(int r)throws IOException{}</b>
+					</p>
+					<p>This method reads the specified byte of data from the
+						InputStream. Returns an int. Returns the next byte of data and -1
+						will be returned if it's the end of the file.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public int read(byte[] r) throws IOException{}</b>
+					</p>
+					<p>This method reads r.length bytes from the input stream into
+						an array. Returns the total number of bytes read. If it is the end
+						of the file, -1 will be returned.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public int available() throws IOException{}</b>
+					</p>
+					<p>Gives the number of bytes that can be read from this file
+						input stream. Returns an int.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>There are other important input streams available, for more
+		detail you can refer to the following links −</p>
+	<ul>
+		<li>ByteArrayInputStream</li>
+		<li>DataInputStream</li>
+	</ul>
 
 
 	<!-- 끝 -->
+	<p>ByteArrayOutputStream,DataOutputStream 내용 정리하자.</p>
+	<h2>Example</h2>
+	<p>Following is the example to demonstrate InputStream and
+		OutputStream −</p>
+	<pre class="code">
+		import java.io.*;
+public class fileStreamTest {
+
+   public static void main(String args[]) {
+   
+      try {
+         byte bWrite [] = {11,21,3,40,5};
+         OutputStream os = new FileOutputStream("test.txt");
+         for(int x = 0; x < bWrite.length ; x++) {
+            os.write( bWrite[x] );   // writes the bytes
+         }
+         os.close();
+     
+         InputStream is = new FileInputStream("test.txt");
+         int size = is.available();
+
+         for(int i = 0; i < size; i++) {
+            System.out.print((char)is.read() + "  ");
+         }
+         is.close();
+      } catch (IOException e) {
+         System.out.print("Exception");
+      }	
+   }
+}</pre>
+	<p>The above code would create file test.txt and would write given
+		numbers in binary format. Same would be the output on the stdout
+		screen.</p>
 
 	<div class="fixed">
 		<a href="#index_subject">▲</a>
