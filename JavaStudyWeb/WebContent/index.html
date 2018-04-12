@@ -9788,7 +9788,7 @@ q</pre>
 		the file −
 	</p>
 	<pre class="code">
-	InputStream f = new FileInputStream("C:/java/hello");</pre>
+InputStream f = new FileInputStream("C:/java/hello");</pre>
 	<p>Following constructor takes a file object to create an input
 		stream object to read the file. First we create a file object using
 		File() method as follows −</p>
@@ -9857,15 +9857,85 @@ InputStream f = new FileInputStream(f);</pre>
 		<li>ByteArrayInputStream</li>
 		<li>DataInputStream</li>
 	</ul>
+	<h1>FileOutputStream</h1>
+	<p>
+		FileOutputStream is used to create a file and write data into it. The
+		stream would create a file, if it doesn't already exist, before
+		opening it for output. <br> <br> Here are two constructors
+		which can be used to create a FileOutputStream object. <br> <br>
+		Following constructor takes a file name as a string to create an input
+		stream object to write the file −
+	</p>
+	<pre class="code">
+OutputStream f = new FileOutputStream("C:/java/hello")</pre>
+	<p>Following constructor takes a file object to create an output
+		stream object to write the file. First, we create a file object using
+		File() method as follows −</p>
+	<pre class="code">
+File f = new File("C:/java/hello");
+OutputStream f = new FileOutputStream(f);</pre>
+	<p>Once you have OutputStream object in hand, then there is a list
+		of helper methods, which can be used to write to stream or to do other
+		operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public void close() throws IOException{}</b>
+					</p>
+					<p>This method closes the file output stream. Releases any
+						system resources associated with the file. Throws an IOException.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>protected void finalize()throws IOException {}</b>
+					</p>
+					<p>This method cleans up the connection to the file. Ensures
+						that the close method of this file output stream is called when
+						there are no more references to this stream. Throws an
+						IOException.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public void write(int w)throws IOException{}</b>
+					</p>
+					<p>This methods writes the specified byte to the output stream.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public void write(byte[] w)</b>
+					</p>
+					<p>Writes w.length bytes from the mentioned byte array to the
+						OutputStream.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>There are other important output streams available, for more
+		detail you can refer to the following links −</p>
+	<ul>
+		<li>ByteArrayOutputStream</li>
+		<li>DataOutputStream</li>
+	</ul>
 
 
-	<!-- 끝 -->
-	<p>ByteArrayOutputStream,DataOutputStream 내용 정리하자.</p>
+
+
+
 	<h2>Example</h2>
 	<p>Following is the example to demonstrate InputStream and
 		OutputStream −</p>
 	<pre class="code">
-		import java.io.*;
+import java.io.*;
 public class fileStreamTest {
 
    public static void main(String args[]) {
@@ -9873,7 +9943,7 @@ public class fileStreamTest {
       try {
          byte bWrite [] = {11,21,3,40,5};
          OutputStream os = new FileOutputStream("test.txt");
-         for(int x = 0; x < bWrite.length ; x++) {
+         for(int x = 0; x &lt; bWrite.length ; x++) {
             os.write( bWrite[x] );   // writes the bytes
          }
          os.close();
@@ -9881,7 +9951,7 @@ public class fileStreamTest {
          InputStream is = new FileInputStream("test.txt");
          int size = is.available();
 
-         for(int i = 0; i < size; i++) {
+         for(int i = 0; i &lt; size; i++) {
             System.out.print((char)is.read() + "  ");
          }
          is.close();
@@ -9890,9 +9960,19 @@ public class fileStreamTest {
       }	
    }
 }</pre>
+	<p class="imp">프렉티스021/pio04.java에서 해당 프렉티스 진행한다.</p>
 	<p>The above code would create file test.txt and would write given
 		numbers in binary format. Same would be the output on the stdout
 		screen.</p>
+
+
+
+
+	<!-- 끝 -->
+	<!-- ByteArrayInputStream,DataInputStream,ByteArrayOutputStream,DataOutputStream 내용 정리하자. -->
+
+
+
 
 	<div class="fixed">
 		<a href="#index_subject">▲</a>

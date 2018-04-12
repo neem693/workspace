@@ -9,12 +9,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="href" key="selection"/>
+		<item value="InputStream f" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="InputStream f"/>
+			<item value="inputstream"/>
 			<item value="href"/>
 			<item value="Passing Arrays to Methods"/>
 			<item value="Passing Parameters by Value"/>
