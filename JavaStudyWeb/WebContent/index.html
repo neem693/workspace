@@ -5758,12 +5758,15 @@ public byte[] getBytes()</pre>
 import java.io.*;
 public class Test12 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str1 = new String("Welcome to Tutorialspoint.com");
-			String str2 = new String(str1.getBytes());
-			System.out.println("Returned Value " + str2);
-			str2 = new String(str1.getBytes());
-			System.out.println("Returned Value " + str2);
+	// TODO Auto-generated method stub
+	String str1 = new String("Welcome to Tutorialspoint.com");
+
+	String str2 = new String(str1.getBytes());
+	System.out.println("Returned Value :" + str2);
+	System.out.println("아스키 코드로 다음과 같다. (바이트숫자 문자)");
+	byte[] bstr = str1.getBytes();
+	for (byte b : bstr)
+		System.out.print(" " + b + " " + (char) b);
 	}
 }
 </pre>
@@ -5771,8 +5774,9 @@ public class Test12 {
 	<p>This will produce the following result −</p>
 	<h2>Output</h2>
 	<pre class="code">
-Returned Value Welcome to Tutorialspoint.com
-Returned Value Welcome to Tutorialspoint.com</pre>
+Returned Value :Welcome to Tutorialspoint.com
+아스키 코드로 다음과 같다. (바이트숫자 문자)
+ 87 W 101 e 108 l 99 c 111 o 109 m 101 e 32   116 t 111 o 32   84 T 117 u 116 t 111 o 114 r 105 i 97 a 108 l 115 s 112 p 111 o 105 i 110 n 116 t 46 . 99 c 111 o 109 m</pre>
 	<span id="str_13"></span>
 	<h1 class="subject sub">String getBytes(String charsetName)</h1>
 	<h1>Description</h1>
@@ -9964,12 +9968,298 @@ public class fileStreamTest {
 	<p>The above code would create file test.txt and would write given
 		numbers in binary format. Same would be the output on the stdout
 		screen.</p>
+	<p class="imp">이 부분이 잘 이해가 안가는게, 학원컴에서는 분명히 잘 안나오던게, 여기서는 또 잘나온다.
+		숫자 말이다.</p>
+	<h1>File Navigation and I/O</h1>
+	<p>There are several other classes that we would be going through
+		to get to know the basics of File Navigation and I/O.</p>
+	<ul>
+		<li>File Class</li>
+		<li>FileReader Class</li>
+		<li>FileWriter Class</li>
+	</ul>
+	<h1>Directories in Java</h1>
+	<p>A directory is a File which can contain a list of other files
+		and directories. You use File object to create directories, to list
+		down files available in a directory. For complete detail, check a list
+		of all the methods which you can call on File object and what are
+		related to directories.</p>
+	<h2>Creating Directories</h2>
+	<p>
+		There are two useful <span class="code">File</span> utility methods,
+		which can be used to create directories −
+	</p>
+	<ul>
+		<li>The <span class="code">mkdir( )</span> method creates a
+			directory, returning true on success and false on failure. Failure
+			indicates that the path specified in the File object already exists,
+			or that the directory cannot be created because the entire path does
+			not exist yet.
+		</li>
+		<li>The <span class="code">mkdirs()</span> method creates both a
+			directory and all the parents of the directory.
+		</li>
+	</ul>
+	<p>Following example creates "/tmp/user/java/bin" directory −</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.File;
+public class CreateDir {
+
+   public static void main(String args[]) {
+      String dirname = "/tmp/user/java/bin";
+      File d = new File(dirname);
+      
+      // Create directory now.
+      d.mkdirs();
+   }
+}</pre>
+	<p class="imp">프렉티스021/pio_05.java에서 해당 프렉티스 진행한다. 해당 프렉티스는 한번 실행하고
+		두 번 실행할 시에는</p>
+	<p>Compile and execute the above code to create
+		"/tmp/user/java/bin".</p>
+	<p>
+		<b>Note</b> − Java automatically takes care of path separators on UNIX
+		and Windows as per conventions. If you use a forward slash (/) on a
+		Windows version of Java, the path will still resolve correctly.
+	</p>
+	<h2 class="bookmark">처음에 /(슬러쉬)쓰는 용도</h2>
+	<p>일단 위에 보듯이 윈도우에서는 / 와 같은 슬러쉬를 써도 \ 와 같은 실제로 윈도우에서 폴더 경로로 사용하는 역
+		슬러쉬를 이용하게 된다. 뭐 어찌되었든 이 이야기를 하려한 건 아니고, 첫번째, 슬러쉬를 의미하는 거에 대해서 말하고자 한다.</p>
+	<ol>
+		<li><span class="code">/tmp</span>/user</li>
+		<li><span class="code">tmp</span>/user</li>
+	</ol>
+	<p>
+		두 코드의 다른점이 있나? 있다. 바로 처음에 슬러쉬가 들어가느냐 안 들어가느냐의 차이점이다. 1번을 보면 맨 처음부터
+		슬러쉬가 들어간다. 이 말은 처음 기반 폴더 부터 출발하겠다는 의미다. 아주 처음의 ROOT 돌아가서 그 공간의 폴더 이름을
+		의미한다. 윈도우 기준으로 C드라이브 하위를 의미한다.<br>자, 그럼 이제 2번을 보도록 하자. 2번은 슬러쉬가
+		없이 바로 파일 네임이 들어가는데, 이럴 경우 현 자바 프로젝트의 해당 폴더 이름을 말한다. 즉, 여기서는 studyJava의
+		하위폴더를 의미한다.
+	</p>
+	<h1>Listing Directories</h1>
+	<p>
+		You can use <span class="code">list( )</span> method provided by <span
+			class="code">File</span> object to list down all the files and
+		directories available in a directory as follows −
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.File;
+public class ReadDir {
+
+   public static void main(String[] args) {
+      File file = null;
+      String[] paths;
+  
+      try {      
+         // create new file object
+         file = new File("/tmp");
+
+         // array of files and directory
+         paths = file.list();
+
+         // for each name in the path array
+         for(String path:paths) {
+            // prints filename and directory name
+            System.out.println(path);
+         }
+      } catch (Exception e) {
+         // if any error occurs
+         e.printStackTrace();
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/pio_06.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result based on the directories
+		and files available in your /tmp directory −</p>
+	<h2>Output</h2>
+	<pre class="code">
+test1.txt
+test2.txt
+ReadDir.java
+ReadDir.class</pre>
+	<h1 class="subject sub">ByteArrayInputStream</h1>
+	<p>
+		The ByteArrayInputStream class allows a buffer in the memory to be
+		used as an InputStream. The input source is a byte array. <br> <br>
+		ByteArrayInputStream class provides the following constructors.
+	</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Constructor and Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>ByteArrayInputStream(byte [] a)</b>
+					</p>
+					<p>This constructor accepts a byte array as a parameter.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>ByteArrayInputStream(byte [] a, int off, int len)</b>
+					</p>
+					<p>
+						This constructor takes an array of bytes, and two integer values,
+						where <b>off</b> is the first byte to be read and <b>len</b> is
+						the number of bytes to be read.
+					</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Once you have ByteArrayInputStream object in hand then there is
+		a list of helper methods which can be used to read the stream or to do
+		other operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public int read()</b>
+					</p>
+					<p>This method reads the next byte of data from the
+						InputStream. Returns an int as the next byte of data. If it is the
+						end of the file, then it returns -1.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public int read(byte[] r, int off, int len)</b>
+					</p>
+					<p>
+						This method reads upto <b>len</b> number of bytes starting from <b>off</b>
+						from the input stream into an array. Returns the total number of
+						bytes read. If it is the end of the file, -1 will be returned.
+					</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public int available()</b>
+					</p>
+					<p>Gives the number of bytes that can be read from this file
+						input stream. Returns an int that gives the number of bytes to be
+						read.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public void mark(int read)</b>
+					</p>
+					<p>This sets the current marked position in the stream. The
+						parameter gives the maximum limit of bytes that can be read before
+						the marked position becomes invalid.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public long skip(long n)</b>
+					</p>
+					<p>Skips ‘n’ number of bytes from the stream. This returns the
+						actual number of bytes skipped.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is the example to demonstrate ByteArrayInputStream and
+		ByteArrayOutputStream.</p>
+	<pre class="code">
+import java.io.*;
+public class ByteStreamTest {
+
+   public static void main(String args[])throws IOException {
+      ByteArrayOutputStream bOutput = new ByteArrayOutputStream(12);
+
+      while( bOutput.size()!= 10 ) {
+         // Gets the inputs from the user
+         bOutput.write("hello".getBytes()); 
+      }
+      byte b [] = bOutput.toByteArray();
+      System.out.println("Print the content");
+      
+      for(int x = 0 ; x &lt; b.length; x++) {
+         // printing the characters
+         System.out.print((char)b[x]  + "   "); 
+      }
+      System.out.println("   ");
+      
+      int c;
+      ByteArrayInputStream bInput = new ByteArrayInputStream(b);
+      System.out.println("Converting characters to Upper case " );
+      
+      for(int y = 0 ; y &lt; 1; y++) {
+         while(( c = bInput.read())!= -1) {
+            System.out.println(Character.toUpperCase((char)c));
+         }
+         bInput.reset(); 
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/pio_07.java에서 해당 프렉티스 진행한다.</p>
+	<p>
+		해당 코드에 대해서 설명을 하도록 하겠다.<br> <span class="code">ByteArrayOutputStream
+			bOutput = new ByteArrayOutputStream(12);</span><br>일단, 이 코드를 보면 총 12
+		버퍼를 저장하겠다는 것이고,
+	</p>
+	<pre class="code">while( bOutput.size()!= 10 ) {
+         // Gets the inputs from the user
+         bOutput.write("hello".getBytes()); 
+      }</pre>
+	<p>이 코드는 그 버퍼(배열)에 10이 채워질 때 까지 hello라는 문자열을 byte로 해서 write하여 버퍼에
+		채워넣겠다는 것이다. 처음에는 당연히 5개의 버퍼가 채워지고, 그리고 또 5개의 버퍼가 채워져 10이 되면, 다음 단계로
+		넘어간다.</p>
+	<p>Following is the sample run of the above program −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Print the content
+h   e   l   l   o   h   e   l   l   o      
+Converting characters to Upper case 
+H
+E
+L
+L
+O
+H
+E
+L
+L
+O</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 	<!-- 끝 -->
-	<!-- ByteArrayInputStream,DataInputStream,ByteArrayOutputStream,DataOutputStream 내용 정리하자. -->
+	<!-- 
+	ByteArrayInputStream
+	DataInputStream
+	ByteArrayOutputStream
+	DataOutputStream
+	File Class
+	FileReader Class
+	FileWriter Class 내용 정리하자. -->
 
 
 

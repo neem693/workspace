@@ -8,7 +8,6 @@
 		<item value="808" key="DIALOG_X_ORIGIN"/>
 		<item value="236" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="General"/>
 			<item value="Java"/>
 			<item value="Java Browsing"/>
 		</list>
