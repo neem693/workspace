@@ -9,12 +9,19 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Test12" key="selection"/>
+		<item value="Vehicle a = new Car();" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Vehicle a = new Car();"/>
+			<item value="플러그인"/>
+			<item value="이곳을"/>
+			<item value="bookmark"/>
+			<item value="bookmakr"/>
+			<item value="설치 확인"/>
+			<item value="public static final"/>
 			<item value="Test12"/>
 			<item value=","/>
 			<item value="If you use a forward slash (/) on a Windows version "/>
@@ -23,13 +30,6 @@
 			<item value="href"/>
 			<item value="Passing Arrays to Methods"/>
 			<item value="Passing Parameters by Value"/>
-			<item value="class=&quot;ts&quot;"/>
-			<item value="left"/>
-			<item value="Capturing groups"/>
-			<item value="\"/>
-			<item value="Open notepad and add the code as above."/>
-			<item value="JAVA_HOME"/>
-			<item value="args"/>
 		</list>
 		<list key="replacehistory">
 			<item value="\n"/>

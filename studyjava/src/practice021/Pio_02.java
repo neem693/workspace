@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class pio_02 {
+public class Pio_02 {
 
 	public static void main(String[] args) throws IOException{
 		FileReader in = null;

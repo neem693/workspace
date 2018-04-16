@@ -45,9 +45,59 @@
 		<li>CLASSPATH : 실행 시 클래스 파일의 위치와 참조 파일들의 위치 지정 (기본 공용 폴더)<span
 			class="code">%JAVA_HOME%\lib;</span>
 		</li>
-		<li>PATH : 실행 명령어 위치 지정 (bin)<span class="code">;(앞의 코드
-				보전하기 위한 세미콜론)%JAVA_HOME%\bin;</span></li>
+		<li><img class="img" src="/java/img/java_setting.png"
+			alt="java_setting">PATH : 밑에 있는 시스템 변수 공간이 아니라 윗 공간 유저에 대한 사용자
+			변수공간에서 실행 명령어 위치 지정 (bin)<span class="code">;(앞의 코드 보전하기 위한
+				세미콜론)%JAVA_HOME%\bin;</span></li>
 	</ul>
+	<h1>노트패드 ++ 설치</h1>
+	<p>
+		이클립스를 사용하기 전 javac와 java에 대해서 알기 위해서는 반드시 먼저 노트패드++ 을 설치해서 운용하는것이 더
+		바람직하다고 생각한다. 이 과정은 명령프롬프트에서 java와 javac를 노트패드 ++ 에서도 쓰기 위한 방법이다. 일단,
+		java와 javac를 명령프롬프트에서 이용하는 방법은 <a class="code" href="#javac">이곳을</a>
+		참조하자. 지금부터 노트패드++에 대한 java와 javac에 대한 추가과정을 설명하겠다.
+	</p>
+	<ol>
+		<li>일단 노트패드++을 설치하자. 다운로드 주소는 <a
+			href="https://notepad-plus-plus.org/">이곳을</a>참조하자. 되도록이면 64bit버젼을
+			다운받자.
+		</li>
+		<li>설치하자.</li>
+		<li>notePad PluginManager를 설치하자. <a
+			href="https://github.com/bruderstein/nppPluginManager/releases">64bit로
+				다운받자.</a></li>
+		<li>해당 파일을 압축을 풀어서 notepad가 설치된 폴더에 붙여넣자. updater 폴더와 plugin 폴더를
+			덮어씌우자.</li>
+
+		<li><img class="img" src="/java/img/java_notepad1.png">노트패드를
+			다시시작 하면, 플러그인->Plugin Manager->Show plugin Manager 으로 가자.</li>
+		<li><img class="img" src="/java/img/java_notepad2.png">NppExec을
+			선택하고 체크를 하자. 인스톨을 한 후, 노트패드를 다시 시작하자.</li>
+		<li><img class="img" src="/java/img/java_notepad3.png">플러그인
+			->NppExec->Excute 또는 F6으로 가서 다음을 입력하자.<br> <br> <span
+			class="code">cd "$(CURRENT_DIRECTORY)" <br> javac
+				$(FILE_NAME)
+		</span><br> <br>을 입력한다.<img class="img"
+			src="/java/img/java_notepad4.png"></li>
+		<li><img class="img" src="/java/img/java_notepad5.png">save를
+			누르고 자바_컴파일을 상징하는 단어를 쓰고 save를 누른다.</li>
+		<li>이런 방식으로 .class 파일을 실행하는 java방식도 만든다. <br> <span
+			class="code">cd "$(CURRENT_DIRECTORY)" <br>java
+				$(NAME_PART)
+		</span></li>
+		<li><img class="img" src="/java/img/java_notepad6.png">플러그인->NppExec->Advanced
+			Option으로 간다.</li>
+		<li><img class="img" src="/java/img/java_notepad7.png">좌우지간
+			위에 체크하고,<img class="img" src="/java/img/java_notepad8.png"> 밑에
+			선택하고 클릭한다.</li>
+		<li><img class="img" src="/java/img/java_notepad9.png">다음
+			리스트 2개가 나오게끔 하게 한다. ok를 누르고, 노트패드를 다시 시작하자.</li>
+		<li>환경설정->단축키로 가서 다음을 찾아서 단축키를 설정하면 끝이다.<img class="img"
+			src="/java/img/java_notepad10.png"></li>
+		<li>컴파일을 하려면 해당 단축키를 누르고 바로 실행을 하려면 해당 단축키를 누르면 된다.</li>
+		<li>자바 파일을 컴파일 하고 실행하면 다음과 같이 결과가 나온다.<img class="img"
+			src="/java/img/java_notepad11.png"></li>
+	</ol>
 	<h1>설치 확인</h1>
 	<p>
 		설치가 다 진행된다면, 명령프롬포트 상에서 <span class="code">java -version</span>이라고 쳐서
@@ -178,6 +228,7 @@ public class MyFirstJavaProgram {
 	<p class="imp">씨발 이건 한거다.</p>
 	<p>Let's look at how to save the file, compile, and run the
 		program. Please follow the subsequent steps −</p>
+	<span id="javac"></span>
 	<p class="bookmark">명령프롬포트로 컴파일 및 java돌리기</p>
 	<ul>
 		<li>Open notepad and add the code as above.</li>
@@ -1294,11 +1345,11 @@ public static void main(String[] arguments) {
 	<h1>Default Access Modifier - No Keyword</h1>
 	<p>
 		Default access modifier means we do not explicitly declare an access
-		modifier for a class, field, method, etc. <br> <br> A
-		variable or method declared without any access control modifier is
-		available to any other class in the same package. The fields in an
-		interface are implicitly public static final and the methods in an
-		interface are by default public.
+		modifier for a class, field, method, etc. <br> <br> <span
+			class="imp">A variable or method declared without any access
+			control modifier is available to any other class in the same package.</span>
+		The fields in an interface are implicitly <span class="code">public
+			static final</span> and the methods in an interface are by default public.
 	</p>
 	<h2>Example</h2>
 	<p>Variables and methods can be declared without any modifiers, as
@@ -2269,6 +2320,7 @@ true</pre>
 		compared is the assignment compatible with the type on the right.
 		Following is one more example −</p>
 	<h2>Example</h2>
+	<p class="bookmark">상속 컨스트럭트</p>
 	<pre class="code">
 class Vehicle {}
 
@@ -10213,9 +10265,13 @@ public class ByteStreamTest {
          // Gets the inputs from the user
          bOutput.write("hello".getBytes()); 
       }</pre>
-	<p>이 코드는 그 버퍼(배열)에 10이 채워질 때 까지 hello라는 문자열을 byte로 해서 write하여 버퍼에
-		채워넣겠다는 것이다. 처음에는 당연히 5개의 버퍼가 채워지고, 그리고 또 5개의 버퍼가 채워져 10이 되면, 다음 단계로
-		넘어간다.</p>
+	<p>
+		이 코드는 그 버퍼(배열)에 10이 채워질 때 까지 hello라는 문자열을 byte로 해서 write하여 버퍼에 채워넣겠다는
+		것이다. 처음에는 당연히 5개의 버퍼가 채워지고, 그리고 또 5개의 버퍼가 채워져 10이 되면, 다음 단계로 넘어간다.<br>
+		<br>이 바이트 배열을 다시 ByteInputStream(이곳으로) 넣어 bInput이라는
+		ByteInputStream을 생성하여서, 루프를 돌려서 이전에 배웠던것 처럼 read()메소드를 이용해서 -1을 리턴할 때
+		까지 해 당 바이트 값을 c로 입력받아 문자(char)로 변형한 후에 대문자로 변형시킨다.
+	</p>
 	<p>Following is the sample run of the above program −</p>
 	<h2>Output</h2>
 	<pre class="code">
@@ -10232,14 +10288,100 @@ E
 L
 L
 O</pre>
+	<h1 class="subject sub">Java - DataInputStream</h1>
+	<p>
+		The DataInputStream is used in the context of DataOutputStream and can
+		be used to read primitives. <br> <br> Following is the
+		constructor to create an InputStream −
+	</p>
+	<p class='code'>InputStream in = DataInputStream(InputStream in);</p>
+	<p>Once you have DataInputStream object in hand, then there is a
+		list of helper methods, which can be used to read the stream or to do
+		other operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public final int read(byte[] r, int off, int len)throws
+							IOException</b>
+					</p>
+					<p>Reads up to len bytes of data from the input stream into an
+						array of bytes. Returns the total number of bytes read into the
+						buffer otherwise -1 if it is end of file.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>Public final int read(byte [] b)throws IOException</b>
+					</p>
+					<p>Reads some bytes from the inputstream an stores in to the
+						byte array. Returns the total number of bytes read into the buffer
+						otherwise -1 if it is end of file.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>(a) public final Boolean readBooolean()throws IOException</b>
+					</p>
+					<p>
+						<b>(b) public final byte readByte()throws IOException</b>
+					</p>
+					<p>
+						<b>(c) public final short readShort()throws IOException</b>
+					</p>
+					<p>
+						<b>(d) public final Int readInt()throws IOException</b>
+					</p>
+					<p>These methods will read the bytes from the contained
+						InputStream. Returns the next two bytes of the InputStream as the
+						specific primitive type.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public String readLine() throws IOException</b>
+					</p>
+					<p>Reads the next line of text from the input stream. It reads
+						successive bytes, converting each byte separately into a
+						character, until it encounters a line terminator or end of file;
+						the characters read are then returned as a String.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is an example to demonstrate DataInputStream and
+		DataOutputStream. This example reads 5 lines given in a file test.txt
+		and converts those lines into capital letters and finally copies them
+		into another file test1.txt.</p>
+	<pre class="code">
+import java.io.*;
+public class DataInput_Stream {
 
+   public static void main(String args[])throws IOException {
 
+      // writing string to a file encoded as modified UTF-8
+      DataOutputStream dataOut = new DataOutputStream(new FileOutputStream("E:\\file.txt"));
+      dataOut.writeUTF("hello");
 
+      // Reading data from the same file
+      DataInputStream dataIn = new DataInputStream(new FileInputStream("E:\\file.txt"));
 
-
-
-
-
+      while(dataIn.available()>0) {
+         String k = dataIn.readUTF();
+         System.out.print(k+" ");
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/Pio_08.java에서 해당 프렉티스 진행한다.</p>
+	<p>Following is the sample run of the above program −</p>
+	<h2>Output</h2>
+	<pre class="code">
+hello</pre>
 
 
 

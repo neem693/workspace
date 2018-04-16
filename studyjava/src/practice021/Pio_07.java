@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public class pio_07 {
+public class Pio_07 {
 
 	public static void main(String[] args) throws IOException {
 		ByteArrayOutputStream bOutput = new ByteArrayOutputStream(12);
@@ -34,3 +34,4 @@ public class pio_07 {
 	}
 
 }
+

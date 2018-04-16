@@ -2,7 +2,7 @@ package practice021;
 
 import java.io.*;
 
-public class pio_03 {
+public class Pio_03 {
 	public static void main(String[] args) throws IOException {
 		InputStreamReader cin = null;
 		

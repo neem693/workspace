@@ -2,7 +2,7 @@ package practice021;
 
 import java.io.File;
 
-public class pio_06 {
+public class Pio_06 {
 
 	public static void main(String[] args) {
 		File file = null;

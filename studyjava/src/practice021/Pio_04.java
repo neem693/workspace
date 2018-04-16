@@ -2,7 +2,7 @@ package practice021;
 
 import java.io.*;
 
-public class pio_04 {
+public class Pio_04 {
 
 	public static void main(String[] args) {
 		try {
