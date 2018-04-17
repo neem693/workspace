@@ -97,6 +97,16 @@
 		<li>컴파일을 하려면 해당 단축키를 누르고 바로 실행을 하려면 해당 단축키를 누르면 된다.</li>
 		<li>자바 파일을 컴파일 하고 실행하면 다음과 같이 결과가 나온다.<img class="img"
 			src="/java/img/java_notepad11.png"></li>
+		<li>위와 같은 코드에 대해서 폰트를 변경하는 것이 중요하다. 어떤 글자든지 한 글자의 범위가 같아 야지만
+			실행결과에 대해서 헷갈리지 않고 잘 볼 수 있다. 폰트를 변경하는 창은 다음과 같이 열 수 있다.<br>
+			플러그인->NppExec->Change Console Font <img class="img"
+			src="/java/img/java_notepad12.png">
+		</li>
+		<li>~"체" 또는 ~"New"로 고르는게 중요하다. 그러나 CJK폰트가 아닌 폰트로 할 경우에는 한글이 나올 때,
+			오히려 스페이스바의 거리까지 잡아먹는 사태가 벌어질 수 있는 등, 범위가 겁나게 넓어질 수 있다는 것을 감안해야 한다.
+			그러니까 그냥 능력 껏 잘 고르자.<img class="img"
+			src="/java/img/java_notepad13.png">
+		</li>
 	</ol>
 	<h1>설치 확인</h1>
 	<p>
@@ -10382,10 +10392,255 @@ public class DataInput_Stream {
 	<h2>Output</h2>
 	<pre class="code">
 hello</pre>
+	<h1 class="subject sub">Java - ByteArrayOutputStream</h1>
+	<p>
+		The ByteArrayOutputStream class stream creates a buffer in memory and
+		all the data sent to the stream is stored in the buffer. <br> <br>
+		Following is the list of the constructors to be provided by
+		ByteArrayOutputStream class.
+	</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Constructor &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>ByteArrayOutputStream()</b>
+					</p>
+					<p>This constructor creates a ByteArrayOutputStream having
+						buffer of 32 byte.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>ByteArrayOutputStream(int a)</b>
+					</p>
+					<p>This constructor creates a ByteArrayOutputStream having
+						buffer of the given size.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Once you have ByteArrayOutputStream object in hand, then there
+		is a list of helper methods which can be used to write the stream or
+		to do other operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center; vertical-align: middle;">Method
+					&amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public void reset()</b>
+					</p>
+					<p>This method resets the number of valid bytes of the byte
+						array output stream to zero, so all the accumulated output in the
+						stream will be discarded.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public byte[] toByteArray()</b>
+					</p>
+					<p>This method creates a newly allocated Byte array. Its size
+						would be the current size of the output stream and the contents of
+						the buffer will be copied into it. Returns the current contents of
+						the output stream as a byte array.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public String toString()</b>
+					</p>
+					<p>Converts the buffer content into a string. Translation will
+						be done according to the default character encoding. Returns the
+						String translated from the buffer's content.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public void write(int w)</b>
+					</p>
+					<p>Writes the specified array to the output stream.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public void write(byte []b, int of, int len)</b>
+					</p>
+					<p>Writes len number of bytes starting from offset off to the
+						stream.</p></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><p>
+						<b>public void writeTo(OutputStream outSt)</b>
+					</p>
+					<p>Writes the entire content of this Stream to the specified
+						stream argument.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is an example to demonstrate ByteArrayOutputStream and
+		ByteArrayInputStream.</p>
+	<pre class="code">
+import java.io.*;
+public class ByteStreamTest {
 
+   public static void main(String args[])throws IOException {
+      ByteArrayOutputStream bOutput = new ByteArrayOutputStream(12);
 
+      while( bOutput.size()!= 10 ) {
+         // Gets the inputs from the user
+         bOutput.write("hello".getBytes());  
+      }
+      byte b [] = bOutput.toByteArray();
+      System.out.println("Print the content");
+      
+      for(int x = 0; x < b.length; x++) {
+         // printing the characters
+         System.out.print((char)b[x]  + "   "); 
+      }
+      System.out.println("   ");
 
+      int c;
+      ByteArrayInputStream bInput = new ByteArrayInputStream(b);
+      System.out.println("Converting characters to Upper case " );
+      
+      for(int y = 0 ; y < 1; y++ ) {
+         while(( c = bInput.read())!= -1) {
+            System.out.println(Character.toUpperCase((char)c));
+         }
+         bInput.reset(); 
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/Pio_09.java 에서 해당 프렉티스 진행한다.</p>
+	<p>Here is the sample run of the above program −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Print the content
+h   e   l   l   o   h   e   l   l   o      
+Converting characters to Upper case 
+H
+E
+L
+L
+O
+H
+E
+L
+L
+O</pre>
+	<h1 class='subject sub'>Java - DataOutputStream</h1>
+	<p>
+		The DataOutputStream stream lets you write the primitives to an output
+		source. <br> <br> Following is the constructor to create a
+		DataOutputStream.
+	</p>
+	<pre class="code">
+	DataOutputStream out = DataOutputStream(OutputStream out);</pre>
+	<p>Once you have DataOutputStream object in hand, then there is a
+		list of helper methods, which can be used to write the stream or to do
+		other operations on the stream.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public final void write(byte[] w, int off, int len)throws
+							IOException</b>
+					</p>
+					<p>Writes len bytes from the specified byte array starting at
+						point off, to the underlying stream.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>Public final int write(byte [] b)throws IOException</b>
+					</p>
+					<p>Writes the current number of bytes written to this data
+						output stream. Returns the total number of bytes written into the
+						buffer.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>(a) public final void writeBooolean()throws IOException,</b>
+					</p>
+					<p>
+						<b>(b) public final void writeByte()throws IOException,</b>
+					</p>
+					<p>
+						<b>(c) public final void writeShort()throws IOException</b>
+					</p>
+					<p>
+						<b>(d) public final void writeInt()throws IOException</b>
+					</p>
+					<p>These methods will write the specific primitive type data
+						into the output stream as bytes.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>Public void flush()throws IOException</b>
+					</p>
+					<p>Flushes the data output stream.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public final void writeBytes(String s) throws IOException</b>
+					</p>
+					<p>Writes out the string to the underlying output stream as a
+						sequence of bytes. Each character in the string is written out, in
+						sequence, by discarding its high eight bits.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is an example to demonstrate DataInputStream and
+		DataOutputStream. This example reads 5 lines given in a file test.txt
+		and converts those lines into capital letters and finally copies them
+		into another file test1.txt.</p>
+	<pre class="code">
+import java.io.*;
+public class DataInput_Stream {
 
+   public static void main(String args[])throws IOException {
+
+      // writing string to a file encoded as modified UTF-8
+      DataOutputStream dataOut = new DataOutputStream(new FileOutputStream("E:\\file.txt"));
+      dataOut.writeUTF("hello");
+
+      // Reading data from the same file
+      DataInputStream dataIn = new DataInputStream(new FileInputStream("E:\\file.txt"));
+
+      while(dataIn.available()>0) {
+         String k = dataIn.readUTF();
+         System.out.print(k+" ");
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/Pio_10.java에서 해당 프렉티스 진행한다.</p>
+	<p>Here is the sample run of the above program −</p>
+	<h2>Output</h2>
+	<pre class="code">
+THIS IS TEST 1  ,
+THIS IS TEST 2  ,
+THIS IS TEST 3  ,
+THIS IS TEST 4  ,
+THIS IS TEST 5  ,</pre>
 
 
 
@@ -10402,10 +10657,6 @@ hello</pre>
 	File Class
 	FileReader Class
 	FileWriter Class 내용 정리하자. -->
-
-
-
-
 	<div class="fixed">
 		<a href="#index_subject">▲</a>
 	</div>
