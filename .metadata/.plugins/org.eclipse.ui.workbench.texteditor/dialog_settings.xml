@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="하면 다음과 같이 결과가 나온다." key="selection"/>
+		<item value="Java - String split() Method" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Java - String split() Method"/>
 			<item value="하면 다음과 같이 결과가 나온다."/>
 			<item value="Vehicle a = new Car();"/>
 			<item value="플러그인"/>
@@ -29,7 +30,6 @@
 			<item value="InputStream f"/>
 			<item value="inputstream"/>
 			<item value="href"/>
-			<item value="Passing Arrays to Methods"/>
 		</list>
 		<list key="replacehistory">
 			<item value="\n"/>

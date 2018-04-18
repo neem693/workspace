@@ -6578,6 +6578,7 @@ public class Test {
 Return Value :AMROOD
 Return Value :Welcome to AMROODpoint.com</pre>
 	<h1 class="subject sub">Java - String split() Method</h1>
+	<p class="bookmark">문자열 분리시키기</p>
 	<h1>Description</h1>
 	<p>This method has two variants and splits this string around
 		matches of the given regular expression.</p>
@@ -10616,21 +10617,18 @@ O</pre>
 	<pre class="code">
 import java.io.*;
 public class DataInput_Stream {
-
-   public static void main(String args[])throws IOException {
-
-      // writing string to a file encoded as modified UTF-8
-      DataOutputStream dataOut = new DataOutputStream(new FileOutputStream("E:\\file.txt"));
-      dataOut.writeUTF("hello");
-
-      // Reading data from the same file
-      DataInputStream dataIn = new DataInputStream(new FileInputStream("E:\\file.txt"));
-
-      while(dataIn.available()>0) {
-         String k = dataIn.readUTF();
-         System.out.print(k+" ");
-      }
-   }
+  	public static void main(String[] args) throws IOException {
+		DataOutputStream dataOut = new DataOutputStream(new FileOutputStream("/practice021/file.txt"));
+		for (int i = 1; i &lt; 6; i++) {
+			dataOut.writeUTF("THIS iS TEST " + i + " ," );
+		}
+		DataInputStream dataIn = new DataInputStream(new FileInputStream("/practice021/file.txt"));
+		
+		while(dataIn.available()>0) {
+			String k = dataIn.readUTF();
+			System.out.println(k + " ");
+		}
+	}
 }</pre>
 	<p class="imp">프렉티스021/Pio_10.java에서 해당 프렉티스 진행한다.</p>
 	<p>Here is the sample run of the above program −</p>
@@ -10645,6 +10643,500 @@ THIS IS TEST 5  ,</pre>
 
 
 
+	<h1 class="subject sub">Java - File Class</h1>
+	<p>
+		Java File class represents the files and directory pathnames in an
+		abstract manner. This class is used for creation of files and
+		directories, file searching, file deletion, etc. <br> <br>
+		The File object represents the actual file/directory on the disk.
+		Following is the list of constructors to create a File object.
+	</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>File(File parent, String child)</b>
+					</p>
+					<p>This constructor creates a new File instance from a parent
+						abstract pathname and a child pathname string.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>File(String pathname)</b>
+					</p>
+					<p>This constructor creates a new File instance by converting
+						the given pathname string into an abstract pathname.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>File(String parent, String child)</b>
+					</p>
+					<p>This constructor creates a new File instance from a parent
+						pathname string and a child pathname string.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>File(URI uri)</b>
+					</p>
+					<p>This constructor creates a new File instance by converting
+						the given file: URI into an abstract pathname.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Once you have File object in hand, then there is a list of
+		helper methods which can be used to manipulate the files.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public String getName()</b>
+					</p>
+					<p>Returns the name of the file or directory denoted by this
+						abstract pathname.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public String getParent()</b>
+					</p>
+					<p>Returns the pathname string of this abstract pathname's
+						parent, or null if this pathname does not name a parent directory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public File getParentFile()</b>
+					</p>
+					<p>Returns the abstract pathname of this abstract pathname's
+						parent, or null if this pathname does not name a parent directory.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public String getPath()</b>
+					</p>
+					<p>Converts this abstract pathname into a pathname string.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public boolean isAbsolute()</b>
+					</p>
+					<p>Tests whether this abstract pathname is absolute. Returns
+						true if this abstract pathname is absolute, false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><p>
+						<b>public String getAbsolutePath()</b>
+					</p>
+					<p>Returns the absolute pathname string of this abstract
+						pathname.</p></td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td><p>
+						<b>public boolean canRead()</b>
+					</p>
+					<p>Tests whether the application can read the file denoted by
+						this abstract pathname. Returns true if and only if the file
+						specified by this abstract pathname exists and can be read by the
+						application; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td><p>
+						<b>public boolean canWrite()</b>
+					</p>
+					<p>Tests whether the application can modify to the file denoted
+						by this abstract pathname. Returns true if and only if the file
+						system actually contains a file denoted by this abstract pathname
+						and the application is allowed to write to the file; false
+						otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td><p>
+						<b>public boolean exists()</b>
+					</p>
+					<p>Tests whether the file or directory denoted by this abstract
+						pathname exists. Returns true if and only if the file or directory
+						denoted by this abstract pathname exists; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td><p>
+						<b>public boolean isDirectory()</b>
+					</p>
+					<p>Tests whether the file denoted by this abstract pathname is
+						a directory. Returns true if and only if the file denoted by this
+						abstract pathname exists and is a directory; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td><p>
+						<b>public boolean isFile()</b>
+					</p>
+					<p>Tests whether the file denoted by this abstract pathname is
+						a normal file. A file is normal if it is not a directory and, in
+						addition, satisfies other system-dependent criteria. Any
+						non-directory file created by a Java application is guaranteed to
+						be a normal file. Returns true if and only if the file denoted by
+						this abstract pathname exists and is a normal file; false
+						otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td><p>
+						<b>public long lastModified()</b>
+					</p>
+					<p>Returns the time that the file denoted by this abstract
+						pathname was last modified. Returns a long value representing the
+						time the file was last modified, measured in milliseconds since
+						the epoch (00:00:00 GMT, January 1, 1970), or 0L if the file does
+						not exist or if an I/O error occurs.</p></td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td><p>
+						<b>public long length()</b>
+					</p>
+					<p>Returns the length of the file denoted by this abstract
+						pathname. The return value is unspecified if this pathname denotes
+						a directory.</p></td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td><p>
+						<b>public boolean createNewFile() throws IOException</b>
+					</p>
+					<p>Atomically creates a new, empty file named by this abstract
+						pathname if and only if a file with this name does not yet exist.
+						Returns true if the named file does not exist and was successfully
+						created; false if the named file already exists.</p></td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td><p>
+						<b>public boolean delete()</b>
+					</p>
+					<p>Deletes the file or directory denoted by this abstract
+						pathname. If this pathname denotes a directory, then the directory
+						must be empty in order to be deleted. Returns true if and only if
+						the file or directory is successfully deleted; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>16</td>
+				<td><p>
+						<b>public void deleteOnExit()</b>
+					</p>
+					<p>Requests that the file or directory denoted by this abstract
+						pathname be deleted when the virtual machine terminates.</p></td>
+			</tr>
+			<tr>
+				<td>17</td>
+				<td><p>
+						<b>public String[] list()</b>
+					</p>
+					<p>Returns an array of strings naming the files and directories
+						in the directory denoted by this abstract pathname.</p></td>
+			</tr>
+			<tr>
+				<td>18</td>
+				<td><p>
+						<b>public String[] list(FilenameFilter filter)</b>
+					</p>
+					<p>Returns an array of strings naming the files and directories
+						in the directory denoted by this abstract pathname that satisfy
+						the specified filter.</p></td>
+			</tr>
+			<tr>
+				<td>20</td>
+				<td><p>
+						<b>public File[] listFiles()</b>
+					</p>
+					<p>Returns an array of abstract pathnames denoting the files in
+						the directory denoted by this abstract pathname.</p></td>
+			</tr>
+			<tr>
+				<td>21</td>
+				<td><p>
+						<b>public File[] listFiles(FileFilter filter)</b>
+					</p>
+					<p>Returns an array of abstract pathnames denoting the files
+						and directories in the directory denoted by this abstract pathname
+						that satisfy the specified filter.</p></td>
+			</tr>
+			<tr>
+				<td>22</td>
+				<td><p>
+						<b>public boolean mkdir()</b>
+					</p>
+					<p>Creates the directory named by this abstract pathname.
+						Returns true if and only if the directory was created; false
+						otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>23</td>
+				<td><p>
+						<b>public boolean mkdirs()</b>
+					</p>
+					<p>Creates the directory named by this abstract pathname,
+						including any necessary but nonexistent parent directories.
+						Returns true if and only if the directory was created, along with
+						all necessary parent directories; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>24</td>
+				<td><p>
+						<b>public boolean renameTo(File dest)</b>
+					</p>
+					<p>Renames the file denoted by this abstract pathname. Returns
+						true if and only if the renaming succeeded; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>25</td>
+				<td><p>
+						<b>public boolean setLastModified(long time)</b>
+					</p>
+					<p>Sets the last-modified time of the file or directory named
+						by this abstract pathname. Returns true if and only if the
+						operation succeeded; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>26</td>
+				<td><p>
+						<b>public boolean setReadOnly()</b>
+					</p>
+					<p>Marks the file or directory named by this abstract pathname
+						so that only read operations are allowed. Returns true if and only
+						if the operation succeeded; false otherwise.</p></td>
+			</tr>
+			<tr>
+				<td>27</td>
+				<td><p>
+						<b>public static File createTempFile(String prefix, String
+							suffix, File directory) throws IOException</b>
+					</p>
+					<p>Creates a new empty file in the specified directory, using
+						the given prefix and suffix strings to generate its name. Returns
+						an abstract pathname denoting a newly-created empty file.</p></td>
+			</tr>
+			<tr>
+				<td>28</td>
+				<td><p>
+						<b>public static File createTempFile(String prefix, String
+							suffix) throws IOException</b>
+					</p>
+					<p>Creates an empty file in the default temporary-file
+						directory, using the given prefix and suffix to generate its name.
+						Invoking this method is equivalent to invoking
+						createTempFile(prefix, suffix, null). Returns abstract pathname
+						denoting a newly-created empty file.</p></td>
+			</tr>
+			<tr>
+				<td>29</td>
+				<td><p>
+						<b>public int compareTo(File pathname)</b>
+					</p>
+					<p>Compares two abstract pathnames lexicographically. Returns
+						zero if the argument is equal to this abstract pathname, a value
+						less than zero if this abstract pathname is lexicographically less
+						than the argument, or a value greater than zero if this abstract
+						pathname is lexicographically greater than the argument.</p></td>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td><p>
+						<b>public int compareTo(Object o)</b>
+					</p>
+					<p>Compares this abstract pathname to another object. Returns
+						zero if the argument is equal to this abstract pathname, a value
+						less than zero if this abstract pathname is lexicographically less
+						than the argument, or a value greater than zero if this abstract
+						pathname is lexicographically greater than the argument.</p></td>
+			</tr>
+			<tr>
+				<td>31</td>
+				<td><p>
+						<b>public boolean equals(Object obj)</b>
+					</p>
+					<p>Tests this abstract pathname for equality with the given
+						object. Returns true if and only if the argument is not null and
+						is an abstract pathname that denotes the same file or directory as
+						this abstract pathname.</p></td>
+			</tr>
+			<tr>
+				<td>32</td>
+				<td><p>
+						<b>public String toString()</b>
+					</p>
+					<p>Returns the pathname string of this abstract pathname. This
+						is just the string returned by the getPath() method.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is an example to demonstrate File object −</p>
+	<pre class="code">
+package com.tutorialspoint;
+import java.io.File;
+
+public class FileDemo {
+   
+   public static void main(String[] args) {
+      File f = null;
+      String[] strs = {"test1.txt", "test2.txt"};
+      try {
+         // for each string in string array 
+         for(String s:strs ) {
+            // create new file
+            f = new File(s);
+            
+            // true if the file is executable
+            boolean bool = f.canExecute();
+            
+            // find the absolute path
+            String a = f.getAbsolutePath(); 
+            
+            // prints absolute path
+            System.out.print(a);
+            
+            // prints
+            System.out.println(" is executable: "+ bool);
+         } 
+      } catch (Exception e) {
+         // if any I/O error occurs
+         e.printStackTrace();
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스021/Pio_11.java에서 해당 프렉티스 진행한다.</p>
+	<p>Consider there is an executable file test1.txt and another file
+		test2.txt is non executable in the current directory. Let us compile
+		and run the above program, This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+/home/cg/root/2880380/test1.txt is executable: false
+/home/cg/root/2880380/test2.txt is executable: false</pre>
+	<h1 class="subject sub">Java - FileReader Class</h1>
+	<p>
+		This class inherits from the InputStreamReader class. FileReader is
+		used for reading streams of characters. <br> <br> This class
+		has several constructors to create required objects. Following is the
+		list of constructors provided by the FileReader class.
+	</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Constructor &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>FileReader(File file)</b>
+					</p>
+					<p>This constructor creates a new FileReader, given the File to
+						read from.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>FileReader(FileDescriptor fd)</b>
+					</p>
+					<p>This constructor creates a new FileReader, given the
+						FileDescriptor to read from.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>FileReader(String fileName)</b>
+					</p>
+					<p>This constructor creates a new FileReader, given the name of
+						the file to read from.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Once you have FileReader object in hand then there is a list of
+		helper methods which can be used to manipulate the files.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public int read() throws IOException</b>
+					</p>
+					<p>Reads a single character. Returns an int, which represents
+						the character read.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public int read(char [] c, int offset, int len)</b>
+					</p>
+					<p>Reads characters into an array. Returns the number of
+						characters read.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example</h2>
+	<p>Following is an example to demonstrate class −</p>
+	<pre class="code">
+import java.io.*;
+public class FileRead {
+
+   public static void main(String args[])throws IOException {
+      File file = new File("Hello1.txt");
+      
+      // creates the file
+      file.createNewFile();
+      
+      // creates a FileWriter Object
+      FileWriter writer = new FileWriter(file); 
+      
+      // Writes the content to the file
+      writer.write("This\n is\n an\n example\n"); 
+      writer.flush();
+      writer.close();
+
+      // Creates a FileReader Object
+      FileReader fr = new FileReader(file); 
+      char [] a = new char[50];
+      fr.read(a);   // reads the content to the array
+      
+      for(char c : a)
+         System.out.print(c);   // prints the characters one by one
+      fr.close();
+   }
+}</pre>
+	<p class="imp">Pio_12.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+This
+is
+an
+example</pre>
 
 
 
