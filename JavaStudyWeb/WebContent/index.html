@@ -11322,7 +11322,7 @@ FilenotFound_Demo.java:8: error: unreported exception FileNotFoundException; mus
       FileReader fr = new FileReader(file);
                       ^
 1 error</pre>
-<p class = "imp">프렉티스022/Ex_01.java에서 해당 프렉티스 진행한다.</p>
+	<p class="imp">프렉티스022/Ex_01.java에서 해당 프렉티스 진행한다.</p>
 	<p>Note − Since the methods read() and close() of FileReader class
 		throws IOException, you can observe that the compiler notifies to
 		handle IOException, along with FileNotFoundException.</p>
@@ -11339,8 +11339,27 @@ FilenotFound_Demo.java:8: error: unreported exception FileNotFoundException; mus
 		occurs.
 	</p>
 	<h2>Example</h2>
-
-
+	<pre class='code'>
+public class Unchecked_Demo {
+   
+   public static void main(String args[]) {
+      int num[] = {1, 2, 3, 4};
+      System.out.println(num[5]);
+   }
+}</pre>
+	<p>If you compile and execute the above program, you will get the
+		following exception.</p>
+	<h2>Output</h2>
+	<pre class="code">
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+	at Exceptions.Unchecked_Demo.main(Unchecked_Demo.java:8)</pre>
+	<ul>
+		<li>Errors − These are not exceptions at all, but problems that
+			arise beyond the control of the user or the programmer. Errors are
+			typically ignored in your code because you can rarely do anything
+			about an error. For example, if a stack overflow occurs, an error
+			will arise. They are also ignored at the time of compilation.</li>
+	</ul>
 
 
 
