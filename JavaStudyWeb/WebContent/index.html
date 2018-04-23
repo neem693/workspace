@@ -11377,12 +11377,269 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
 
 	<p>Following is a list of most common checked and unchecked Java's
 		Built-in Exceptions.</p>
-		
-		
-		<!-- java built in Exception 정리하자
+	<h1>Java - Built-in Exceptions</h1>
+	<p>
+		Java defines several exception classes inside the standard package
+		java.lang. <br> <br> The most general of these exceptions
+		are subclasses of the standard type RuntimeException. Since java.lang
+		is implicitly imported into all Java programs, most exceptions derived
+		from RuntimeException are automatically available. <br> <br>
+		Java defines several other types of exceptions that relate to its
+		various class libraries. Following is the list of Java Unchecked
+		RuntimeException.
+	</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Exception &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>ArithmeticException</b>
+					</p>
+					<p>Arithmetic error, such as divide-by-zero.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>ArrayIndexOutOfBoundsException</b>
+					</p>
+					<p>Array index is out-of-bounds.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>ArrayStoreException</b>
+					</p>
+					<p>Assignment to an array element of an incompatible type.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>ClassCastException</b>
+					</p>
+					<p>Invalid cast.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>IllegalArgumentException</b>
+					</p>
+					<p>Illegal argument used to invoke a method.</p></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><p>
+						<b>IllegalMonitorStateException</b>
+					</p>
+					<p>Illegal monitor operation, such as waiting on an unlocked
+						thread.</p></td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td><p>
+						<b>IllegalStateException</b>
+					</p>
+					<p>Environment or application is in incorrect state.</p></td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td><p>
+						<b>IllegalThreadStateException</b>
+					</p>
+					<p>Requested operation not compatible with the current thread
+						state.</p></td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td><p>
+						<b>IndexOutOfBoundsException</b>
+					</p>
+					<p>Some type of index is out-of-bounds.</p></td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td><p>
+						<b>NegativeArraySizeException</b>
+					</p>
+					<p>Array created with a negative size.</p></td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td><p>
+						<b>NullPointerException</b>
+					</p>
+					<p>Invalid use of a null reference.</p></td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td><p>
+						<b>NumberFormatException</b>
+					</p>
+					<p>Invalid conversion of a string to a numeric format.</p></td>
+			</tr>
+			<tr>
+				<td>13</td>
+				<td><p>
+						<b>SecurityException</b>
+					</p>
+					<p>Attempt to violate security.</p></td>
+			</tr>
+			<tr>
+				<td>14</td>
+				<td><p>
+						<b>StringIndexOutOfBounds</b>
+					</p>
+					<p>Attempt to index outside the bounds of a string.</p></td>
+			</tr>
+			<tr>
+				<td>15</td>
+				<td><p>
+						<b>UnsupportedOperationException</b>
+					</p>
+					<p>An unsupported operation was encountered.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Following is the list of Java Checked Exceptions Defined in
+		java.lang.</p>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Exception &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>ClassNotFoundException</b>
+					</p>
+					<p>Class not found.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>CloneNotSupportedException</b>
+					</p>
+					<p>Attempt to clone an object that does not implement the
+						Cloneable interface.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>IllegalAccessException</b>
+					</p>
+					<p>Access to a class is denied.</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>InstantiationException</b>
+					</p>
+					<p>Attempt to create an object of an abstract class or
+						interface.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>InterruptedException</b>
+					</p>
+					<p>One thread has been interrupted by another thread.</p></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><p>
+						<b>NoSuchFieldException</b>
+					</p>
+					<p>A requested field does not exist.</p></td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td><p>
+						<b>NoSuchMethodException</b>
+					</p>
+					<p>A requested method does not exist.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>Exceptions Methods</h1>
+	<p>Following is the list of important methods available in the
+		Throwable class.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Sr.No.</th>
+				<th style="text-align: center;">Method &amp; Description</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td><p>
+						<b>public String getMessage()</b>
+					</p>
+					<p>Returns a detailed message about the exception that has
+						occurred. This message is initialized in the Throwable
+						constructor.</p></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td><p>
+						<b>public Throwable getCause()</b>
+					</p>
+					<p>Returns the cause of the exception as represented by a
+						Throwable object.</p></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><p>
+						<b>public String toString()</b>
+					</p>
+					<p>Returns the name of the class concatenated with the result
+						of getMessage().</p></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td><p>
+						<b>public void printStackTrace()</b>
+					</p>
+					<p>Prints the result of toString() along with the stack trace
+						to System.err, the error output stream.</p></td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td><p>
+						<b>public StackTraceElement [] getStackTrace()</b>
+					</p>
+					<p>Returns an array containing each element on the stack trace.
+						The element at index 0 represents the top of the call stack, and
+						the last element in the array represents the method at the bottom
+						of the call stack.</p></td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td><p>
+						<b>public Throwable fillInStackTrace()</b>
+					</p>
+					<p>Fills the stack trace of this Throwable object with the
+						current stack trace, adding to any previous information in the
+						stack trace.</p></td>
+			</tr>
+		</tbody>
+	</table>
+	<h1>Catching Exceptions</h1>
+	<p>A method catches an exception using a combination of the <span class = "code">try</span> and
+		<span class = "code">catch</span> keywords. A try/catch block is placed around the code that might
+		generate an exception. Code within a try/catch block is referred to as
+		protected code, and the syntax for using try/catch looks like the
+		following −</p>
+
+
+	<!-- java built in Exception 정리하자
 		https://www.tutorialspoint.com/java/java_builtin_exceptions.htm -->
-	
-	
+
+
 
 
 
