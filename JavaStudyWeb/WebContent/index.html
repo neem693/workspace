@@ -11629,12 +11629,59 @@ Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
 		</tbody>
 	</table>
 	<h1>Catching Exceptions</h1>
-	<p>A method catches an exception using a combination of the <span class = "code">try</span> and
-		<span class = "code">catch</span> keywords. A try/catch block is placed around the code that might
-		generate an exception. Code within a try/catch block is referred to as
-		protected code, and the syntax for using try/catch looks like the
-		following −</p>
+	<p>
+		A method catches an exception using a combination of the <span
+			class="code">try</span> and <span class="code">catch</span> keywords.
+		A try/catch block is placed around the code that might generate an
+		exception. Code within a try/catch block is referred to as protected
+		code, and the syntax for using try/catch looks like the following −
+	</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+try {
+   // Protected code
+} catch (ExceptionName e1) {
+   // Catch block
+}</pre>
+	<p>
+		The code which is prone to exceptions is placed in the try block. When
+		an exception occurs, that exception occurred is handled by catch block
+		associated with it. Every try block should be immediately followed
+		either by a catch block or finally block. <br> <br> A catch
+		statement involves declaring the type of exception you are trying to
+		catch. If an exception occurs in protected code, the catch block (or
+		blocks) that follows the try is checked. If the type of exception that
+		occurred is listed in a catch block, the exception is passed to the
+		catch block much as an argument is passed into a method parameter.
+	</p>
+	<h2>Example</h2>
+	<p>The following is an array declared with 2 elements. Then the
+		code tries to access the 3rd element of the array which throws an
+		exception.</p>
+	<pre class = "code">
+// File Name : ExcepTest.java
+import java.io.*;
 
+public class ExcepTest {
+
+   public static void main(String args[]) {
+      try {
+         int a[] = new int[2];
+         System.out.println("Access element three :" + a[3]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }
+      System.out.println("Out of the block");
+   }
+}</pre>
+<p>This will produce the following result −</p>
+<h2>Output</h2>
+<pre class = "code">
+Exception thrown  :java.lang.ArrayIndexOutOfBoundsException: 3
+Out of the block</pre>		
+
+		
+		
 
 	<!-- java built in Exception 정리하자
 		https://www.tutorialspoint.com/java/java_builtin_exceptions.htm -->
