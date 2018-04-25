@@ -11658,7 +11658,7 @@ try {
 	<p>The following is an array declared with 2 elements. Then the
 		code tries to access the 3rd element of the array which throws an
 		exception.</p>
-	<pre class = "code">
+	<pre class="code">
 // File Name : ExcepTest.java
 import java.io.*;
 
@@ -11674,14 +11674,101 @@ public class ExcepTest {
       System.out.println("Out of the block");
    }
 }</pre>
-<p>This will produce the following result −</p>
-<h2>Output</h2>
-<pre class = "code">
+	<p class="imp">프렉티스022/Ex_03.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
 Exception thrown  :java.lang.ArrayIndexOutOfBoundsException: 3
-Out of the block</pre>		
+Out of the block</pre>
+	<h1>Multiple Catch Blocks</h1>
+	<p>A try block can be followed by multiple catch blocks. The syntax
+		for multiple catch blocks looks like the following −</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+try {
+   // Protected code
+} catch (ExceptionType1 e1) {
+   // Catch block
+} catch (ExceptionType2 e2) {
+   // Catch block
+} catch (ExceptionType3 e3) {
+   // Catch block
+}</pre>
+	<p>The previous statements demonstrate three catch blocks, but you
+		can have any number of them after a single try. If an exception occurs
+		in the protected code, the exception is thrown to the first catch
+		block in the list. If the data type of the exception thrown matches
+		ExceptionType1, it gets caught there. If not, the exception passes
+		down to the second catch statement. This continues until the exception
+		either is caught or falls through all catches, in which case the
+		current method stops execution and the exception is thrown down to the
+		previous method on the call stack.</p>
 
-		
-		
+
+
+
+	<h2>Example</h2>
+	<p>Here is code segment showing how to use multiple try/catch
+		statements.</p>
+	<pre class="code">
+try {
+   file = new FileInputStream(fileName);
+   x = (byte) file.read();
+} catch (IOException i) {
+   i.printStackTrace();
+   return -1;
+} catch (FileNotFoundException f) // Not valid! {
+   f.printStackTrace();
+   return -1;
+}</pre>
+
+	<h1>Catching Multiple Type of Exceptions</h1>
+	<p>Since Java 7, you can handle more than one exception using a
+		single catch block, this feature simplifies the code. Here is how you
+		would do it −</p>
+	<pre class="code">
+catch (IOException|FileNotFoundException ex) {
+   logger.log(ex);
+   throw ex;</pre>
+	<h1>The Throws/Throw Keywords</h1>
+	<p>
+		If a method does not handle a checked exception, the method must
+		declare it using the throws keyword. The <span class="code">throws</span>
+		keyword appears at the end of a method's signature. <br> <br>
+		You can throw an exception, either a newly instantiated one or an
+		exception that you just caught, by using the <span class="code">throw</span>
+		keyword. <br> <br> Try to understand the difference between
+		throws and throw keywords, throws is used to postpone the handling of
+		a checked exception and throw is used to invoke an exception
+		explicitly. <br> <br> The following method declares that it
+		throws a RemoteException −
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.*;
+public class className {
+
+   public void deposit(double amount) throws RemoteException {
+      // Method implementation
+      throw new RemoteException();
+   }
+   // Remainder of class definition
+}</pre>
+	<p>A method can declare that it throws more than one exception, in
+		which case the exceptions are declared in a list separated by commas.
+		For example, the following method declares that it throws a
+		RemoteException and an InsufficientFundsException −</p>
+		<h2>Example</h2>
+		<pre class = "code">
+import java.io.*;
+public class className {
+
+   public void withdraw(double amount) throws RemoteException, 
+      InsufficientFundsException {
+      // Method implementation
+   }
+   // Remainder of class definition
+}</pre>
 
 	<!-- java built in Exception 정리하자
 		https://www.tutorialspoint.com/java/java_builtin_exceptions.htm -->
