@@ -11758,8 +11758,8 @@ public class className {
 		which case the exceptions are declared in a list separated by commas.
 		For example, the following method declares that it throws a
 		RemoteException and an InsufficientFundsException −</p>
-		<h2>Example</h2>
-		<pre class = "code">
+	<h2>Example</h2>
+	<pre class="code">
 import java.io.*;
 public class className {
 
@@ -11769,6 +11769,99 @@ public class className {
    }
    // Remainder of class definition
 }</pre>
+	<h1>The Finally Block</h1>
+	<p>
+		The finally block follows a try block or a catch block. A finally
+		block of code always executes, irrespective of occurrence of an
+		Exception. <br> <br> Using a finally block allows you to run
+		any cleanup-type statements that you want to execute, no matter what
+		happens in the protected code. <br> <br> A finally block
+		appears at the end of the catch blocks and has the following syntax −
+	</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+try {
+   // Protected code
+} catch (ExceptionType1 e1) {
+   // Catch block
+} catch (ExceptionType2 e2) {
+   // Catch block
+} catch (ExceptionType3 e3) {
+   // Catch block
+}finally {
+   // The finally block always executes.
+}</pre>
+	<h2>Example</h2>
+	<pre class="code">
+public class ExcepTest {
+
+   public static void main(String args[]) {
+      int a[] = new int[2];
+      try {
+         System.out.println("Access element three :" + a[3]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }finally {
+         a[0] = 6;
+         System.out.println("First element value: " + a[0]);
+         System.out.println("The finally statement is executed");
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스022/Ex_05.java에서 해당 프렉티스 진행한다.</p>
+	<p>This will produce the following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Exception thrown  :java.lang.ArrayIndexOutOfBoundsException: 3
+First element value: 6
+The finally statement is executed</pre>
+	<ul>
+		<li>A catch clause cannot exist without a try statement.</li>
+		<li>It is not compulsory to have finally clauses whenever a
+			try/catch block is present.</li>
+		<li>The try block cannot be present without either catch clause
+			or finally clause.</li>
+		<li>Any code cannot be present in between the try, catch, finally
+			blocks.</li>
+	</ul>
+	<h1>The try-with-resources</h1>
+	<p>
+		Generally, when we use any resources like streams, connections, etc.
+		we have to close them explicitly using finally block. In the following
+		program, we are reading data from a file using <span class="code">FileReader</span>
+		and we are closing it using finally block.
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadData_Demo {
+
+   public static void main(String args[]) {
+      FileReader fr = null;		
+      try {
+         File file = new File("file.txt");
+         fr = new FileReader(file); char [] a = new char[50];
+         fr.read(a);   // reads the content to the array
+         for(char c : a)
+         System.out.print(c);   // prints the characters one by one
+      } catch (IOException e) {
+         e.printStackTrace();
+      }finally {
+         try {
+            fr.close();
+         } catch (IOException ex) {		
+            ex.printStackTrace();
+         }
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스022/Ex_06.java에서 해당 프렉티스 진행한다.</p>
+	
+
+
 
 	<!-- java built in Exception 정리하자
 		https://www.tutorialspoint.com/java/java_builtin_exceptions.htm -->
