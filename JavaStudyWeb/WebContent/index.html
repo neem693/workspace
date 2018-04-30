@@ -11843,7 +11843,8 @@ public class ReadData_Demo {
       FileReader fr = null;		
       try {
          File file = new File("file.txt");
-         fr = new FileReader(file); char [] a = new char[50];
+         fr = new FileReader(file); 
+         char [] a = new char[50];
          fr.read(a);   // reads the content to the array
          for(char c : a)
          System.out.print(c);   // prints the characters one by one
@@ -11859,7 +11860,92 @@ public class ReadData_Demo {
    }
 }</pre>
 	<p class="imp">프렉티스022/Ex_06.java에서 해당 프렉티스 진행한다.</p>
+	<p>
+		<span class="code">try-with-resources</span>, also referred as <span
+			class="code">automatic resource management</span>, is a new exception
+		handling mechanism that was introduced in Java 7, which automatically
+		closes the resources used within the try catch block. <br> <br>
+		To use this statement, you simply need to declare the required
+		resources within the parenthesis, and the created resource will be
+		closed automatically at the end of the block. Following is the syntax
+		of try-with-resources statement.
+	</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+try(FileReader fr = new FileReader("file path")) {
+   // use the resource
+   } catch () {
+      // body of catch 
+   }
+}</pre>
+	<p>Following is the program that reads the data in a file using
+		try-with-resources statement.</p>
+	<h2>Example</h2>
+	<pre class="code">
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Try_withDemo {
+
+   public static void main(String args[]) {
+      try(FileReader fr = new FileReader("E://file.txt")) {
+         char [] a = new char[50];
+         fr.read(a);   // reads the contentto the array
+         for(char c : a)
+         System.out.print(c);   // prints the characters one by one
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
+}</pre>
+	<p class="imp">프렉티스022/Ex_07.java에서 해당 프렉티스 진행한다.</p>
 	
+	<p>Following points are to be kept in mind while working with
+		try-with-resources statement.</p>
+
+	<ul>
+		<li>To use a class with try-with-resources statement it should
+			implement AutoCloseable interface and the close() method of it gets
+			invoked automatically at runtime.</li>
+		<li>You can declare more than one class in try-with-resources
+			statement.</li>
+		<li>While you declare multiple classes in the try block of
+			try-with-resources statement these classes are closed in reverse
+			order.</li>
+		<li>Except the declaration of resources within the parenthesis
+			everything is the same as normal try/catch block of a try block.</li>
+		<li>The resource declared in try gets instantiated just before
+			the start of the try-block.</li>
+		<li>The resource declared at the try block is implicitly declared
+			as final.</li>
+	</ul>
+
+	<h1>User-defined Exceptions</h1>
+	<p>You can create your own exceptions in Java. Keep the following
+		points in mind when writing your own exception classes −</p>
+	<ul>
+		<li>All exceptions must be a child of Throwable.</li>
+		<li>If you want to write a checked exception that is
+			automatically enforced by the Handle or Declare Rule, you need to
+			extend the Exception class.</li>
+		<li>If you want to write a runtime exception, you need to extend
+			the RuntimeException class.</li>
+	</ul>
+	<p>We can define our own Exception class as below −</p>
+	<pre class="code">
+class MyException extends Exception {
+}</pre>
+	<p>
+		You just need to extend the predefined <span class="code">Exception</span>
+		class to create your own Exception. These are considered to be checked
+		exceptions. The following <span class="code">InsufficientFundsException</span>
+		class is a user-defined exception that extends the Exception class,
+		making it a checked exception. An exception class is like any other
+		class, containing useful fields and methods.
+	</p>
+
+
+
 
 
 
