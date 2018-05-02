@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
 <fullyQualifiedTypeName name="practice022.InsufficientFundsException"/>
 <fullyQualifiedTypeName name="practice022.CheckingAccount"/>
+<fullyQualifiedTypeName name="practice023.Outer_Demo2.Inner_Demo"/>
 </qualifiedTypeNameHistroy>

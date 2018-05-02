@@ -12082,6 +12082,215 @@ class Outer_Demo {
 			class.</li>
 	</ul>
 	<img class="img" src="/java/img/inner_classes.jpg">
+	<h1>Inner Classes (Non-static Nested Classes)</h1>
+	<p>
+		Inner classes are a security mechanism in Java. We know a class cannot
+		be associated with the access modifier <span class="code">private</span>,
+		but if we have the class as a member of other class, then the inner
+		class can be made private. And this is also used to access the private
+		members of a class.
+	</p>
+	<p>Inner classes are of three types depending on how and where you
+		define them. They are −</p>
+	<ul>
+		<li>Inner Class</li>
+		<li>Method-local Inner Class</li>
+		<li>Anonymous Inner Class</li>
+	</ul>
+	<h2>Inner Class</h2>
+	<p>
+		Creating an inner class is quite simple. You just need to write a
+		class within a class. Unlike a class, an inner class can be private
+		and once you declare an inner class private, it cannot be accessed
+		from an object outside the class. <br> <br> Following is the
+		program to create an inner class and access it. In the given example,
+		we make the inner class private and access the class through a method.
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+class Outer_Demo {
+   int num;
+   
+   // inner class
+   private class Inner_Demo {
+      public void print() {
+         System.out.println("This is an inner class");
+      }
+   }
+   
+   // Accessing he inner class from the method within
+   void display_Inner() {
+      Inner_Demo inner = new Inner_Demo();
+      inner.print();
+   }
+}
+   
+public class My_class {
+
+   public static void main(String args[]) {
+      // Instantiating the outer class 
+      Outer_Demo outer = new Outer_Demo();
+      
+      // Accessing the display_Inner() method.
+      outer.display_Inner();
+   }
+}</pre>
+	<p class="imp">프렉티스023/Inner01.java에서 해당 프렉티스 진행한다.</p>
+	<p>
+		Here you can observe that <span class="code">Outer_Demo</span> is the
+		outer class, <span class="code">Inner_Demo</span> is the inner class,
+		display_Inner() is the method inside which we are instantiating the
+		inner class, and this method is invoked from the <span class="code">main</span>
+		method. <br> <br> If you compile and execute the above
+		program, you will get the following result −
+	</p>
+	<h2>Output</h2>
+	<pre class="code">
+This is an inner class.</pre>
+
+	<h2>Accessing the Private Members</h2>
+	<p>
+		As mentioned earlier, inner classes are also used to access the
+		private members of a class. Suppose, a class is having private members
+		to access them. Write an inner class in it, return the private members
+		from a method within the inner class, say, getValue(), and finally
+		from another class (from which you want to access the private members)
+		call the getValue() method of the inner class. <br> <br> To
+		instantiate the inner class, initially you have to instantiate the
+		outer class. Thereafter, using the object of the outer class,
+		following is the way in which you can instantiate the inner class.
+	</p>
+	<pre class="code">
+Outer_Demo outer = new Outer_Demo();
+Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();</pre>
+	<p>The following program shows how to access the private members of
+		a class using inner class.</p>
+	<h2>Example</h2>
+	<pre class="code">
+class Outer_Demo {
+   // private variable of the outer class
+   private int num = 175;  
+   
+   // inner class
+   public class Inner_Demo {
+      public int getNum() {
+         System.out.println("This is the getnum method of the inner class");
+         return num;
+      }
+   }
+}
+
+public class My_class2 {
+
+   public static void main(String args[]) {
+      // Instantiating the outer class
+      Outer_Demo outer = new Outer_Demo();
+      
+      // Instantiating the inner class
+      Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+      System.out.println(inner.getNum());
+   }
+}</pre>
+	<p class="imp">프렉티스023/Inner02.java에서 해당 프렉티스 진행한다.</p>
+	<p>If you compile and execute the above program, you will get the
+		following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+This is the getnum method of the inner class: 175</pre>
+	<h1>Method-local Inner Class</h1>
+	<p>
+		In Java, we can write a class within a method and this will be a local
+		type. Like local variables, the scope of the inner class is restricted
+		within the method. <br> <br> A method-local inner class can
+		be instantiated only within the method where the inner class is
+		defined. The following program shows how to use a method-local inner
+		class.
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+public class Outerclass {
+   // instance method of the outer class 
+   void my_Method() {
+      int num = 23;
+
+      // method-local inner class
+      class MethodInner_Demo {
+         public void print() {
+            System.out.println("This is method inner class "+num);	   
+         }   
+      } // end of inner class
+	   
+      // Accessing the inner class
+      MethodInner_Demo inner = new MethodInner_Demo();
+      inner.print();
+   }
+   
+   public static void main(String args[]) {
+      Outerclass outer = new Outerclass();
+      outer.my_Method();	   	   
+   }
+}</pre>
+	<p class="imp">프렉티스023/Inner03.java에서 해당 프렉티스 진행한다.</p>
+	<p>If you compile and execute the above program, you will get the
+		following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+This is method inner class 23</pre>
+	<p>In the same way, you can override the methods of the concrete
+		class as well as the interface using an anonymous inner class.</p>
+
+	<h1>Anonymous Inner Class as Argument</h1>
+	<p>
+		Generally, if a method accepts an object of an interface, an abstract
+		class, or a concrete class, then we can implement the interface,
+		extend the abstract class, and pass the object to the method. If it is
+		a class, then we can directly pass it to the method. <br> <br>
+		But in all the three cases, you can pass an anonymous inner class to
+		the method. Here is the syntax of passing an anonymous inner class as
+		a method argument −
+	</p>
+	<pre class="code">
+obj.my_Method(new My_Class() {
+   public void Do() {
+      .....
+      .....
+   }
+});</pre>
+	<p>The following program shows how to pass an anonymous inner class
+		as a method argument.</p>
+	<pre class="code">
+// interface
+interface Message {
+   String greet();
+}
+
+public class My_class {
+   // method which accepts the object of interface Message
+   public void displayMessage(Message m) {
+      System.out.println(m.greet() +
+         ", This is an example of anonymous inner class as an argument");  
+   }
+
+   public static void main(String args[]) {
+      // Instantiating the class
+      My_class obj = new My_class();
+
+      // Passing an anonymous inner class as an argument
+      obj.displayMessage(new Message() {
+         public String greet() {
+            return "Hello";
+         }
+      });
+   }
+}</pre>
+	<p>If you compile and execute the above program, it gives you the
+		following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+Hello, This is an example of anonymous inner class as an argument</pre>
+
+
+
 
 
 
