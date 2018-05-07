@@ -12283,11 +12283,57 @@ public class My_class {
       });
    }
 }</pre>
+	<p class="imp">프렉티스023/Inner04.java에서 해당 프렉티스 진행한다.</p>
 	<p>If you compile and execute the above program, it gives you the
 		following result −</p>
 	<h2>Output</h2>
 	<pre class="code">
 Hello, This is an example of anonymous inner class as an argument</pre>
+
+	<h1>Static Nested Class</h1>
+	<p>A static inner class is a nested class which is a static member
+		of the outer class. It can be accessed without instantiating the outer
+		class, using other static members. Just like static members, a static
+		nested class does not have access to the instance variables and
+		methods of the outer class. The syntax of static nested class is as
+		follows −</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+class MyOuter {
+   static class Nested_Demo {
+   }
+}</pre>
+	<p>Instantiating a static nested class is a bit different from
+		instantiating an inner class. The following program shows how to use a
+		static nested class.</p>
+	<h2>Example</h2>
+	<pre class="code">
+public class Outer {
+   static class Nested_Demo {
+      public void my_method() {
+         System.out.println("This is my nested class");
+      }
+   }
+   
+   public static void main(String args[]) {
+      Outer.Nested_Demo nested = new Outer.Nested_Demo();	 
+      nested.my_method();
+   }
+}</pre>
+	<p class="imp">프렉티스023/Inner05.java에서 해당 프렉티스 진행한다.</p>
+
+
+
+	<p>If you compile and execute the above program, you will get the
+		following result −</p>
+	<h2>Output</h2>
+	<pre class="code">
+This is my nested class</pre>
+
+
+
+
+
 
 
 
