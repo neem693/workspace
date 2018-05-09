@@ -12329,19 +12329,77 @@ public class Outer {
 	<h2>Output</h2>
 	<pre class="code">
 This is my nested class</pre>
+	<h1 class="subject">Java - Inheritance</h1>
+	<p>
+		Inheritance can be defined as the process where one class acquires the
+		properties (methods and fields) of another. With the use of
+		inheritance the information is made manageable in a hierarchical
+		order. <br> <br> The class which inherits the properties of
+		other is known as subclass (derived class, child class) and the class
+		whose properties are inherited is known as superclass (base class,
+		parent class).
+	</p>
+	<h1>extends Keyword</h1>
+	<p>
+		<span class="code">extends</span> is the keyword used to inherit the
+		properties of a class. Following is the syntax of extends keyword.
+	</p>
+	<h2>Syntax</h2>
+	<pre class="code">
+class Super {
+   .....
+   .....
+}
+class Sub extends Super {
+   .....
+   .....
+}</pre>
+	<h1>Sample Code</h1>
+	<p>
+		Following is an example demonstrating Java inheritance. In this
+		example, you can observe two classes namely Calculation and
+		My_Calculation. <br> <br> Using extends keyword, the
+		My_Calculation inherits the methods addition() and Subtraction() of
+		Calculation class. <br> <br> Copy and paste the following
+		program in a file with name My_Calculation.java
+	</p>
+	<h2>Example</h2>
+	<pre class="code">
+class Calculation {
+   int z;
+	
+   public void addition(int x, int y) {
+      z = x + y;
+      System.out.println("The sum of the given numbers:"+z);
+   }
+	
+   public void Subtraction(int x, int y) {
+      z = x - y;
+      System.out.println("The difference between the given numbers:"+z);
+   }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+public class My_Calculation extends Calculation {
+   public void multiplication(int x, int y) {
+      z = x * y;
+      System.out.println("The product of the given numbers:"+z);
+   }
+	
+   public static void main(String args[]) {
+      int a = 20, b = 10;
+      My_Calculation demo = new My_Calculation();
+      demo.addition(a, b);
+      demo.Subtraction(a, b);
+      demo.multiplication(a, b);
+   }
+}</pre>
+	<p class="imp">프렉티스024/Inheri01.java에서 해당 프렉티스 진행한다.</p>
+	<p>Compile and execute the above code as shown below.</p>
+	<pre class="code">
+javac My_Calculation.java
+java My_Calculation</pre>
+	<p>After executing the program, it will produce the following
+		result −</p>
 
 
 
