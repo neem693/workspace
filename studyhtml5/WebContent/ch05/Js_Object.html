@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale = 1.0" />
-<title>Insert title here</title>
+<title>Javascript Object</title>
 <link rel="stylesheet" href="/studyhtml5/ch05/style.css">
 <script src="/studyhtml5/js/jquery-3.1.1.min.js"></script>
 <script src="/studyhtml5/ch05/jquery_index.js"></script>
@@ -21,7 +21,7 @@
 			<div id="bookmark_list"></div>
 			<p class="subject_fix" id="subject_line"></p>
 			<h1 class="subject">이 페이지는 뭐냐?</h1>
-			<p>자바스크립트의 DOM에 대한 내용만 정리할 것이다. 이제 자바스크립트의 꽃이라고 할 수 있다.</p>
+			<p>자바스크립트 오브젝트에 대해서 알아보자.</p>
 			<h1 class="subject">JavaScript Objects</h1>
 			<p class="imp">In JavaScript, objects are king. If you understand
 				objects, you understand JavaScript.</p>
@@ -39,10 +39,291 @@
 			</ul>
 
 			<p>All JavaScript values, except primitives, are objects.</p>
+			<h1>JavaScript Primitives</h1>
+			<p>
+				A primitive value is a value that has no properties or methods. A
+				primitive data type is data that has a primitive value. <br>
+				JavaScript defines 5 types of primitive data types:
+			</p>
+			<ul>
+				<li>string</li>
+				<li>number</li>
+				<li>boolean</li>
+				<li>null</li>
+				<li>undefined</li>
+			</ul>
+			<p>Primitive values are immutable (they are hardcoded and
+				therefore cannot be changed).</p>
+			<p class="imp">if x = 3.14, you can change the value of x. But
+				you cannot change the value of 3.14.</p>
+			<table>
+				<tbody>
+					<tr>
+						<th>Value</th>
+						<th>Type</th>
+						<th>Comment</th>
+					</tr>
+					<tr>
+						<td>"Hello"</td>
+						<td>string</td>
+						<td>"Hello" is always "Hello"</td>
+					</tr>
+					<tr>
+						<td>3.14</td>
+						<td>number</td>
+						<td>3.14 is always 3.14</td>
+					</tr>
+					<tr>
+						<td>true</td>
+						<td>boolean</td>
+						<td>true is always true</td>
+					</tr>
+					<tr>
+						<td>false</td>
+						<td>boolean</td>
+						<td>false is always false</td>
+					</tr>
+					<tr>
+						<td>null</td>
+						<td>null (object)</td>
+						<td>null is always null</td>
+					</tr>
+					<tr>
+						<td>undefined</td>
+						<td>undefined</td>
+						<td>undefined is always undefined</td>
+					</tr>
+				</tbody>
+			</table>
 
+			<h1>Objects are Variables Containing Variables</h1>
+			<p>JavaScript variables can contain single values:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
 
+&lt;h2&gt;JavaScript Variables&lt;/h2&gt;
 
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+// Create aand display a variable:
+var person = "John Doe";
+document.getElementById("demo").innerHTML = person;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice_Object/practice_01.html">프렉티스 01</a>
+			<p>
+				Objects are variables too. But objects can contain many values. <br>
+				<br> The values are written as name : value pairs (name and
+				value separated by a colon).
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Creating a JavaScript Object.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " " + person.lastName;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice_Object/practice_02.html">프렉티스02</a>
+			<p class="imp">A JavaScript object is a collection of named
+				values</p>
+			<h1>Object Properties</h1>
+			<p>The named values, in JavaScript objects, are called
+				properties.</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Value</th>
+					</tr>
+					<tr>
+						<td>firstName</td>
+						<td>John</td>
+					</tr>
+					<tr>
+						<td>lastName</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>age</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>eyeColor</td>
+						<td>blue</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>Objects written as name value pairs are similar to:</p>
+			<ul>
+				<li>Associative arrays in PHP</li>
+				<li>Dictionaries in Python</li>
+				<li>Hash tables in C</li>
+				<li>Hash maps in Java</li>
+				<li>Hashes in Ruby and Perl</li>
+			</ul>
+			<h1>Object Methods</h1>
+			<p>
+				Methods are actions that can be performed on objects. <br> <br>
+				Object properties can be both primitive values, other objects, and
+				functions. <br> <br> An object method is an object
+				property containing a function definition.
+			</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Value</th>
+					</tr>
+					<tr>
+						<td>firstName</td>
+						<td>John</td>
+					</tr>
+					<tr>
+						<td>lastName</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>age</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>eyeColor</td>
+						<td>blue</td>
+					</tr>
+					<tr>
+						<td>fullName</td>
+						<td>function() {return this.firstName + " " + this.lastName;}</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="imp">JavaScript objects are containers for named
+				values, called properties and methods.</p>
+			<p>You will learn more about methods in the next chapters.</p>
+			<h1>Creating a JavaScript Object</h1>
+			<p>
+				With JavaScript, you can define and create your own objects. <br>
+				<br> There are different ways to create new objects:
+			</p>
+			<ul>
+				<li>Define and create a single object, using an object literal.</li>
+				<li>Define and create a single object, with the keyword new.</li>
+				<li>Define an object constructor, and then create objects of
+					the constructed type.</li>
+			</ul>
+			<p class="imp">In ECMAScript 5, an object can also be created
+				with the function Object.create().</p>
+			<h1>Using an Object Literal</h1>
+			<p>
+				This is the easiest way to create a JavaScript Object. <br> <br>
+				Using an object literal, you both define and create an object in one
+				statement. <br> <br> An object literal is a list of
+				name:value pairs (like age:50) inside curly braces {}. <br> <br>
+				The following example creates a new JavaScript object with four
+				properties:
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Creating a JavaScript Object.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice_Object/practice_03.html">프렉티스03</a>
+			<p>Spaces and line breaks are not important. An object definition
+				can span multiple lines:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Creating a JavaScript Object.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_04.html"
+				class="center">프렉티스 04</a>
+			<h1>Using the JavaScript Keyword new</h1>
+			<p>The following example also creates a new JavaScript object
+				with four properties:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = new Object();
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue"; 
+
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a class="center"
+				href="/studyhtml5/ch05/practice_Object/practice_05.html">프렉티스05</a>
+				
 		</article>
+
 
 
 

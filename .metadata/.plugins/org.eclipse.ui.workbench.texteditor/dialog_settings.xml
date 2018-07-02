@@ -9,12 +9,17 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="subject sub" key="selection"/>
+		<item value="a class" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="a class"/>
+			<item value="a href"/>
+			<item value="Using test()"/>
+			<item value="use test"/>
+			<item value="test"/>
 			<item value="subject sub"/>
 			<item value="sub subject"/>
 			<item value="exception"/>
@@ -25,11 +30,6 @@
 			<item value="이곳을"/>
 			<item value="bookmark"/>
 			<item value="bookmakr"/>
-			<item value="설치 확인"/>
-			<item value="public static final"/>
-			<item value="Test12"/>
-			<item value=","/>
-			<item value="If you use a forward slash (/) on a Windows version "/>
 		</list>
 		<list key="replacehistory">
 			<item value="\n"/>
@@ -40,7 +40,7 @@
 		<item value="288" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="434" key="DIALOG_HEIGHT"/>
-		<item value="508" key="DIALOG_X_ORIGIN"/>
-		<item value="273" key="DIALOG_Y_ORIGIN"/>
+		<item value="672" key="DIALOG_X_ORIGIN"/>
+		<item value="279" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
