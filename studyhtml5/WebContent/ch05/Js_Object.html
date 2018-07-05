@@ -511,18 +511,70 @@ person.firstname + " is " + person.nationality + ".";
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
-			<a href="/studyhtml5/ch05/practice_Object/practice_10.html" class="center">프렉티스
-				10</a>
+			<a href="/studyhtml5/ch05/practice_Object/practice_10.html"
+				class="center">프렉티스 10</a>
 			<p class="imp">You cannot use reserved words for property (or
 				method) names. JavaScript naming rules apply.</p>
-				
 
+			<h1>Deleting Properties</h1>
+			<p>The delete keyword deletes a property from an object:</p>
+			<pre class="code">
+			&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Object Properties&lt;/h2&gt;
+
+&lt;p&gt;You can delete object properties.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstname:"John",
+    lastname:"Doe",
+    age:50,
+    eyecolor:"blue"
+};
+delete person.age;
+document.getElementById("demo").innerHTML =
+person.firstname + " is " + person.age + " years old.";
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_11.html"
+				class="center">프렉티스 11</a>
+			<p>
+				The delete keyword deletes both the value of the property and the
+				property itself. <br> <br> After deletion, the property
+				cannot be used before it is added back again. <br> <br>
+				The delete operator is designed to be used on object properties. It
+				has no effect on variables or functions. <br> <br> The
+				delete operator should not be used on predefined JavaScript object
+				properties. It can crash your application.
+			</p>
+			<h1>Property AttributesS</h1>
+			<p>
+				All properties have a name. In addition they also have a value. <br>
+				<br> The value is one of the property's attributes. <br> <br>
+				Other attributes are: enumerable, configurable, and writable. <br>
+				<br> These attributes define how the property can be accessed
+				(is it readable?, is it writable?) <br> <br> In
+				JavaScript, all attributes can be read, but only the value attribute
+				can be changed (and only if the property is writable). <br> <br>(
+				ECMAScript 5 has methods for both getting and setting all property
+				attributes)
+			</p>
+			<h1>Prototype Properties</h1>
+			<p>
+				JavaScript objects inherit the properties of their prototype. <br>
+				<br> The delete keyword does not delete inherited properties,
+				but if you delete a prototype property, it will affect all objects
+				inherited from the prototype.
+			</p>
 		</article>
-
-
-
-
-
 	</section>
 
 
