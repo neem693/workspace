@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="a class" key="selection"/>
+		<item value="bookmark" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="bookmark"/>
 			<item value="a class"/>
 			<item value="a href"/>
 			<item value="Using test()"/>
@@ -28,7 +29,6 @@
 			<item value="Vehicle a = new Car();"/>
 			<item value="플러그인"/>
 			<item value="이곳을"/>
-			<item value="bookmark"/>
 			<item value="bookmakr"/>
 		</list>
 		<list key="replacehistory">
