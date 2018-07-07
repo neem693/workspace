@@ -2918,8 +2918,24 @@ $(document).ready(function(){
 			</pre>
 			<a href="/studyhtml5/ch05/practice/jq_p25.html" class="center">프렉티스25</a>
 
-
-
+			<h1 class="bookmark">MouseOver vs MouseEnter vs MouseMove</h1>
+			<p>
+				이 세가지 이벤트들의 다른점들에 대해서 확실히 알고 가도록 하자. 사실 move이벤트는 해당 영역에서 움직이만 하면
+				발생하는 이벤트라서 확실히 구분되지만, 이 염병할 over와 enter는 좀 구분하기가 힘들다. 왜 그럴까? 둘다 마우스가
+				들어갈 때 발생하기 때문이다. 근데 차이가 있다. over는 해당 엘리먼트 자식 엘리먼트로 이동 할 때도 발생한다. 즉,
+				마우스를 움직이면 계속 이벤트가 발생할 확률이 높다. 그러나 enter는 그렇지 않다. 오직 마우스가 들어갈 때 한번만
+				발생한다.<br> <br> 무슨 말인지 잘 모르겠다고? 다음 <a
+					href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseenter_mouseover">링크</a>를
+				참고 하면 확실히 이해가 될 것이다.
+			</p>
+			<h1 class="bookmark">MouseOut vs MouseLeave</h1>
+			<p>이 두가지 이벤트들은 분명히 차이가 있다. out은 해당 영역의 모든 엘리먼트에 적용되 움직이거나 자식
+				엘리먼트에서 벗어나면 또 이벤트가 발생하지만, leave는 오직 해당 엘리먼트 한곳에서만 발생한다.</p>
+			<p>
+				이해가 안된다면 다음 <a
+					href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseleave_mouseout">링크</a>를
+				참고하면 확실히 이해가 될 것이다.
+			</p>
 		</article>
 	</section>
 	<div class="fixed">
