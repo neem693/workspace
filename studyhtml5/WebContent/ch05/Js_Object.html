@@ -545,11 +545,11 @@ person.firstname + " is " + person.age + " years old.";
 &lt;/html&gt;
 			
 			</pre>
-			
-			
+
+
 			<a href="/studyhtml5/ch05/practice_Object/practice_11.html"
 				class="center">프렉티스 11</a>
-			
+
 			<p>
 				The delete keyword deletes both the value of the property and the
 				property itself. <br> <br> After deletion, the property
@@ -559,9 +559,9 @@ person.firstname + " is " + person.age + " years old.";
 				delete operator should not be used on predefined JavaScript object
 				properties. It can crash your application.
 			</p>
-			
+
 			<h1>Property AttributesS</h1>
-			
+
 			<p>
 				All properties have a name. In addition they also have a value. <br>
 				<br> The value is one of the property's attributes. <br> <br>
@@ -573,21 +573,204 @@ person.firstname + " is " + person.age + " years old.";
 				ECMAScript 5 has methods for both getting and setting all property
 				attributes)
 			</p>
-			
-			
+
+
 			<h1>Prototype Properties</h1>
-			
-			
+
+
 			<p>
 				JavaScript objects inherit the properties of their prototype. <br>
 				<br> The delete keyword does not delete inherited properties,
 				but if you delete a prototype property, it will affect all objects
 				inherited from the prototype.
 			</p>
-			
-			
-			
-			
+
+
+			<h1 class="subject">JavaScript Object Methods</h1>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The JavaScript &lt;b&gt;this&lt;/b&gt; Keyword&lt;/h2&gt;
+
+&lt;p&gt;In this example, &lt;b&gt;this&lt;/b&gt; represents the &lt;b&gt;person&lt;/b&gt; object.&lt;/p&gt;
+&lt;p&gt;Because the person object "owns" the fullName method.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+// Create an object:
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_12.html"
+				class="center">프렉티스 12</a>
+			<h1>The this Keyword</h1>
+
+			<p>
+				In a function definition, this refers to the "owner" of the
+				function. <br> <br> In the example above, this is the
+				person object that "owns" the fullName function. <br> <br>
+				In other words, this.firstName means the firstName property of this
+				object. <br> <br> Read more about the this keyword at <a
+					href="https://www.w3schools.com/js/js_this.asp">JS this Keyword</a>.
+			</p>
+			<h1>JavaScript Methods</h1>
+			<p>
+				JavaScript methods are actions that can be performed on objects. <br>
+				<br> A JavaScript method is a property containing a function
+				definition.
+			</p>
+			<table>
+				<tbody>
+					<tr>
+						<th style="width: 20%">Property</th>
+						<th>Value</th>
+					</tr>
+					<tr>
+						<td>firstName</td>
+						<td>John</td>
+					</tr>
+					<tr>
+						<td>lastName</td>
+						<td>Doe</td>
+					</tr>
+					<tr>
+						<td>age</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>eyeColor</td>
+						<td>blue</td>
+					</tr>
+					<tr>
+						<td>fullName</td>
+						<td>function() {return this.firstName + " " + this.lastName;}</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="imp">Methods are functions stored as object properties.</p>
+			<h1>Accessing Object Methods</h1>
+			<p>You access an object method with the following syntax:</p>
+			<pre class="code">objectName.methodName()</pre>
+			<p>
+				You will typically describe fullName() as a method of the person
+				object, and fullName as a property. <br> <br> The fullName
+				property will execute (as a function) when it is invoked with (). <br>
+				<br> This example accesses the fullName() method of a person
+				object:
+			</p>
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;Creating and using an object method.&lt;/p&gt;
+
+&lt;p&gt;A method is actually a function definition stored as a property value.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+document.getElementById("demo").innerHTML = person.fullName();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_13.html"
+				class="center">프렉티스 13</a>
+			<p>
+				If you access the fullName property, without (), it will return the
+				function <span class="imp">definition</span>:
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p&gt;An object method is a function definition stored as a property value.&lt;/p&gt;
+&lt;p&gt;If you access it without (), it will return the function definition:&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+document.getElementById("demo").innerHTML = person.fullName;
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_14.html"
+				class="center">프렉티스 14</a>
+			<h1>Using Built-In Methods</h1>
+			<p>This example uses the toUpperCase() method of the String
+				object, to convert a text to uppercase:</p>
+			<pre class="code">
+var message = "Hello world!";
+var x = message.toUpperCase();</pre>
+			<p>The value of x, after execution of the code above will be:</p>
+			<pre class="code">HELLO WORLD!</pre>
+			<h1>Adding a Method to an Object</h1>
+			<p>Adding a new method to an object is easy:</p>
+<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+};
+person.name = function() {
+    return this.firstName + " " + this.lastName;
+};
+
+document.getElementById("demo").innerHTML =
+"My father is " + person.name(); 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href = "/studyhtml5/ch05/practice_Object/practice_15.html" class = "center">프렉티스 15</a>
+
+
 		</article>
 	</section>
 
