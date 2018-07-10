@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Javascript Object Constructors</h2>
+	<p id="demo"></p>
+	<script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        Person.nationality = "English";
+
+        var myFather = new Person("John", "Doe", 50, "blue");
+        var myMother = new Person("sally", "Rally", 48, "green");
+
+        document.getElementById("demo").innerHTML = "The nationality of my father is "
+                + myFather.nationality;
+    </script>
+
+</body>
+</html>
