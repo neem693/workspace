@@ -1082,7 +1082,7 @@ function Person(firstName, lastName, age, eyeColor) {
 } </pre>
 			<p>The changeName() function assigns the value of name to the
 				person's lastName property.</p>
-<pre class="code">
+			<pre class="code">
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
@@ -1117,6 +1117,212 @@ document.getElementById("demo").innerHTML =
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_23.html"
+				class="center">프렉티스 23</a>
+			<p>JavaScript knows which person you are talking about by
+				"substituting" this with myMother.</p>
+			<h1>Built-in JavaScript Constructors</h1>
+			<p>JavaScript has built-in constructors for native objects:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Object Constructors&lt;/h2&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+var x1 = new Object();   // A new Object object
+var x2 = new String();   // A new String object
+var x3 = new Number();   // A new Number object
+var x4 = new Boolean();  // A new Boolean object
+var x5 = new Array();    // A new Array object
+var x6 = new RegExp();   // A new RegExp object
+var x7 = new Function(); // A new Function object
+var x8 = new Date();     // A new Date object
+
+// Display the type of all objects
+document.getElementById("demo").innerHTML =
+"x1: " + typeof x1 + "&lt;br&gt;" +
+"x2: " + typeof x2 + "&lt;br&gt;" +
+"x3: " + typeof x3 + "&lt;br&gt;" +
+"x4: " + typeof x4 + "&lt;br&gt;" +
+"x5: " + typeof x5 + "&lt;br&gt;" +
+"x6: " + typeof x6 + "&lt;br&gt;" +
+"x7: " + typeof x7 + "&lt;br&gt;" +
+"x8: " + typeof x8 + "&lt;br&gt;";
+&lt;/script&gt;
+
+&lt;p&gt;There is no need to use String(), Number(), Boolean(), Array(), and RegExp()&lt;/p&gt;
+
+&lt;p&gt;Read the JavaScript tutorials.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_24.html"
+				class='center'>프렉티스 24</a>
+			<p>The Math() object is not in the list. Math is a global object.
+				The new keyword cannot be used on Math.</p>
+			<h1>Did You Know?</h1>
+			<p>As you can see above, JavaScript has object versions of the
+				primitive data types String, Number, and Boolean. But there is no
+				reason to create complex objects. Primitive values are much faster.</p>
+			<p>ALSO:</p>
+			<p>
+				Use object literals {} instead of new Object(). <br> <br>
+				Use string literals "" instead of new String(). <br> <br>
+				Use number literals 12345 instead of new Number(). <br> <br>
+				Use boolean literals true / false instead of new Boolean(). <br>
+				<br> Use array literals [] instead of new Array(). <br> <br>
+				Use pattern literals /()/ instead of new RegExp(). <br> <br>
+				Use function expressions () {} instead of new Function().
+			</p>
+
+			<h1>String Objects</h1>
+			<p>
+				Normally, strings are created as primitives: var firstName = "John"
+				<br> <br> But strings can also be created as objects using
+				the new keyword: var firstName = new String("John") <br> <br>
+				Learn why strings should not be created as object in the chapter JS
+				Strings.
+			</p>
+			<h1>Number Objects</h1>
+			<P>
+				Normally, numbers are created as primitives: var x = 123 <br> <br>
+				But numbers can also be created as objects using the new keyword:
+				var x = new Number(123) <br> <br> Learn why numbers should
+				not be created as object in the chapter JS Numbers.
+			</P>
+			<h1>Boolean Objects</h1>
+			<p>
+				Normally, booleans are created as primitives: var x = false <br>
+				<br> But booleans can also be created as objects using the new
+				keyword: var x = new Boolean(false) <br> <br> Learn why
+				booleans should not be created as object in the chapter JS Booleans.
+			</p>
+			<h1 class="subject">JavaScript Object Prototypes</h1>
+			<p>All JavaScript objects inherit properties and methods from a
+				prototype.</p>
+			<p>In the previous chapter we learned how to use an object
+				constructor:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Objects&lt;/h2&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.age + ". My mother is " + myMother.age; 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_25.html"
+				class="center">프렉티스 25</a>
+			<p>
+				We also learned that you can <span class="imp">not</span> add a new
+				property to an existing object constructor:
+			</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Objects&lt;/h2&gt;
+
+&lt;p&gt;You cannot add a new property to a constructor function.&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.nationality = "English";
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML =
+"The nationality of my father is " + myFather.nationality; 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_26.html"
+				class="center">프렉티스 26</a>
+			<p>To add a new property to a constructor, you must add it to the
+				constructor function:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Objects&lt;/h2&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    this.nationality = "English";
+}
+
+var myFather = new Person("John", "Doe", 50, "blue");
+var myMother = new Person("Sally", "Rally", 48, "green");
+
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.nationality + ". My mother is " + myMother.nationality; 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_27.html"
+				class="center">프렉티스 27</a>
+
+			<h1>Prototype Inheritance</h1>
+			<p>
+				All JavaScript objects inherit properties and methods from a
+				prototype. <br> <br> Date objects inherit from
+				Date.prototype. Array objects inherit from Array.prototype. Person
+				objects inherit from Person.prototype. <br> <br> The
+				Object.prototype is on the top of the prototype inheritance chain: <br>
+				<br> Date objects, Array objects, and Person objects inherit
+				from Object.prototype.
+			</p>
+			<h1>Adding Properties and Methods to Objects</h1>
+			<p>
+				Sometimes you want to add new properties (or methods) to all
+				existing objects of a given type. <br>
+				<br> Sometimes you want to add new properties (or methods) to
+				an object constructor.
+			</p>
+
 
 
 
