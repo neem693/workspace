@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale = 1.0" />
+<title>Insert title here</title>
+
+</head>
+<body>
+
+	<p id="demo"></p>
+
+	<script>
+	console.log(window.innerWidth );
+	console.log(document.documentElement.clientWidth );
+	console.log(document.body.clientWidth );
+	console.log(window.innerHeight);
+	console.log(document.documentElement.clientHeight);
+	console.log(document.body.clientHeight);
+	
+        var w = window.innerWidth || document.documentElement.clientWidth
+                || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight
+                || document.body.clientHeight;
+
+        var x = document.getElementById("demo");
+        x.innerHTML = "Browser inner window width:" + w + ", height: " + h + ".";
+    </script>
+
+</body>
+</html>

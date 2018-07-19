@@ -1324,6 +1324,73 @@ document.getElementById("demo").innerHTML =
 			<h1>Using the prototype Property</h1>
 			<p>The JavaScript prototype property allows you to add new
 				properties to object constructors:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Objects&lt;/h2&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.prototype.nationality = "English";
+
+var myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.nationality; 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_28.html"
+				class="center">프렉티스 28</a>
+			<p>The JavaScript prototype property also allows you to add new
+				methods to objects constructors:</p>
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Objects&lt;/h2&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+}
+Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName
+};
+
+var myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML =
+"My father is " + myFather.name(); 
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<a href="/studyhtml5/ch05/practice_Object/practice_29.html"
+				class="center">프렉티스 29</a>
+			<p class="imp">Only modify your own prototypes. Never modify the
+				prototypes of standard JavaScript objects.</p>
+				
+				
+				
+				
+				
 
 
 		</article>
