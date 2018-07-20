@@ -151,7 +151,7 @@
 <node CREATED="1501750129751" ID="ID_1656552393" MODIFIED="1501750132504" TEXT="&#xb098;&#xc911;&#xc5d0; &#xc0dd;&#xac01;&#xd574;&#xbcf4;&#xc790;."/>
 </node>
 </node>
-<node CREATED="1501991543817" FOLDED="true" ID="ID_1309840535" MODIFIED="1525690146046" TEXT="8/6">
+<node CREATED="1501991543817" FOLDED="true" ID="ID_1309840535" MODIFIED="1532062250382" TEXT="8/6">
 <node CREATED="1501991832657" ID="ID_1749690479" MODIFIED="1501992082426" TEXT="php_ajax&#xc5d0;&#xc11c; firefox&#xad00;&#xb828;&#xd574;&#xc11c; &#xc798; &#xc548;&#xb418;&#xb294; &#xbd80;&#xbd84;&#xc744; &#xbd81;&#xb9c8;&#xd06c;&#xb97c; &#xc918;&#xc11c; &#xae30;&#xb85d;&#xd558;&#xace0; &#xc788;&#xb2e4;."/>
 <node CREATED="1501992082624" ID="ID_842450204" MODIFIED="1501992256649" TEXT="&#xadfc;&#xb370; &#xcc3e;&#xb294; &#xb3c4;&#xc911; &#xd574;&#xb2f9; &#xc6f9;&#xc0ac;&#xc774;&#xd2b8;&#xb97c; &#xcc3e;&#xc544;&#xbcfc;&#xb824;&#xb2e4;&#xac00; &#xc775;&#xc2a4;&#xd50c;&#xb85c;&#xb7ec;&#xc5d0;&#xc11c; &#xb514;&#xcf54;&#xb354; &#xc778;&#xcf54;&#xb354;&#xac00; &#xc548;&#xb418;&#xb294; &#xbd80;&#xbd84;&#xc744; &#xce90;&#xce58;&#xd588;&#xb2e4;."/>
 <node CREATED="1501992256928" ID="ID_241135948" MODIFIED="1525690146045" TEXT="&#xb530;&#xb77c;&#xc11c; &#xadf8; &#xbd80;&#xbd84;&#xc5d0; &#xb300;&#xd55c; &#xb0b4;&#xc6a9;&#xc744; &#xb354; &#xcc3e;&#xc544;&#xbd10;&#xc11c; &#xbb54;&#xc9c0; &#xc54c;&#xc544;&#xb0c8;&#xb2e4;.">
@@ -169,7 +169,7 @@
 <node CREATED="1501992338334" ID="ID_530096621" MODIFIED="1502337966768" TEXT="&#xc774;&#xbd80;&#xbd84;&#xc73c;&#xb85c; &#xacc4;&#xc18d; debug&#xd560; &#xc218; &#xc788;&#xc744; &#xac70; &#xac19;&#xac70;&#xb4e0;.."/>
 </node>
 </node>
-<node CREATED="1502337973658" FOLDED="true" ID="ID_1835582109" MODIFIED="1525690146043" TEXT="8/10">
+<node CREATED="1502337973658" FOLDED="true" ID="ID_1835582109" MODIFIED="1532062247360" TEXT="8/10">
 <node CREATED="1502338008969" ID="ID_1876258596" MODIFIED="1525690146043" TEXT="&apos;,&apos; &#xb530;&#xc74c;&#xd45c;&#xb97c; url &#xb514;&#xcf54;&#xb354; &#xd558;&#xb294; &#xac74; decodeURIComponent&#xb85c; &#xd574;&#xacb0;&#xac00;&#xb2a5;&#xd558;&#xb2e4;. &#xadf8;&#xb7ec;&#xb098; &#xc2a4;&#xd398;&#xc774;&#xc2a4;&#xbc14;&#xb294; &#xc790;&#xb3d9;&#xc73c;&#xb85c; +&#xb85c; &#xbc14;&#xb010;&#xb2e4;.  &#xc774; +&#xb97c; &#xb2e4;&#xc2dc; %20&#xc774;&#xb77c;&#xb294; &#xc2a4;&#xd398;&#xc774;&#xc2a4;&#xbc14; &#xcf54;&#xb4dc;&#xb85c; &#xbc14;&#xafd4;&#xc8fc;&#xc9c0; &#xc54a;&#xb294;&#xb2e4;&#xba74;, &#xb514;&#xcf54;&#xb354;&#xac00; &#xc81c;&#xb300;&#xb85c; &#xb418;&#xc9c0; &#xc54a;&#xb294;&#xb2e4;.">
 <node CREATED="1502338228660" ID="ID_884176002" MODIFIED="1502338241683" TEXT="&#xc5ec;&#xae30;&#xc5d0; &#xb300;&#xd55c; &#xb0b4;&#xc6a9;&#xc740; &#xb2e4;&#xc74c; &#xb9c1;&#xd06c;&#xc5d0; &#xc790;&#xc138;&#xd788; &#xb098;&#xc640;&#xc788;&#xb2e4;. &#xb450;&#xbc88;&#xc9f8; &#xb2f5;&#xbcc0;&#xc774;&#xb2e4;."/>
 <node CREATED="1502338249131" ID="ID_671105387" LINK="https://stackoverflow.com/questions/18717557/remove-plus-sign-in-url-query-string" MODIFIED="1502338249131" TEXT="https://stackoverflow.com/questions/18717557/remove-plus-sign-in-url-query-string"/>
