@@ -11003,7 +11003,22 @@ obj.employees[1].firstName + " " + obj.employees[1].lastName;
 				browser, the global object is the browser window. Then isNaN() is
 				actually a window method: window.isNaN().
 			</p>
+			<h1 class="bookmark">자바스크립트와 제이쿼리 구분 사용해야 함</h1>
+			<pre class="code">
+&lt;script&gt;
+var a = document.getElmentById("dsf");
+var $b = $("#dsf");
 
+a.value='aaa';
+$b.val('ddd');
+&lt;/script&gt;
+</pre>
+			<p>
+				만약 $b.value라고 한다면 씨알도 먹히지 않음을 주의하라. 한번 jquery는 영원한 jquery 한번
+				javascript는 영원한 javascript이다. 이는 다시 말해서, 다음도 해당한다.  <span class="imp">jquery에서
+					사용하는 api들의 대부분은  속성을 입력하는 과정에서도 모두 jquery api들을 활용해야만 한다. 그렇지 않으면, 아무것도 되지 않는다. 차라리 값을 jquery api가 실행되기 전에 사용하라.
+					 그러니까 외부에서 사용하라 이런 말이다. </span>
+			</p>
 
 
 
