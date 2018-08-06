@@ -8,13 +8,15 @@
 <body>
 
 	<h2>The Navigator Object</h2>
-	<p>The cookieEnabled property returns true if cookies are enabled:</p>
+	<p>The appName propery returns the application name of the browser:</p>
 
 	<p id="demo"></p>
 
+	<p>strange enough, "Netscape" is the application name for both
+		IE11, Chrome, FireFox, and Safari.</p>
 	<script>
-        document.getElementById("demo").innerHTML = "navigator.cookieEnabled is "
-                + navigator.cookieEnabled;
+        document.getElementById("demo").innerHTML = "navigator.appName is "
+                + navigator.appName;
     </script>
 
 </body>
