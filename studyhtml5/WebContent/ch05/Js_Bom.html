@@ -654,9 +654,118 @@ navigator.userAgent;
 &lt;/body&gt;
 &lt;/html&gt;
 				</pre>
-<a href="/studyhtml5/ch05/practice_Bom/practice_21.html"
+			<a href="/studyhtml5/ch05/practice_Bom/practice_21.html"
 				class="center">프렉티스 21</a>
+			<h1>Warning !!!</h1>
+
+			<p>The information from the navigator object can often be
+				misleading, and should not be used to detect browser versions
+				because:</p>
+			<ul>
+				<li>Different browsers can use the same name</li>
+				<li>The navigator data can be changed by the browser owner</li>
+				<li>Some browsers misidentify themselves to bypass site tests</li>
+				<li>Browsers cannot report new operating systems, released
+					later than the browser</li>
+			</ul>
+			<h1>The Browser Platform</h1>
+			<p>The platform property returns the browser platform (operating
+				system):</p>
+
+
+			<pre class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The Navigator Object&lt;/h2&gt;
+
+&lt;p&gt;The platform property returns the browser platform (operating system):&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML = 
+"navigator.platform is " + navigator.platform;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<a href="/studyhtml5/ch05/practice_Bom/practice_22.html"
+				class="center">프렉티스 22</a>
+				<h1>The Browser Language</h1>
+				<p>The language property returns the browser's language:</p>
+				<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The Navigator Object&lt;/h2&gt;
+
+&lt;p&gt;The language property returns the browser's language:&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"navigator.language is " + navigator.language;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+				<a href="/studyhtml5/ch05/practice_Bom/practice_23.html"
+				class="center">프렉티스 23</a>
+				
+				<h1>Is The Browser Online?</h1>
+				<p>The onLine property returns true if the browser is online:</p>
+				<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The Navigator Object&lt;/h2&gt;
+
+&lt;p&gt;The onLine property returns true if the browser is online:&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"navigator.onLine is " + navigator.onLine;
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+								<a href="/studyhtml5/ch05/practice_Bom/practice_24.html"
+				class="center">프렉티스 24</a>
+				<h1>Is Java Enabled?</h1>
+				<p>The javaEnabled() method returns true if Java is enabled:</p>
+				<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;The Navigator Object&lt;/h2&gt;
+
+&lt;p&gt;The javaEnabled() method returns true if Java is enabled:&lt;/p&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+document.getElementById("demo").innerHTML =
+"javaEnabled is " + navigator.javaEnabled();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+				</pre>
+								<a href="/studyhtml5/ch05/practice_Bom/practice_25.html"
+				class="center">프렉티스 25</a>
 		</article>
+
 	</section>
 	<div class="fixed">
 		<a href="#index_subject">▲</a>
