@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="article" key="selection"/>
+		<item value="pre" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="pre"/>
 			<item value="article"/>
 			<item value="action"/>
 			<item value="img"/>
@@ -29,7 +30,6 @@
 			<item value="sub subject"/>
 			<item value="exception"/>
 			<item value="Java - String split() Method"/>
-			<item value="하면 다음과 같이 결과가 나온다."/>
 		</list>
 		<list key="replacehistory">
 			<item value="\n"/>

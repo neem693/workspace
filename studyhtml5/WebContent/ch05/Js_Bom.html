@@ -764,7 +764,171 @@ document.getElementById("demo").innerHTML =
 				</pre>
 								<a href="/studyhtml5/ch05/practice_Bom/practice_25.html"
 				class="center">프렉티스 25</a>
+<h1 class = "subject">JavaScript Popup Boxes</h1>
+<p>JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.</p>
+<h1>Alert Box</h1>
+
+<p>An alert box is often used if you want to make sure information comes through to the user.
+<br><br>
+When an alert box pops up, the user will have to click "OK" to proceed. </p>
+
+<h2>Syntax</h2>
+
+
+<pre class = "code">
+window.alert("sometext");</pre>
+
+<p>The window.alert() method can be written without the window prefix.</p>
+
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Alert&lt;/h2&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction() {
+    alert("I am an alert box!");
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class = "center">이건 안해봐도 결과를 다 잘 알지 않나?</p>
+<h1>Confirm Box</h1>
+ 
+ <p>A confirm box is often used if you want the user to verify or accept something.
+<br><br>
+When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+<br><br>
+If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.</p>
+<h2>Syntax</h2>
+<pre class = "code">
+window.confirm("sometext");</pre>
+<p>The window.confirm() method can be written without the window prefix.</p>
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Confirm Box&lt;/h2&gt;
+
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var txt;
+    if (confirm("Press a button!")) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+				<a href="/studyhtml5/ch05/practice_Bom/practice_26.html"
+				class="center">프렉티스 26</a>
+				
+				
+				<h1>Prompt Box</h1>
+				<p>A prompt box is often used if you want the user to input a value before entering a page.
+<br><br>
+When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value.
+<br><br>
+If the user clicks "OK" the box returns the input value. If the user clicks "Cancel" the box returns null.</p>
+
+<h2>Syntax</h2>
+<pre class = "code">
+window.prompt("sometext","defaultText");</pre>
+<p>The window.prompt() method can be written without the window prefix.</p>
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript Prompt&lt;/h2&gt;
+
+&lt;button onclick="myFunction()"&gt;Try it&lt;/button&gt;
+
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function myFunction() {
+    var txt;
+    var person = prompt("Please enter your name:", "Harry Potter");
+    if (person == null || person == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Hello " + person + "! How are you today?";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<a href="/studyhtml5/ch05/practice_Bom/practice_27.html"
+				class="center">프렉티스 27</a>
+<h1>Line Breaks</h1>
+<p>To display line breaks inside a popup box, use a back-slash followed by the character n.</p>
+<pre class = "code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;JavaScript&lt;/h2&gt;
+&lt;p&gt;Line-breaks in a popup box.&lt;/p&gt;
+
+&lt;button onclick="alert('Hello\nHow are you?')"&gt;Try it&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<a href="/studyhtml5/ch05/practice_Bom/practice_28.html"
+				class="center">프렉티스 28</a>
+				<h1 class = "subject">
+				JavaScript Timing Events</h1>
+<p>JavaScript can be executed in time-intervals.
+<br><br>
+This is called timing events.</p>
+<h1>Timing Events</h1>				
+<p>The window object allows execution of code at specified time intervals.
+<br><br>
+These time intervals are called timing events.
+<br><br>
+The two key methods to use with JavaScript are:</p>				
+
+<ul><li>
+    setTimeout(function, milliseconds)<br>
+    Executes a function, after waiting a specified number of milliseconds.
+</li><li>    setInterval(function, milliseconds)<br>
+    Same as setTimeout(), but repeats the execution of the function continuously.
+</li></ul>
+
+
+<div class = "imp">The setTimeout() and setInterval() are both methods of the HTML DOM Window object.</div>				
+				<h1>The setTimeout() Method</h1>
+				<pre class = "code">window.setTimeout(function, milliseconds);</pre>
+				<p>The window.setTimeout() method can be written without the window prefix.<br><br>
+The first parameter is a function to be executed.<br><br>
+The second parameter indicates the number of milliseconds before execution. </p>
+
+
 		</article>
+		
 
 	</section>
 	<div class="fixed">
