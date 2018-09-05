@@ -8536,6 +8536,7 @@ args에
 	<h2>Example</h2>
 	<p>Following example illustrates how to find a digit string from
 		the given alphanumeric string −</p>
+<p class = "bookmark">matcher에서 <span class = "imp">find메소드</span>를 가동하지 않으면 뭣도 안된다는 것을 꼭 기억해라.</p>
 	<pre class="code">
 package practice019;
 import java.util.regex.Pattern;
@@ -8546,7 +8547,7 @@ public class RegexMatches01 {
 		String pattern = "(.*)(\\d+)(.*)";
 		Pattern r = Pattern.compile(pattern);
 		Matcher m = r.matcher(line);
-		if(m.find()) {
+		if(<span class = "imp">m.find()</span>) {
 			System.out.println("Found value: " + m.group(0));
 			System.out.println("Found value: " + m.group(1));
 			System.out.println("Found value: " + m.group(2));
