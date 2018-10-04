@@ -29,6 +29,8 @@
         RewriteRule ^.*$ /studyphp/ [R]
 		
 		
+		
+		
 		Rewritecond %{REQUEST_URI} !^/studyhtml5/webcontent/?.*$ [NC]
 		Rewritecond %{REQUEST_URI} ^/studyhtml5/?(.*)$ [NC]
 		RewriteRule ^.* /studyhtml5/webcontent/%1 [NC]
