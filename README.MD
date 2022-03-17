@@ -1,4 +1,5 @@
 wsl docker build -t tutorial:1.0 .
+
 wsl ./runDocker.sh tutorial:1.0
 
 
